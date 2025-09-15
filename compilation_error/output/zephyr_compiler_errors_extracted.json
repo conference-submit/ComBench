@@ -1,0 +1,1911 @@
+{
+  "metadata": {
+    "total_compiler_errors": 77,
+    "extraction_timestamp": "2025-08-10 23:13:09",
+    "method": "enhanced_string_matching_with_classification",
+    "statistics": {
+      "total_errors": 77,
+      "commits_with_errors": 55,
+      "workflows_with_errors": {
+        "Build with Clang/LLVM": 77
+      },
+      "error_types_summary": {
+        "warning_as_error": 221,
+        "declaration_error": 12,
+        "syntax_error": 8,
+        "other_error": 4
+      },
+      "error_types_summary_detailed": {
+        "other_error": 101,
+        "type_conversion_error": 39,
+        "address_error": 81,
+        "undefined_error": 12,
+        "unexpected_token": 4,
+        "missing_error": 4,
+        "type_mismatch": 4
+      },
+      "jobs_with_errors": {
+        "clang-build (1)": 45,
+        "clang-build (2)": 32
+      }
+    }
+  },
+  "compiler_errors": [
+    {
+      "commit_sha": "f2f496df8491192da7ebbbed8d4c1dc798ec805b",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 16847039466,
+      "job_id": 47728125108,
+      "created_at": "2025-08-09T07:40:20Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/subsys/bluetooth/host/classic/shell/goep.c:102:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/subsys/bluetooth/host/classic/shell/goep.c:102:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  102 |                 int err;\n      |                 ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "ba65ff34fbd4a46a6d8e5cb20bb30a8cacdeb429",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 16834645711,
+      "job_id": 47690926504,
+      "created_at": "2025-08-08T15:48:58Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/subsys/bluetooth/host/classic/shell/goep.c:102:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/subsys/bluetooth/host/classic/shell/goep.c:102:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  102 |                 int err;\n      |                 ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "1747bd7f1477657a130c470e340297f9ccb6d33c",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (2)",
+      "workflow_id": 16806338647,
+      "job_id": 47599622989,
+      "created_at": "2025-08-07T13:46:41Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:242:4: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:289:18: error: implicit conversion from enumeration type 'enum ocpp_notify_reason' to different enumeration type 'enum ocpp_pdu_msg' [-Werror,-Wenum-conversion]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:290:16: error: implicit conversion from enumeration type 'enum ocpp_pdu_msg' to different enumeration type 'enum ocpp_notify_reason' [-Werror,-Wenum-conversion]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:294:18: error: implicit conversion from enumeration type 'enum ocpp_notify_reason' to different enumeration type 'enum ocpp_pdu_msg' [-Werror,-Wenum-conversion]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:295:16: error: implicit conversion from enumeration type 'enum ocpp_pdu_msg' to different enumeration type 'enum ocpp_notify_reason' [-Werror,-Wenum-conversion]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:299:18: error: implicit conversion from enumeration type 'enum ocpp_notify_reason' to different enumeration type 'enum ocpp_pdu_msg' [-Werror,-Wenum-conversion]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:300:16: error: implicit conversion from enumeration type 'enum ocpp_pdu_msg' to different enumeration type 'enum ocpp_notify_reason' [-Werror,-Wenum-conversion]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:348:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:359:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:405:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:524:13: error: result of comparison of constant -128 with expression of type 'uint8_t' (aka 'unsigned char') is always false [-Werror,-Wtautological-constant-out-of-range-compare]"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:242:4: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  242 |                         union ocpp_io_value io;\n      |                         ^",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:289:18: error: implicit conversion from enumeration type 'enum ocpp_notify_reason' to different enumeration type 'enum ocpp_pdu_msg' [-Werror,-Wenum-conversion]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:290:16: error: implicit conversion from enumeration type 'enum ocpp_pdu_msg' to different enumeration type 'enum ocpp_notify_reason' [-Werror,-Wenum-conversion]\n  290 |                         ctx->cb(msg.msgtype, &msg.usr, ctx->user_data);\n      |                         ~~~     ~~~~^~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:294:18: error: implicit conversion from enumeration type 'enum ocpp_notify_reason' to different enumeration type 'enum ocpp_pdu_msg' [-Werror,-Wenum-conversion]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:295:16: error: implicit conversion from enumeration type 'enum ocpp_pdu_msg' to different enumeration type 'enum ocpp_notify_reason' [-Werror,-Wenum-conversion]\n  295 |                         ctx->cb(msg.msgtype, &msg.usr, ctx->user_data);\n      |                         ~~~     ~~~~^~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:299:18: error: implicit conversion from enumeration type 'enum ocpp_notify_reason' to different enumeration type 'enum ocpp_pdu_msg' [-Werror,-Wenum-conversion]\n  299 |                         msg.msgtype = OCPP_USR_UNLOCK_CONNECTOR;\n      |                                     ~ ^~~~~~~~~~~~~~~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:300:16: error: implicit conversion from enumeration type 'enum ocpp_pdu_msg' to different enumeration type 'enum ocpp_notify_reason' [-Werror,-Wenum-conversion]\n  300 |                         ctx->cb(msg.msgtype, &msg.usr, ctx->user_data);\n      |                         ~~~     ~~~~^~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:348:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  348 |                 struct boot_notif binfo;\n      |                 ^",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:359:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  359 |                 struct ocpp_idtag_info idinfo = {0};\n      |                 ^",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:405:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  405 |                 char sval[CISTR500] = {0};\n      |                 ^",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:524:13: error: result of comparison of constant -128 with expression of type 'uint8_t' (aka 'unsigned char') is always false [-Werror,-Wtautological-constant-out-of-range-compare]\n  524 |                                 if (ret == -ENOTCONN) {\n      |                                     ~~~ ^  ~~~~~~~~~"
+      ],
+      "error_count": 11,
+      "error_types": {
+        "warning_as_error": 11
+      }
+    },
+    {
+      "commit_sha": "a5c0ba853b3a7aa6fc3d1140c96f62a03016c314",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (2)",
+      "workflow_id": 16805177614,
+      "job_id": 47595652967,
+      "created_at": "2025-08-07T12:58:57Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:242:4: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:289:18: error: implicit conversion from enumeration type 'enum ocpp_notify_reason' to different enumeration type 'enum ocpp_pdu_msg' [-Werror,-Wenum-conversion]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:290:16: error: implicit conversion from enumeration type 'enum ocpp_pdu_msg' to different enumeration type 'enum ocpp_notify_reason' [-Werror,-Wenum-conversion]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:294:18: error: implicit conversion from enumeration type 'enum ocpp_notify_reason' to different enumeration type 'enum ocpp_pdu_msg' [-Werror,-Wenum-conversion]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:295:16: error: implicit conversion from enumeration type 'enum ocpp_pdu_msg' to different enumeration type 'enum ocpp_notify_reason' [-Werror,-Wenum-conversion]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:299:18: error: implicit conversion from enumeration type 'enum ocpp_notify_reason' to different enumeration type 'enum ocpp_pdu_msg' [-Werror,-Wenum-conversion]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:300:16: error: implicit conversion from enumeration type 'enum ocpp_pdu_msg' to different enumeration type 'enum ocpp_notify_reason' [-Werror,-Wenum-conversion]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:348:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:359:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:405:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:524:13: error: result of comparison of constant -128 with expression of type 'uint8_t' (aka 'unsigned char') is always false [-Werror,-Wtautological-constant-out-of-range-compare]"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:242:4: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  242 |                         union ocpp_io_value io;\n      |                         ^",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:289:18: error: implicit conversion from enumeration type 'enum ocpp_notify_reason' to different enumeration type 'enum ocpp_pdu_msg' [-Werror,-Wenum-conversion]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:290:16: error: implicit conversion from enumeration type 'enum ocpp_pdu_msg' to different enumeration type 'enum ocpp_notify_reason' [-Werror,-Wenum-conversion]\n  290 |                         ctx->cb(msg.msgtype, &msg.usr, ctx->user_data);\n      |                         ~~~     ~~~~^~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:294:18: error: implicit conversion from enumeration type 'enum ocpp_notify_reason' to different enumeration type 'enum ocpp_pdu_msg' [-Werror,-Wenum-conversion]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:295:16: error: implicit conversion from enumeration type 'enum ocpp_pdu_msg' to different enumeration type 'enum ocpp_notify_reason' [-Werror,-Wenum-conversion]\n  295 |                         ctx->cb(msg.msgtype, &msg.usr, ctx->user_data);\n      |                         ~~~     ~~~~^~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:299:18: error: implicit conversion from enumeration type 'enum ocpp_notify_reason' to different enumeration type 'enum ocpp_pdu_msg' [-Werror,-Wenum-conversion]\n  299 |                         msg.msgtype = OCPP_USR_UNLOCK_CONNECTOR;\n      |                                     ~ ^~~~~~~~~~~~~~~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:300:16: error: implicit conversion from enumeration type 'enum ocpp_pdu_msg' to different enumeration type 'enum ocpp_notify_reason' [-Werror,-Wenum-conversion]\n  300 |                         ctx->cb(msg.msgtype, &msg.usr, ctx->user_data);\n      |                         ~~~     ~~~~^~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:348:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  348 |                 struct boot_notif binfo;\n      |                 ^",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:359:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  359 |                 struct ocpp_idtag_info idinfo = {0};\n      |                 ^",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:405:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  405 |                 char sval[CISTR500] = {0};\n      |                 ^",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:524:13: error: result of comparison of constant -128 with expression of type 'uint8_t' (aka 'unsigned char') is always false [-Werror,-Wtautological-constant-out-of-range-compare]\n  524 |                                 if (ret == -ENOTCONN) {\n      |                                     ~~~ ^  ~~~~~~~~~"
+      ],
+      "error_count": 11,
+      "error_types": {
+        "warning_as_error": 11
+      }
+    },
+    {
+      "commit_sha": "a91b959dd484d949666fbae521a9948f39eb5e6c",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (2)",
+      "workflow_id": 16802932276,
+      "job_id": 47588305554,
+      "created_at": "2025-08-07T11:16:09Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:242:4: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:289:18: error: implicit conversion from enumeration type 'enum ocpp_notify_reason' to different enumeration type 'enum ocpp_pdu_msg' [-Werror,-Wenum-conversion]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:290:16: error: implicit conversion from enumeration type 'enum ocpp_pdu_msg' to different enumeration type 'enum ocpp_notify_reason' [-Werror,-Wenum-conversion]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:294:18: error: implicit conversion from enumeration type 'enum ocpp_notify_reason' to different enumeration type 'enum ocpp_pdu_msg' [-Werror,-Wenum-conversion]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:295:16: error: implicit conversion from enumeration type 'enum ocpp_pdu_msg' to different enumeration type 'enum ocpp_notify_reason' [-Werror,-Wenum-conversion]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:299:18: error: implicit conversion from enumeration type 'enum ocpp_notify_reason' to different enumeration type 'enum ocpp_pdu_msg' [-Werror,-Wenum-conversion]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:300:16: error: implicit conversion from enumeration type 'enum ocpp_pdu_msg' to different enumeration type 'enum ocpp_notify_reason' [-Werror,-Wenum-conversion]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:348:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:359:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:405:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:524:13: error: result of comparison of constant -128 with expression of type 'uint8_t' (aka 'unsigned char') is always false [-Werror,-Wtautological-constant-out-of-range-compare]"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:242:4: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  242 |                         union ocpp_io_value io;\n      |                         ^",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:289:18: error: implicit conversion from enumeration type 'enum ocpp_notify_reason' to different enumeration type 'enum ocpp_pdu_msg' [-Werror,-Wenum-conversion]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:290:16: error: implicit conversion from enumeration type 'enum ocpp_pdu_msg' to different enumeration type 'enum ocpp_notify_reason' [-Werror,-Wenum-conversion]\n  290 |                         ctx->cb(msg.msgtype, &msg.usr, ctx->user_data);\n      |                         ~~~     ~~~~^~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:294:18: error: implicit conversion from enumeration type 'enum ocpp_notify_reason' to different enumeration type 'enum ocpp_pdu_msg' [-Werror,-Wenum-conversion]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:295:16: error: implicit conversion from enumeration type 'enum ocpp_pdu_msg' to different enumeration type 'enum ocpp_notify_reason' [-Werror,-Wenum-conversion]\n  295 |                         ctx->cb(msg.msgtype, &msg.usr, ctx->user_data);\n      |                         ~~~     ~~~~^~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:299:18: error: implicit conversion from enumeration type 'enum ocpp_notify_reason' to different enumeration type 'enum ocpp_pdu_msg' [-Werror,-Wenum-conversion]\n  299 |                         msg.msgtype = OCPP_USR_UNLOCK_CONNECTOR;\n      |                                     ~ ^~~~~~~~~~~~~~~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:300:16: error: implicit conversion from enumeration type 'enum ocpp_pdu_msg' to different enumeration type 'enum ocpp_notify_reason' [-Werror,-Wenum-conversion]\n  300 |                         ctx->cb(msg.msgtype, &msg.usr, ctx->user_data);\n      |                         ~~~     ~~~~^~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:348:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  348 |                 struct boot_notif binfo;\n      |                 ^",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:359:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  359 |                 struct ocpp_idtag_info idinfo = {0};\n      |                 ^",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:405:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  405 |                 char sval[CISTR500] = {0};\n      |                 ^",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:524:13: error: result of comparison of constant -128 with expression of type 'uint8_t' (aka 'unsigned char') is always false [-Werror,-Wtautological-constant-out-of-range-compare]\n  524 |                                 if (ret == -ENOTCONN) {\n      |                                     ~~~ ^  ~~~~~~~~~"
+      ],
+      "error_count": 11,
+      "error_types": {
+        "warning_as_error": 11
+      }
+    },
+    {
+      "commit_sha": "169b47ce38aef2a7a6c2e0e09430b82c5ce3115b",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (2)",
+      "workflow_id": 16792895356,
+      "job_id": 47557814634,
+      "created_at": "2025-08-07T01:37:00Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:242:4: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:289:18: error: implicit conversion from enumeration type 'enum ocpp_notify_reason' to different enumeration type 'enum ocpp_pdu_msg' [-Werror,-Wenum-conversion]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:290:16: error: implicit conversion from enumeration type 'enum ocpp_pdu_msg' to different enumeration type 'enum ocpp_notify_reason' [-Werror,-Wenum-conversion]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:294:18: error: implicit conversion from enumeration type 'enum ocpp_notify_reason' to different enumeration type 'enum ocpp_pdu_msg' [-Werror,-Wenum-conversion]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:295:16: error: implicit conversion from enumeration type 'enum ocpp_pdu_msg' to different enumeration type 'enum ocpp_notify_reason' [-Werror,-Wenum-conversion]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:299:18: error: implicit conversion from enumeration type 'enum ocpp_notify_reason' to different enumeration type 'enum ocpp_pdu_msg' [-Werror,-Wenum-conversion]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:300:16: error: implicit conversion from enumeration type 'enum ocpp_pdu_msg' to different enumeration type 'enum ocpp_notify_reason' [-Werror,-Wenum-conversion]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:348:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:359:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:405:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:524:13: error: result of comparison of constant -128 with expression of type 'uint8_t' (aka 'unsigned char') is always false [-Werror,-Wtautological-constant-out-of-range-compare]"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:242:4: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  242 |                         union ocpp_io_value io;\n      |                         ^",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:289:18: error: implicit conversion from enumeration type 'enum ocpp_notify_reason' to different enumeration type 'enum ocpp_pdu_msg' [-Werror,-Wenum-conversion]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:290:16: error: implicit conversion from enumeration type 'enum ocpp_pdu_msg' to different enumeration type 'enum ocpp_notify_reason' [-Werror,-Wenum-conversion]\n  290 |                         ctx->cb(msg.msgtype, &msg.usr, ctx->user_data);\n      |                         ~~~     ~~~~^~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:294:18: error: implicit conversion from enumeration type 'enum ocpp_notify_reason' to different enumeration type 'enum ocpp_pdu_msg' [-Werror,-Wenum-conversion]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:295:16: error: implicit conversion from enumeration type 'enum ocpp_pdu_msg' to different enumeration type 'enum ocpp_notify_reason' [-Werror,-Wenum-conversion]\n  295 |                         ctx->cb(msg.msgtype, &msg.usr, ctx->user_data);\n      |                         ~~~     ~~~~^~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:299:18: error: implicit conversion from enumeration type 'enum ocpp_notify_reason' to different enumeration type 'enum ocpp_pdu_msg' [-Werror,-Wenum-conversion]\n  299 |                         msg.msgtype = OCPP_USR_UNLOCK_CONNECTOR;\n      |                                     ~ ^~~~~~~~~~~~~~~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:300:16: error: implicit conversion from enumeration type 'enum ocpp_pdu_msg' to different enumeration type 'enum ocpp_notify_reason' [-Werror,-Wenum-conversion]\n  300 |                         ctx->cb(msg.msgtype, &msg.usr, ctx->user_data);\n      |                         ~~~     ~~~~^~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:348:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  348 |                 struct boot_notif binfo;\n      |                 ^",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:359:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  359 |                 struct ocpp_idtag_info idinfo = {0};\n      |                 ^",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:405:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  405 |                 char sval[CISTR500] = {0};\n      |                 ^",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:524:13: error: result of comparison of constant -128 with expression of type 'uint8_t' (aka 'unsigned char') is always false [-Werror,-Wtautological-constant-out-of-range-compare]\n  524 |                                 if (ret == -ENOTCONN) {\n      |                                     ~~~ ^  ~~~~~~~~~"
+      ],
+      "error_count": 11,
+      "error_types": {
+        "warning_as_error": 11
+      }
+    },
+    {
+      "commit_sha": "93620efc8d2398d1b17807564277a562c4dfeeb7",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (2)",
+      "workflow_id": 16782203480,
+      "job_id": 47523599628,
+      "created_at": "2025-08-06T16:04:29Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:242:4: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:289:18: error: implicit conversion from enumeration type 'enum ocpp_notify_reason' to different enumeration type 'enum ocpp_pdu_msg' [-Werror,-Wenum-conversion]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:290:16: error: implicit conversion from enumeration type 'enum ocpp_pdu_msg' to different enumeration type 'enum ocpp_notify_reason' [-Werror,-Wenum-conversion]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:294:18: error: implicit conversion from enumeration type 'enum ocpp_notify_reason' to different enumeration type 'enum ocpp_pdu_msg' [-Werror,-Wenum-conversion]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:295:16: error: implicit conversion from enumeration type 'enum ocpp_pdu_msg' to different enumeration type 'enum ocpp_notify_reason' [-Werror,-Wenum-conversion]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:299:18: error: implicit conversion from enumeration type 'enum ocpp_notify_reason' to different enumeration type 'enum ocpp_pdu_msg' [-Werror,-Wenum-conversion]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:300:16: error: implicit conversion from enumeration type 'enum ocpp_pdu_msg' to different enumeration type 'enum ocpp_notify_reason' [-Werror,-Wenum-conversion]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:348:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:359:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:405:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:524:13: error: result of comparison of constant -128 with expression of type 'uint8_t' (aka 'unsigned char') is always false [-Werror,-Wtautological-constant-out-of-range-compare]"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:242:4: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  242 |                         union ocpp_io_value io;\n      |                         ^",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:289:18: error: implicit conversion from enumeration type 'enum ocpp_notify_reason' to different enumeration type 'enum ocpp_pdu_msg' [-Werror,-Wenum-conversion]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:290:16: error: implicit conversion from enumeration type 'enum ocpp_pdu_msg' to different enumeration type 'enum ocpp_notify_reason' [-Werror,-Wenum-conversion]\n  290 |                         ctx->cb(msg.msgtype, &msg.usr, ctx->user_data);\n      |                         ~~~     ~~~~^~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:294:18: error: implicit conversion from enumeration type 'enum ocpp_notify_reason' to different enumeration type 'enum ocpp_pdu_msg' [-Werror,-Wenum-conversion]",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:295:16: error: implicit conversion from enumeration type 'enum ocpp_pdu_msg' to different enumeration type 'enum ocpp_notify_reason' [-Werror,-Wenum-conversion]\n  295 |                         ctx->cb(msg.msgtype, &msg.usr, ctx->user_data);\n      |                         ~~~     ~~~~^~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:299:18: error: implicit conversion from enumeration type 'enum ocpp_notify_reason' to different enumeration type 'enum ocpp_pdu_msg' [-Werror,-Wenum-conversion]\n  299 |                         msg.msgtype = OCPP_USR_UNLOCK_CONNECTOR;\n      |                                     ~ ^~~~~~~~~~~~~~~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:300:16: error: implicit conversion from enumeration type 'enum ocpp_pdu_msg' to different enumeration type 'enum ocpp_notify_reason' [-Werror,-Wenum-conversion]\n  300 |                         ctx->cb(msg.msgtype, &msg.usr, ctx->user_data);\n      |                         ~~~     ~~~~^~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:348:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  348 |                 struct boot_notif binfo;\n      |                 ^",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:359:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  359 |                 struct ocpp_idtag_info idinfo = {0};\n      |                 ^",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:405:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  405 |                 char sval[CISTR500] = {0};\n      |                 ^",
+        "/__w/zephyr/zephyr/subsys/net/lib/ocpp/ocpp.c:524:13: error: result of comparison of constant -128 with expression of type 'uint8_t' (aka 'unsigned char') is always false [-Werror,-Wtautological-constant-out-of-range-compare]\n  524 |                                 if (ret == -ENOTCONN) {\n      |                                     ~~~ ^  ~~~~~~~~~"
+      ],
+      "error_count": 11,
+      "error_types": {
+        "warning_as_error": 11
+      }
+    },
+    {
+      "commit_sha": "87917a10874dea20da24f9cd6324d61d5e11ce4b",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (2)",
+      "workflow_id": 16407789174,
+      "job_id": 46356577000,
+      "created_at": "2025-07-21T03:25:17Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:1598:47: error: taking address of packed member 'th_seq' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:3302:5: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:1598:47: error: taking address of packed member 'th_seq' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n 1598 |         UNALIGNED_PUT(htonl(th_seq(th) + trim_len), &th->th_seq);\n      |                                                      ^~~~~~~~~~",
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:170:15: note: expanded from macro 'UNALIGNED_PUT'\n/__w/zephyr/zephyr/subsys/net/ip/tcp.c:3302:5: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n 3302 |                                 bool psh = FL(&fl, &, PSH);\n      |                                 ^"
+      ],
+      "error_count": 2,
+      "error_types": {
+        "warning_as_error": 2
+      }
+    },
+    {
+      "commit_sha": "4044e0e75ce8b1f7cae992f8e3965c06c06b0be0",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (2)",
+      "workflow_id": 16405058281,
+      "job_id": 46349775941,
+      "created_at": "2025-07-20T22:49:12Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:1598:47: error: taking address of packed member 'th_seq' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:3302:5: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:1598:47: error: taking address of packed member 'th_seq' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n 1598 |         UNALIGNED_PUT(htonl(th_seq(th) + trim_len), &th->th_seq);\n      |                                                      ^~~~~~~~~~",
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:170:15: note: expanded from macro 'UNALIGNED_PUT'\n/__w/zephyr/zephyr/subsys/net/ip/tcp.c:3302:5: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n 3302 |                                 bool psh = FL(&fl, &, PSH);\n      |                                 ^"
+      ],
+      "error_count": 2,
+      "error_types": {
+        "warning_as_error": 2
+      }
+    },
+    {
+      "commit_sha": "f9eeefa6e0ee052e81cb3649ca4eeb02d29fdff6",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (2)",
+      "workflow_id": 16401933548,
+      "job_id": 46342614614,
+      "created_at": "2025-07-20T16:27:33Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:1598:47: error: taking address of packed member 'th_seq' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:3302:5: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:1598:47: error: taking address of packed member 'th_seq' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n 1598 |         UNALIGNED_PUT(htonl(th_seq(th) + trim_len), &th->th_seq);\n      |                                                      ^~~~~~~~~~",
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:170:15: note: expanded from macro 'UNALIGNED_PUT'\n/__w/zephyr/zephyr/subsys/net/ip/tcp.c:3302:5: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n 3302 |                                 bool psh = FL(&fl, &, PSH);\n      |                                 ^"
+      ],
+      "error_count": 2,
+      "error_types": {
+        "warning_as_error": 2
+      }
+    },
+    {
+      "commit_sha": "f66460bed652bf6a0f541a7a384f5cfdf30deaee",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (2)",
+      "workflow_id": 16394479519,
+      "job_id": 46324831879,
+      "created_at": "2025-07-20T00:58:34Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:1598:47: error: taking address of packed member 'th_seq' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:3302:5: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:1598:47: error: taking address of packed member 'th_seq' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n 1598 |         UNALIGNED_PUT(htonl(th_seq(th) + trim_len), &th->th_seq);\n      |                                                      ^~~~~~~~~~",
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:170:15: note: expanded from macro 'UNALIGNED_PUT'\n/__w/zephyr/zephyr/subsys/net/ip/tcp.c:3302:5: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n 3302 |                                 bool psh = FL(&fl, &, PSH);\n      |                                 ^"
+      ],
+      "error_count": 2,
+      "error_types": {
+        "warning_as_error": 2
+      }
+    },
+    {
+      "commit_sha": "9219c81b66f48523f0cd3b7b7cac8cf3dadb84b2",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (2)",
+      "workflow_id": 16392174531,
+      "job_id": 46319585597,
+      "created_at": "2025-07-19T19:50:51Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:1598:47: error: taking address of packed member 'th_seq' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:3302:5: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:1598:47: error: taking address of packed member 'th_seq' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n 1598 |         UNALIGNED_PUT(htonl(th_seq(th) + trim_len), &th->th_seq);\n      |                                                      ^~~~~~~~~~",
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:170:15: note: expanded from macro 'UNALIGNED_PUT'\n/__w/zephyr/zephyr/subsys/net/ip/tcp.c:3302:5: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n 3302 |                                 bool psh = FL(&fl, &, PSH);\n      |                                 ^"
+      ],
+      "error_count": 2,
+      "error_types": {
+        "warning_as_error": 2
+      }
+    },
+    {
+      "commit_sha": "305d511c3e6e0d4eb90caafe7e1265e2a6a4b7af",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 16003416792,
+      "job_id": 45144176874,
+      "created_at": "2025-07-01T15:18:46Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/drivers/fuel_gauge/lc709203f/lc709203f.c:537:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/drivers/fuel_gauge/lc709203f/lc709203f.c:537:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  537 |                 enum lc709203f_battery_apa apa = LC709203F_APA_100MAH;\n      |                 ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "b15404f998346c65952ffa42ca6f5194ec71065f",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (2)",
+      "workflow_id": 15985176780,
+      "job_id": 45088088110,
+      "created_at": "2025-06-30T22:39:13Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/subsys/net/ip/igmp.c:71:19: error: taking address of packed member 'address' of class or structure 'net_ipv4_igmp_v2_report' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:199:43: error: taking address of packed member 'th_sport' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:200:15: error: taking address of packed member 'th_dport' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:223:45: error: taking address of packed member 'th_sport' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:224:10: error: taking address of packed member 'th_dport' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:350:42: error: taking address of packed member 'th_seq' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:354:16: error: taking address of packed member 'th_ack' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:1157:27: error: taking address of packed member 'th_seq' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:1164:38: error: taking address of packed member 'th_seq' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/lib/http/http_server_http2.c:264:11: error: taking address of packed member 'id' of class or structure 'http2_settings_field' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/lib/http/http_server_http2.c:265:21: error: taking address of packed member 'value' of class or structure 'http2_settings_field' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/lib/http/http_server_http2.c:269:11: error: taking address of packed member 'id' of class or structure 'http2_settings_field' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/lib/http/http_server_http2.c:271:11: error: taking address of packed member 'value' of class or structure 'http2_settings_field' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154.c:267:9: error: taking address of packed member 'union ieee802154_address::(anonymous at /__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154_frame.h:107:2)' of class or structure 'ieee802154_address' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154.c:267:38: error: taking address of packed member 'union ieee802154_address::(anonymous at /__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154_frame.h:107:2)' of class or structure 'ieee802154_address' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/../../../subsys/net/lib/dhcpv6/dhcpv6.c:2253:45: error: taking address of packed member 'type' of class or structure 'net_dhcpv6_duid_raw' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/../../../subsys/net/lib/dhcpv6/dhcpv6.c:2254:55: error: taking address of packed member 'hw_type' of class or structure 'dhcpv6_duid_ll' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/subsys/net/ip/igmp.c:71:19: error: taking address of packed member 'address' of class or structure 'net_ipv4_igmp_v2_report' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n   71 |         net_ipaddr_copy(&igmp->address, addr);\n      |                          ^~~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:199:43: error: taking address of packed member 'th_sport' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  199 |                         ep->sin.sin_port = src == TCP_EP_SRC ? th_sport(th) :\n      |                                                                ^~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp_private.h:16:37: note: expanded from macro 'th_sport'\n/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:139:16: note: expanded from macro 'UNALIGNED_GET'\n/__w/zephyr/zephyr/subsys/net/ip/tcp.c:200:15: error: taking address of packed member 'th_dport' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  200 |                                                                th_dport(th);\n      |                                                                ^~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp_private.h:17:37: note: expanded from macro 'th_dport'\n/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:139:16: note: expanded from macro 'UNALIGNED_GET'\n/__w/zephyr/zephyr/subsys/net/ip/tcp.c:223:45: error: taking address of packed member 'th_sport' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  223 |                         ep->sin6.sin6_port = src == TCP_EP_SRC ? th_sport(th) :\n      |                                                                  ^~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp_private.h:16:37: note: expanded from macro 'th_sport'\n/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:139:16: note: expanded from macro 'UNALIGNED_GET'\n/__w/zephyr/zephyr/subsys/net/ip/tcp.c:224:10: error: taking address of packed member 'th_dport' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  224 |                                                                  th_dport(th);\n      |                                                                  ^~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp_private.h:17:37: note: expanded from macro 'th_dport'\n/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:139:16: note: expanded from macro 'UNALIGNED_GET'\n/__w/zephyr/zephyr/subsys/net/ip/tcp.c:350:42: error: taking address of packed member 'th_seq' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  350 |                         \"%s Seq=%u\", tcp_flags(th_flags(th)), th_seq(th));\n      |                                                               ^~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp_private.h:18:41: note: expanded from macro 'th_seq'\n/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:139:16: note: expanded from macro 'UNALIGNED_GET'\n/__w/zephyr/zephyr/include/zephyr/net/net_ip.h:108:34: note: expanded from macro 'ntohl'\n/__w/zephyr/zephyr/include/zephyr/sys/byteorder.h:237:39: note: expanded from macro 'sys_be32_to_cpu'\n/__w/zephyr/zephyr/include/zephyr/sys/byteorder.h:28:11: note: expanded from macro 'BSWAP_32'\n/__w/zephyr/zephyr/subsys/net/ip/tcp.c:354:16: error: taking address of packed member 'th_ack' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  354 |                                 \" Ack=%u\", th_ack(th));\n      |                                            ^~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp_private.h:19:41: note: expanded from macro 'th_ack'\n/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:139:16: note: expanded from macro 'UNALIGNED_GET'\n/__w/zephyr/zephyr/include/zephyr/net/net_ip.h:108:34: note: expanded from macro 'ntohl'\n/__w/zephyr/zephyr/include/zephyr/sys/byteorder.h:237:39: note: expanded from macro 'sys_be32_to_cpu'\n/__w/zephyr/zephyr/include/zephyr/sys/byteorder.h:28:11: note: expanded from macro 'BSWAP_32'\n/__w/zephyr/zephyr/subsys/net/ip/tcp.c:1157:27: error: taking address of packed member 'th_seq' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n 1157 |                 uint32_t expected_seq = th_seq(th) + len;\n      |                                         ^~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp_private.h:18:41: note: expanded from macro 'th_seq'\n/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:139:16: note: expanded from macro 'UNALIGNED_GET'\n/__w/zephyr/zephyr/include/zephyr/net/net_ip.h:108:34: note: expanded from macro 'ntohl'\n/__w/zephyr/zephyr/include/zephyr/sys/byteorder.h:237:39: note: expanded from macro 'sys_be32_to_cpu'\n/__w/zephyr/zephyr/include/zephyr/sys/byteorder.h:28:11: note: expanded from macro 'BSWAP_32'\n/__w/zephyr/zephyr/subsys/net/ip/tcp.c:1164:38: error: taking address of packed member 'th_seq' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n 1164 |                 gap_size = (int32_t)(pending_seq - th_seq(th) - ((uint32_t)len));\n      |                                                    ^~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/lib/http/http_server_http2.c:264:11: error: taking address of packed member 'id' of class or structure 'http2_settings_field' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  264 |                               &setting->id);\n      |                                ^~~~~~~~~~~",
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:170:15: note: expanded from macro 'UNALIGNED_PUT'\n/__w/zephyr/zephyr/subsys/net/lib/http/http_server_http2.c:265:21: error: taking address of packed member 'value' of class or structure 'http2_settings_field' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  265 |                 UNALIGNED_PUT(0, &setting->value);\n      |                                   ^~~~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:170:15: note: expanded from macro 'UNALIGNED_PUT'\n/__w/zephyr/zephyr/subsys/net/lib/http/http_server_http2.c:269:11: error: taking address of packed member 'id' of class or structure 'http2_settings_field' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  269 |                               &setting->id);\n      |                                ^~~~~~~~~~~",
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:170:15: note: expanded from macro 'UNALIGNED_PUT'\n/__w/zephyr/zephyr/subsys/net/lib/http/http_server_http2.c:271:11: error: taking address of packed member 'value' of class or structure 'http2_settings_field' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  271 |                               &setting->value);\n      |                                ^~~~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154.c:267:9: error: taking address of packed member 'union ieee802154_address::(anonymous at /__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154_frame.h:107:2)' of class or structure 'ieee802154_address' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  267 |                                           &ll->plain.addr.short_addr : &ll->comp.addr.short_addr),\n      |                                            ^~~~~~~~~~~~~~~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154.c:267:38: error: taking address of packed member 'union ieee802154_address::(anonymous at /__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154_frame.h:107:2)' of class or structure 'ieee802154_address' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  267 |                                           &ll->plain.addr.short_addr : &ll->comp.addr.short_addr),\n      |                                                                         ^~~~~~~~~~~~~~~~~~~~~~~~",
+        "In file included from /__w/zephyr/zephyr/tests/net/dhcpv6/src/main.c:13:\n/__w/zephyr/zephyr/subsys/net/ip/../../../subsys/net/lib/dhcpv6/dhcpv6.c:2253:45: error: taking address of packed member 'type' of class or structure 'net_dhcpv6_duid_raw' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n 2253 |         UNALIGNED_PUT(htons(DHCPV6_DUID_TYPE_LL), &clientid->duid.type);\n      |                                                    ^~~~~~~~~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:170:15: note: expanded from macro 'UNALIGNED_PUT'\nIn file included from /__w/zephyr/zephyr/tests/net/dhcpv6/src/main.c:13:\n/__w/zephyr/zephyr/subsys/net/ip/../../../subsys/net/lib/dhcpv6/dhcpv6.c:2254:55: error: taking address of packed member 'hw_type' of class or structure 'dhcpv6_duid_ll' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]"
+      ],
+      "error_count": 17,
+      "error_types": {
+        "warning_as_error": 17
+      }
+    },
+    {
+      "commit_sha": "b15404f998346c65952ffa42ca6f5194ec71065f",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 15985176780,
+      "job_id": 45088088120,
+      "created_at": "2025-06-30T22:39:13Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154.c:267:9: error: taking address of packed member 'union ieee802154_address::(anonymous at /__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154_frame.h:107:2)' of class or structure 'ieee802154_address' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154.c:267:38: error: taking address of packed member 'union ieee802154_address::(anonymous at /__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154_frame.h:107:2)' of class or structure 'ieee802154_address' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/drivers/fuel_gauge/lc709203f/lc709203f.c:537:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154.c:267:9: error: taking address of packed member 'union ieee802154_address::(anonymous at /__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154_frame.h:107:2)' of class or structure 'ieee802154_address' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  267 |                                           &ll->plain.addr.short_addr : &ll->comp.addr.short_addr),\n      |                                            ^~~~~~~~~~~~~~~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154.c:267:38: error: taking address of packed member 'union ieee802154_address::(anonymous at /__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154_frame.h:107:2)' of class or structure 'ieee802154_address' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  267 |                                           &ll->plain.addr.short_addr : &ll->comp.addr.short_addr),\n      |                                                                         ^~~~~~~~~~~~~~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/drivers/fuel_gauge/lc709203f/lc709203f.c:537:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  537 |                 enum lc709203f_battery_apa apa = LC709203F_APA_100MAH;\n      |                 ^"
+      ],
+      "error_count": 3,
+      "error_types": {
+        "warning_as_error": 3
+      }
+    },
+    {
+      "commit_sha": "369517444bae4c66eb19d070e63265f983f64843",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 15982923142,
+      "job_id": 45081204355,
+      "created_at": "2025-06-30T20:24:40Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154.c:267:9: error: taking address of packed member 'union ieee802154_address::(anonymous at /__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154_frame.h:107:2)' of class or structure 'ieee802154_address' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154.c:267:38: error: taking address of packed member 'union ieee802154_address::(anonymous at /__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154_frame.h:107:2)' of class or structure 'ieee802154_address' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/drivers/fuel_gauge/lc709203f/lc709203f.c:537:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154.c:267:9: error: taking address of packed member 'union ieee802154_address::(anonymous at /__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154_frame.h:107:2)' of class or structure 'ieee802154_address' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  267 |                                           &ll->plain.addr.short_addr : &ll->comp.addr.short_addr),\n      |                                            ^~~~~~~~~~~~~~~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154.c:267:38: error: taking address of packed member 'union ieee802154_address::(anonymous at /__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154_frame.h:107:2)' of class or structure 'ieee802154_address' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  267 |                                           &ll->plain.addr.short_addr : &ll->comp.addr.short_addr),\n      |                                                                         ^~~~~~~~~~~~~~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/drivers/fuel_gauge/lc709203f/lc709203f.c:537:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  537 |                 enum lc709203f_battery_apa apa = LC709203F_APA_100MAH;\n      |                 ^"
+      ],
+      "error_count": 3,
+      "error_types": {
+        "warning_as_error": 3
+      }
+    },
+    {
+      "commit_sha": "369517444bae4c66eb19d070e63265f983f64843",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (2)",
+      "workflow_id": 15982923142,
+      "job_id": 45081204356,
+      "created_at": "2025-06-30T20:24:40Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/subsys/net/ip/igmp.c:71:19: error: taking address of packed member 'address' of class or structure 'net_ipv4_igmp_v2_report' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:199:43: error: taking address of packed member 'th_sport' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:200:15: error: taking address of packed member 'th_dport' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:223:45: error: taking address of packed member 'th_sport' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:224:10: error: taking address of packed member 'th_dport' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:350:42: error: taking address of packed member 'th_seq' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:354:16: error: taking address of packed member 'th_ack' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:1157:27: error: taking address of packed member 'th_seq' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:1164:38: error: taking address of packed member 'th_seq' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/lib/http/http_server_http2.c:264:11: error: taking address of packed member 'id' of class or structure 'http2_settings_field' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/lib/http/http_server_http2.c:265:21: error: taking address of packed member 'value' of class or structure 'http2_settings_field' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/lib/http/http_server_http2.c:269:11: error: taking address of packed member 'id' of class or structure 'http2_settings_field' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/lib/http/http_server_http2.c:271:11: error: taking address of packed member 'value' of class or structure 'http2_settings_field' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154.c:267:9: error: taking address of packed member 'union ieee802154_address::(anonymous at /__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154_frame.h:107:2)' of class or structure 'ieee802154_address' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154.c:267:38: error: taking address of packed member 'union ieee802154_address::(anonymous at /__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154_frame.h:107:2)' of class or structure 'ieee802154_address' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/../../../subsys/net/lib/dhcpv6/dhcpv6.c:2253:45: error: taking address of packed member 'type' of class or structure 'net_dhcpv6_duid_raw' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/../../../subsys/net/lib/dhcpv6/dhcpv6.c:2254:55: error: taking address of packed member 'hw_type' of class or structure 'dhcpv6_duid_ll' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/subsys/net/ip/igmp.c:71:19: error: taking address of packed member 'address' of class or structure 'net_ipv4_igmp_v2_report' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n   71 |         net_ipaddr_copy(&igmp->address, addr);\n      |                          ^~~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:199:43: error: taking address of packed member 'th_sport' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  199 |                         ep->sin.sin_port = src == TCP_EP_SRC ? th_sport(th) :\n      |                                                                ^~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp_private.h:16:37: note: expanded from macro 'th_sport'\n/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:139:16: note: expanded from macro 'UNALIGNED_GET'\n/__w/zephyr/zephyr/subsys/net/ip/tcp.c:200:15: error: taking address of packed member 'th_dport' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  200 |                                                                th_dport(th);\n      |                                                                ^~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp_private.h:17:37: note: expanded from macro 'th_dport'\n/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:139:16: note: expanded from macro 'UNALIGNED_GET'\n/__w/zephyr/zephyr/subsys/net/ip/tcp.c:223:45: error: taking address of packed member 'th_sport' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  223 |                         ep->sin6.sin6_port = src == TCP_EP_SRC ? th_sport(th) :\n      |                                                                  ^~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp_private.h:16:37: note: expanded from macro 'th_sport'\n/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:139:16: note: expanded from macro 'UNALIGNED_GET'\n/__w/zephyr/zephyr/subsys/net/ip/tcp.c:224:10: error: taking address of packed member 'th_dport' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  224 |                                                                  th_dport(th);\n      |                                                                  ^~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp_private.h:17:37: note: expanded from macro 'th_dport'\n/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:139:16: note: expanded from macro 'UNALIGNED_GET'\n/__w/zephyr/zephyr/subsys/net/ip/tcp.c:350:42: error: taking address of packed member 'th_seq' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  350 |                         \"%s Seq=%u\", tcp_flags(th_flags(th)), th_seq(th));\n      |                                                               ^~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp_private.h:18:41: note: expanded from macro 'th_seq'\n/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:139:16: note: expanded from macro 'UNALIGNED_GET'\n/__w/zephyr/zephyr/include/zephyr/net/net_ip.h:108:34: note: expanded from macro 'ntohl'\n/__w/zephyr/zephyr/include/zephyr/sys/byteorder.h:237:39: note: expanded from macro 'sys_be32_to_cpu'\n/__w/zephyr/zephyr/include/zephyr/sys/byteorder.h:28:11: note: expanded from macro 'BSWAP_32'\n/__w/zephyr/zephyr/subsys/net/ip/tcp.c:354:16: error: taking address of packed member 'th_ack' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  354 |                                 \" Ack=%u\", th_ack(th));\n      |                                            ^~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp_private.h:19:41: note: expanded from macro 'th_ack'\n/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:139:16: note: expanded from macro 'UNALIGNED_GET'\n/__w/zephyr/zephyr/include/zephyr/net/net_ip.h:108:34: note: expanded from macro 'ntohl'\n/__w/zephyr/zephyr/include/zephyr/sys/byteorder.h:237:39: note: expanded from macro 'sys_be32_to_cpu'\n/__w/zephyr/zephyr/include/zephyr/sys/byteorder.h:28:11: note: expanded from macro 'BSWAP_32'\n/__w/zephyr/zephyr/subsys/net/ip/tcp.c:1157:27: error: taking address of packed member 'th_seq' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n 1157 |                 uint32_t expected_seq = th_seq(th) + len;\n      |                                         ^~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp_private.h:18:41: note: expanded from macro 'th_seq'\n/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:139:16: note: expanded from macro 'UNALIGNED_GET'\n/__w/zephyr/zephyr/include/zephyr/net/net_ip.h:108:34: note: expanded from macro 'ntohl'\n/__w/zephyr/zephyr/include/zephyr/sys/byteorder.h:237:39: note: expanded from macro 'sys_be32_to_cpu'\n/__w/zephyr/zephyr/include/zephyr/sys/byteorder.h:28:11: note: expanded from macro 'BSWAP_32'\n/__w/zephyr/zephyr/subsys/net/ip/tcp.c:1164:38: error: taking address of packed member 'th_seq' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n 1164 |                 gap_size = (int32_t)(pending_seq - th_seq(th) - ((uint32_t)len));\n      |                                                    ^~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/lib/http/http_server_http2.c:264:11: error: taking address of packed member 'id' of class or structure 'http2_settings_field' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  264 |                               &setting->id);\n      |                                ^~~~~~~~~~~",
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:170:15: note: expanded from macro 'UNALIGNED_PUT'\n/__w/zephyr/zephyr/subsys/net/lib/http/http_server_http2.c:265:21: error: taking address of packed member 'value' of class or structure 'http2_settings_field' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  265 |                 UNALIGNED_PUT(0, &setting->value);\n      |                                   ^~~~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:170:15: note: expanded from macro 'UNALIGNED_PUT'\n/__w/zephyr/zephyr/subsys/net/lib/http/http_server_http2.c:269:11: error: taking address of packed member 'id' of class or structure 'http2_settings_field' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  269 |                               &setting->id);\n      |                                ^~~~~~~~~~~",
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:170:15: note: expanded from macro 'UNALIGNED_PUT'\n/__w/zephyr/zephyr/subsys/net/lib/http/http_server_http2.c:271:11: error: taking address of packed member 'value' of class or structure 'http2_settings_field' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  271 |                               &setting->value);\n      |                                ^~~~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154.c:267:9: error: taking address of packed member 'union ieee802154_address::(anonymous at /__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154_frame.h:107:2)' of class or structure 'ieee802154_address' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  267 |                                           &ll->plain.addr.short_addr : &ll->comp.addr.short_addr),\n      |                                            ^~~~~~~~~~~~~~~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154.c:267:38: error: taking address of packed member 'union ieee802154_address::(anonymous at /__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154_frame.h:107:2)' of class or structure 'ieee802154_address' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  267 |                                           &ll->plain.addr.short_addr : &ll->comp.addr.short_addr),\n      |                                                                         ^~~~~~~~~~~~~~~~~~~~~~~~",
+        "In file included from /__w/zephyr/zephyr/tests/net/dhcpv6/src/main.c:13:\n/__w/zephyr/zephyr/subsys/net/ip/../../../subsys/net/lib/dhcpv6/dhcpv6.c:2253:45: error: taking address of packed member 'type' of class or structure 'net_dhcpv6_duid_raw' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n 2253 |         UNALIGNED_PUT(htons(DHCPV6_DUID_TYPE_LL), &clientid->duid.type);\n      |                                                    ^~~~~~~~~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:170:15: note: expanded from macro 'UNALIGNED_PUT'\nIn file included from /__w/zephyr/zephyr/tests/net/dhcpv6/src/main.c:13:\n/__w/zephyr/zephyr/subsys/net/ip/../../../subsys/net/lib/dhcpv6/dhcpv6.c:2254:55: error: taking address of packed member 'hw_type' of class or structure 'dhcpv6_duid_ll' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]"
+      ],
+      "error_count": 17,
+      "error_types": {
+        "warning_as_error": 17
+      }
+    },
+    {
+      "commit_sha": "ad4c3e3e9afe1385ab80adf3fa2d3309fad68c60",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 15938996364,
+      "job_id": 44964173813,
+      "created_at": "2025-06-28T01:28:21Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154.c:267:9: error: taking address of packed member 'union ieee802154_address::(anonymous at /__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154_frame.h:107:2)' of class or structure 'ieee802154_address' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154.c:267:38: error: taking address of packed member 'union ieee802154_address::(anonymous at /__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154_frame.h:107:2)' of class or structure 'ieee802154_address' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/drivers/fuel_gauge/lc709203f/lc709203f.c:537:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154.c:267:9: error: taking address of packed member 'union ieee802154_address::(anonymous at /__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154_frame.h:107:2)' of class or structure 'ieee802154_address' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  267 |                                           &ll->plain.addr.short_addr : &ll->comp.addr.short_addr),\n      |                                            ^~~~~~~~~~~~~~~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154.c:267:38: error: taking address of packed member 'union ieee802154_address::(anonymous at /__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154_frame.h:107:2)' of class or structure 'ieee802154_address' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  267 |                                           &ll->plain.addr.short_addr : &ll->comp.addr.short_addr),\n      |                                                                         ^~~~~~~~~~~~~~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/drivers/fuel_gauge/lc709203f/lc709203f.c:537:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  537 |                 enum lc709203f_battery_apa apa = LC709203F_APA_100MAH;\n      |                 ^"
+      ],
+      "error_count": 3,
+      "error_types": {
+        "warning_as_error": 3
+      }
+    },
+    {
+      "commit_sha": "ad4c3e3e9afe1385ab80adf3fa2d3309fad68c60",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (2)",
+      "workflow_id": 15938996364,
+      "job_id": 44964173820,
+      "created_at": "2025-06-28T01:28:21Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/subsys/net/ip/igmp.c:71:19: error: taking address of packed member 'address' of class or structure 'net_ipv4_igmp_v2_report' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:199:43: error: taking address of packed member 'th_sport' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:200:15: error: taking address of packed member 'th_dport' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:223:45: error: taking address of packed member 'th_sport' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:224:10: error: taking address of packed member 'th_dport' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:350:42: error: taking address of packed member 'th_seq' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:354:16: error: taking address of packed member 'th_ack' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:1157:27: error: taking address of packed member 'th_seq' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:1164:38: error: taking address of packed member 'th_seq' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/lib/http/http_server_http2.c:264:11: error: taking address of packed member 'id' of class or structure 'http2_settings_field' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/lib/http/http_server_http2.c:265:21: error: taking address of packed member 'value' of class or structure 'http2_settings_field' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/lib/http/http_server_http2.c:269:11: error: taking address of packed member 'id' of class or structure 'http2_settings_field' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/lib/http/http_server_http2.c:271:11: error: taking address of packed member 'value' of class or structure 'http2_settings_field' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154.c:267:9: error: taking address of packed member 'union ieee802154_address::(anonymous at /__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154_frame.h:107:2)' of class or structure 'ieee802154_address' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154.c:267:38: error: taking address of packed member 'union ieee802154_address::(anonymous at /__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154_frame.h:107:2)' of class or structure 'ieee802154_address' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/../../../subsys/net/lib/dhcpv6/dhcpv6.c:2253:45: error: taking address of packed member 'type' of class or structure 'net_dhcpv6_duid_raw' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/../../../subsys/net/lib/dhcpv6/dhcpv6.c:2254:55: error: taking address of packed member 'hw_type' of class or structure 'dhcpv6_duid_ll' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/subsys/net/ip/igmp.c:71:19: error: taking address of packed member 'address' of class or structure 'net_ipv4_igmp_v2_report' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n   71 |         net_ipaddr_copy(&igmp->address, addr);\n      |                          ^~~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:199:43: error: taking address of packed member 'th_sport' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  199 |                         ep->sin.sin_port = src == TCP_EP_SRC ? th_sport(th) :\n      |                                                                ^~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp_private.h:16:37: note: expanded from macro 'th_sport'\n/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:139:16: note: expanded from macro 'UNALIGNED_GET'\n/__w/zephyr/zephyr/subsys/net/ip/tcp.c:200:15: error: taking address of packed member 'th_dport' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  200 |                                                                th_dport(th);\n      |                                                                ^~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp_private.h:17:37: note: expanded from macro 'th_dport'\n/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:139:16: note: expanded from macro 'UNALIGNED_GET'\n/__w/zephyr/zephyr/subsys/net/ip/tcp.c:223:45: error: taking address of packed member 'th_sport' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  223 |                         ep->sin6.sin6_port = src == TCP_EP_SRC ? th_sport(th) :\n      |                                                                  ^~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp_private.h:16:37: note: expanded from macro 'th_sport'\n/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:139:16: note: expanded from macro 'UNALIGNED_GET'\n/__w/zephyr/zephyr/subsys/net/ip/tcp.c:224:10: error: taking address of packed member 'th_dport' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  224 |                                                                  th_dport(th);\n      |                                                                  ^~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp_private.h:17:37: note: expanded from macro 'th_dport'\n/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:139:16: note: expanded from macro 'UNALIGNED_GET'\n/__w/zephyr/zephyr/subsys/net/ip/tcp.c:350:42: error: taking address of packed member 'th_seq' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  350 |                         \"%s Seq=%u\", tcp_flags(th_flags(th)), th_seq(th));\n      |                                                               ^~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp_private.h:18:41: note: expanded from macro 'th_seq'\n/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:139:16: note: expanded from macro 'UNALIGNED_GET'\n/__w/zephyr/zephyr/include/zephyr/net/net_ip.h:108:34: note: expanded from macro 'ntohl'\n/__w/zephyr/zephyr/include/zephyr/sys/byteorder.h:237:39: note: expanded from macro 'sys_be32_to_cpu'\n/__w/zephyr/zephyr/include/zephyr/sys/byteorder.h:28:11: note: expanded from macro 'BSWAP_32'\n/__w/zephyr/zephyr/subsys/net/ip/tcp.c:354:16: error: taking address of packed member 'th_ack' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  354 |                                 \" Ack=%u\", th_ack(th));\n      |                                            ^~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp_private.h:19:41: note: expanded from macro 'th_ack'\n/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:139:16: note: expanded from macro 'UNALIGNED_GET'\n/__w/zephyr/zephyr/include/zephyr/net/net_ip.h:108:34: note: expanded from macro 'ntohl'\n/__w/zephyr/zephyr/include/zephyr/sys/byteorder.h:237:39: note: expanded from macro 'sys_be32_to_cpu'\n/__w/zephyr/zephyr/include/zephyr/sys/byteorder.h:28:11: note: expanded from macro 'BSWAP_32'\n/__w/zephyr/zephyr/subsys/net/ip/tcp.c:1157:27: error: taking address of packed member 'th_seq' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n 1157 |                 uint32_t expected_seq = th_seq(th) + len;\n      |                                         ^~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp_private.h:18:41: note: expanded from macro 'th_seq'\n/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:139:16: note: expanded from macro 'UNALIGNED_GET'\n/__w/zephyr/zephyr/include/zephyr/net/net_ip.h:108:34: note: expanded from macro 'ntohl'\n/__w/zephyr/zephyr/include/zephyr/sys/byteorder.h:237:39: note: expanded from macro 'sys_be32_to_cpu'\n/__w/zephyr/zephyr/include/zephyr/sys/byteorder.h:28:11: note: expanded from macro 'BSWAP_32'\n/__w/zephyr/zephyr/subsys/net/ip/tcp.c:1164:38: error: taking address of packed member 'th_seq' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n 1164 |                 gap_size = (int32_t)(pending_seq - th_seq(th) - ((uint32_t)len));\n      |                                                    ^~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/lib/http/http_server_http2.c:264:11: error: taking address of packed member 'id' of class or structure 'http2_settings_field' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  264 |                               &setting->id);\n      |                                ^~~~~~~~~~~",
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:170:15: note: expanded from macro 'UNALIGNED_PUT'\n/__w/zephyr/zephyr/subsys/net/lib/http/http_server_http2.c:265:21: error: taking address of packed member 'value' of class or structure 'http2_settings_field' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  265 |                 UNALIGNED_PUT(0, &setting->value);\n      |                                   ^~~~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:170:15: note: expanded from macro 'UNALIGNED_PUT'\n/__w/zephyr/zephyr/subsys/net/lib/http/http_server_http2.c:269:11: error: taking address of packed member 'id' of class or structure 'http2_settings_field' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  269 |                               &setting->id);\n      |                                ^~~~~~~~~~~",
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:170:15: note: expanded from macro 'UNALIGNED_PUT'\n/__w/zephyr/zephyr/subsys/net/lib/http/http_server_http2.c:271:11: error: taking address of packed member 'value' of class or structure 'http2_settings_field' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  271 |                               &setting->value);\n      |                                ^~~~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154.c:267:9: error: taking address of packed member 'union ieee802154_address::(anonymous at /__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154_frame.h:107:2)' of class or structure 'ieee802154_address' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  267 |                                           &ll->plain.addr.short_addr : &ll->comp.addr.short_addr),\n      |                                            ^~~~~~~~~~~~~~~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154.c:267:38: error: taking address of packed member 'union ieee802154_address::(anonymous at /__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154_frame.h:107:2)' of class or structure 'ieee802154_address' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  267 |                                           &ll->plain.addr.short_addr : &ll->comp.addr.short_addr),\n      |                                                                         ^~~~~~~~~~~~~~~~~~~~~~~~",
+        "In file included from /__w/zephyr/zephyr/tests/net/dhcpv6/src/main.c:13:\n/__w/zephyr/zephyr/subsys/net/ip/../../../subsys/net/lib/dhcpv6/dhcpv6.c:2253:45: error: taking address of packed member 'type' of class or structure 'net_dhcpv6_duid_raw' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n 2253 |         UNALIGNED_PUT(htons(DHCPV6_DUID_TYPE_LL), &clientid->duid.type);\n      |                                                    ^~~~~~~~~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:170:15: note: expanded from macro 'UNALIGNED_PUT'\nIn file included from /__w/zephyr/zephyr/tests/net/dhcpv6/src/main.c:13:\n/__w/zephyr/zephyr/subsys/net/ip/../../../subsys/net/lib/dhcpv6/dhcpv6.c:2254:55: error: taking address of packed member 'hw_type' of class or structure 'dhcpv6_duid_ll' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]"
+      ],
+      "error_count": 17,
+      "error_types": {
+        "warning_as_error": 17
+      }
+    },
+    {
+      "commit_sha": "8caef68264f22efe95dafc1b74f190b4d37f1c28",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 15938062192,
+      "job_id": 44961731896,
+      "created_at": "2025-06-27T23:52:42Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154.c:267:9: error: taking address of packed member 'union ieee802154_address::(anonymous at /__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154_frame.h:107:2)' of class or structure 'ieee802154_address' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154.c:267:38: error: taking address of packed member 'union ieee802154_address::(anonymous at /__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154_frame.h:107:2)' of class or structure 'ieee802154_address' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/drivers/fuel_gauge/lc709203f/lc709203f.c:537:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154.c:267:9: error: taking address of packed member 'union ieee802154_address::(anonymous at /__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154_frame.h:107:2)' of class or structure 'ieee802154_address' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  267 |                                           &ll->plain.addr.short_addr : &ll->comp.addr.short_addr),\n      |                                            ^~~~~~~~~~~~~~~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154.c:267:38: error: taking address of packed member 'union ieee802154_address::(anonymous at /__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154_frame.h:107:2)' of class or structure 'ieee802154_address' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  267 |                                           &ll->plain.addr.short_addr : &ll->comp.addr.short_addr),\n      |                                                                         ^~~~~~~~~~~~~~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/drivers/fuel_gauge/lc709203f/lc709203f.c:537:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  537 |                 enum lc709203f_battery_apa apa = LC709203F_APA_100MAH;\n      |                 ^"
+      ],
+      "error_count": 3,
+      "error_types": {
+        "warning_as_error": 3
+      }
+    },
+    {
+      "commit_sha": "8caef68264f22efe95dafc1b74f190b4d37f1c28",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (2)",
+      "workflow_id": 15938062192,
+      "job_id": 44961731900,
+      "created_at": "2025-06-27T23:52:42Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/subsys/net/ip/igmp.c:71:19: error: taking address of packed member 'address' of class or structure 'net_ipv4_igmp_v2_report' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:199:43: error: taking address of packed member 'th_sport' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:200:15: error: taking address of packed member 'th_dport' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:223:45: error: taking address of packed member 'th_sport' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:224:10: error: taking address of packed member 'th_dport' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:350:42: error: taking address of packed member 'th_seq' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:354:16: error: taking address of packed member 'th_ack' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:1157:27: error: taking address of packed member 'th_seq' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:1164:38: error: taking address of packed member 'th_seq' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/lib/http/http_server_http2.c:264:11: error: taking address of packed member 'id' of class or structure 'http2_settings_field' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/lib/http/http_server_http2.c:265:21: error: taking address of packed member 'value' of class or structure 'http2_settings_field' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/lib/http/http_server_http2.c:269:11: error: taking address of packed member 'id' of class or structure 'http2_settings_field' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/lib/http/http_server_http2.c:271:11: error: taking address of packed member 'value' of class or structure 'http2_settings_field' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154.c:267:9: error: taking address of packed member 'union ieee802154_address::(anonymous at /__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154_frame.h:107:2)' of class or structure 'ieee802154_address' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154.c:267:38: error: taking address of packed member 'union ieee802154_address::(anonymous at /__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154_frame.h:107:2)' of class or structure 'ieee802154_address' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/../../../subsys/net/lib/dhcpv6/dhcpv6.c:2253:45: error: taking address of packed member 'type' of class or structure 'net_dhcpv6_duid_raw' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]",
+        "/__w/zephyr/zephyr/subsys/net/ip/../../../subsys/net/lib/dhcpv6/dhcpv6.c:2254:55: error: taking address of packed member 'hw_type' of class or structure 'dhcpv6_duid_ll' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/subsys/net/ip/igmp.c:71:19: error: taking address of packed member 'address' of class or structure 'net_ipv4_igmp_v2_report' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n   71 |         net_ipaddr_copy(&igmp->address, addr);\n      |                          ^~~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp.c:199:43: error: taking address of packed member 'th_sport' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  199 |                         ep->sin.sin_port = src == TCP_EP_SRC ? th_sport(th) :\n      |                                                                ^~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp_private.h:16:37: note: expanded from macro 'th_sport'\n/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:139:16: note: expanded from macro 'UNALIGNED_GET'\n/__w/zephyr/zephyr/subsys/net/ip/tcp.c:200:15: error: taking address of packed member 'th_dport' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  200 |                                                                th_dport(th);\n      |                                                                ^~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp_private.h:17:37: note: expanded from macro 'th_dport'\n/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:139:16: note: expanded from macro 'UNALIGNED_GET'\n/__w/zephyr/zephyr/subsys/net/ip/tcp.c:223:45: error: taking address of packed member 'th_sport' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  223 |                         ep->sin6.sin6_port = src == TCP_EP_SRC ? th_sport(th) :\n      |                                                                  ^~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp_private.h:16:37: note: expanded from macro 'th_sport'\n/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:139:16: note: expanded from macro 'UNALIGNED_GET'\n/__w/zephyr/zephyr/subsys/net/ip/tcp.c:224:10: error: taking address of packed member 'th_dport' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  224 |                                                                  th_dport(th);\n      |                                                                  ^~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp_private.h:17:37: note: expanded from macro 'th_dport'\n/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:139:16: note: expanded from macro 'UNALIGNED_GET'\n/__w/zephyr/zephyr/subsys/net/ip/tcp.c:350:42: error: taking address of packed member 'th_seq' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  350 |                         \"%s Seq=%u\", tcp_flags(th_flags(th)), th_seq(th));\n      |                                                               ^~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp_private.h:18:41: note: expanded from macro 'th_seq'\n/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:139:16: note: expanded from macro 'UNALIGNED_GET'\n/__w/zephyr/zephyr/include/zephyr/net/net_ip.h:108:34: note: expanded from macro 'ntohl'\n/__w/zephyr/zephyr/include/zephyr/sys/byteorder.h:237:39: note: expanded from macro 'sys_be32_to_cpu'\n/__w/zephyr/zephyr/include/zephyr/sys/byteorder.h:28:11: note: expanded from macro 'BSWAP_32'\n/__w/zephyr/zephyr/subsys/net/ip/tcp.c:354:16: error: taking address of packed member 'th_ack' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  354 |                                 \" Ack=%u\", th_ack(th));\n      |                                            ^~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp_private.h:19:41: note: expanded from macro 'th_ack'\n/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:139:16: note: expanded from macro 'UNALIGNED_GET'\n/__w/zephyr/zephyr/include/zephyr/net/net_ip.h:108:34: note: expanded from macro 'ntohl'\n/__w/zephyr/zephyr/include/zephyr/sys/byteorder.h:237:39: note: expanded from macro 'sys_be32_to_cpu'\n/__w/zephyr/zephyr/include/zephyr/sys/byteorder.h:28:11: note: expanded from macro 'BSWAP_32'\n/__w/zephyr/zephyr/subsys/net/ip/tcp.c:1157:27: error: taking address of packed member 'th_seq' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n 1157 |                 uint32_t expected_seq = th_seq(th) + len;\n      |                                         ^~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/ip/tcp_private.h:18:41: note: expanded from macro 'th_seq'\n/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:139:16: note: expanded from macro 'UNALIGNED_GET'\n/__w/zephyr/zephyr/include/zephyr/net/net_ip.h:108:34: note: expanded from macro 'ntohl'\n/__w/zephyr/zephyr/include/zephyr/sys/byteorder.h:237:39: note: expanded from macro 'sys_be32_to_cpu'\n/__w/zephyr/zephyr/include/zephyr/sys/byteorder.h:28:11: note: expanded from macro 'BSWAP_32'\n/__w/zephyr/zephyr/subsys/net/ip/tcp.c:1164:38: error: taking address of packed member 'th_seq' of class or structure 'tcphdr' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n 1164 |                 gap_size = (int32_t)(pending_seq - th_seq(th) - ((uint32_t)len));\n      |                                                    ^~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/lib/http/http_server_http2.c:264:11: error: taking address of packed member 'id' of class or structure 'http2_settings_field' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  264 |                               &setting->id);\n      |                                ^~~~~~~~~~~",
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:170:15: note: expanded from macro 'UNALIGNED_PUT'\n/__w/zephyr/zephyr/subsys/net/lib/http/http_server_http2.c:265:21: error: taking address of packed member 'value' of class or structure 'http2_settings_field' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  265 |                 UNALIGNED_PUT(0, &setting->value);\n      |                                   ^~~~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:170:15: note: expanded from macro 'UNALIGNED_PUT'\n/__w/zephyr/zephyr/subsys/net/lib/http/http_server_http2.c:269:11: error: taking address of packed member 'id' of class or structure 'http2_settings_field' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  269 |                               &setting->id);\n      |                                ^~~~~~~~~~~",
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:170:15: note: expanded from macro 'UNALIGNED_PUT'\n/__w/zephyr/zephyr/subsys/net/lib/http/http_server_http2.c:271:11: error: taking address of packed member 'value' of class or structure 'http2_settings_field' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  271 |                               &setting->value);\n      |                                ^~~~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154.c:267:9: error: taking address of packed member 'union ieee802154_address::(anonymous at /__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154_frame.h:107:2)' of class or structure 'ieee802154_address' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  267 |                                           &ll->plain.addr.short_addr : &ll->comp.addr.short_addr),\n      |                                            ^~~~~~~~~~~~~~~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154.c:267:38: error: taking address of packed member 'union ieee802154_address::(anonymous at /__w/zephyr/zephyr/subsys/net/l2/ieee802154/ieee802154_frame.h:107:2)' of class or structure 'ieee802154_address' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n  267 |                                           &ll->plain.addr.short_addr : &ll->comp.addr.short_addr),\n      |                                                                         ^~~~~~~~~~~~~~~~~~~~~~~~",
+        "In file included from /__w/zephyr/zephyr/tests/net/dhcpv6/src/main.c:13:\n/__w/zephyr/zephyr/subsys/net/ip/../../../subsys/net/lib/dhcpv6/dhcpv6.c:2253:45: error: taking address of packed member 'type' of class or structure 'net_dhcpv6_duid_raw' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]\n 2253 |         UNALIGNED_PUT(htons(DHCPV6_DUID_TYPE_LL), &clientid->duid.type);\n      |                                                    ^~~~~~~~~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/gcc.h:170:15: note: expanded from macro 'UNALIGNED_PUT'\nIn file included from /__w/zephyr/zephyr/tests/net/dhcpv6/src/main.c:13:\n/__w/zephyr/zephyr/subsys/net/ip/../../../subsys/net/lib/dhcpv6/dhcpv6.c:2254:55: error: taking address of packed member 'hw_type' of class or structure 'dhcpv6_duid_ll' may result in an unaligned pointer value [-Werror,-Waddress-of-packed-member]"
+      ],
+      "error_count": 17,
+      "error_types": {
+        "warning_as_error": 17
+      }
+    },
+    {
+      "commit_sha": "222a601b21e41af101bc82df4f34c6b813fc0c6e",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 15936757806,
+      "job_id": 44958135034,
+      "created_at": "2025-06-27T22:00:39Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/drivers/modem/modem_cellular.c:885:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]",
+        "/__w/zephyr/zephyr/drivers/fuel_gauge/lc709203f/lc709203f.c:537:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/drivers/modem/modem_cellular.c:885:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]",
+        "/__w/zephyr/zephyr/drivers/fuel_gauge/lc709203f/lc709203f.c:537:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  537 |                 enum lc709203f_battery_apa apa = LC709203F_APA_100MAH;\n      |                 ^"
+      ],
+      "error_count": 2,
+      "error_types": {
+        "warning_as_error": 2
+      }
+    },
+    {
+      "commit_sha": "f1f9cf5c55921a57febeed915aaa5fec9d449081",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 15934212015,
+      "job_id": 44950250903,
+      "created_at": "2025-06-27T19:19:44Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/drivers/modem/modem_cellular.c:885:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]",
+        "/__w/zephyr/zephyr/drivers/fuel_gauge/lc709203f/lc709203f.c:537:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/drivers/modem/modem_cellular.c:885:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]",
+        "/__w/zephyr/zephyr/drivers/fuel_gauge/lc709203f/lc709203f.c:537:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  537 |                 enum lc709203f_battery_apa apa = LC709203F_APA_100MAH;\n      |                 ^"
+      ],
+      "error_count": 2,
+      "error_types": {
+        "warning_as_error": 2
+      }
+    },
+    {
+      "commit_sha": "6c68584046046e42e5c98efecb12e2ea6bad2d27",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 15929655554,
+      "job_id": 44935501817,
+      "created_at": "2025-06-27T15:13:01Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/drivers/modem/modem_cellular.c:885:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]",
+        "/__w/zephyr/zephyr/drivers/fuel_gauge/lc709203f/lc709203f.c:537:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/drivers/modem/modem_cellular.c:885:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]",
+        "/__w/zephyr/zephyr/drivers/fuel_gauge/lc709203f/lc709203f.c:537:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  537 |                 enum lc709203f_battery_apa apa = LC709203F_APA_100MAH;\n      |                 ^"
+      ],
+      "error_count": 2,
+      "error_types": {
+        "warning_as_error": 2
+      }
+    },
+    {
+      "commit_sha": "4ec435165753bf353b35ae700c3ed5a1421eb46b",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 15926037950,
+      "job_id": 44923416773,
+      "created_at": "2025-06-27T12:15:06Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/drivers/modem/modem_cellular.c:885:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]",
+        "/__w/zephyr/zephyr/drivers/fuel_gauge/lc709203f/lc709203f.c:537:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/drivers/modem/modem_cellular.c:885:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]",
+        "/__w/zephyr/zephyr/drivers/fuel_gauge/lc709203f/lc709203f.c:537:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  537 |                 enum lc709203f_battery_apa apa = LC709203F_APA_100MAH;\n      |                 ^"
+      ],
+      "error_count": 2,
+      "error_types": {
+        "warning_as_error": 2
+      }
+    },
+    {
+      "commit_sha": "e4348ad877f45a298a4433f53f8a88fdc2172ff3",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 15924090477,
+      "job_id": 44917412914,
+      "created_at": "2025-06-27T10:25:55Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/drivers/fuel_gauge/lc709203f/lc709203f.c:537:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/drivers/fuel_gauge/lc709203f/lc709203f.c:537:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  537 |                 enum lc709203f_battery_apa apa = LC709203F_APA_100MAH;\n      |                 ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "ba905d045b97a437fbd82f8c91204ef5caa2a96b",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 15922420065,
+      "job_id": 44912045488,
+      "created_at": "2025-06-27T08:59:25Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/drivers/fuel_gauge/lc709203f/lc709203f.c:537:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/drivers/fuel_gauge/lc709203f/lc709203f.c:537:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  537 |                 enum lc709203f_battery_apa apa = LC709203F_APA_100MAH;\n      |                 ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "3e704256e308fed36dfea82b1e897439eecc49fe",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 15921000580,
+      "job_id": 44907551261,
+      "created_at": "2025-06-27T07:43:16Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/drivers/fuel_gauge/lc709203f/lc709203f.c:537:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/drivers/fuel_gauge/lc709203f/lc709203f.c:537:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  537 |                 enum lc709203f_battery_apa apa = LC709203F_APA_100MAH;\n      |                 ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "3198db1b12292cf072b69f06000e9e258e529358",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 15918447609,
+      "job_id": 44900332532,
+      "created_at": "2025-06-27T04:51:29Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/drivers/fuel_gauge/lc709203f/lc709203f.c:537:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/drivers/fuel_gauge/lc709203f/lc709203f.c:537:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  537 |                 enum lc709203f_battery_apa apa = LC709203F_APA_100MAH;\n      |                 ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "1f9cca43eb45f2a92ddcf9eaae7a82b9d5256c6f",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 15917349497,
+      "job_id": 44897318367,
+      "created_at": "2025-06-27T03:19:21Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/drivers/fuel_gauge/lc709203f/lc709203f.c:537:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/drivers/fuel_gauge/lc709203f/lc709203f.c:537:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  537 |                 enum lc709203f_battery_apa apa = LC709203F_APA_100MAH;\n      |                 ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "350a5ef3946af0a3e4d24e414ad590f821317a9c",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 15868807725,
+      "job_id": 44740688144,
+      "created_at": "2025-06-25T06:14:34Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/drivers/sensor/nordic/npm13xx_charger/npm13xx_charger.c:191:44: error: implicit conversion increases floating-point precision: 'float' to 'double' [-Werror,-Wdouble-promotion]",
+        "/__w/zephyr/zephyr/drivers/sensor/nordic/npm13xx_charger/npm13xx_charger.c:498:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/drivers/sensor/nordic/npm13xx_charger/npm13xx_charger.c:191:44: error: implicit conversion increases floating-point precision: 'float' to 'double' [-Werror,-Wdouble-promotion]\n  191 |                exp((float)config->thermistor_beta * (inv_temp_k - inv_t0));\n      |                ~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/drivers/sensor/nordic/npm13xx_charger/npm13xx_charger.c:498:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  498 |                 int32_t current = (val->val1 * 1000000) + val->val2;\n      |                 ^"
+      ],
+      "error_count": 2,
+      "error_types": {
+        "warning_as_error": 2
+      }
+    },
+    {
+      "commit_sha": "94a6c1f0ff73932253b09bdf2ca9e3d7b9622ff9",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 15861242965,
+      "job_id": 44718676878,
+      "created_at": "2025-06-24T20:51:26Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/drivers/sensor/nordic/npm13xx_charger/npm13xx_charger.c:191:44: error: implicit conversion increases floating-point precision: 'float' to 'double' [-Werror,-Wdouble-promotion]",
+        "/__w/zephyr/zephyr/drivers/sensor/nordic/npm13xx_charger/npm13xx_charger.c:498:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/drivers/sensor/nordic/npm13xx_charger/npm13xx_charger.c:191:44: error: implicit conversion increases floating-point precision: 'float' to 'double' [-Werror,-Wdouble-promotion]\n  191 |                exp((float)config->thermistor_beta * (inv_temp_k - inv_t0));\n      |                ~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/drivers/sensor/nordic/npm13xx_charger/npm13xx_charger.c:498:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  498 |                 int32_t current = (val->val1 * 1000000) + val->val2;\n      |                 ^"
+      ],
+      "error_count": 2,
+      "error_types": {
+        "warning_as_error": 2
+      }
+    },
+    {
+      "commit_sha": "6f53b485b12d3ba84684334364d400b09de6d168",
+      "branch": "collab-sdk-0.17.2",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 15855093181,
+      "job_id": 44698257151,
+      "created_at": "2025-06-24T15:41:45Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/drivers/sensor/nordic/npm13xx_charger/npm13xx_charger.c:191:44: error: implicit conversion increases floating-point precision: 'float' to 'double' [-Werror,-Wdouble-promotion]",
+        "/__w/zephyr/zephyr/drivers/sensor/nordic/npm13xx_charger/npm13xx_charger.c:498:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/drivers/sensor/nordic/npm13xx_charger/npm13xx_charger.c:191:44: error: implicit conversion increases floating-point precision: 'float' to 'double' [-Werror,-Wdouble-promotion]\n  191 |                exp((float)config->thermistor_beta * (inv_temp_k - inv_t0));\n      |                ~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/drivers/sensor/nordic/npm13xx_charger/npm13xx_charger.c:498:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  498 |                 int32_t current = (val->val1 * 1000000) + val->val2;\n      |                 ^"
+      ],
+      "error_count": 2,
+      "error_types": {
+        "warning_as_error": 2
+      }
+    },
+    {
+      "commit_sha": "97519002ad04e744008f4e2661675697624832b3",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 15854715469,
+      "job_id": 44696984625,
+      "created_at": "2025-06-24T15:25:55Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/drivers/sensor/nordic/npm13xx_charger/npm13xx_charger.c:191:44: error: implicit conversion increases floating-point precision: 'float' to 'double' [-Werror,-Wdouble-promotion]",
+        "/__w/zephyr/zephyr/drivers/sensor/nordic/npm13xx_charger/npm13xx_charger.c:498:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/drivers/sensor/nordic/npm13xx_charger/npm13xx_charger.c:191:44: error: implicit conversion increases floating-point precision: 'float' to 'double' [-Werror,-Wdouble-promotion]\n  191 |                exp((float)config->thermistor_beta * (inv_temp_k - inv_t0));\n      |                ~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/drivers/sensor/nordic/npm13xx_charger/npm13xx_charger.c:498:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  498 |                 int32_t current = (val->val1 * 1000000) + val->val2;\n      |                 ^"
+      ],
+      "error_count": 2,
+      "error_types": {
+        "warning_as_error": 2
+      }
+    },
+    {
+      "commit_sha": "f2c37c4b13252352472cbab98907c0a3fce2b2d4",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 15850317154,
+      "job_id": 44682023647,
+      "created_at": "2025-06-24T12:23:02Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/drivers/sensor/nordic/npm13xx_charger/npm13xx_charger.c:191:44: error: implicit conversion increases floating-point precision: 'float' to 'double' [-Werror,-Wdouble-promotion]",
+        "/__w/zephyr/zephyr/drivers/sensor/nordic/npm13xx_charger/npm13xx_charger.c:498:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/drivers/sensor/nordic/npm13xx_charger/npm13xx_charger.c:191:44: error: implicit conversion increases floating-point precision: 'float' to 'double' [-Werror,-Wdouble-promotion]\n  191 |                exp((float)config->thermistor_beta * (inv_temp_k - inv_t0));\n      |                ~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/drivers/sensor/nordic/npm13xx_charger/npm13xx_charger.c:498:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  498 |                 int32_t current = (val->val1 * 1000000) + val->val2;\n      |                 ^"
+      ],
+      "error_count": 2,
+      "error_types": {
+        "warning_as_error": 2
+      }
+    },
+    {
+      "commit_sha": "f4a0beb2b7b15162fa272117f6fbd76b7c76b292",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 15843912174,
+      "job_id": 44661652219,
+      "created_at": "2025-06-24T07:17:06Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/drivers/sensor/nordic/npm13xx_charger/npm13xx_charger.c:191:44: error: implicit conversion increases floating-point precision: 'float' to 'double' [-Werror,-Wdouble-promotion]",
+        "/__w/zephyr/zephyr/drivers/sensor/nordic/npm13xx_charger/npm13xx_charger.c:498:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/drivers/sensor/nordic/npm13xx_charger/npm13xx_charger.c:191:44: error: implicit conversion increases floating-point precision: 'float' to 'double' [-Werror,-Wdouble-promotion]\n  191 |                exp((float)config->thermistor_beta * (inv_temp_k - inv_t0));\n      |                ~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/drivers/sensor/nordic/npm13xx_charger/npm13xx_charger.c:498:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  498 |                 int32_t current = (val->val1 * 1000000) + val->val2;\n      |                 ^"
+      ],
+      "error_count": 2,
+      "error_types": {
+        "warning_as_error": 2
+      }
+    },
+    {
+      "commit_sha": "99957e1fb3eeda625c6153aa49f1d1e2a3cb3adf",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 15835587244,
+      "job_id": 44638283740,
+      "created_at": "2025-06-23T21:31:43Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/drivers/sensor/nordic/npm13xx_charger/npm13xx_charger.c:191:44: error: implicit conversion increases floating-point precision: 'float' to 'double' [-Werror,-Wdouble-promotion]",
+        "/__w/zephyr/zephyr/drivers/sensor/nordic/npm13xx_charger/npm13xx_charger.c:498:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/drivers/sensor/nordic/npm13xx_charger/npm13xx_charger.c:191:44: error: implicit conversion increases floating-point precision: 'float' to 'double' [-Werror,-Wdouble-promotion]\n  191 |                exp((float)config->thermistor_beta * (inv_temp_k - inv_t0));\n      |                ~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/drivers/sensor/nordic/npm13xx_charger/npm13xx_charger.c:498:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  498 |                 int32_t current = (val->val1 * 1000000) + val->val2;\n      |                 ^"
+      ],
+      "error_count": 2,
+      "error_types": {
+        "warning_as_error": 2
+      }
+    },
+    {
+      "commit_sha": "6a893fb91b4aa1126c22844b09210dd9d9444ed1",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 15833678068,
+      "job_id": 44632211535,
+      "created_at": "2025-06-23T19:49:10Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/drivers/sensor/nordic/npm13xx_charger/npm13xx_charger.c:191:44: error: implicit conversion increases floating-point precision: 'float' to 'double' [-Werror,-Wdouble-promotion]",
+        "/__w/zephyr/zephyr/drivers/sensor/nordic/npm13xx_charger/npm13xx_charger.c:498:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/drivers/sensor/nordic/npm13xx_charger/npm13xx_charger.c:191:44: error: implicit conversion increases floating-point precision: 'float' to 'double' [-Werror,-Wdouble-promotion]\n  191 |                exp((float)config->thermistor_beta * (inv_temp_k - inv_t0));\n      |                ~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/drivers/sensor/nordic/npm13xx_charger/npm13xx_charger.c:498:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  498 |                 int32_t current = (val->val1 * 1000000) + val->val2;\n      |                 ^"
+      ],
+      "error_count": 2,
+      "error_types": {
+        "warning_as_error": 2
+      }
+    },
+    {
+      "commit_sha": "3b035954f292867c0f8f00f025e486904cee30cd",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 15828276326,
+      "job_id": 44614118384,
+      "created_at": "2025-06-23T15:19:47Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/drivers/sensor/nordic/npm13xx_charger/npm13xx_charger.c:191:44: error: implicit conversion increases floating-point precision: 'float' to 'double' [-Werror,-Wdouble-promotion]",
+        "/__w/zephyr/zephyr/drivers/sensor/nordic/npm13xx_charger/npm13xx_charger.c:498:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/drivers/sensor/nordic/npm13xx_charger/npm13xx_charger.c:191:44: error: implicit conversion increases floating-point precision: 'float' to 'double' [-Werror,-Wdouble-promotion]\n  191 |                exp((float)config->thermistor_beta * (inv_temp_k - inv_t0));\n      |                ~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~",
+        "/__w/zephyr/zephyr/drivers/sensor/nordic/npm13xx_charger/npm13xx_charger.c:498:3: error: label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]\n  498 |                 int32_t current = (val->val1 * 1000000) + val->val2;\n      |                 ^"
+      ],
+      "error_count": 2,
+      "error_types": {
+        "warning_as_error": 2
+      }
+    },
+    {
+      "commit_sha": "d410b2cc6774d203c54a071530dd01e558de3adf",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 15342603178,
+      "job_id": 43171805062,
+      "created_at": "2025-05-30T08:28:16Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/lib/posix/options/pthread.c:291:18: error: use of undeclared identifier '_POSIX_STACK_MIN'",
+        "/__w/zephyr/zephyr/lib/posix/options/pthread.c:293:23: error: use of undeclared identifier '_POSIX_STACK_MIN'",
+        "/__w/zephyr/zephyr/lib/posix/options/pthread.c:354:68: error: use of undeclared identifier '_POSIX_STACK_MIN'",
+        "/__w/zephyr/zephyr/lib/posix/options/pthread.c:1313:68: error: use of undeclared identifier '_POSIX_STACK_MIN'"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/lib/posix/options/pthread.c:291:18: error: use of undeclared identifier '_POSIX_STACK_MIN'\n  291 |         if (stacksize < PTHREAD_STACK_MIN) {\n      |                         ^",
+        "/__w/zephyr/zephyr/include/zephyr/posix/posix_features.h:348:39: note: expanded from macro 'PTHREAD_STACK_MIN'\n/__w/zephyr/zephyr/lib/posix/options/pthread.c:293:23: error: use of undeclared identifier '_POSIX_STACK_MIN'\n  293 |                         stacksize, (size_t)PTHREAD_STACK_MIN);\n      |                                            ^",
+        "/__w/zephyr/zephyr/include/zephyr/posix/posix_features.h:348:39: note: expanded from macro 'PTHREAD_STACK_MIN'\n/__w/zephyr/zephyr/lib/posix/options/pthread.c:354:68: error: use of undeclared identifier '_POSIX_STACK_MIN'\n  354 |         if (!__attr_is_initialized(attr) || stacksize == 0 || stacksize < PTHREAD_STACK_MIN ||\n      |                                                                           ^",
+        "/__w/zephyr/zephyr/include/zephyr/posix/posix_features.h:348:39: note: expanded from macro 'PTHREAD_STACK_MIN'\n/__w/zephyr/zephyr/lib/posix/options/pthread.c:1313:68: error: use of undeclared identifier '_POSIX_STACK_MIN'\n 1313 |         if (!__attr_is_initialized(attr) || stacksize == 0 || stacksize < PTHREAD_STACK_MIN ||\n      |                                                                           ^"
+      ],
+      "error_count": 4,
+      "error_types": {
+        "declaration_error": 4
+      }
+    },
+    {
+      "commit_sha": "d410b2cc6774d203c54a071530dd01e558de3adf",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (2)",
+      "workflow_id": 15342603178,
+      "job_id": 43171805420,
+      "created_at": "2025-05-30T08:28:16Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/lib/posix/options/pthread.c:291:18: error: use of undeclared identifier '_POSIX_STACK_MIN'",
+        "/__w/zephyr/zephyr/lib/posix/options/pthread.c:293:23: error: use of undeclared identifier '_POSIX_STACK_MIN'",
+        "/__w/zephyr/zephyr/lib/posix/options/pthread.c:354:68: error: use of undeclared identifier '_POSIX_STACK_MIN'",
+        "/__w/zephyr/zephyr/lib/posix/options/pthread.c:1313:68: error: use of undeclared identifier '_POSIX_STACK_MIN'"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/lib/posix/options/pthread.c:291:18: error: use of undeclared identifier '_POSIX_STACK_MIN'\n  291 |         if (stacksize < PTHREAD_STACK_MIN) {\n      |                         ^",
+        "/__w/zephyr/zephyr/include/zephyr/posix/posix_features.h:348:39: note: expanded from macro 'PTHREAD_STACK_MIN'\n/__w/zephyr/zephyr/lib/posix/options/pthread.c:293:23: error: use of undeclared identifier '_POSIX_STACK_MIN'\n  293 |                         stacksize, (size_t)PTHREAD_STACK_MIN);\n      |                                            ^",
+        "/__w/zephyr/zephyr/include/zephyr/posix/posix_features.h:348:39: note: expanded from macro 'PTHREAD_STACK_MIN'\n/__w/zephyr/zephyr/lib/posix/options/pthread.c:354:68: error: use of undeclared identifier '_POSIX_STACK_MIN'\n  354 |         if (!__attr_is_initialized(attr) || stacksize == 0 || stacksize < PTHREAD_STACK_MIN ||\n      |                                                                           ^",
+        "/__w/zephyr/zephyr/include/zephyr/posix/posix_features.h:348:39: note: expanded from macro 'PTHREAD_STACK_MIN'\n/__w/zephyr/zephyr/lib/posix/options/pthread.c:1313:68: error: use of undeclared identifier '_POSIX_STACK_MIN'\n 1313 |         if (!__attr_is_initialized(attr) || stacksize == 0 || stacksize < PTHREAD_STACK_MIN ||\n      |                                                                           ^"
+      ],
+      "error_count": 4,
+      "error_types": {
+        "declaration_error": 4
+      }
+    },
+    {
+      "commit_sha": "b1f9351930f14775e90ebfb2d3d3998b6552ca1f",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 15206575536,
+      "job_id": 42771020197,
+      "created_at": "2025-05-23T09:04:50Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/include/zephyr/sys/timeutil.h:682:18: error: result of comparison of constant 9223372036854775807 with expression of type 'const __time_t' (aka 'const long') is always true [-Werror,-Wtautological-constant-out-of-range-compare]",
+        "/__w/zephyr/zephyr/include/zephyr/sys/timeutil.h:680:25: error: result of comparison of constant 9223372036854775807 with expression of type 'const __time_t' (aka 'const long') is always false [-Werror,-Wtautological-constant-out-of-range-compare]"
+      ],
+      "error_details": [
+        "In file included from /__w/zephyr/zephyr/lib/utils/timeutil.c:17:\n/__w/zephyr/zephyr/include/zephyr/sys/timeutil.h:682:18: error: result of comparison of constant 9223372036854775807 with expression of type 'const __time_t' (aka 'const long') is always true [-Werror,-Wtautological-constant-out-of-range-compare]\n                         ((ts->tv_sec != INT64_MAX) && (ts->tv_sec >= 0)) *\n                           ~~~~~~~~~~ ^  ~~~~~~~~~",
+        "/__w/zephyr/zephyr/include/zephyr/sys/timeutil.h:680:25: error: result of comparison of constant 9223372036854775807 with expression of type 'const __time_t' (aka 'const long') is always false [-Werror,-Wtautological-constant-out-of-range-compare]\n                .ticks = ((ts->tv_sec == INT64_MAX) && (ts->tv_nsec == NSEC_PER_SEC - 1)) *\n                           ~~~~~~~~~~ ^  ~~~~~~~~~"
+      ],
+      "error_count": 2,
+      "error_types": {
+        "warning_as_error": 2
+      }
+    },
+    {
+      "commit_sha": "fc56305c2f79fa78036179fd49371814c7f21678",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 15204989892,
+      "job_id": 42765959971,
+      "created_at": "2025-05-23T07:38:01Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/include/zephyr/sys/timeutil.h:682:18: error: result of comparison of constant 9223372036854775807 with expression of type 'const __time_t' (aka 'const long') is always true [-Werror,-Wtautological-constant-out-of-range-compare]",
+        "/__w/zephyr/zephyr/include/zephyr/sys/timeutil.h:680:25: error: result of comparison of constant 9223372036854775807 with expression of type 'const __time_t' (aka 'const long') is always false [-Werror,-Wtautological-constant-out-of-range-compare]"
+      ],
+      "error_details": [
+        "In file included from /__w/zephyr/zephyr/lib/utils/timeutil.c:17:\n/__w/zephyr/zephyr/include/zephyr/sys/timeutil.h:682:18: error: result of comparison of constant 9223372036854775807 with expression of type 'const __time_t' (aka 'const long') is always true [-Werror,-Wtautological-constant-out-of-range-compare]\n                         ((ts->tv_sec != INT64_MAX) && (ts->tv_sec >= 0)) *\n                           ~~~~~~~~~~ ^  ~~~~~~~~~",
+        "/__w/zephyr/zephyr/include/zephyr/sys/timeutil.h:680:25: error: result of comparison of constant 9223372036854775807 with expression of type 'const __time_t' (aka 'const long') is always false [-Werror,-Wtautological-constant-out-of-range-compare]\n                .ticks = ((ts->tv_sec == INT64_MAX) && (ts->tv_nsec == NSEC_PER_SEC - 1)) *\n                           ~~~~~~~~~~ ^  ~~~~~~~~~"
+      ],
+      "error_count": 2,
+      "error_types": {
+        "warning_as_error": 2
+      }
+    },
+    {
+      "commit_sha": "8607eee0c45ee809c8c51a05e7f8e101afd601d4",
+      "branch": "collab-sdk-dev",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 15198240243,
+      "job_id": 42747255840,
+      "created_at": "2025-05-22T22:43:41Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]"
+      ],
+      "error_details": [
+        "In file included from /__w/zephyr/zephyr/arch/posix/core/offsets/offsets.c:26:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel.h:17:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel_includes.h:23:\nIn file included from /__w/zephyr/zephyr/include/zephyr/toolchain.h:50:\n/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]\n#define __fallthrough __attribute__((fallthrough))\n        ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "8607eee0c45ee809c8c51a05e7f8e101afd601d4",
+      "branch": "collab-sdk-dev",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (2)",
+      "workflow_id": 15198240243,
+      "job_id": 42747256120,
+      "created_at": "2025-05-22T22:43:41Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]"
+      ],
+      "error_details": [
+        "In file included from /__w/zephyr/zephyr/arch/posix/core/offsets/offsets.c:26:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel.h:17:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel_includes.h:23:\nIn file included from /__w/zephyr/zephyr/include/zephyr/toolchain.h:50:\n/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]\n#define __fallthrough __attribute__((fallthrough))\n        ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "f77e258cb9c2aad7fe81f7489d5fa8ff0f269899",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 15197606622,
+      "job_id": 42745322585,
+      "created_at": "2025-05-22T21:57:29Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/include/zephyr/sys/timeutil.h:519:17: error: result of comparison of constant -9223372036854775808 with expression of type '__time_t' (aka 'long') is always false [-Werror,-Wtautological-constant-out-of-range-compare]",
+        "/__w/zephyr/zephyr/include/zephyr/sys/timeutil.h:698:24: error: result of comparison of constant 9223372036854775807 with expression of type 'const __time_t' (aka 'const long') is always false [-Werror,-Wtautological-constant-out-of-range-compare]",
+        "/__w/zephyr/zephyr/include/zephyr/sys/timeutil.h:680:18: error: result of comparison of constant 9223372036854775807 with expression of type 'const __time_t' (aka 'const long') is always true [-Werror,-Wtautological-constant-out-of-range-compare]",
+        "/__w/zephyr/zephyr/include/zephyr/sys/timeutil.h:678:25: error: result of comparison of constant 9223372036854775807 with expression of type 'const __time_t' (aka 'const long') is always false [-Werror,-Wtautological-constant-out-of-range-compare]"
+      ],
+      "error_details": [
+        "In file included from /__w/zephyr/zephyr/lib/utils/timeutil.c:17:\n/__w/zephyr/zephyr/include/zephyr/sys/timeutil.h:519:17: error: result of comparison of constant -9223372036854775808 with expression of type '__time_t' (aka 'long') is always false [-Werror,-Wtautological-constant-out-of-range-compare]\n        if (ts->tv_sec == INT64_MIN) {\n            ~~~~~~~~~~ ^  ~~~~~~~~~",
+        "/__w/zephyr/zephyr/include/zephyr/sys/timeutil.h:698:24: error: result of comparison of constant 9223372036854775807 with expression of type 'const __time_t' (aka 'const long') is always false [-Werror,-Wtautological-constant-out-of-range-compare]\n        } else if (ts->tv_sec == INT64_MAX && ts->tv_nsec == NSEC_PER_SEC - 1) {\n                   ~~~~~~~~~~ ^  ~~~~~~~~~",
+        "In file included from /__w/zephyr/zephyr/lib/utils/timeutil.c:17:\n/__w/zephyr/zephyr/include/zephyr/sys/timeutil.h:680:18: error: result of comparison of constant 9223372036854775807 with expression of type 'const __time_t' (aka 'const long') is always true [-Werror,-Wtautological-constant-out-of-range-compare]\n                         ((ts->tv_sec != INT64_MAX) && (ts->tv_sec >= 0)) *\n                           ~~~~~~~~~~ ^  ~~~~~~~~~",
+        "/__w/zephyr/zephyr/include/zephyr/sys/timeutil.h:678:25: error: result of comparison of constant 9223372036854775807 with expression of type 'const __time_t' (aka 'const long') is always false [-Werror,-Wtautological-constant-out-of-range-compare]\n                .ticks = ((ts->tv_sec == INT64_MAX) && (ts->tv_nsec == NSEC_PER_SEC - 1)) *\n                           ~~~~~~~~~~ ^  ~~~~~~~~~"
+      ],
+      "error_count": 4,
+      "error_types": {
+        "warning_as_error": 4
+      }
+    },
+    {
+      "commit_sha": "f77e258cb9c2aad7fe81f7489d5fa8ff0f269899",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (2)",
+      "workflow_id": 15197606622,
+      "job_id": 42745322878,
+      "created_at": "2025-05-22T21:57:29Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/include/zephyr/sys/timeutil.h:519:17: error: result of comparison of constant -9223372036854775808 with expression of type '__time_t' (aka 'long') is always false [-Werror,-Wtautological-constant-out-of-range-compare]",
+        "/__w/zephyr/zephyr/include/zephyr/sys/timeutil.h:698:24: error: result of comparison of constant 9223372036854775807 with expression of type 'const __time_t' (aka 'const long') is always false [-Werror,-Wtautological-constant-out-of-range-compare]"
+      ],
+      "error_details": [
+        "In file included from /__w/zephyr/zephyr/lib/utils/timeutil.c:17:\n/__w/zephyr/zephyr/include/zephyr/sys/timeutil.h:519:17: error: result of comparison of constant -9223372036854775808 with expression of type '__time_t' (aka 'long') is always false [-Werror,-Wtautological-constant-out-of-range-compare]\n        if (ts->tv_sec == INT64_MIN) {\n            ~~~~~~~~~~ ^  ~~~~~~~~~",
+        "/__w/zephyr/zephyr/include/zephyr/sys/timeutil.h:698:24: error: result of comparison of constant 9223372036854775807 with expression of type 'const __time_t' (aka 'const long') is always false [-Werror,-Wtautological-constant-out-of-range-compare]\n        } else if (ts->tv_sec == INT64_MAX && ts->tv_nsec == NSEC_PER_SEC - 1) {\n                   ~~~~~~~~~~ ^  ~~~~~~~~~"
+      ],
+      "error_count": 2,
+      "error_types": {
+        "warning_as_error": 2
+      }
+    },
+    {
+      "commit_sha": "e496ac51f94010259c8ee8f3bf048886bfedd45a",
+      "branch": "collab-sdk-dev",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 15192257852,
+      "job_id": 42727779838,
+      "created_at": "2025-05-22T16:47:39Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]"
+      ],
+      "error_details": [
+        "In file included from /__w/zephyr/zephyr/arch/posix/core/offsets/offsets.c:26:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel.h:17:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel_includes.h:23:\nIn file included from /__w/zephyr/zephyr/include/zephyr/toolchain.h:50:\n/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]\n#define __fallthrough __attribute__((fallthrough))\n        ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "e496ac51f94010259c8ee8f3bf048886bfedd45a",
+      "branch": "collab-sdk-dev",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (2)",
+      "workflow_id": 15192257852,
+      "job_id": 42727780362,
+      "created_at": "2025-05-22T16:47:39Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]"
+      ],
+      "error_details": [
+        "In file included from /__w/zephyr/zephyr/arch/posix/core/offsets/offsets.c:26:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel.h:17:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel_includes.h:23:\nIn file included from /__w/zephyr/zephyr/include/zephyr/toolchain.h:50:\n/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]\n#define __fallthrough __attribute__((fallthrough))\n        ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "f6883c4d69ca46dd0cee717ed44f935827cdeec3",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 15187802701,
+      "job_id": 42712484224,
+      "created_at": "2025-05-22T13:25:15Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]"
+      ],
+      "error_details": [
+        "In file included from /__w/zephyr/zephyr/arch/posix/core/offsets/offsets.c:26:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel.h:17:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel_includes.h:23:\nIn file included from /__w/zephyr/zephyr/include/zephyr/toolchain.h:50:\n/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]\n#define __fallthrough __attribute__((fallthrough))\n        ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "f6883c4d69ca46dd0cee717ed44f935827cdeec3",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (2)",
+      "workflow_id": 15187802701,
+      "job_id": 42712484905,
+      "created_at": "2025-05-22T13:25:15Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]"
+      ],
+      "error_details": [
+        "In file included from /__w/zephyr/zephyr/arch/posix/core/offsets/offsets.c:26:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel.h:17:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel_includes.h:23:\nIn file included from /__w/zephyr/zephyr/include/zephyr/toolchain.h:50:\n/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]\n#define __fallthrough __attribute__((fallthrough))\n        ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "280171076e229b4064eec2b9a049b7eea588ae74",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 15185705363,
+      "job_id": 42705469324,
+      "created_at": "2025-05-22T11:45:10Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]"
+      ],
+      "error_details": [
+        "In file included from /__w/zephyr/zephyr/arch/posix/core/offsets/offsets.c:26:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel.h:17:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel_includes.h:23:\nIn file included from /__w/zephyr/zephyr/include/zephyr/toolchain.h:50:\n/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]\n#define __fallthrough __attribute__((fallthrough))\n        ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "280171076e229b4064eec2b9a049b7eea588ae74",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (2)",
+      "workflow_id": 15185705363,
+      "job_id": 42705469951,
+      "created_at": "2025-05-22T11:45:10Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]"
+      ],
+      "error_details": [
+        "In file included from /__w/zephyr/zephyr/arch/posix/core/offsets/offsets.c:26:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel.h:17:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel_includes.h:23:\nIn file included from /__w/zephyr/zephyr/include/zephyr/toolchain.h:50:\n/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]\n#define __fallthrough __attribute__((fallthrough))\n        ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "438ed6d74aea1f32dd11dcdd842bc7bf28d2af51",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 15183073257,
+      "job_id": 42696922950,
+      "created_at": "2025-05-22T09:32:05Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]"
+      ],
+      "error_details": [
+        "In file included from /__w/zephyr/zephyr/arch/posix/core/offsets/offsets.c:26:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel.h:17:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel_includes.h:23:\nIn file included from /__w/zephyr/zephyr/include/zephyr/toolchain.h:50:\n/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]\n#define __fallthrough __attribute__((fallthrough))\n        ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "438ed6d74aea1f32dd11dcdd842bc7bf28d2af51",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (2)",
+      "workflow_id": 15183073257,
+      "job_id": 42696923633,
+      "created_at": "2025-05-22T09:32:05Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]"
+      ],
+      "error_details": [
+        "In file included from /__w/zephyr/zephyr/arch/posix/core/offsets/offsets.c:26:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel.h:17:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel_includes.h:23:\nIn file included from /__w/zephyr/zephyr/include/zephyr/toolchain.h:50:\n/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]\n#define __fallthrough __attribute__((fallthrough))\n        ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "b7f046dd102e4eb26b0c39b8f0ae283571aa777e",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 15177017430,
+      "job_id": 42679049127,
+      "created_at": "2025-05-22T02:53:20Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]"
+      ],
+      "error_details": [
+        "In file included from /__w/zephyr/zephyr/arch/posix/core/offsets/offsets.c:26:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel.h:17:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel_includes.h:23:\nIn file included from /__w/zephyr/zephyr/include/zephyr/toolchain.h:50:\n/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]\n#define __fallthrough __attribute__((fallthrough))\n        ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "b7f046dd102e4eb26b0c39b8f0ae283571aa777e",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (2)",
+      "workflow_id": 15177017430,
+      "job_id": 42679049371,
+      "created_at": "2025-05-22T02:53:20Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]"
+      ],
+      "error_details": [
+        "In file included from /__w/zephyr/zephyr/arch/posix/core/offsets/offsets.c:26:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel.h:17:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel_includes.h:23:\nIn file included from /__w/zephyr/zephyr/include/zephyr/toolchain.h:50:\n/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]\n#define __fallthrough __attribute__((fallthrough))\n        ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "163234e5009486af969b371ed3895b4d7a79852b",
+      "branch": "collab-sdk-dev",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 15176663475,
+      "job_id": 42678096158,
+      "created_at": "2025-05-22T02:23:40Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]"
+      ],
+      "error_details": [
+        "In file included from /__w/zephyr/zephyr/arch/posix/core/offsets/offsets.c:26:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel.h:17:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel_includes.h:23:\nIn file included from /__w/zephyr/zephyr/include/zephyr/toolchain.h:50:\n/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]\n#define __fallthrough __attribute__((fallthrough))\n        ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "163234e5009486af969b371ed3895b4d7a79852b",
+      "branch": "collab-sdk-dev",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (2)",
+      "workflow_id": 15176663475,
+      "job_id": 42678096445,
+      "created_at": "2025-05-22T02:23:40Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]"
+      ],
+      "error_details": [
+        "In file included from /__w/zephyr/zephyr/arch/posix/core/offsets/offsets.c:26:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel.h:17:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel_includes.h:23:\nIn file included from /__w/zephyr/zephyr/include/zephyr/toolchain.h:50:\n/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]\n#define __fallthrough __attribute__((fallthrough))\n        ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "ac1dec0498567eab6a285f9526508552cd0bf2e6",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 15175202889,
+      "job_id": 42674062376,
+      "created_at": "2025-05-22T00:21:54Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]"
+      ],
+      "error_details": [
+        "In file included from /__w/zephyr/zephyr/arch/posix/core/offsets/offsets.c:26:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel.h:17:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel_includes.h:23:\nIn file included from /__w/zephyr/zephyr/include/zephyr/toolchain.h:50:\n/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]\n#define __fallthrough __attribute__((fallthrough))\n        ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "ac1dec0498567eab6a285f9526508552cd0bf2e6",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (2)",
+      "workflow_id": 15175202889,
+      "job_id": 42674062638,
+      "created_at": "2025-05-22T00:21:54Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]"
+      ],
+      "error_details": [
+        "In file included from /__w/zephyr/zephyr/arch/posix/core/offsets/offsets.c:26:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel.h:17:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel_includes.h:23:\nIn file included from /__w/zephyr/zephyr/include/zephyr/toolchain.h:50:\n/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]\n#define __fallthrough __attribute__((fallthrough))\n        ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "9afc7a2d058189edc523c6172de7259f7d7465d5",
+      "branch": "collab-sdk-dev",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 15162483038,
+      "job_id": 42631687778,
+      "created_at": "2025-05-21T12:43:05Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]"
+      ],
+      "error_details": [
+        "In file included from /__w/zephyr/zephyr/arch/posix/core/offsets/offsets.c:26:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel.h:17:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel_includes.h:23:\nIn file included from /__w/zephyr/zephyr/include/zephyr/toolchain.h:50:\n/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]\n#define __fallthrough __attribute__((fallthrough))\n        ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "9afc7a2d058189edc523c6172de7259f7d7465d5",
+      "branch": "collab-sdk-dev",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (2)",
+      "workflow_id": 15162483038,
+      "job_id": 42631688724,
+      "created_at": "2025-05-21T12:43:05Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]"
+      ],
+      "error_details": [
+        "In file included from /__w/zephyr/zephyr/arch/posix/core/offsets/offsets.c:26:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel.h:17:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel_includes.h:23:\nIn file included from /__w/zephyr/zephyr/include/zephyr/toolchain.h:50:\n/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]\n#define __fallthrough __attribute__((fallthrough))\n        ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "fb9470c87a6a61cbf21ffa9066fdf97a97a2aa42",
+      "branch": "collab-sdk-dev",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 15073987484,
+      "job_id": 42376975994,
+      "created_at": "2025-05-16T17:24:55Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]"
+      ],
+      "error_details": [
+        "In file included from /__w/zephyr/zephyr/arch/posix/core/offsets/offsets.c:26:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel.h:17:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel_includes.h:23:\nIn file included from /__w/zephyr/zephyr/include/zephyr/toolchain.h:50:\n/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]\n#define __fallthrough __attribute__((fallthrough))\n        ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "fb9470c87a6a61cbf21ffa9066fdf97a97a2aa42",
+      "branch": "collab-sdk-dev",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (2)",
+      "workflow_id": 15073987484,
+      "job_id": 42376976388,
+      "created_at": "2025-05-16T17:24:55Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]"
+      ],
+      "error_details": [
+        "In file included from /__w/zephyr/zephyr/arch/posix/core/offsets/offsets.c:26:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel.h:17:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel_includes.h:23:\nIn file included from /__w/zephyr/zephyr/include/zephyr/toolchain.h:50:\n/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]\n#define __fallthrough __attribute__((fallthrough))\n        ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "fb7f0ac39c2a65c68e918b29a2ff78c0677a5e19",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 15051482762,
+      "job_id": 42307120948,
+      "created_at": "2025-05-15T17:32:48Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/subsys/settings/src/settings_store.c:119:10: error: expected expression",
+        "/__w/zephyr/zephyr/subsys/settings/src/settings_store.c:119:9: error: expected parameter declarator",
+        "/__w/zephyr/zephyr/subsys/settings/src/settings_store.c:119:26: error: expected ')'",
+        "/__w/zephyr/zephyr/subsys/settings/src/settings_store.c:124:30: error: use of undeclared identifier 'param'",
+        "/__w/zephyr/zephyr/subsys/settings/src/settings_store.c:154:11: error: incompatible function pointer types initializing 'settings_load_direct_cb' (aka 'int (*)(const char *, unsigned int, int (*)(void *, void *, unsigned int), void *, void *)') with an expression of type 'int (*)(const char *, size_t)' (aka 'int (*)(const char *, unsigned int)') [-Wincompatible-function-pointer-types]"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/subsys/settings/src/settings_store.c:119:10: error: expected expression",
+        "/__w/zephyr/zephyr/subsys/settings/src/settings_store.c:119:9: error: expected parameter declarator",
+        "/__w/zephyr/zephyr/subsys/settings/src/settings_store.c:119:26: error: expected ')'",
+        "/__w/zephyr/zephyr/subsys/settings/src/settings_store.c:118:43: note: to match this '('\n/__w/zephyr/zephyr/subsys/settings/src/settings_store.c:124:30: error: use of undeclared identifier 'param'\n        size_t *val_len = (size_t *)param;\n                                    ^",
+        "/__w/zephyr/zephyr/subsys/settings/src/settings_store.c:154:11: error: incompatible function pointer types initializing 'settings_load_direct_cb' (aka 'int (*)(const char *, unsigned int, int (*)(void *, void *, unsigned int), void *, void *)') with an expression of type 'int (*)(const char *, size_t)' (aka 'int (*)(const char *, unsigned int)') [-Wincompatible-function-pointer-types]\n                                .cb = &settings_get_val_len_default_cb,\n                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+      ],
+      "error_count": 5,
+      "error_types": {
+        "syntax_error": 2,
+        "other_error": 1,
+        "declaration_error": 1,
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "fb7f0ac39c2a65c68e918b29a2ff78c0677a5e19",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (2)",
+      "workflow_id": 15051482762,
+      "job_id": 42307121339,
+      "created_at": "2025-05-15T17:32:48Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/subsys/settings/src/settings_store.c:119:10: error: expected expression",
+        "/__w/zephyr/zephyr/subsys/settings/src/settings_store.c:119:9: error: expected parameter declarator",
+        "/__w/zephyr/zephyr/subsys/settings/src/settings_store.c:119:26: error: expected ')'",
+        "/__w/zephyr/zephyr/subsys/settings/src/settings_store.c:124:30: error: use of undeclared identifier 'param'",
+        "/__w/zephyr/zephyr/subsys/settings/src/settings_store.c:154:11: error: incompatible function pointer types initializing 'settings_load_direct_cb' (aka 'int (*)(const char *, unsigned int, int (*)(void *, void *, unsigned int), void *, void *)') with an expression of type 'int (*)(const char *, size_t)' (aka 'int (*)(const char *, unsigned int)') [-Wincompatible-function-pointer-types]"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/subsys/settings/src/settings_store.c:119:10: error: expected expression",
+        "/__w/zephyr/zephyr/subsys/settings/src/settings_store.c:119:9: error: expected parameter declarator",
+        "/__w/zephyr/zephyr/subsys/settings/src/settings_store.c:119:26: error: expected ')'",
+        "/__w/zephyr/zephyr/subsys/settings/src/settings_store.c:118:43: note: to match this '('\n/__w/zephyr/zephyr/subsys/settings/src/settings_store.c:124:30: error: use of undeclared identifier 'param'\n        size_t *val_len = (size_t *)param;\n                                    ^",
+        "/__w/zephyr/zephyr/subsys/settings/src/settings_store.c:154:11: error: incompatible function pointer types initializing 'settings_load_direct_cb' (aka 'int (*)(const char *, unsigned int, int (*)(void *, void *, unsigned int), void *, void *)') with an expression of type 'int (*)(const char *, size_t)' (aka 'int (*)(const char *, unsigned int)') [-Wincompatible-function-pointer-types]\n                                .cb = &settings_get_val_len_default_cb,\n                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+      ],
+      "error_count": 5,
+      "error_types": {
+        "syntax_error": 2,
+        "other_error": 1,
+        "declaration_error": 1,
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "cfb0a80df4b7b64b25123ebe891ee5ecf7d62887",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 15049577029,
+      "job_id": 42300730596,
+      "created_at": "2025-05-15T15:54:05Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/subsys/settings/src/settings_store.c:119:10: error: expected expression",
+        "/__w/zephyr/zephyr/subsys/settings/src/settings_store.c:119:9: error: expected parameter declarator",
+        "/__w/zephyr/zephyr/subsys/settings/src/settings_store.c:119:26: error: expected ')'",
+        "/__w/zephyr/zephyr/subsys/settings/src/settings_store.c:124:30: error: use of undeclared identifier 'param'",
+        "/__w/zephyr/zephyr/subsys/settings/src/settings_store.c:154:11: error: incompatible function pointer types initializing 'settings_load_direct_cb' (aka 'int (*)(const char *, unsigned int, int (*)(void *, void *, unsigned int), void *, void *)') with an expression of type 'int (*)(const char *, size_t)' (aka 'int (*)(const char *, unsigned int)') [-Wincompatible-function-pointer-types]"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/subsys/settings/src/settings_store.c:119:10: error: expected expression",
+        "/__w/zephyr/zephyr/subsys/settings/src/settings_store.c:119:9: error: expected parameter declarator",
+        "/__w/zephyr/zephyr/subsys/settings/src/settings_store.c:119:26: error: expected ')'",
+        "/__w/zephyr/zephyr/subsys/settings/src/settings_store.c:118:43: note: to match this '('\n/__w/zephyr/zephyr/subsys/settings/src/settings_store.c:124:30: error: use of undeclared identifier 'param'\n        size_t *val_len = (size_t *)param;\n                                    ^",
+        "/__w/zephyr/zephyr/subsys/settings/src/settings_store.c:154:11: error: incompatible function pointer types initializing 'settings_load_direct_cb' (aka 'int (*)(const char *, unsigned int, int (*)(void *, void *, unsigned int), void *, void *)') with an expression of type 'int (*)(const char *, size_t)' (aka 'int (*)(const char *, unsigned int)') [-Wincompatible-function-pointer-types]\n                                .cb = &settings_get_val_len_default_cb,\n                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+      ],
+      "error_count": 5,
+      "error_types": {
+        "syntax_error": 2,
+        "other_error": 1,
+        "declaration_error": 1,
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "cfb0a80df4b7b64b25123ebe891ee5ecf7d62887",
+      "branch": "main",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (2)",
+      "workflow_id": 15049577029,
+      "job_id": 42300731144,
+      "created_at": "2025-05-15T15:54:05Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/subsys/settings/src/settings_store.c:119:10: error: expected expression",
+        "/__w/zephyr/zephyr/subsys/settings/src/settings_store.c:119:9: error: expected parameter declarator",
+        "/__w/zephyr/zephyr/subsys/settings/src/settings_store.c:119:26: error: expected ')'",
+        "/__w/zephyr/zephyr/subsys/settings/src/settings_store.c:124:30: error: use of undeclared identifier 'param'",
+        "/__w/zephyr/zephyr/subsys/settings/src/settings_store.c:154:11: error: incompatible function pointer types initializing 'settings_load_direct_cb' (aka 'int (*)(const char *, unsigned int, int (*)(void *, void *, unsigned int), void *, void *)') with an expression of type 'int (*)(const char *, size_t)' (aka 'int (*)(const char *, unsigned int)') [-Wincompatible-function-pointer-types]"
+      ],
+      "error_details": [
+        "/__w/zephyr/zephyr/subsys/settings/src/settings_store.c:119:10: error: expected expression",
+        "/__w/zephyr/zephyr/subsys/settings/src/settings_store.c:119:9: error: expected parameter declarator",
+        "/__w/zephyr/zephyr/subsys/settings/src/settings_store.c:119:26: error: expected ')'",
+        "/__w/zephyr/zephyr/subsys/settings/src/settings_store.c:118:43: note: to match this '('\n/__w/zephyr/zephyr/subsys/settings/src/settings_store.c:124:30: error: use of undeclared identifier 'param'\n        size_t *val_len = (size_t *)param;\n                                    ^",
+        "/__w/zephyr/zephyr/subsys/settings/src/settings_store.c:154:11: error: incompatible function pointer types initializing 'settings_load_direct_cb' (aka 'int (*)(const char *, unsigned int, int (*)(void *, void *, unsigned int), void *, void *)') with an expression of type 'int (*)(const char *, size_t)' (aka 'int (*)(const char *, unsigned int)') [-Wincompatible-function-pointer-types]\n                                .cb = &settings_get_val_len_default_cb,\n                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+      ],
+      "error_count": 5,
+      "error_types": {
+        "syntax_error": 2,
+        "other_error": 1,
+        "declaration_error": 1,
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "804d41f6647edafa4a52f513cb31753c1418f411",
+      "branch": "collab-sdk-0.18-dev",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 15034984712,
+      "job_id": 42254960435,
+      "created_at": "2025-05-15T02:03:30Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]"
+      ],
+      "error_details": [
+        "In file included from /__w/zephyr/zephyr/arch/posix/core/offsets/offsets.c:26:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel.h:17:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel_includes.h:23:\nIn file included from /__w/zephyr/zephyr/include/zephyr/toolchain.h:50:\n/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]\n#define __fallthrough __attribute__((fallthrough))\n        ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "804d41f6647edafa4a52f513cb31753c1418f411",
+      "branch": "collab-sdk-0.18-dev",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (2)",
+      "workflow_id": 15034984712,
+      "job_id": 42254960810,
+      "created_at": "2025-05-15T02:03:30Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]"
+      ],
+      "error_details": [
+        "In file included from /__w/zephyr/zephyr/arch/posix/core/offsets/offsets.c:26:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel.h:17:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel_includes.h:23:\nIn file included from /__w/zephyr/zephyr/include/zephyr/toolchain.h:50:\n/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]\n#define __fallthrough __attribute__((fallthrough))\n        ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "3b2155e9d3d01f402b4843cec3c77af775e19f8b",
+      "branch": "collab-sdk-dev",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 15030794566,
+      "job_id": 42242591976,
+      "created_at": "2025-05-14T20:49:38Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]"
+      ],
+      "error_details": [
+        "In file included from /__w/zephyr/zephyr/arch/posix/core/offsets/offsets.c:26:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel.h:17:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel_includes.h:23:\nIn file included from /__w/zephyr/zephyr/include/zephyr/toolchain.h:50:\n/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]\n#define __fallthrough __attribute__((fallthrough))\n        ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "3b2155e9d3d01f402b4843cec3c77af775e19f8b",
+      "branch": "collab-sdk-dev",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (2)",
+      "workflow_id": 15030794566,
+      "job_id": 42242592506,
+      "created_at": "2025-05-14T20:49:38Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]"
+      ],
+      "error_details": [
+        "In file included from /__w/zephyr/zephyr/arch/posix/core/offsets/offsets.c:26:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel.h:17:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel_includes.h:23:\nIn file included from /__w/zephyr/zephyr/include/zephyr/toolchain.h:50:\n/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]\n#define __fallthrough __attribute__((fallthrough))\n        ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "19888c8af0211f8ec4ed5c929f20d846017aed44",
+      "branch": "collab-sdk-dev",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 14979408850,
+      "job_id": 42079686662,
+      "created_at": "2025-05-12T18:09:23Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]"
+      ],
+      "error_details": [
+        "In file included from /__w/zephyr/zephyr/arch/posix/core/offsets/offsets.c:26:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel.h:17:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel_includes.h:23:\nIn file included from /__w/zephyr/zephyr/include/zephyr/toolchain.h:50:\n/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]\n#define __fallthrough __attribute__((fallthrough))\n        ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "19888c8af0211f8ec4ed5c929f20d846017aed44",
+      "branch": "collab-sdk-dev",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (2)",
+      "workflow_id": 14979408850,
+      "job_id": 42079687329,
+      "created_at": "2025-05-12T18:09:23Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]"
+      ],
+      "error_details": [
+        "In file included from /__w/zephyr/zephyr/arch/posix/core/offsets/offsets.c:26:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel.h:17:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel_includes.h:23:\nIn file included from /__w/zephyr/zephyr/include/zephyr/toolchain.h:50:\n/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]\n#define __fallthrough __attribute__((fallthrough))\n        ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "a0c30d1ea5d37716ef60ee249600f7648199b902",
+      "branch": "collab-sdk-dev",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (1)",
+      "workflow_id": 14974583014,
+      "job_id": 42063534952,
+      "created_at": "2025-05-12T14:14:03Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]"
+      ],
+      "error_details": [
+        "In file included from /__w/zephyr/zephyr/arch/posix/core/offsets/offsets.c:26:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel.h:17:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel_includes.h:23:\nIn file included from /__w/zephyr/zephyr/include/zephyr/toolchain.h:50:\n/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]\n#define __fallthrough __attribute__((fallthrough))\n        ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "a0c30d1ea5d37716ef60ee249600f7648199b902",
+      "branch": "collab-sdk-dev",
+      "workflow_name": "Build with Clang/LLVM",
+      "job_name": "clang-build (2)",
+      "workflow_id": 14974583014,
+      "job_id": 42063535814,
+      "created_at": "2025-05-12T14:14:03Z",
+      "error_lines": [
+        "/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]"
+      ],
+      "error_details": [
+        "In file included from /__w/zephyr/zephyr/arch/posix/core/offsets/offsets.c:26:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel.h:17:\nIn file included from /__w/zephyr/zephyr/include/zephyr/kernel_includes.h:23:\nIn file included from /__w/zephyr/zephyr/include/zephyr/toolchain.h:50:\n/__w/zephyr/zephyr/include/zephyr/toolchain/llvm.h:17:9: error: '__fallthrough' macro redefined [-Werror,-Wmacro-redefined]\n#define __fallthrough __attribute__((fallthrough))\n        ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    }
+  ],
+  "error_classification_report": {
+    "summary": {
+      "total_error_types": 4,
+      "total_error_instances": 245,
+      "most_common_error": [
+        "warning_as_error",
+        221
+      ],
+      "commits_affected": 55
+    },
+    "by_category": {
+      "syntax_errors": 8,
+      "type_errors": 0,
+      "declaration_errors": 12,
+      "function_errors": 0,
+      "member_errors": 0,
+      "semantic_errors": 0,
+      "werror_errors": 221,
+      "other_errors": 4
+    },
+    "top_errors": {
+      "warning_as_error": 221,
+      "declaration_error": 12,
+      "syntax_error": 8,
+      "other_error": 4,
+      "missing_error": 0,
+      "unexpected_token": 0,
+      "format_error": 0,
+      "initialization_error": 0,
+      "operator_precedence_error": 0,
+      "constexpr_error": 0
+    },
+    "error_frequency": {
+      "warning_as_error": 54,
+      "declaration_error": 3,
+      "syntax_error": 2,
+      "other_error": 2
+    },
+    "commit_impact": {},
+    "error_examples": {
+      "warning_as_error": [
+        "label followed by a declaration is a C23 extension [-Werror,-Wc23-extensions]",
+        "result of comparison of constant 9223372036854775807 with expression of type 'const __time_t' (aka '",
+        "'__fallthrough' macro redefined [-Werror,-Wmacro-redefined]"
+      ],
+      "type_conversion_error": [
+        "implicit conversion from enumeration type 'enum ocpp_notify_reason' to different enumeration type 'e",
+        "implicit conversion increases floating-point precision: 'float' to 'double' [-Werror,-Wdouble-promot"
+      ],
+      "address_error": [
+        "taking address of packed member 'th_seq' of class or structure 'tcphdr' may result in an unaligned p",
+        "taking address of packed member 'address' of class or structure 'net_ipv4_igmp_v2_report' may result",
+        "taking address of packed member 'th_sport' of class or structure 'tcphdr' may result in an unaligned"
+      ],
+      "undefined_error": [
+        "use of undeclared identifier '_POSIX_STACK_MIN'"
+      ],
+      "unexpected_token": [
+        "expected expression"
+      ],
+      "other_error": [
+        "expected parameter declarator"
+      ]
+    }
+  }
+}

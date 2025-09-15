@@ -1,0 +1,44 @@
+# ComBench Project Dependencies
+
+# HTTP requests and networking
+requests>=2.25.0
+urllib3>=1.26.0
+
+# Character encoding detection
+chardet>=4.0.0
+
+# Data processing and analysis
+pandas>=1.3.0
+numpy>=1.21.0
+
+# JSON and configuration file processing
+pyyaml>=5.4.0
+
+# Logging and debugging
+colorlog>=6.0.0
+
+# Type hint support
+typing-extensions>=3.10.0
+
+# Path and file operations
+pathlib2>=2.3.0
+
+# Enhanced regular expressions
+regex>=2021.8.3
+
+# Progress bar display
+tqdm>=4.62.0
+
+# Date and time processing
+python-dateutil>=2.8.0
+
+# Command line argument parsing
+argparse
+
+# System utilities
+psutil>=5.8.0
+
+# Optional: Machine learning related (for PFL evaluation)
+# torch>=1.9.0
+# transformers>=4.12.0
+# scikit-learn>=1.0.0

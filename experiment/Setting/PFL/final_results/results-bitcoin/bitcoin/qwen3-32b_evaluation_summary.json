@@ -1,0 +1,18 @@
+{
+  "dataset": "bitcoin",
+  "model_name": "qwen3-32b",
+  "evaluation_result": {
+    "model_name": "qwen3-32b",
+    "total_instances": 19,
+    "total_errors": 12,
+    "successful_fixes": 2,
+    "exact_matches": 0,
+    "valid_patches": 0,
+    "total_time": 2890.2935016155243,
+    "average_time": 240.8577918012937,
+    "success_rate": 0.16666666666666666,
+    "exact_match_rate": 0.0,
+    "patch_validity_rate": 0.0
+  },
+  "timestamp": "2025-08-30 07:36:53"
+}

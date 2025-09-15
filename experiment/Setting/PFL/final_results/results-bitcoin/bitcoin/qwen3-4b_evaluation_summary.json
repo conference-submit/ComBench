@@ -1,0 +1,18 @@
+{
+  "dataset": "bitcoin",
+  "model_name": "qwen3-4b",
+  "evaluation_result": {
+    "model_name": "qwen3-4b",
+    "total_instances": 19,
+    "total_errors": 12,
+    "successful_fixes": 1,
+    "exact_matches": 0,
+    "valid_patches": 0,
+    "total_time": 1809.8852705955505,
+    "average_time": 150.8237725496292,
+    "success_rate": 0.08333333333333333,
+    "exact_match_rate": 0.0,
+    "patch_validity_rate": 0.0
+  },
+  "timestamp": "2025-08-30 19:00:26"
+}

@@ -1,0 +1,18 @@
+{
+  "dataset": "llvm",
+  "model_name": "qwen3-14b",
+  "evaluation_result": {
+    "model_name": "qwen3-14b",
+    "total_instances": 63,
+    "total_errors": 103,
+    "successful_fixes": 45,
+    "exact_matches": 0,
+    "valid_patches": 0,
+    "total_time": 27395.345012903214,
+    "average_time": 265.9742234262448,
+    "success_rate": 0.4368932038834951,
+    "exact_match_rate": 0.0,
+    "patch_validity_rate": 0.0
+  },
+  "timestamp": "2025-09-06 23:37:43"
+}

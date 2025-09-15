@@ -1,0 +1,18 @@
+{
+  "dataset": "bitcoin",
+  "model_name": "gemini-2.5-pro",
+  "evaluation_result": {
+    "model_name": "gemini-2.5-pro",
+    "total_instances": 19,
+    "total_errors": 12,
+    "successful_fixes": 3,
+    "exact_matches": 0,
+    "valid_patches": 0,
+    "total_time": 442.14406180381775,
+    "average_time": 36.84533848365148,
+    "success_rate": 0.25,
+    "exact_match_rate": 0.0,
+    "patch_validity_rate": 0.0
+  },
+  "timestamp": "2025-09-08 11:58:51"
+}

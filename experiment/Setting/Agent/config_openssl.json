@@ -1,0 +1,33 @@
+{
+    "description": "PFL评估系统配置文件",
+    "datasets": [
+        {
+            "name": "openssl",
+            "path": "reproduced_data/openssl.jsonl",
+            "repo_path": "../../../experiment/repos/openssl_repo",
+            "description": "OpenSSL编译错误修复分析数据集"
+        }
+    ],
+    "models": [
+        {
+            "name": "claude-sonnet-4",
+            "description": "Claude 4 Sonnet 模型",
+            "provider": "anthropic",
+            "enabled": true
+        }
+    ],
+    "settings": {
+        "max_instances": 100,
+        "similarity_threshold": 0.8,
+        "output_dir": "results-openssl",
+        "max_workers": 5,
+        "save_detailed_results": true,
+        "log_level": "INFO"
+    },
+    "environment": {
+        "required_env_vars": {
+            "USE_CUSTOM_OPENAI_API": "true"
+        },
+        "optional_env_vars": {}
+    }
+}

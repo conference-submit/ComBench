@@ -1,0 +1,1041 @@
+{
+  "metadata": {
+    "total_compiler_errors": 40,
+    "extraction_timestamp": "2025-08-06 15:08:32",
+    "method": "enhanced_string_matching_with_classification",
+    "statistics": {
+      "total_errors": 40,
+      "commits_with_errors": 40,
+      "workflows_with_errors": {
+        "ci-tests": 40
+      },
+      "error_types_summary": {
+        "semantic_error": 2,
+        "syntax_error": 6,
+        "declaration_error": 51,
+        "type_error": 1,
+        "function_error": 4,
+        "warning_as_error": 21,
+        "other_error": 14,
+        "member_error": 2
+      },
+      "error_types_summary_detailed": {
+        "operator_error": 2,
+        "macro_error": 3,
+        "undefined_error": 50,
+        "other_error": 26,
+        "type_mismatch": 1,
+        "call_error": 1,
+        "internal_error": 2,
+        "unused_warning_error": 4,
+        "function_overload_error": 3,
+        "access_error": 3,
+        "format_error": 1,
+        "missing_error": 1,
+        "unexpected_token": 2,
+        "member_not_found": 2
+      },
+      "jobs_with_errors": {
+        "build (ubuntu-dev:20, Debug, g++, gcc, -Werror -no-pie, NoSanitizers)": 24,
+        "build (ubuntu-dev:20, Release, g++, gcc, -Werror -no-pie, NoSanitizers)": 6,
+        "build (alpine-dev:latest, Debug, g++, gcc, -Werror -no-pie, NoSanitizers)": 5,
+        "build (alpine-dev:latest, Debug, clang++, clang, NoSanitizers)": 1,
+        "build (alpine-dev:latest, Release, g++, gcc, -Werror -no-pie, NoSanitizers)": 2,
+        "build (ubuntu-dev:24, Debug, clang++, clang, -Wno-error=unused-command-line-argument, Sanitizers)": 2
+      }
+    }
+  },
+  "compiler_errors": [
+    {
+      "commit_sha": "dbc8e72912a34dae7ebe549ee515001abfdffac0",
+      "branch": "Pr1",
+      "workflow_name": "ci-tests",
+      "job_name": "build (ubuntu-dev:20, Debug, g++, gcc, -Werror -no-pie, NoSanitizers)",
+      "workflow_id": 16682525583,
+      "job_id": 47224342305,
+      "created_at": "2025-08-01T18:34:50Z",
+      "error_lines": [
+        "../src/server/geo_family.cc:829:60: error: no match for 'operator<<' (operand types are 'std::basic_ostream<char>' and 'facade::ErrorReply')",
+        "../src/server/geo_family.cc:836:56: error: no match for 'operator<<' (operand types are 'std::basic_ostream<char>' and 'facade::ErrorReply')"
+      ],
+      "error_details": [
+        "../src/server/geo_family.cc:829:60: error: no match for 'operator<<' (operand types are 'std::basic_ostream<char>' and 'facade::ErrorReply')\n  829 |         LOG_EVERY_T(INFO, 1) << \"GeoRadius parser error: \" << parser.Error()->MakeReply();\n      |                                                            ^~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |                                                                                        |\n      |                                                                                        facade::ErrorReply",
+        "/usr/include/c++/9/bits/random.tcc:3177:5: note: candidate: 'template<class _RealType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::piecewise_linear_distribution<_RealType>&)'\n/usr/include/c++/9/bits/random.tcc:3177:5: note:   template argument deduction/substitution failed:\nIn file included from third_party/libs/mimalloc2/include/mimalloc/atomic.h:362,\n/usr/include/c++/9/thread:322:5: note: candidate: 'template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::thread::id)'\n/usr/include/c++/9/thread:322:5: note:   template argument deduction/substitution failed:\n../src/server/geo_family.cc:836:56: error: no match for 'operator<<' (operand types are 'std::basic_ostream<char>' and 'facade::ErrorReply')\n  836 |     LOG_EVERY_T(INFO, 1) << \"GeoRadius parser error: \" << error->MakeReply();\n      |                                                        ^~ ~~~~~~~~~~~~~~~~~~\n      |                                                                           |\n      |                                                                           facade::ErrorReply"
+      ],
+      "error_count": 2,
+      "error_types": {
+        "semantic_error": 2
+      }
+    },
+    {
+      "commit_sha": "23a9ef245cb91ceb63cc2fd50a56bee9b7d9fe11",
+      "branch": "abhijat/chore/warn-when-refusing-conns",
+      "workflow_name": "ci-tests",
+      "job_name": "build (ubuntu-dev:20, Debug, g++, gcc, -Werror -no-pie, NoSanitizers)",
+      "workflow_id": 16671263504,
+      "job_id": 47187919841,
+      "created_at": "2025-08-01T09:16:00Z",
+      "error_lines": [
+        "../src/server/server_family.cc:1257:99: error: macro \"LOG_EVERY_N\" passed 3 arguments, but takes just 2",
+        "../src/server/server_family.cc:1260:88: error: macro \"LOG_EVERY_N\" passed 3 arguments, but takes just 2",
+        "../src/server/server_family.cc:1257:7: error: 'LOG_EVERY_N' was not declared in this scope",
+        "../src/server/server_family.cc:1260:7: error: 'LOG_EVERY_N' was not declared in this scope"
+      ],
+      "error_details": [
+        "../src/server/server_family.cc:1257:99: error: macro \"LOG_EVERY_N\" passed 3 arguments, but takes just 2",
+        "In file included from ../helio/base/logging.h:45,\n../src/server/server_family.cc:1260:88: error: macro \"LOG_EVERY_N\" passed 3 arguments, but takes just 2\n 1260 |       LOG_EVERY_N(INFO, 1000, \"Accepting connections again, used memory is below limit\");\n      |                                                                                        ^",
+        "In file included from ../helio/base/logging.h:45,\n../src/server/server_family.cc:1257:7: error: 'LOG_EVERY_N' was not declared in this scope",
+        "../src/server/server_family.cc:1260:7: error: 'LOG_EVERY_N' was not declared in this scope\n 1260 |       LOG_EVERY_N(INFO, 1000, \"Accepting connections again, used memory is below limit\");\n      |       ^~~~~~~~~~~"
+      ],
+      "error_count": 4,
+      "error_types": {
+        "syntax_error": 2,
+        "declaration_error": 2
+      }
+    },
+    {
+      "commit_sha": "f6fb9c2f1bd7a126a0d0f0b015e2e2e273026473",
+      "branch": "kpr4",
+      "workflow_name": "ci-tests",
+      "job_name": "build (ubuntu-dev:20, Debug, g++, gcc, -Werror -no-pie, NoSanitizers)",
+      "workflow_id": 16594035098,
+      "job_id": 46936297017,
+      "created_at": "2025-07-29T10:52:26Z",
+      "error_lines": [
+        "../src/server/journal/journal_slice.h:65:21: error: 'ConsumeJournalChangeItem' has not been declared",
+        "../src/server/journal/journal_slice.cc:100:16: error: cannot convert 'dfly::journal::JournalChangeItem*' to 'int*'",
+        "../src/server/journal/journal_slice.cc:103:6: error: no declaration matches 'void dfly::journal::JournalSlice::CallOnChange(dfly::journal::JournalChangeItem*)'"
+      ],
+      "error_details": [
+        "In file included from ../src/server/journal/journal.cc:11:\n../src/server/journal/journal_slice.h:65:21: error: 'ConsumeJournalChangeItem' has not been declared\n   65 |   void CallOnChange(ConsumeJournalChangeItem* item);\n      |                     ^~~~~~~~~~~~~~~~~~~~~~~~",
+        "../src/server/journal/journal_slice.cc:100:16: error: cannot convert 'dfly::journal::JournalChangeItem*' to 'int*'\n  100 |   CallOnChange(&item);\n      |                ^~~~~\n      |                |\n      |                dfly::journal::JournalChangeItem*",
+        "In file included from ../src/server/journal/journal_slice.cc:5:\n../src/server/journal/journal_slice.cc:103:6: error: no declaration matches 'void dfly::journal::JournalSlice::CallOnChange(dfly::journal::JournalChangeItem*)'\n  103 | void JournalSlice::CallOnChange(JournalChangeItem* change_item) {\n      |      ^~~~~~~~~~~~"
+      ],
+      "error_count": 3,
+      "error_types": {
+        "declaration_error": 2,
+        "type_error": 1
+      }
+    },
+    {
+      "commit_sha": "07a8a6b2f208928d7ef15ccbe6f8a76c4e514275",
+      "branch": "tiering-errors-3",
+      "workflow_name": "ci-tests",
+      "job_name": "build (ubuntu-dev:20, Debug, g++, gcc, -Werror -no-pie, NoSanitizers)",
+      "workflow_id": 16566160934,
+      "job_id": 46846683528,
+      "created_at": "2025-07-28T10:06:04Z",
+      "error_lines": [
+        "../src/server/string_family.cc:868:71: error: no matching function for call to 'CollectKeys(util::fb2::BlockingCounter&, uint8_t&, const dfly::Transaction*&, dfly::EngineShard*&, std::remove_reference<std::function<facade::OpResult<dfly::DbSlice::IteratorT<dfly::DashTable<dfly::CompactObj, dfly::CompactObj, dfly::detail::PrimeTablePolicy>::Iterator<false, false> > >(std::basic_string_view<char>)>&>::type)'"
+      ],
+      "error_details": [
+        "../src/server/string_family.cc:868:71: error: no matching function for call to 'CollectKeys(util::fb2::BlockingCounter&, uint8_t&, const dfly::Transaction*&, dfly::EngineShard*&, std::remove_reference<std::function<facade::OpResult<dfly::DbSlice::IteratorT<dfly::DashTable<dfly::CompactObj, dfly::CompactObj, dfly::detail::PrimeTablePolicy>::Iterator<false, false> > >(std::basic_string_view<char>)>&>::type)'\n  868 |   return CollectKeys(wait_bc, fetch_mask, t, shard, std::move(find_op));\n      |                                                                       ^\n../src/server/string_family.cc:543:14: note: candidate: 'template<class Iter> dfly::{anonymous}::MGetResponse dfly::{anonymous}::CollectKeys(util::fb2::BlockingCounter, dfly::AggregateError*, uint8_t, const dfly::Transaction*, dfly::EngineShard*, dfly::{anonymous}::SearchKey<Iter>)'\n  543 | MGetResponse CollectKeys(BlockingCounter wait_bc, AggregateError* err, uint8_t fetch_mask,\n      |              ^~~~~~~~~~~\n../src/server/string_family.cc:543:14: note:   template argument deduction/substitution failed:\n../src/server/string_family.cc:868:71: note:   candidate expects 6 arguments, 5 provided\n  868 |   return CollectKeys(wait_bc, fetch_mask, t, shard, std::move(find_op));\n      |                                                                       ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "function_error": 1
+      }
+    },
+    {
+      "commit_sha": "737a457a987110fda7560b9db31c459116467ec8",
+      "branch": "kpr9",
+      "workflow_name": "ci-tests",
+      "job_name": "build (ubuntu-dev:20, Release, g++, gcc, -Werror -no-pie, NoSanitizers)",
+      "workflow_id": 16493572466,
+      "job_id": 46633856465,
+      "created_at": "2025-07-24T09:48:52Z",
+      "error_lines": [
+        "../src/facade/dragonfly_connection.cc:1156:18: error: macro \"LOG_EVERY_T\" requires 2 arguments, but only 1 given",
+        "../src/facade/dragonfly_connection.cc:1156:5: error: 'LOG_EVERY_T' was not declared in this scope"
+      ],
+      "error_details": [
+        "../src/facade/dragonfly_connection.cc:1156:18: error: macro \"LOG_EVERY_T\" requires 2 arguments, but only 1 given\n 1156 |     LOG_EVERY_T(5) << \"Socket error for connection \" << conn_info << \" \" << GetName()\n      |                  ^",
+        "In file included from ../helio/base/logging.h:45,\n../src/facade/dragonfly_connection.cc:1156:5: error: 'LOG_EVERY_T' was not declared in this scope\n 1156 |     LOG_EVERY_T(5) << \"Socket error for connection \" << conn_info << \" \" << GetName()\n      |     ^~~~~~~~~~~"
+      ],
+      "error_count": 2,
+      "error_types": {
+        "syntax_error": 1,
+        "declaration_error": 1
+      }
+    },
+    {
+      "commit_sha": "d6c7c1a6cabe9c18b88372d6858dfa9abddb2a9f",
+      "branch": "feat-config-rewrite-pure",
+      "workflow_name": "ci-tests",
+      "job_name": "build (ubuntu-dev:20, Debug, g++, gcc, -Werror -no-pie, NoSanitizers)",
+      "workflow_id": 16472603581,
+      "job_id": 46565470039,
+      "created_at": "2025-07-23T13:51:21Z",
+      "error_lines": [
+        "../src/server/server_family.cc:859:14: error: 'tmp_path' was not declared in this scope",
+        "../src/server/server_family.cc:869:14: error: 'tmp_path' was not declared in this scope"
+      ],
+      "error_details": [
+        "../src/server/server_family.cc:859:14: error: 'tmp_path' was not declared in this scope\n  859 |       unlink(tmp_path.data());\n      |              ^~~~~~~~",
+        "../src/server/server_family.cc:869:14: error: 'tmp_path' was not declared in this scope\n  869 |   if (rename(tmp_path.data(), config_file_path.c_str()) == -1) {\n      |              ^~~~~~~~"
+      ],
+      "error_count": 2,
+      "error_types": {
+        "declaration_error": 2
+      }
+    },
+    {
+      "commit_sha": "0d190fb0f2c0f622e93a4bfca06d9f85be803ee1",
+      "branch": "feat-config-rewrite-pure",
+      "workflow_name": "ci-tests",
+      "job_name": "build (ubuntu-dev:20, Debug, g++, gcc, -Werror -no-pie, NoSanitizers)",
+      "workflow_id": 16472073380,
+      "job_id": 46563635520,
+      "created_at": "2025-07-23T13:30:12Z",
+      "error_lines": [
+        "../src/server/server_family.cc:859:14: error: 'tmp_path' was not declared in this scope",
+        "../src/server/server_family.cc:869:14: error: 'tmp_path' was not declared in this scope"
+      ],
+      "error_details": [
+        "../src/server/server_family.cc:859:14: error: 'tmp_path' was not declared in this scope\n  859 |       unlink(tmp_path.data());\n      |              ^~~~~~~~",
+        "../src/server/server_family.cc:869:14: error: 'tmp_path' was not declared in this scope\n  869 |   if (rename(tmp_path.data(), config_file_path.c_str()) == -1) {\n      |              ^~~~~~~~"
+      ],
+      "error_count": 2,
+      "error_types": {
+        "declaration_error": 2
+      }
+    },
+    {
+      "commit_sha": "eadfbef8de5b7ff4f87e457e2bf2b1649d3e9980",
+      "branch": "extend-mc-squasher",
+      "workflow_name": "ci-tests",
+      "job_name": "build (ubuntu-dev:20, Release, g++, gcc, -Werror -no-pie, NoSanitizers)",
+      "workflow_id": 16455155026,
+      "job_id": 46510221604,
+      "created_at": "2025-07-22T20:46:01Z",
+      "error_lines": [
+        "_deps/abseil_cpp-src/absl/container/internal/inlined_vector.h:522:5: error: '*((void*)(& entry)+96).absl::lts_20240722::inlined_vector_internal::Storage<unsigned int, 4, std::allocator<unsigned int> >::data_' may be used uninitialized in this function [-Werror=maybe-uninitialized]"
+      ],
+      "error_details": [
+        "In file included from _deps/abseil_cpp-src/absl/container/inlined_vector.h:53,\n_deps/abseil_cpp-src/absl/container/internal/inlined_vector.h:522:5: error: '*((void*)(& entry)+96).absl::lts_20240722::inlined_vector_internal::Storage<unsigned int, 4, std::allocator<unsigned int> >::data_' may be used uninitialized in this function [-Werror=maybe-uninitialized]\n  522 |     data_ = other_storage.data_;\n      |     ^~~~~\ncc1plus: all warnings being treated as errors"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "aebc78944087bc17e2d95ccc9d805825b7b4ca5c",
+      "branch": "extend-mc-squasher",
+      "workflow_name": "ci-tests",
+      "job_name": "build (ubuntu-dev:20, Release, g++, gcc, -Werror -no-pie, NoSanitizers)",
+      "workflow_id": 16454812670,
+      "job_id": 46509055809,
+      "created_at": "2025-07-22T20:27:56Z",
+      "error_lines": [
+        "_deps/abseil_cpp-src/absl/container/internal/inlined_vector.h:522:5: error: '*((void*)(& entry)+96).absl::lts_20240722::inlined_vector_internal::Storage<unsigned int, 4, std::allocator<unsigned int> >::data_' may be used uninitialized in this function [-Werror=maybe-uninitialized]"
+      ],
+      "error_details": [
+        "In file included from _deps/abseil_cpp-src/absl/container/inlined_vector.h:53,\n_deps/abseil_cpp-src/absl/container/internal/inlined_vector.h:522:5: error: '*((void*)(& entry)+96).absl::lts_20240722::inlined_vector_internal::Storage<unsigned int, 4, std::allocator<unsigned int> >::data_' may be used uninitialized in this function [-Werror=maybe-uninitialized]\n  522 |     data_ = other_storage.data_;\n      |     ^~~~~\ncc1plus: all warnings being treated as errors"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "94340eb23e34d1e10eb111c900595e15160e8f4e",
+      "branch": "search/speed-up-numeric-indexes-9",
+      "workflow_name": "ci-tests",
+      "job_name": "build (ubuntu-dev:20, Debug, g++, gcc, -Werror -no-pie, NoSanitizers)",
+      "workflow_id": 16437162565,
+      "job_id": 46449324336,
+      "created_at": "2025-07-22T07:02:50Z",
+      "error_lines": [
+        "../src/core/search/index_result.h:110:69: error: parameter 'end' set but not used [-Werror=unused-but-set-parameter]"
+      ],
+      "error_details": [
+        "In file included from ../src/core/search/search.cc:21:\n/usr/include/c++/9/type_traits:2330:26:   required by substitution of 'template<class _Fn, class ... _Args> static std::__result_of_success<decltype (declval<_Fn>()((declval<_Args>)()...)), std::__invoke_other> std::__result_of_other_impl::_S_test(int) [with _Fn = dfly::search::MergeIndexResults(const dfly::search::IndexResult&, const dfly::search::IndexResult&, dfly::search::AstLogicalNode::LogicOp)::<lambda(auto:28*, auto:29*)>&; _Args = {const std::vector<unsigned int, std::allocator<unsigned int> >*, const dfly::search::SingleBlockRangeResult*}]'\n/usr/include/c++/9/type_traits:2341:55:   required from 'struct std::__result_of_impl<false, false, dfly::search::MergeIndexResults(const dfly::search::IndexResult&, const dfly::search::IndexResult&, dfly::search::AstLogicalNode::LogicOp)::<lambda(auto:28*, auto:29*)>&, const std::vector<unsigned int, std::allocator<unsigned int> >*, const dfly::search::SingleBlockRangeResult*>'\n/usr/include/c++/9/type_traits:2346:12:   required from 'struct std::__invoke_result<dfly::search::MergeIndexResults(const dfly::search::IndexResult&, const dfly::search::IndexResult&, dfly::search::AstLogicalNode::LogicOp)::<lambda(auto:28*, auto:29*)>&, const std::vector<unsigned int, std::allocator<unsigned int> >*, const dfly::search::SingleBlockRangeResult*>'\n/usr/include/c++/9/bits/invoke.h:89:5:   [ skipping 4 instantiation contexts, use -ftemplate-backtrace-limit=0 to disable ]\n/usr/include/c++/9/variant:1014:28:   required from 'static constexpr auto std::__detail::__variant::__gen_vtable_impl<__same_return_types, std::__detail::__variant::_Multi_array<_Result_type (*)(_Visitor, _Variants ...)>, std::tuple<_Variants ...>, std::integer_sequence<long unsigned int, __indices ...> >::_S_apply() [with bool __same_return_types = true; _Result_type = void; _Visitor = dfly::search::MergeIndexResults(const dfly::search::IndexResult&, const dfly::search::IndexResult&, dfly::search::AstLogicalNode::LogicOp)::<lambda(auto:28*, auto:29*)>&; _Variants = {std::variant<const std::vector<unsigned int, std::allocator<unsigned int> >*, const dfly::search::BlockList<dfly::search::CompressedSortedSet>*, const dfly::search::BlockList<dfly::search::SortedVector<unsigned int> >*, const dfly::search::SingleBlockRangeResult*, const dfly::search::TwoBlocksRangeResult*>&&, std::variant<const std::vector<unsigned int, std::allocator<unsigned int> >*, const dfly::search::BlockList<dfly::search::CompressedSortedSet>*, const dfly::search::BlockList<dfly::search::SortedVector<unsigned int> >*, const dfly::search::SingleBlockRangeResult*, const dfly::search::TwoBlocksRangeResult*>&&}; long unsigned int ...__indices = {0, 3}]'\n/usr/include/c++/9/variant:936:56:   required from 'static constexpr void std::__detail::__variant::__gen_vtable_impl<__same_return_types, std::__detail::__variant::_Multi_array<_Result_type (*)(_Visitor, _Variants ...), __dimensions ...>, std::tuple<_Variants ...>, std::integer_sequence<long unsigned int, __indices ...> >::_S_apply_single_alt(_Tp&, _Tp*) [with bool __do_cookie = false; long unsigned int __index = 3; _Tp = std::__detail::__variant::_Multi_array<void (*)(dfly::search::MergeIndexResults(const dfly::search::IndexResult&, const dfly::search::IndexResult&, dfly::search::AstLogicalNode::LogicOp)::<lambda(auto:28*, auto:29*)>&, std::variant<const std::vector<unsigned int, std::allocator<unsigned int> >*, const dfly::search::BlockList<dfly::search::CompressedSortedSet>*, const dfly::search::BlockList<dfly::search::SortedVector<unsigned int> >*, const dfly::search::SingleBlockRangeResult*, const dfly::search::TwoBlocksRangeResult*>&&, std::variant<const std::vector<unsigned int, std::allocator<unsigned int> >*, const dfly::search::BlockList<dfly::search::CompressedSortedSet>*, const dfly::search::BlockList<dfly::search::SortedVector<unsigned int> >*, const dfly::search::SingleBlockRangeResult*, const dfly::search::TwoBlocksRangeResult*>&&)>; bool __same_return_types = true; _Result_type = void; _Visitor = dfly::search::MergeIndexResults(const dfly::search::IndexResult&, const dfly::search::IndexResult&, dfly::search::AstLogicalNode::LogicOp)::<lambda(auto:28*, auto:29*)>&; long unsigned int ...__dimensions = {5}; _Variants = {std::variant<const std::vector<unsigned int, std::allocator<unsigned int> >*, const dfly::search::BlockList<dfly::search::CompressedSortedSet>*, const dfly::search::BlockList<dfly::search::SortedVector<unsigned int> >*, const dfly::search::SingleBlockRangeResult*, const dfly::search::TwoBlocksRangeResult*>&&, std::variant<const std::vector<unsigned int, std::allocator<unsigned int> >*, const dfly::search::BlockList<dfly::search::CompressedSortedSet>*, const dfly::search::BlockList<dfly::search::SortedVector<unsigned int> >*, const dfly::search::SingleBlockRangeResult*, const dfly::search::TwoBlocksRangeResult*>&&}; long unsigned int ...__indices = {0}]'\n/usr/include/c++/9/variant:909:48:   required from 'constexpr const _Array_type std::__detail::__variant::__gen_vtable<true, void, dfly::search::MergeIndexResults(const dfly::search::IndexResult&, const dfly::search::IndexResult&, dfly::search::AstLogicalNode::LogicOp)::<lambda(auto:28*, auto:29*)>&, std::variant<const std::vector<unsigned int, std::allocator<unsigned int> >*, const dfly::search::BlockList<dfly::search::CompressedSortedSet>*, const dfly::search::BlockList<dfly::search::SortedVector<unsigned int> >*, const dfly::search::SingleBlockRangeResult*, const dfly::search::TwoBlocksRangeResult*>&&, std::variant<const std::vector<unsigned int, std::allocator<unsigned int> >*, const dfly::search::BlockList<dfly::search::CompressedSortedSet>*, const dfly::search::BlockList<dfly::search::SortedVector<unsigned int> >*, const dfly::search::SingleBlockRangeResult*, const dfly::search::TwoBlocksRangeResult*>&&>::_S_vtable'\n/usr/include/c++/9/variant:1647:23:   required from 'constexpr decltype(auto) std::__do_visit(_Visitor&&, _Variants&& ...) [with bool __use_index = false; bool __same_return_types = true; _Visitor = dfly::search::MergeIndexResults(const dfly::search::IndexResult&, const dfly::search::IndexResult&, dfly::search::AstLogicalNode::LogicOp)::<lambda(auto:28*, auto:29*)>&; _Variants = {std::variant<const std::vector<unsigned int, std::allocator<unsigned int> >*, const dfly::search::BlockList<dfly::search::CompressedSortedSet>*, const dfly::search::BlockList<dfly::search::SortedVector<unsigned int> >*, const dfly::search::SingleBlockRangeResult*, const dfly::search::TwoBlocksRangeResult*>, std::variant<const std::vector<unsigned int, std::allocator<unsigned int> >*, const dfly::search::BlockList<dfly::search::CompressedSortedSet>*, const dfly::search::BlockList<dfly::search::SortedVector<unsigned int> >*, const dfly::search::SingleBlockRangeResult*, const dfly::search::TwoBlocksRangeResult*>}]'\n/usr/include/c++/9/variant:1663:24:   required from 'constexpr decltype(auto) std::visit(_Visitor&&, _Variants&& ...) [with _Visitor = dfly::search::MergeIndexResults(const dfly::search::IndexResult&, const dfly::search::IndexResult&, dfly::search::AstLogicalNode::LogicOp)::<lambda(auto:28*, auto:29*)>&; _Variants = {std::variant<const std::vector<unsigned int, std::allocator<unsigned int> >*, const dfly::search::BlockList<dfly::search::CompressedSortedSet>*, const dfly::search::BlockList<dfly::search::SortedVector<unsigned int> >*, const dfly::search::SingleBlockRangeResult*, const dfly::search::TwoBlocksRangeResult*>, std::variant<const std::vector<unsigned int, std::allocator<unsigned int> >*, const dfly::search::BlockList<dfly::search::CompressedSortedSet>*, const dfly::search::BlockList<dfly::search::SortedVector<unsigned int> >*, const dfly::search::SingleBlockRangeResult*, const dfly::search::TwoBlocksRangeResult*>}]'\n../src/core/search/index_result.h:110:69: error: parameter 'end' set but not used [-Werror=unused-but-set-parameter]\n  110 | template <typename Iterator> void Seek(Iterator* it, const Iterator end, DocId min_doc_id) {\n      |                                                      ~~~~~~~~~~~~~~~^~~\n../src/core/search/index_result.h: In instantiation of 'void dfly::search::details::Seek(Iterator*, Iterator, dfly::search::DocId) [with Iterator = dfly::search::TwoBlocksRangeResult::MergingIterator; dfly::search::DocId = unsigned int]':\n../src/core/search/index_result.h:134:13:   required from 'void dfly::search::details::SetIntersection(FirstIterator, FirstIterator, SecondIterator, SecondIterator, dfly::search::details::BackInserter) [with FirstIterator = __gnu_cxx::__normal_iterator<const unsigned int*, std::vector<unsigned int> >; SecondIterator = dfly::search::TwoBlocksRangeResult::MergingIterator; dfly::search::details::BackInserter = std::back_insert_iterator<std::vector<unsigned int> >]'\n../src/core/search/index_result.h:154:31:   required from 'dfly::search::MergeIndexResults(const dfly::search::IndexResult&, const dfly::search::IndexResult&, dfly::search::AstLogicalNode::LogicOp)::<lambda(auto:28*, auto:29*)> [with auto:28 = const std::vector<unsigned int>; auto:29 = const dfly::search::TwoBlocksRangeResult]'"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "c84f5b69159b63e8bfe6c290da693649c0c49f99",
+      "branch": "build-options-1",
+      "workflow_name": "ci-tests",
+      "job_name": "build (ubuntu-dev:20, Debug, g++, gcc, -Werror -no-pie, NoSanitizers)",
+      "workflow_id": 16416686416,
+      "job_id": 46384246797,
+      "created_at": "2025-07-21T12:15:14Z",
+      "error_lines": [
+        "../src/server/hll_family.cc:327:3: error: 'THIS' was not declared in this scope"
+      ],
+      "error_details": [
+        "../src/server/hll_family.cc:327:3: error: 'THIS' was not declared in this scope\n  327 |   THIS SHOULD BREAK THE CODE !\n      |   ^~~~"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      }
+    },
+    {
+      "commit_sha": "e2b7c1b15333efb715a17985448b44158dddbe18",
+      "branch": "dranikpg-memory-refactor",
+      "workflow_name": "ci-tests",
+      "job_name": "build (ubuntu-dev:20, Debug, g++, gcc, -Werror -no-pie, NoSanitizers)",
+      "workflow_id": 16413162759,
+      "job_id": 46372855843,
+      "created_at": "2025-07-21T09:21:43Z",
+      "error_lines": [
+        "../src/server/engine_shard.cc:386:6: error: no declaration matches 'bool dfly::EngineShard::DoDefrag(float)'",
+        "../src/server/engine_shard.cc:466:27: error: no matching function for call to 'dfly::EngineShard::DoDefrag(const float&)'"
+      ],
+      "error_details": [
+        "../src/server/engine_shard.cc:386:6: error: no declaration matches 'bool dfly::EngineShard::DoDefrag(float)'\n  386 | bool EngineShard::DoDefrag(const float threshold) {\n      |      ^~~~~~~~~~~",
+        "In file included from ../src/server/engine_shard.cc:5:\n../src/server/engine_shard.cc:466:27: error: no matching function for call to 'dfly::EngineShard::DoDefrag(const float&)'\n  466 |     if (DoDefrag(threshold)) {\n      |                           ^"
+      ],
+      "error_count": 2,
+      "error_types": {
+        "declaration_error": 1,
+        "function_error": 1
+      }
+    },
+    {
+      "commit_sha": "105122fd016bfefc60ccdcb9823467a3f8774f4c",
+      "branch": "search/speed-up-numeric-indexes-9",
+      "workflow_name": "ci-tests",
+      "job_name": "build (ubuntu-dev:20, Release, g++, gcc, -Werror -no-pie, NoSanitizers)",
+      "workflow_id": 16413136051,
+      "job_id": 46372771116,
+      "created_at": "2025-07-21T09:20:26Z",
+      "error_lines": [
+        "../src/core/search/range_tree.h:83:7: error: '*((void*)&<anonymous> +40)' may be used uninitialized in this function [-Werror=maybe-uninitialized]"
+      ],
+      "error_details": [
+        "In file included from ../src/core/search/index_result.h:12,\n../src/core/search/range_tree.h:83:7: error: '*((void*)&<anonymous> +40)' may be used uninitialized in this function [-Werror=maybe-uninitialized]\n   83 | class RangeFilterIterator : public MergeableIterator {\n      |       ^~~~~~~~~~~~~~~~~~~\n../src/core/search/range_tree.h: In lambda function:"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "b4d2576713ab824c7a3e3498c20fd029eb6e6655",
+      "branch": "abhijat/feat/mem-defrag-stats",
+      "workflow_name": "ci-tests",
+      "job_name": "build (alpine-dev:latest, Debug, g++, gcc, -Werror -no-pie, NoSanitizers)",
+      "workflow_id": 16258395239,
+      "job_id": 45898753357,
+      "created_at": "2025-07-14T05:03:27Z",
+      "error_lines": [
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc.h:135:17: error: unknown type name 'ssize_t'; did you mean 'size_t'?",
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:12:10: error: unknown type name 'ssize_t'; did you mean 'size_t'?",
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:75:3: error: unknown type name 'ssize_t'; did you mean 'size_t'?",
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:78:3: error: unknown type name 'ssize_t'; did you mean 'size_t'?",
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:90:3: error: unknown type name 'ssize_t'; did you mean 'size_t'?"
+      ],
+      "error_details": [
+        "In file included from /__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:10:\n/__w/dragonfly/dragonfly/src/redis/zmalloc.h:135:17: error: unknown type name 'ssize_t'; did you mean 'size_t'?\n  135 | extern __thread ssize_t zmalloc_used_memory_tl;\n      |                 ^~~~~~~\n      |                 size_t",
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:12:10: error: unknown type name 'ssize_t'; did you mean 'size_t'?\n   12 | __thread ssize_t zmalloc_used_memory_tl = 0;\n      |          ^~~~~~~\n      |          size_t",
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c: In function 'zrealloc_usable':\n/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:75:3: error: unknown type name 'ssize_t'; did you mean 'size_t'?\n   75 |   ssize_t prev = mi_usable_size(ptr);\n      |   ^~~~~~~\n      |   size_t",
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:78:3: error: unknown type name 'ssize_t'; did you mean 'size_t'?\n   78 |   ssize_t uss = mi_usable_size(res);\n      |   ^~~~~~~\n      |   size_t",
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c: In function 'zfree_size':\n/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:90:3: error: unknown type name 'ssize_t'; did you mean 'size_t'?\n   90 |   ssize_t uss = mi_usable_size(ptr);\n      |   ^~~~~~~\n      |   size_t"
+      ],
+      "error_count": 5,
+      "error_types": {
+        "declaration_error": 5
+      }
+    },
+    {
+      "commit_sha": "483ef2aa62ae9638af4055367a81038c9831d7d7",
+      "branch": "abhijat/feat/mem-defrag-stats",
+      "workflow_name": "ci-tests",
+      "job_name": "build (alpine-dev:latest, Debug, g++, gcc, -Werror -no-pie, NoSanitizers)",
+      "workflow_id": 16258031098,
+      "job_id": 45897781205,
+      "created_at": "2025-07-14T04:33:58Z",
+      "error_lines": [
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc.h:135:17: error: unknown type name 'ssize_t'; did you mean 'size_t'?",
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:12:10: error: unknown type name 'ssize_t'; did you mean 'size_t'?",
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:75:3: error: unknown type name 'ssize_t'; did you mean 'size_t'?",
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:78:3: error: unknown type name 'ssize_t'; did you mean 'size_t'?",
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:90:3: error: unknown type name 'ssize_t'; did you mean 'size_t'?"
+      ],
+      "error_details": [
+        "In file included from /__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:10:\n/__w/dragonfly/dragonfly/src/redis/zmalloc.h:135:17: error: unknown type name 'ssize_t'; did you mean 'size_t'?\n  135 | extern __thread ssize_t zmalloc_used_memory_tl;\n      |                 ^~~~~~~\n      |                 size_t",
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:12:10: error: unknown type name 'ssize_t'; did you mean 'size_t'?\n   12 | __thread ssize_t zmalloc_used_memory_tl = 0;\n      |          ^~~~~~~\n      |          size_t",
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c: In function 'zrealloc_usable':\n/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:75:3: error: unknown type name 'ssize_t'; did you mean 'size_t'?\n   75 |   ssize_t prev = mi_usable_size(ptr);\n      |   ^~~~~~~\n      |   size_t",
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:78:3: error: unknown type name 'ssize_t'; did you mean 'size_t'?\n   78 |   ssize_t uss = mi_usable_size(res);\n      |   ^~~~~~~\n      |   size_t",
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c: In function 'zfree_size':\n/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:90:3: error: unknown type name 'ssize_t'; did you mean 'size_t'?\n   90 |   ssize_t uss = mi_usable_size(ptr);\n      |   ^~~~~~~\n      |   size_t"
+      ],
+      "error_count": 5,
+      "error_types": {
+        "declaration_error": 5
+      }
+    },
+    {
+      "commit_sha": "c9a311875b8308367e669a390eef8c6fff9c305e",
+      "branch": "dranikpg-spop-small-perf",
+      "workflow_name": "ci-tests",
+      "job_name": "build (ubuntu-dev:20, Debug, g++, gcc, -Werror -no-pie, NoSanitizers)",
+      "workflow_id": 16252097173,
+      "job_id": 45883166984,
+      "created_at": "2025-07-13T18:19:28Z",
+      "error_lines": [
+        "../src/core/string_set.cc:115:21: error: no declaration matches 'dfly::StringSet::iterator dfly::StringSet::GetRandomMember(size_t)'"
+      ],
+      "error_details": [
+        "../src/core/string_set.cc:115:21: error: no declaration matches 'dfly::StringSet::iterator dfly::StringSet::GetRandomMember(size_t)'\n  115 | StringSet::iterator StringSet::GetRandomMember(size_t search_offset) {\n      |                     ^~~~~~~~~"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      }
+    },
+    {
+      "commit_sha": "873432d705a08087ad29c2f65093751ddda0cbd7",
+      "branch": "dranikpg-spop-small-perf",
+      "workflow_name": "ci-tests",
+      "job_name": "build (ubuntu-dev:20, Debug, g++, gcc, -Werror -no-pie, NoSanitizers)",
+      "workflow_id": 16249078797,
+      "job_id": 45876210013,
+      "created_at": "2025-07-13T12:23:10Z",
+      "error_lines": [
+        "../src/core/dense_set.cc:673:31: error: no declaration matches 'dfly::DenseSet::ChainVectorIterator dfly::DenseSet::RandomChain(size_t)'",
+        "../src/core/dense_set.cc:673:11: error: 'using ChainVectorIterator = std::vector<dfly::DenseSet::DensePtr, std::pmr::polymorphic_allocator<dfly::DenseSet::DensePtr> >::iterator' is protected within this context",
+        "../src/core/dense_set.cc:683:24: error: no declaration matches 'dfly::DenseSet::IteratorBase dfly::DenseSet::RandomIterator(size_t)'",
+        "../src/core/dense_set.cc:683:11: error: 'class dfly::DenseSet::IteratorBase' is protected within this context",
+        "../src/core/dense_set.cc:692:22: error: 'RandomChain' was not declared in this scope; did you mean 'GetRandomChain'?"
+      ],
+      "error_details": [
+        "../src/core/dense_set.cc:673:31: error: no declaration matches 'dfly::DenseSet::ChainVectorIterator dfly::DenseSet::RandomChain(size_t)'\n  673 | DenseSet::ChainVectorIterator DenseSet::RandomChain(size_t offset) {\n      |                               ^~~~~~~~\n../src/core/dense_set.cc:673:31: note: no functions named 'dfly::DenseSet::ChainVectorIterator dfly::DenseSet::RandomChain(size_t)'",
+        "In file included from ../src/core/dense_set.cc:5:\n../src/core/dense_set.cc:673:11: error: 'using ChainVectorIterator = std::vector<dfly::DenseSet::DensePtr, std::pmr::polymorphic_allocator<dfly::DenseSet::DensePtr> >::iterator' is protected within this context\n  673 | DenseSet::ChainVectorIterator DenseSet::RandomChain(size_t offset) {\n      |           ^~~~~~~~~~~~~~~~~~~",
+        "In file included from ../src/core/dense_set.cc:5:\n../src/core/dense_set.cc:683:24: error: no declaration matches 'dfly::DenseSet::IteratorBase dfly::DenseSet::RandomIterator(size_t)'\n  683 | DenseSet::IteratorBase DenseSet::RandomIterator(size_t offset) {\n      |                        ^~~~~~~~\n../src/core/dense_set.cc:683:24: note: no functions named 'dfly::DenseSet::IteratorBase dfly::DenseSet::RandomIterator(size_t)'",
+        "In file included from ../src/core/dense_set.cc:5:\n../src/core/dense_set.cc:683:11: error: 'class dfly::DenseSet::IteratorBase' is protected within this context\n  683 | DenseSet::IteratorBase DenseSet::RandomIterator(size_t offset) {\n      |           ^~~~~~~~~~~~",
+        "In file included from ../src/core/dense_set.cc:5:\n../src/core/dense_set.cc:692:22: error: 'RandomChain' was not declared in this scope; did you mean 'GetRandomChain'?\n  692 |   auto bucket_iter = RandomChain();  // Find first non empty chain\n      |                      ^~~~~~~~~~~\n      |                      GetRandomChain"
+      ],
+      "error_count": 5,
+      "error_types": {
+        "declaration_error": 3,
+        "other_error": 2
+      }
+    },
+    {
+      "commit_sha": "da7f51d351e8f4bf3d63d75956c0419c2b9d9dca",
+      "branch": "abhijat/feat/mem-defrag-stats",
+      "workflow_name": "ci-tests",
+      "job_name": "build (alpine-dev:latest, Debug, g++, gcc, -Werror -no-pie, NoSanitizers)",
+      "workflow_id": 16248260301,
+      "job_id": 45874267355,
+      "created_at": "2025-07-13T10:42:47Z",
+      "error_lines": [
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc.h:135:17: error: unknown type name 'ssize_t'; did you mean 'size_t'?",
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:12:10: error: unknown type name 'ssize_t'; did you mean 'size_t'?",
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:75:3: error: unknown type name 'ssize_t'; did you mean 'size_t'?",
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:78:3: error: unknown type name 'ssize_t'; did you mean 'size_t'?",
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:90:3: error: unknown type name 'ssize_t'; did you mean 'size_t'?"
+      ],
+      "error_details": [
+        "In file included from /__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:10:\n/__w/dragonfly/dragonfly/src/redis/zmalloc.h:135:17: error: unknown type name 'ssize_t'; did you mean 'size_t'?\n  135 | extern __thread ssize_t zmalloc_used_memory_tl;\n      |                 ^~~~~~~\n      |                 size_t",
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:12:10: error: unknown type name 'ssize_t'; did you mean 'size_t'?\n   12 | __thread ssize_t zmalloc_used_memory_tl = 0;\n      |          ^~~~~~~\n      |          size_t",
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c: In function 'zrealloc_usable':\n/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:75:3: error: unknown type name 'ssize_t'; did you mean 'size_t'?\n   75 |   ssize_t prev = mi_usable_size(ptr);\n      |   ^~~~~~~\n      |   size_t",
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:78:3: error: unknown type name 'ssize_t'; did you mean 'size_t'?\n   78 |   ssize_t uss = mi_usable_size(res);\n      |   ^~~~~~~\n      |   size_t",
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c: In function 'zfree_size':\n/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:90:3: error: unknown type name 'ssize_t'; did you mean 'size_t'?\n   90 |   ssize_t uss = mi_usable_size(ptr);\n      |   ^~~~~~~\n      |   size_t"
+      ],
+      "error_count": 5,
+      "error_types": {
+        "declaration_error": 5
+      }
+    },
+    {
+      "commit_sha": "9a5a9f1e2f803e0022263af42787b5710d79f802",
+      "branch": "abhijat/feat/mem-defrag-stats",
+      "workflow_name": "ci-tests",
+      "job_name": "build (alpine-dev:latest, Debug, clang++, clang, NoSanitizers)",
+      "workflow_id": 16247711350,
+      "job_id": 45873001154,
+      "created_at": "2025-07-13T09:34:03Z",
+      "error_lines": [
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc.h:135:17: error: unknown type name 'ssize_t'; did you mean 'size_t'?",
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:12:10: error: unknown type name 'ssize_t'; did you mean 'size_t'?",
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:75:3: error: unknown type name 'ssize_t'; did you mean 'size_t'?",
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:78:3: error: unknown type name 'ssize_t'; did you mean 'size_t'?",
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:90:3: error: unknown type name 'ssize_t'; did you mean 'size_t'?"
+      ],
+      "error_details": [
+        "In file included from /__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:10:\n/__w/dragonfly/dragonfly/src/redis/zmalloc.h:135:17: error: unknown type name 'ssize_t'; did you mean 'size_t'?\n  135 | extern __thread ssize_t zmalloc_used_memory_tl;\n      |                 ^~~~~~~\n      |                 size_t",
+        "/usr/include/bits/alltypes.h:50:24: note: 'size_t' declared here\n/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:12:10: error: unknown type name 'ssize_t'; did you mean 'size_t'?\n   12 | __thread ssize_t zmalloc_used_memory_tl = 0;\n      |          ^~~~~~~\n      |          size_t",
+        "/usr/include/bits/alltypes.h:50:24: note: 'size_t' declared here\n/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:75:3: error: unknown type name 'ssize_t'; did you mean 'size_t'?\n   75 |   ssize_t prev = mi_usable_size(ptr);\n      |   ^~~~~~~\n      |   size_t",
+        "/usr/include/bits/alltypes.h:50:24: note: 'size_t' declared here\n/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:78:3: error: unknown type name 'ssize_t'; did you mean 'size_t'?\n   78 |   ssize_t uss = mi_usable_size(res);\n      |   ^~~~~~~\n      |   size_t",
+        "/usr/include/bits/alltypes.h:50:24: note: 'size_t' declared here\n/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:90:3: error: unknown type name 'ssize_t'; did you mean 'size_t'?\n   90 |   ssize_t uss = mi_usable_size(ptr);\n      |   ^~~~~~~\n      |   size_t"
+      ],
+      "error_count": 5,
+      "error_types": {
+        "declaration_error": 5
+      }
+    },
+    {
+      "commit_sha": "7db27badb5a9c086678e49f2dd89af0226d3b027",
+      "branch": "abhijat/feat/mem-defrag-stats",
+      "workflow_name": "ci-tests",
+      "job_name": "build (alpine-dev:latest, Release, g++, gcc, -Werror -no-pie, NoSanitizers)",
+      "workflow_id": 16246858034,
+      "job_id": 45870923802,
+      "created_at": "2025-07-13T07:45:55Z",
+      "error_lines": [
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc.h:135:17: error: unknown type name 'ssize_t'; did you mean 'size_t'?",
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:12:10: error: unknown type name 'ssize_t'; did you mean 'size_t'?",
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:75:3: error: unknown type name 'ssize_t'; did you mean 'size_t'?",
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:78:3: error: unknown type name 'ssize_t'; did you mean 'size_t'?",
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:90:3: error: unknown type name 'ssize_t'; did you mean 'size_t'?"
+      ],
+      "error_details": [
+        "In file included from /__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:10:\n/__w/dragonfly/dragonfly/src/redis/zmalloc.h:135:17: error: unknown type name 'ssize_t'; did you mean 'size_t'?\n  135 | extern __thread ssize_t zmalloc_used_memory_tl;\n      |                 ^~~~~~~\n      |                 size_t",
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:12:10: error: unknown type name 'ssize_t'; did you mean 'size_t'?\n   12 | __thread ssize_t zmalloc_used_memory_tl = 0;\n      |          ^~~~~~~\n      |          size_t",
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c: In function 'zrealloc_usable':\n/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:75:3: error: unknown type name 'ssize_t'; did you mean 'size_t'?\n   75 |   ssize_t prev = mi_usable_size(ptr);\n      |   ^~~~~~~\n      |   size_t",
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:78:3: error: unknown type name 'ssize_t'; did you mean 'size_t'?\n   78 |   ssize_t uss = mi_usable_size(res);\n      |   ^~~~~~~\n      |   size_t",
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c: In function 'zfree_size':\n/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:90:3: error: unknown type name 'ssize_t'; did you mean 'size_t'?\n   90 |   ssize_t uss = mi_usable_size(ptr);\n      |   ^~~~~~~\n      |   size_t"
+      ],
+      "error_count": 5,
+      "error_types": {
+        "declaration_error": 5
+      }
+    },
+    {
+      "commit_sha": "85dea293316128925742fba6a615a62ef9caa9a4",
+      "branch": "abhijat/feat/mem-defrag-stats",
+      "workflow_name": "ci-tests",
+      "job_name": "build (alpine-dev:latest, Release, g++, gcc, -Werror -no-pie, NoSanitizers)",
+      "workflow_id": 16246813151,
+      "job_id": 45870824570,
+      "created_at": "2025-07-13T07:40:16Z",
+      "error_lines": [
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc.h:135:17: error: unknown type name 'ssize_t'; did you mean 'size_t'?",
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:12:10: error: unknown type name 'ssize_t'; did you mean 'size_t'?",
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:75:3: error: unknown type name 'ssize_t'; did you mean 'size_t'?",
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:78:3: error: unknown type name 'ssize_t'; did you mean 'size_t'?",
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:90:3: error: unknown type name 'ssize_t'; did you mean 'size_t'?"
+      ],
+      "error_details": [
+        "In file included from /__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:10:\n/__w/dragonfly/dragonfly/src/redis/zmalloc.h:135:17: error: unknown type name 'ssize_t'; did you mean 'size_t'?\n  135 | extern __thread ssize_t zmalloc_used_memory_tl;\n      |                 ^~~~~~~\n      |                 size_t",
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:12:10: error: unknown type name 'ssize_t'; did you mean 'size_t'?\n   12 | __thread ssize_t zmalloc_used_memory_tl = 0;\n      |          ^~~~~~~\n      |          size_t",
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c: In function 'zrealloc_usable':\n/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:75:3: error: unknown type name 'ssize_t'; did you mean 'size_t'?\n   75 |   ssize_t prev = mi_usable_size(ptr);\n      |   ^~~~~~~\n      |   size_t",
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:78:3: error: unknown type name 'ssize_t'; did you mean 'size_t'?\n   78 |   ssize_t uss = mi_usable_size(res);\n      |   ^~~~~~~\n      |   size_t",
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c: In function 'zfree_size':\n/__w/dragonfly/dragonfly/src/redis/zmalloc_mi.c:90:3: error: unknown type name 'ssize_t'; did you mean 'size_t'?\n   90 |   ssize_t uss = mi_usable_size(ptr);\n      |   ^~~~~~~\n      |   size_t"
+      ],
+      "error_count": 5,
+      "error_types": {
+        "declaration_error": 5
+      }
+    },
+    {
+      "commit_sha": "e1ed516ae6f6c1381b2f20b2dbdceee9a84eca20",
+      "branch": "patch-1",
+      "workflow_name": "ci-tests",
+      "job_name": "build (ubuntu-dev:20, Debug, g++, gcc, -Werror -no-pie, NoSanitizers)",
+      "workflow_id": 16230238285,
+      "job_id": 45834245295,
+      "created_at": "2025-07-11T21:37:49Z",
+      "error_lines": [
+        "../src/core/qlist.h:270:12: error: 'dfly::QList::bookmark_count_' will be initialized after [-Werror=reorder]",
+        "../src/core/qlist.h:267:7: error:   'signed char:2 dfly::QList::compr_method_' [-Werror=reorder]",
+        "../src/core/qlist.cc:392:1: error:   when initialized here [-Werror=reorder]"
+      ],
+      "error_details": [
+        "In file included from ../src/core/qlist.cc:5:\n../src/core/qlist.h:270:12: error: 'dfly::QList::bookmark_count_' will be initialized after [-Werror=reorder]\n  270 |   unsigned bookmark_count_ : QL_BM_BITS;\n      |            ^~~~~~~~~~~~~~~",
+        "../src/core/qlist.h:267:7: error:   'signed char:2 dfly::QList::compr_method_' [-Werror=reorder]\n  267 |   int compr_method_ : 2;    // 0 - lzf, 1 - lz4\n      |       ^~~~~~~~~~~~~",
+        "../src/core/qlist.cc:392:1: error:   when initialized here [-Werror=reorder]\n  392 | QList::QList(QList&& other)\n      | ^~~~~\ncc1plus: all warnings being treated as errors"
+      ],
+      "error_count": 3,
+      "error_types": {
+        "warning_as_error": 3
+      }
+    },
+    {
+      "commit_sha": "032e912684ba22037f059b4bf58fdde4c8a33e49",
+      "branch": "dranikpg-memory-refactor",
+      "workflow_name": "ci-tests",
+      "job_name": "build (ubuntu-dev:20, Debug, g++, gcc, -Werror -no-pie, NoSanitizers)",
+      "workflow_id": 16072850389,
+      "job_id": 45361188838,
+      "created_at": "2025-07-04T11:34:32Z",
+      "error_lines": [
+        "../src/server/engine_shard.h:253:21: error: 'dfly::EngineShard::queue2_' will be initialized after [-Werror=reorder]",
+        "../src/server/engine_shard.h:252:11: error:   'dfly::TxQueue dfly::EngineShard::txq_' [-Werror=reorder]",
+        "../src/server/engine_shard.cc:479:1: error:   when initialized here [-Werror=reorder]",
+        "../src/server/engine_shard.h:262:20: error: 'dfly::EngineShard::mi_resource_' will be initialized after [-Werror=reorder]",
+        "../src/server/engine_shard.h:255:11: error:   'dfly::ShardId dfly::EngineShard::shard_id_' [-Werror=reorder]"
+      ],
+      "error_details": [
+        "In file included from ../src/server/engine_shard.cc:5:\n../src/server/engine_shard.h:253:21: error: 'dfly::EngineShard::queue2_' will be initialized after [-Werror=reorder]\n  253 |   TaskQueue queue_, queue2_;\n      |                     ^~~~~~~",
+        "../src/server/engine_shard.h:252:11: error:   'dfly::TxQueue dfly::EngineShard::txq_' [-Werror=reorder]\n  252 |   TxQueue txq_;\n      |           ^~~~",
+        "../src/server/engine_shard.cc:479:1: error:   when initialized here [-Werror=reorder]\n  479 | EngineShard::EngineShard(util::ProactorBase* pb, mi_heap_t* heap)\n      | ^~~~~~~~~~~",
+        "In file included from ../src/server/engine_shard.cc:5:\n../src/server/engine_shard.h:262:20: error: 'dfly::EngineShard::mi_resource_' will be initialized after [-Werror=reorder]\n  262 |   MiMemoryResource mi_resource_;\n      |                    ^~~~~~~~~~~~",
+        "../src/server/engine_shard.h:255:11: error:   'dfly::ShardId dfly::EngineShard::shard_id_' [-Werror=reorder]\n  255 |   ShardId shard_id_;\n      |           ^~~~~~~~~"
+      ],
+      "error_count": 5,
+      "error_types": {
+        "warning_as_error": 5
+      }
+    },
+    {
+      "commit_sha": "06a4be2938ba23afbb87b55bae7b0f6eeb193236",
+      "branch": "search/speed-up-numeric-indexes",
+      "workflow_name": "ci-tests",
+      "job_name": "build (ubuntu-dev:20, Debug, g++, gcc, -Werror -no-pie, NoSanitizers)",
+      "workflow_id": 16010776217,
+      "job_id": 45167896070,
+      "created_at": "2025-07-01T21:42:25Z",
+      "error_lines": [
+        "_deps/glog-build/glog/logging.h:869:32: error: comparison of integer expressions of different signedness: 'const long unsigned int' and 'const int' [-Werror=sign-compare]"
+      ],
+      "error_details": [
+        "In file included from ../helio/base/logging.h:45,\n_deps/glog-build/glog/logging.h:869:32: error: comparison of integer expressions of different signedness: 'const long unsigned int' and 'const int' [-Werror=sign-compare]\n  869 | DEFINE_CHECK_OP_IMPL(Check_GT, > )\n      |                                ^\n_deps/glog-build/glog/logging.h:215:53: note: in definition of macro 'GOOGLE_PREDICT_TRUE'\n  215 | #define GOOGLE_PREDICT_TRUE(x) (__builtin_expect(!!(x), 1))\n      |                                                     ^\n_deps/glog-build/glog/logging.h:869:1: note: in expansion of macro 'DEFINE_CHECK_OP_IMPL'\n  869 | DEFINE_CHECK_OP_IMPL(Check_GT, > )\n      | ^~~~~~~~~~~~~~~~~~~~\ncc1plus: all warnings being treated as errors"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "2d7131e7c3ece4943656f528555415616e641b3f",
+      "branch": "search/speed-up-numeric-indexes",
+      "workflow_name": "ci-tests",
+      "job_name": "build (ubuntu-dev:20, Debug, g++, gcc, -Werror -no-pie, NoSanitizers)",
+      "workflow_id": 16010238013,
+      "job_id": 45166232043,
+      "created_at": "2025-07-01T21:10:53Z",
+      "error_lines": [
+        "_deps/glog-build/glog/logging.h:869:32: error: comparison of integer expressions of different signedness: 'const long unsigned int' and 'const int' [-Werror=sign-compare]"
+      ],
+      "error_details": [
+        "In file included from ../helio/base/logging.h:45,\n_deps/glog-build/glog/logging.h:869:32: error: comparison of integer expressions of different signedness: 'const long unsigned int' and 'const int' [-Werror=sign-compare]\n  869 | DEFINE_CHECK_OP_IMPL(Check_GT, > )\n      |                                ^\n_deps/glog-build/glog/logging.h:215:53: note: in definition of macro 'GOOGLE_PREDICT_TRUE'\n  215 | #define GOOGLE_PREDICT_TRUE(x) (__builtin_expect(!!(x), 1))\n      |                                                     ^\n_deps/glog-build/glog/logging.h:869:1: note: in expansion of macro 'DEFINE_CHECK_OP_IMPL'\n  869 | DEFINE_CHECK_OP_IMPL(Check_GT, > )\n      | ^~~~~~~~~~~~~~~~~~~~"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "b6b9cb27df49ae446dc562c5a964951f35248945",
+      "branch": "abhijat/feat/5092/support-latency-percentiles",
+      "workflow_name": "ci-tests",
+      "job_name": "build (ubuntu-dev:24, Debug, clang++, clang, -Wno-error=unused-command-line-argument, Sanitizers)",
+      "workflow_id": 15920518211,
+      "job_id": 44906112401,
+      "created_at": "2025-06-27T07:16:00Z",
+      "error_lines": [
+        "/__w/dragonfly/dragonfly/src/server/server_family.cc:2889:44: error: 'FormatSpecTemplate<void>' is unavailable: Format specified does not match the arguments passed."
+      ],
+      "error_details": [
+        "/__w/dragonfly/dragonfly/src/core/dash.h:573:34: note: in instantiation of function template specialization 'dfly::detail::Segment<dfly::CompactObj, dfly::CompactObj, dfly::detail::PrimeTablePolicy>::CVCOnInsert<true>' requested here\n/__w/dragonfly/dragonfly/src/server/snapshot.cc:429:14: note: in instantiation of function template specialization 'dfly::DashTable<dfly::CompactObj, dfly::CompactObj, dfly::detail::PrimeTablePolicy>::CVCUponInsert<std::basic_string_view<char>, (lambda at /__w/dragonfly/dragonfly/src/server/snapshot.cc:430:28)>' requested here\n/__w/dragonfly/dragonfly/src/server/server_family.cc:2889:44: error: 'FormatSpecTemplate<void>' is unavailable: Format specified does not match the arguments passed.\n 2889 |         stats.emplace_back(absl::StrFormat(\"p%d=%d\", percentile, value));\n      |                                            ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "other_error": 1
+      }
+    },
+    {
+      "commit_sha": "fa11d9390c97d9fedf0405f01872fa09cb792258",
+      "branch": "dranikpg-suffix-search",
+      "workflow_name": "ci-tests",
+      "job_name": "build (ubuntu-dev:20, Release, g++, gcc, -Werror -no-pie, NoSanitizers)",
+      "workflow_id": 15765148357,
+      "job_id": 44439970780,
+      "created_at": "2025-06-19T19:35:05Z",
+      "error_lines": [
+        "../src/core/search/search.cc:330:45: error: parameter 'index' set but not used [-Werror=unused-but-set-parameter]"
+      ],
+      "error_details": [
+        "/usr/include/c++/9/type_traits:2330:26:   required by substitution of 'template<class _Fn, class ... _Args> static std::__result_of_success<decltype (declval<_Fn>()((declval<_Args>)()...)), std::__invoke_other> std::__result_of_other_impl::_S_test(int) [with _Fn = dfly::search::{anonymous}::BasicSearch::SearchGeneric(const dfly::search::AstNode&, std::string_view, bool)::<lambda(const auto:38&)>&; _Args = {const dfly::search::AstAffixNode<dfly::search::TagType::INFIX>&}]'\n/usr/include/c++/9/type_traits:2341:55:   required from 'struct std::__result_of_impl<false, false, dfly::search::{anonymous}::BasicSearch::SearchGeneric(const dfly::search::AstNode&, std::string_view, bool)::<lambda(const auto:38&)>&, const dfly::search::AstAffixNode<dfly::search::TagType::INFIX>&>'\n/usr/include/c++/9/type_traits:2346:12:   required from 'struct std::__invoke_result<dfly::search::{anonymous}::BasicSearch::SearchGeneric(const dfly::search::AstNode&, std::string_view, bool)::<lambda(const auto:38&)>&, const dfly::search::AstAffixNode<dfly::search::TagType::INFIX>&>'\n/usr/include/c++/9/bits/invoke.h:89:5:   required by substitution of 'template<class _Callable, class ... _Args> constexpr typename std::__invoke_result<_Functor, _ArgTypes>::type std::__invoke(_Callable&&, _Args&& ...) [with _Callable = dfly::search::{anonymous}::BasicSearch::SearchGeneric(const dfly::search::AstNode&, std::string_view, bool)::<lambda(const auto:38&)>&; _Args = {const dfly::search::AstAffixNode<dfly::search::TagType::INFIX>&}]'\n/usr/include/c++/9/variant:981:24:   [ skipping 3 instantiation contexts, use -ftemplate-backtrace-limit=0 to disable ]\n../src/core/search/search.cc:330:45: error: parameter 'index' set but not used [-Werror=unused-but-set-parameter]\n  330 |     auto mapping = [&node, this](TextIndex* index) {\n      |                                  ~~~~~~~~~~~^~~~~\ncc1plus: all warnings being treated as errors"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "e5fa885230ad8da50239a3d65c1431dd6d793557",
+      "branch": "Pr2",
+      "workflow_name": "ci-tests",
+      "job_name": "build (ubuntu-dev:20, Debug, g++, gcc, -Werror -no-pie, NoSanitizers)",
+      "workflow_id": 15602400023,
+      "job_id": 43944637251,
+      "created_at": "2025-06-12T05:28:38Z",
+      "error_lines": [
+        "../src/server/engine_shard_set.cc:23:17: error: 'MemoryBytesFlag' is not a member of 'dfly'; did you mean 'facade::MemoryBytesFlag'?",
+        "_deps/abseil_cpp-src/absl/flags/flag.h:265:27: error: template argument 1 is invalid",
+        "../src/server/engine_shard_set.cc:23:17: error: 'MemoryBytesFlag' in namespace 'dfly' does not name a type",
+        "_deps/abseil_cpp-src/absl/flags/flag.h:253:76: error: expected unqualified-id before ')' token",
+        "../src/server/engine_shard_set.cc:23:11: error: expected type-specifier",
+        "_deps/abseil_cpp-src/absl/flags/flag.h:255:69: error: expected primary-expression before '.' token",
+        "_deps/abseil_cpp-src/absl/flags/flag.h:269:34: error: template argument 1 is invalid",
+        "_deps/abseil_cpp-src/absl/flags/flag.h:203:72: error: no matching function for call to 'DefaultArg<<expression error>, AbslFlagDefaultGenFortiered_max_file_size>(int)'",
+        "_deps/abseil_cpp-src/absl/flags/flag.h:203:72: error: template argument 1 is invalid",
+        "_deps/abseil_cpp-src/absl/flags/flag.h:269:36: error: scalar object 'FLAGS_tiered_max_file_size' requires one element in initializer",
+        "_deps/abseil_cpp-src/absl/flags/flag.h:215:46: error: template argument 1 is invalid"
+      ],
+      "error_details": [
+        "In file included from ../helio/base/flags.h:7,\n../src/server/engine_shard_set.cc:23:17: error: 'MemoryBytesFlag' is not a member of 'dfly'; did you mean 'facade::MemoryBytesFlag'?\n   23 | ABSL_FLAG(dfly::MemoryBytesFlag, tiered_max_file_size, dfly::MemoryBytesFlag{},\n      |                 ^~~~~~~~~~~~~~~\n_deps/abseil_cpp-src/absl/flags/flag.h:265:23: note: in definition of macro 'ABSL_FLAG_IMPL'\n  265 |   extern ::absl::Flag<Type> FLAGS_##name;                                     \\\n      |                       ^~~~\n../src/server/engine_shard_set.cc:23:1: note: in expansion of macro 'ABSL_FLAG'\n   23 | ABSL_FLAG(dfly::MemoryBytesFlag, tiered_max_file_size, dfly::MemoryBytesFlag{},\n      | ^~~~~~~~~",
+        "In file included from ../src/facade/dragonfly_connection.h:18,\nIn file included from ../helio/base/flags.h:7,\n_deps/abseil_cpp-src/absl/flags/flag.h:265:27: error: template argument 1 is invalid\n  265 |   extern ::absl::Flag<Type> FLAGS_##name;                                     \\\n      |                           ^\n_deps/abseil_cpp-src/absl/flags/flag.h:169:3: note: in expansion of macro 'ABSL_FLAG_IMPL'\n  169 |   ABSL_FLAG_IMPL(Type, name, default_value, help)\n      |   ^~~~~~~~~~~~~~\n../src/server/engine_shard_set.cc:23:1: note: in expansion of macro 'ABSL_FLAG'\n   23 | ABSL_FLAG(dfly::MemoryBytesFlag, tiered_max_file_size, dfly::MemoryBytesFlag{},\n      | ^~~~~~~~~",
+        "../src/server/engine_shard_set.cc:23:17: error: 'MemoryBytesFlag' in namespace 'dfly' does not name a type\n   23 | ABSL_FLAG(dfly::MemoryBytesFlag, tiered_max_file_size, dfly::MemoryBytesFlag{},\n      |                 ^~~~~~~~~~~~~~~",
+        "_deps/abseil_cpp-src/absl/flags/flag.h:253:76: error: expected unqualified-id before ')' token\n  253 |     Type value = absl::flags_internal::InitDefaultValue<Type>(default_value); \\\n      |                                                                            ^",
+        "../src/server/engine_shard_set.cc:23:11: error: expected type-specifier\n   23 | ABSL_FLAG(dfly::MemoryBytesFlag, tiered_max_file_size, dfly::MemoryBytesFlag{},\n      |           ^~~~",
+        "_deps/abseil_cpp-src/absl/flags/flag.h:255:69: error: expected primary-expression before '.' token\n  255 |       new (absl_flag_default_loc) Type(AbslFlagDefaultGenFor##name{}.value);  \\\n      |                                                                     ^",
+        "In file included from ../src/facade/dragonfly_connection.h:18,\nIn file included from ../helio/base/flags.h:7,\n_deps/abseil_cpp-src/absl/flags/flag.h:269:34: error: template argument 1 is invalid\n  269 |   ABSL_CONST_INIT absl::Flag<Type> FLAGS_##name{                              \\\n      |                                  ^\n_deps/abseil_cpp-src/absl/flags/flag.h:169:3: note: in expansion of macro 'ABSL_FLAG_IMPL'\n  169 |   ABSL_FLAG_IMPL(Type, name, default_value, help)\n      |   ^~~~~~~~~~~~~~\n../src/server/engine_shard_set.cc:23:1: note: in expansion of macro 'ABSL_FLAG'\n   23 | ABSL_FLAG(dfly::MemoryBytesFlag, tiered_max_file_size, dfly::MemoryBytesFlag{},\n      | ^~~~~~~~~",
+        "In file included from ../src/facade/dragonfly_connection.h:18,\nIn file included from ../helio/base/flags.h:7,\n_deps/abseil_cpp-src/absl/flags/flag.h:203:72: error: no matching function for call to 'DefaultArg<<expression error>, AbslFlagDefaultGenFortiered_max_file_size>(int)'\n  203 |   absl::flags_internal::DefaultArg<Type, AbslFlagDefaultGenFor##name>(0)\n      |                                                                        ^",
+        "In file included from _deps/abseil_cpp-src/absl/flags/flag.h:41,\nIn file included from ../helio/base/flags.h:7,\n_deps/abseil_cpp-src/absl/flags/flag.h:203:72: error: template argument 1 is invalid\n  203 |   absl::flags_internal::DefaultArg<Type, AbslFlagDefaultGenFor##name>(0)\n      |                                                                        ^",
+        "_deps/abseil_cpp-src/absl/flags/flag.h:269:36: error: scalar object 'FLAGS_tiered_max_file_size' requires one element in initializer\n  269 |   ABSL_CONST_INIT absl::Flag<Type> FLAGS_##name{                              \\\n      |                                    ^~~~~~\n_deps/abseil_cpp-src/absl/flags/flag.h:269:36: note: in definition of macro 'ABSL_FLAG_IMPL'\n  269 |   ABSL_CONST_INIT absl::Flag<Type> FLAGS_##name{                              \\\n      |                                    ^~~~~~\n../src/server/engine_shard_set.cc:23:1: note: in expansion of macro 'ABSL_FLAG'\n   23 | ABSL_FLAG(dfly::MemoryBytesFlag, tiered_max_file_size, dfly::MemoryBytesFlag{},\n      | ^~~~~~~~~",
+        "In file included from ../src/facade/dragonfly_connection.h:18,\nIn file included from ../helio/base/flags.h:7,\n_deps/abseil_cpp-src/absl/flags/flag.h:215:46: error: template argument 1 is invalid\n  215 |   absl::flags_internal::FlagRegistrar<T, true>(ABSL_FLAG_IMPL_FLAG_PTR(flag), \\\n      |                                              ^"
+      ],
+      "error_count": 11,
+      "error_types": {
+        "declaration_error": 2,
+        "other_error": 5,
+        "syntax_error": 3,
+        "function_error": 1
+      }
+    },
+    {
+      "commit_sha": "db6fffb1bd3681d746767d0bb10631f18e9f1380",
+      "branch": "fix-pubsub-unsub",
+      "workflow_name": "ci-tests",
+      "job_name": "build (ubuntu-dev:20, Debug, g++, gcc, -Werror -no-pie, NoSanitizers)",
+      "workflow_id": 15506152297,
+      "job_id": 43661253795,
+      "created_at": "2025-06-07T08:41:18Z",
+      "error_lines": [
+        "../src/facade/dragonfly_connection.cc:515:14: error: '_in' is not a member of 'base'"
+      ],
+      "error_details": [
+        "../src/facade/dragonfly_connection.cc:515:14: error: '_in' is not a member of 'base'\n  515 |       !base::_in(pub_msg.channel, {\"unsubscribe\", \"punsubscribe\"}))\n      |              ^~~"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "member_error": 1
+      }
+    },
+    {
+      "commit_sha": "2ccf8213b7b9f787c885abceade42f7327048fdd",
+      "branch": "kpr2",
+      "workflow_name": "ci-tests",
+      "job_name": "build (ubuntu-dev:24, Debug, clang++, clang, -Wno-error=unused-command-line-argument, Sanitizers)",
+      "workflow_id": 15465249622,
+      "job_id": 43535717278,
+      "created_at": "2025-06-05T10:56:46Z",
+      "error_lines": [
+        "/__w/dragonfly/dragonfly/src/server/dflycmd.cc:341:30: error: acquiring mutex 'replica_ptr->shared_mu' that is already held [-Werror,-Wthread-safety-analysis]"
+      ],
+      "error_details": [
+        "/__w/dragonfly/dragonfly/src/server/journal/streamer.cc:345:12: note: in instantiation of function template specialization 'dfly::DashTable<dfly::CompactObj, dfly::CompactObj, dfly::detail::PrimeTablePolicy>::CVCUponInsert<std::basic_string_view<char>, (lambda at /__w/dragonfly/dragonfly/src/server/journal/streamer.cc:345:50)>' requested here\n/__w/dragonfly/dragonfly/src/server/dflycmd.cc:341:30: error: acquiring mutex 'replica_ptr->shared_mu' that is already held [-Werror,-Wthread-safety-analysis]\n  341 |         util::fb2::LockGuard lk{replica_ptr->shared_mu};\n      |                              ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "17bba4e4fd63b6b919c7ca3700f7ee0a96b332d5",
+      "branch": "bobik/multitransation_race_condition",
+      "workflow_name": "ci-tests",
+      "job_name": "build (ubuntu-dev:20, Debug, g++, gcc, -Werror -no-pie, NoSanitizers)",
+      "workflow_id": 15307461246,
+      "job_id": 43063673142,
+      "created_at": "2025-05-28T18:11:48Z",
+      "error_lines": [
+        "../src/server/transaction.cc:1247:10: error: variable 'lock_args' set but not used [-Werror=unused-but-set-variable]"
+      ],
+      "error_details": [
+        "../src/server/transaction.cc:1247:10: error: variable 'lock_args' set but not used [-Werror=unused-but-set-variable]\n 1247 |     auto lock_args = GetLockArgs(shard->shard_id());\n      |          ^~~~~~~~~\ncc1plus: all warnings being treated as errors"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "3f420d72f77baeda7805218908e7909ddf37f407",
+      "branch": "Pr3",
+      "workflow_name": "ci-tests",
+      "job_name": "build (ubuntu-dev:20, Debug, g++, gcc, -Werror -no-pie, NoSanitizers)",
+      "workflow_id": 15294304350,
+      "job_id": 43019664461,
+      "created_at": "2025-05-28T07:35:35Z",
+      "error_lines": [
+        "../src/core/dash_internal.h:1218:69: error: parameter 'dest_id' set but not used [-Werror=unused-but-set-parameter]"
+      ],
+      "error_details": [
+        "In file included from ../src/core/dash.h:10,\n../src/core/dash_internal.h:1218:69: error: parameter 'dest_id' set but not used [-Werror=unused-but-set-parameter]\n 1218 |   auto update_version = [dest_right](const Bucket& src, PhysicalBid dest_id) {\n      |                                                         ~~~~~~~~~~~~^~~~~~~\n../src/core/dash_internal.h: In instantiation of 'void dfly::detail::Segment<KeyType, ValueType, Policy>::Split(HFunc&&, dfly::detail::Segment<KeyType, ValueType, Policy>*) [with HashFn = dfly::DashTable<_Key, _Value, Policy>::Split(uint32_t) [with _Key = dfly::CompactObj; _Value = unsigned int; Policy = dfly::detail::ExpireTablePolicy; uint32_t = unsigned int]::<lambda(const auto:46&)>; KeyType = dfly::CompactObj; ValueType = unsigned int; Policy = dfly::detail::ExpireTablePolicy]':\n../src/core/dash.h:908:3:   required from 'void dfly::DashTable<_Key, _Value, Policy>::Split(uint32_t) [with _Key = dfly::CompactObj; _Value = unsigned int; Policy = dfly::detail::ExpireTablePolicy; uint32_t = unsigned int]'\n../src/core/dash.h:876:5:   required from 'std::pair<dfly::DashTable<_Key, _Value, Policy>::Iterator<false>, bool> dfly::DashTable<_Key, _Value, Policy>::InsertInternal(U&&, V&&, EvictionPolicy&, dfly::DashTable<_Key, _Value, Policy>::InsertMode) [with U = dfly::CompactObj; V = unsigned int&; EvictionPolicy = dfly::DashTable<dfly::CompactObj, unsigned int, dfly::detail::ExpireTablePolicy>::DefaultEvictionPolicy; _Key = dfly::CompactObj; _Value = unsigned int; Policy = dfly::detail::ExpireTablePolicy]'\n../src/core/dash.h:117:56:   required from 'std::pair<dfly::DashTable<_Key, _Value, Policy>::Iterator<false>, bool> dfly::DashTable<_Key, _Value, Policy>::Insert(U&&, V&&) [with U = dfly::CompactObj; V = unsigned int&; _Key = dfly::CompactObj; _Value = unsigned int; Policy = dfly::detail::ExpireTablePolicy]'\n../src/server/db_slice.cc:935:57:   required from here"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "warning_as_error": 1
+      }
+    },
+    {
+      "commit_sha": "9d642a64bcb99f53ad5865b3b17639709c9c5226",
+      "branch": "Pr7",
+      "workflow_name": "ci-tests",
+      "job_name": "build (ubuntu-dev:20, Debug, g++, gcc, -Werror -no-pie, NoSanitizers)",
+      "workflow_id": 15237497867,
+      "job_id": 42853303254,
+      "created_at": "2025-05-25T11:42:02Z",
+      "error_lines": [
+        "../src/server/db_slice.cc:1366:58: error: 'const unsigned int dfly::detail::Segment<dfly::CompactObj, dfly::CompactObj, dfly::detail::PrimeTablePolicy>::kTotalBuckets' is private within this context"
+      ],
+      "error_details": [
+        "../src/server/db_slice.cc:1366:58: error: 'const unsigned int dfly::detail::Segment<dfly::CompactObj, dfly::CompactObj, dfly::detail::PrimeTablePolicy>::kTotalBuckets' is private within this context\n 1366 |   constexpr int32_t num_buckets = PrimeTable::Segment_t::kTotalBuckets;\n      |                                                          ^~~~~~~~~~~~~"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "other_error": 1
+      }
+    },
+    {
+      "commit_sha": "b1804072e937870716ea069c32d05395c6673a33",
+      "branch": "bobik/better_logging_around_replica",
+      "workflow_name": "ci-tests",
+      "job_name": "build (ubuntu-dev:20, Debug, g++, gcc, -Werror -no-pie, NoSanitizers)",
+      "workflow_id": 15037725026,
+      "job_id": 42262467026,
+      "created_at": "2025-05-15T05:58:11Z",
+      "error_lines": [
+        "../src/server/replica.cc:1193:32: error: request for member 'load' in '((const dfly::Replica*)this)->dfly::Replica::state_mask_', which is of non-class type 'const unsigned int'"
+      ],
+      "error_details": [
+        "../src/server/replica.cc:1193:32: error: request for member 'load' in '((const dfly::Replica*)this)->dfly::Replica::state_mask_', which is of non-class type 'const unsigned int'\n 1193 |   uint32_t state = state_mask_.load();\n      |                                ^~~~"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "other_error": 1
+      }
+    },
+    {
+      "commit_sha": "3c64165a7a74c38792b802c955b904702984ac33",
+      "branch": "main",
+      "workflow_name": "ci-tests",
+      "job_name": "build (ubuntu-dev:20, Debug, g++, gcc, -Werror -no-pie, NoSanitizers)",
+      "workflow_id": 15002378875,
+      "job_id": 42152421505,
+      "created_at": "2025-05-13T16:57:27Z",
+      "error_lines": [
+        "../helio/base/iterator.h:23:25: error: 'base::it::CompoundIterator<F, Its>::CompoundIterator(F, T&&) [with T = const std::basic_string_view<char>*; F = facade::<lambda(auto:29&&)>; Its = {const std::basic_string_view<char, std::char_traits<char> >*, const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*}]', declared using local type 'facade::<lambda(auto:29&&)>', is used but never defined [-fpermissive]",
+        "../helio/base/iterator.h:23:25: error: 'base::it::CompoundIterator<F, Its>::CompoundIterator(F, T&&) [with T = const std::__cxx11::basic_string<char>*; F = facade::<lambda(auto:29&&)>; Its = {const std::basic_string_view<char, std::char_traits<char> >*, const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*}]', declared using local type 'facade::<lambda(auto:29&&)>', is used but never defined [-fpermissive]"
+      ],
+      "error_details": [
+        "In file included from /usr/include/c++/9/bits/basic_string.h:48,\n/usr/include/c++/9/string_view:123:39: note:   initializing argument 1 of 'constexpr std::basic_string_view<_CharT, _Traits>::basic_string_view(const _CharT*) [with _CharT = char; _Traits = std::char_traits<char>]'\nIn file included from ../src/facade/facade_types.h:15,\n../helio/base/iterator.h:23:25: error: 'base::it::CompoundIterator<F, Its>::CompoundIterator(F, T&&) [with T = const std::basic_string_view<char>*; F = facade::<lambda(auto:29&&)>; Its = {const std::basic_string_view<char, std::char_traits<char> >*, const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*}]', declared using local type 'facade::<lambda(auto:29&&)>', is used but never defined [-fpermissive]\n   23 |   template <typename T> CompoundIterator(F f, T&& it) : f(std::move(f)), it(std::forward<T>(it)) {\n      |                         ^~~~~~~~~~~~~~~~",
+        "../helio/base/iterator.h:23:25: error: 'base::it::CompoundIterator<F, Its>::CompoundIterator(F, T&&) [with T = const std::__cxx11::basic_string<char>*; F = facade::<lambda(auto:29&&)>; Its = {const std::basic_string_view<char, std::char_traits<char> >*, const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*}]', declared using local type 'facade::<lambda(auto:29&&)>', is used but never defined [-fpermissive]"
+      ],
+      "error_count": 2,
+      "error_types": {
+        "other_error": 2
+      }
+    },
+    {
+      "commit_sha": "224ef8fc2691bc483a0b98835d9e39301aae8bdf",
+      "branch": "prob_base",
+      "workflow_name": "ci-tests",
+      "job_name": "build (alpine-dev:latest, Debug, g++, gcc, -Werror -no-pie, NoSanitizers)",
+      "workflow_id": 15000692067,
+      "job_id": 42146579361,
+      "created_at": "2025-05-13T15:31:37Z",
+      "error_lines": [
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc.h:135:17: error: unknown type name 'ssize_t'; did you mean 'size_t'?"
+      ],
+      "error_details": [
+        "In file included from /__w/dragonfly/dragonfly/src/redis/td_malloc.h:17,\n/__w/dragonfly/dragonfly/src/redis/zmalloc.h:135:17: error: unknown type name 'ssize_t'; did you mean 'size_t'?\n  135 | extern __thread ssize_t zmalloc_used_memory_tl;\n      |                 ^~~~~~~\n      |                 size_t"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      }
+    },
+    {
+      "commit_sha": "5f5e032453545dee645aa149a39b1f21dd9ec6e3",
+      "branch": "prob_base",
+      "workflow_name": "ci-tests",
+      "job_name": "build (alpine-dev:latest, Debug, g++, gcc, -Werror -no-pie, NoSanitizers)",
+      "workflow_id": 14972632258,
+      "job_id": 42056937874,
+      "created_at": "2025-05-12T12:47:40Z",
+      "error_lines": [
+        "/__w/dragonfly/dragonfly/src/redis/zmalloc.h:135:17: error: unknown type name 'ssize_t'; did you mean 'size_t'?"
+      ],
+      "error_details": [
+        "In file included from /__w/dragonfly/dragonfly/src/redis/td_malloc.h:17,\n/__w/dragonfly/dragonfly/src/redis/zmalloc.h:135:17: error: unknown type name 'ssize_t'; did you mean 'size_t'?\n  135 | extern __thread ssize_t zmalloc_used_memory_tl;\n      |                 ^~~~~~~\n      |                 size_t"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      }
+    },
+    {
+      "commit_sha": "0862b43d27445581a0889fb432301114e834881b",
+      "branch": "main",
+      "workflow_name": "ci-tests",
+      "job_name": "build (ubuntu-dev:20, Debug, g++, gcc, -Werror -no-pie, NoSanitizers)",
+      "workflow_id": 14943298614,
+      "job_id": 41983391347,
+      "created_at": "2025-05-10T07:40:54Z",
+      "error_lines": [
+        "../helio/base/iterator.h:23:25: error: 'base::it::CompoundIterator<F, Its>::CompoundIterator(F, T&&) [with T = const std::basic_string_view<char>*; F = facade::<lambda(auto:29&&)>; Its = {const std::basic_string_view<char, std::char_traits<char> >*, const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*}]', declared using local type 'facade::<lambda(auto:29&&)>', is used but never defined [-fpermissive]",
+        "../helio/base/iterator.h:23:25: error: 'base::it::CompoundIterator<F, Its>::CompoundIterator(F, T&&) [with T = const std::__cxx11::basic_string<char>*; F = facade::<lambda(auto:29&&)>; Its = {const std::basic_string_view<char, std::char_traits<char> >*, const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*}]', declared using local type 'facade::<lambda(auto:29&&)>', is used but never defined [-fpermissive]"
+      ],
+      "error_details": [
+        "In file included from /usr/include/c++/9/bits/basic_string.h:48,\n/usr/include/c++/9/string_view:123:39: note:   initializing argument 1 of 'constexpr std::basic_string_view<_CharT, _Traits>::basic_string_view(const _CharT*) [with _CharT = char; _Traits = std::char_traits<char>]'\nIn file included from ../src/facade/facade_types.h:15,\n../helio/base/iterator.h:23:25: error: 'base::it::CompoundIterator<F, Its>::CompoundIterator(F, T&&) [with T = const std::basic_string_view<char>*; F = facade::<lambda(auto:29&&)>; Its = {const std::basic_string_view<char, std::char_traits<char> >*, const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*}]', declared using local type 'facade::<lambda(auto:29&&)>', is used but never defined [-fpermissive]\n   23 |   template <typename T> CompoundIterator(F f, T&& it) : f(std::move(f)), it(std::forward<T>(it)) {\n      |                         ^~~~~~~~~~~~~~~~",
+        "../helio/base/iterator.h:23:25: error: 'base::it::CompoundIterator<F, Its>::CompoundIterator(F, T&&) [with T = const std::__cxx11::basic_string<char>*; F = facade::<lambda(auto:29&&)>; Its = {const std::basic_string_view<char, std::char_traits<char> >*, const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*}]', declared using local type 'facade::<lambda(auto:29&&)>', is used but never defined [-fpermissive]"
+      ],
+      "error_count": 2,
+      "error_types": {
+        "other_error": 2
+      }
+    },
+    {
+      "commit_sha": "bfad52e54b742e8047dfce3d131961ed4609b5f1",
+      "branch": "Pr3",
+      "workflow_name": "ci-tests",
+      "job_name": "build (ubuntu-dev:20, Debug, g++, gcc, -Werror -no-pie, NoSanitizers)",
+      "workflow_id": 14890122697,
+      "job_id": 41819875370,
+      "created_at": "2025-05-07T18:01:59Z",
+      "error_lines": [
+        "../src/core/compact_object.cc:1015:23: error: no matching function for call to 'dfly::CompactObj::GetString(std::string**) const'",
+        "../src/core/compact_object.cc:445:58: error: this statement may fall through [-Werror=implicit-fallthrough=]",
+        "../src/core/compact_object.cc:459:51: error: this statement may fall through [-Werror=implicit-fallthrough=]",
+        "../src/core/compact_object.cc:473:51: error: this statement may fall through [-Werror=implicit-fallthrough=]"
+      ],
+      "error_details": [
+        "../src/core/compact_object.cc:1015:23: error: no matching function for call to 'dfly::CompactObj::GetString(std::string**) const'\n 1015 |     GetString(&scratch);\n      |                       ^",
+        "In file included from ../src/core/compact_object.cc:5:\n../src/core/compact_object.cc:445:58: error: this statement may fall through [-Werror=implicit-fallthrough=]\n  445 |           LOG(FATAL) << \"Unknown sorted set encoding\" << encoding_;\n      |                                                          ^~~~~~~~~\n../src/core/compact_object.cc:448:5: note: here\n  448 |     case OBJ_SET:\n      |     ^~~~",
+        "../src/core/compact_object.cc:459:51: error: this statement may fall through [-Werror=implicit-fallthrough=]\n  459 |           LOG(FATAL) << \"Unexpected encoding \" << encoding_;\n      |                                                   ^~~~~~~~~\n../src/core/compact_object.cc:461:5: note: here\n  461 |     case OBJ_HASH:\n      |     ^~~~",
+        "../src/core/compact_object.cc:473:51: error: this statement may fall through [-Werror=implicit-fallthrough=]\n  473 |           LOG(FATAL) << \"Unexpected encoding \" << encoding_;\n      |                                                   ^~~~~~~~~\n../src/core/compact_object.cc:475:5: note: here\n  475 |     case OBJ_STREAM:\n      |     ^~~~\ncc1plus: all warnings being treated as errors"
+      ],
+      "error_count": 4,
+      "error_types": {
+        "function_error": 1,
+        "warning_as_error": 3
+      }
+    },
+    {
+      "commit_sha": "a6b67818d8e4d2ea0960f756d744036ddd99f456",
+      "branch": "bobik/better_logging_around_replica",
+      "workflow_name": "ci-tests",
+      "job_name": "build (ubuntu-dev:20, Release, g++, gcc, -Werror -no-pie, NoSanitizers)",
+      "workflow_id": 14880259645,
+      "job_id": 41786484614,
+      "created_at": "2025-05-07T09:43:29Z",
+      "error_lines": [
+        "../src/facade/socket_utils.cc:31:23: error: 'ReadTcpInfo' is not a member of 'io'; did you mean 'ReadMemInfo'?",
+        "../src/facade/socket_utils.cc:33:26: error: 'ReadTcp6Info' is not a member of 'io'; did you mean 'ReadMemInfo'?",
+        "../src/facade/socket_utils.cc:40:31: error: 'TcpStateToString' is not a member of 'io'"
+      ],
+      "error_details": [
+        "../src/facade/socket_utils.cc:31:23: error: 'ReadTcpInfo' is not a member of 'io'; did you mean 'ReadMemInfo'?\n   31 |   auto tcp_info = io::ReadTcpInfo(sock_stat.st_ino);\n      |                       ^~~~~~~~~~~\n      |                       ReadMemInfo",
+        "../src/facade/socket_utils.cc:33:26: error: 'ReadTcp6Info' is not a member of 'io'; did you mean 'ReadMemInfo'?\n   33 |     auto tcp6_info = io::ReadTcp6Info(sock_stat.st_ino);\n      |                          ^~~~~~~~~~~~\n      |                          ReadMemInfo",
+        "../src/facade/socket_utils.cc:40:31: error: 'TcpStateToString' is not a member of 'io'\n   40 |   std::string state_str = io::TcpStateToString(tcp_info->state);\n      |                               ^~~~~~~~~~~~~~~~"
+      ],
+      "error_count": 3,
+      "error_types": {
+        "declaration_error": 2,
+        "member_error": 1
+      }
+    }
+  ],
+  "error_classification_report": {
+    "summary": {
+      "total_error_types": 8,
+      "total_error_instances": 101,
+      "most_common_error": [
+        "declaration_error",
+        51
+      ],
+      "commits_affected": 40
+    },
+    "by_category": {
+      "syntax_errors": 6,
+      "type_errors": 1,
+      "declaration_errors": 51,
+      "function_errors": 4,
+      "member_errors": 2,
+      "semantic_errors": 2,
+      "werror_errors": 21,
+      "other_errors": 14
+    },
+    "top_errors": {
+      "declaration_error": 51,
+      "warning_as_error": 21,
+      "other_error": 14,
+      "syntax_error": 6,
+      "function_error": 4,
+      "semantic_error": 2,
+      "member_error": 2,
+      "type_error": 1,
+      "missing_error": 0,
+      "unexpected_token": 0
+    },
+    "error_frequency": {
+      "semantic_error": 1,
+      "syntax_error": 3,
+      "declaration_error": 19,
+      "type_error": 1,
+      "function_error": 4,
+      "warning_as_error": 13,
+      "other_error": 7,
+      "member_error": 2
+    },
+    "commit_impact": {},
+    "error_examples": {
+      "operator_error": [
+        "no match for 'operator<<' (operand types are 'std::basic_ostream<char>' and 'facade::ErrorReply')"
+      ],
+      "macro_error": [
+        "macro \"LOG_EVERY_N\" passed 3 arguments, but takes just 2",
+        "macro \"LOG_EVERY_T\" requires 2 arguments, but only 1 given"
+      ],
+      "declaration_error": [
+        "'ConsumeJournalChangeItem' has not been declared"
+      ],
+      "type_mismatch": [
+        "cannot convert 'dfly::journal::JournalChangeItem*' to 'int*'"
+      ],
+      "call_error": [
+        "no matching function for call to 'CollectKeys(util::fb2::BlockingCounter&, uint8_t&, const dfly::Tra"
+      ],
+      "undefined_error": [
+        "'LOG_EVERY_T' was not declared in this scope",
+        "'tmp_path' was not declared in this scope",
+        "'THIS' was not declared in this scope"
+      ],
+      "internal_error": [
+        "'*((void*)(& entry)+96).absl::lts_20240722::inlined_vector_internal::Storage<unsigned int, 4, std::a"
+      ],
+      "unused_warning_error": [
+        "parameter 'end' set but not used [-Werror=unused-but-set-parameter]",
+        "parameter 'index' set but not used [-Werror=unused-but-set-parameter]",
+        "variable 'lock_args' set but not used [-Werror=unused-but-set-variable]"
+      ],
+      "function_overload_error": [
+        "no matching function for call to 'dfly::EngineShard::DoDefrag(const float&)'",
+        "no matching function for call to 'dfly::CompactObj::GetString(std::string**) const'"
+      ],
+      "warning_as_error": [
+        "'*((void*)&<anonymous> +40)' may be used uninitialized in this function [-Werror=maybe-uninitialized",
+        "'dfly::QList::bookmark_count_' will be initialized after [-Werror=reorder]",
+        "'signed char:2 dfly::QList::compr_method_' [-Werror=reorder]"
+      ],
+      "access_error": [
+        "'using ChainVectorIterator = std::vector<dfly::DenseSet::DensePtr, std::pmr::polymorphic_allocator<d",
+        "'const unsigned int dfly::detail::Segment<dfly::CompactObj, dfly::CompactObj, dfly::detail::PrimeTab"
+      ],
+      "format_error": [
+        "'FormatSpecTemplate<void>' is unavailable: Format specified does not match the arguments passed."
+      ],
+      "other_error": [
+        "template argument 1 is invalid",
+        "request for member 'load' in '((const dfly::Replica*)this)->dfly::Replica::state_mask_', which is of",
+        "'base::it::CompoundIterator<F, Its>::CompoundIterator(F, T&&) [with T = const std::basic_string_view"
+      ],
+      "member_not_found": [
+        "'_in' is not a member of 'base'"
+      ]
+    }
+  }
+}

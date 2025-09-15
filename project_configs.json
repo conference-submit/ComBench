@@ -1,0 +1,354 @@
+{
+    "llvm": {
+        "repo_owner": "llvm",
+        "repo_name": "llvm-project",
+        "main_branch": "main",
+        "main_language": "C++",
+        "compilation_workflows": [
+            "CI Checks"
+        ],
+        "reproducible_jobs": [
+            "Build and Test Linux"
+        ],
+        "include_paths": [
+            "-I.",
+            "-Iinclude",
+            "-Illvm/include"
+        ]
+    },
+    "openssl": {
+        "repo_owner": "openssl",
+        "repo_name": "openssl",
+        "main_branch": "master",
+        "main_language": "C",
+        "compilation_workflows": [
+            "GitHub CI"
+        ],
+        "reproducible_jobs": [
+            "address_ub_sanitizer",
+            "basic_clang",
+            "buildtest",
+            "check-ansi",
+            "check-c99",
+            "enable_non-default_options",
+            "external-test-pyca (1.51.0, 3.9)",
+            "external-tests-oqs-provider",
+            "external-tests-pkcs11-provider",
+            "external-tests-providers",
+            "external-tests-pyca (3.9)",
+            "fips_and_ktls",
+            "full_featured",
+            "fuzz_tests",
+            "legacy",
+            "memory_sanitizer",
+            "minimal",
+            "no-deprecated",
+            "no-legacy",
+            "no-shared-ubuntu",
+            "out-of-readonly-source-and-install-ubuntu",
+            "threads_sanitizer"
+        ],
+        "include_paths": [
+            "-I.",
+            "-Iinclude",
+            "-Iopenssl/include"
+        ]
+    },
+    "bitcoin": {
+        "repo_owner": "bitcoin",
+        "repo_name": "bitcoin",
+        "main_branch": "master",
+        "main_language": "C",
+        "compilation_workflows": [
+            "CI"
+        ],
+        "reproducible_jobs": [
+            "Linux->Windows cross, no tests"
+        ],
+        "include_paths": [
+            "-I.",
+            "-Iinclude",
+            "-Isrc"
+        ]
+    },
+    "rocksdb": {
+        "repo_owner": "facebook",
+        "repo_name": "rocksdb",
+        "main_branch": "main",
+        "main_language": "C++",
+        "compilation_workflows": [
+            "facebook/rocksdb/pr-jobs"
+        ],
+        "reproducible_jobs": [
+            "build-linux",
+            "build-linux-static_lib-alt_namespace-status_checked",
+            "build-linux-clang-no_test_run",
+            "build-linux-gcc-11-no_test_run",
+            "build-linux-gcc-8-no_test_run",
+            "build-fuzzers",
+            "build-linux-unity-and-headers",
+            "build-linux-cmake-mingw",
+            "build-linux-clang-13-no_test_run",
+            "build-linux-release-rtti",
+            "build-linux-release"
+        ],
+        "include_paths": [
+            "-I.",
+            "-Iinclude",
+            "-Irocksdb"
+        ]
+    },
+    "protobuf": {
+        "repo_owner": "protocolbuffers",
+        "repo_name": "protobuf",
+        "main_branch": "main",
+        "main_language": "C++",
+        "compilation_workflows": [
+            "Tests"
+        ],
+        "include_paths": [
+            "-I.",
+            "-Iinclude",
+            "-Isrc"
+        ]
+    },
+    "electron": {
+        "repo_owner": "electron",
+        "repo_name": "electron",
+        "main_branch": "main",
+        "main_language": "C++",
+        "compilation_workflows": [
+            "Build"
+        ],
+        "include_paths": [
+            "-I.",
+            "-Iinclude",
+            "-Ishell"
+        ]
+    },
+    "opencv": {
+        "repo_owner": "opencv",
+        "repo_name": "opencv",
+        "main_branch": "master",
+        "main_language": "C++",
+        "compilation_workflows": [
+            "PR:4.x"
+        ],
+        "include_paths": [
+            "-I.",
+            "-Iinclude",
+            "-Imodules"
+        ]
+    },
+    "clickhouse": {
+        "repo_owner": "ClickHouse",
+        "repo_name": "ClickHouse",
+        "main_branch": "master",
+        "main_language": "C++",
+        "compilation_workflows": [
+            "PR"
+        ],
+        "include_paths": [
+            "-I.",
+            "-Iinclude",
+            "-Isrc"
+        ]
+    },
+    "redis": {
+        "repo_owner": "redis",
+        "repo_name": "redis",
+        "main_branch": "unstable",
+        "main_language": "C",
+        "compilation_workflows": [
+            "CI"
+        ],
+        "reproducible_jobs": [
+            "build-centos-jemalloc",
+            "build-libc-malloc",
+            "build-old-chain-jemalloc",
+            "test-sanitizer-address",
+            "test-ubuntu-latest"
+        ],
+        "include_paths": [
+            "-I.",
+            "-Iinclude",
+            "-Isrc"
+        ]
+    },
+    "curl": {
+        "repo_owner": "curl",
+        "repo_name": "curl",
+        "main_branch": "master",
+        "main_language": "C",
+        "compilation_workflows": [
+            "Linux"
+        ],
+        "reproducible_jobs": [],
+        "include_paths": [
+            "-I.",
+            "-Iinclude",
+            "-Ilib"
+        ]
+    },
+    "systemd": {
+        "repo_owner": "systemd",
+        "repo_name": "systemd",
+        "main_branch": "main",
+        "main_language": "C",
+        "compilation_workflows": [
+            "Build test",
+            "mkosi"
+        ],
+        "include_paths": [
+            "-I.",
+            "-Iinclude",
+            "-Isrc"
+        ]
+    },
+    "iree": {
+        "repo_owner": "iree-org",
+        "repo_name": "iree",
+        "main_branch": "main",
+        "main_language": "C++",
+        "compilation_workflows": [
+            "CI"
+        ],
+        "include_paths": [
+            "-I.",
+            "-Iinclude",
+            "-Iruntime"
+        ]
+    },
+    "velox": {
+        "repo_owner": "facebookincubator",
+        "repo_name": "velox",
+        "main_branch": "main",
+        "main_language": "C++",
+        "compilation_workflows": [
+            "Linux Build using GCC"
+        ],
+        "include_paths": [
+            "-I.",
+            "-Iinclude",
+            "-Ivelox"
+        ]
+    },
+    "kratos": {
+        "repo_owner": "KratosMultiphysics",
+        "repo_name": "Kratos",
+        "main_branch": "master",
+        "main_language": "C++",
+        "compilation_workflows": [
+            "CI"
+        ],
+        "include_paths": [
+            "-I.",
+            "-Iinclude",
+            "-Ikratos"
+        ]
+    },
+    "faiss": {
+        "repo_owner": "facebookresearch",
+        "repo_name": "faiss",
+        "main_branch": "main",
+        "main_language": "C++",
+        "compilation_workflows": [
+            "Build"
+        ],
+        "reproducible_jobs": [
+            "build-pull-request / Linux x86_64 (cmake)"
+        ],
+        "include_paths": [
+            "-I.",
+            "-Iinclude",
+            "-Ifaiss"
+        ]
+    },
+    "serenity": {
+        "repo_owner": "SerenityOS",
+        "repo_name": "serenity",
+        "main_branch": "master",
+        "main_language": "C++",
+        "compilation_workflows": [
+            "CI"
+        ],
+        "reproducible_jobs": [],
+        "include_paths": [
+            "-I.",
+            "-Iinclude",
+            "-IUserland"
+        ]
+    },
+    "hyprland": {
+        "repo_owner": "hyprwm",
+        "repo_name": "Hyprland",
+        "main_branch": "main",
+        "main_language": "C++",
+        "compilation_workflows": [
+            "Build Hyprland"
+        ],
+        "reproducible_jobs": [],
+        "include_paths": [
+            "-I.",
+            "-Iinclude",
+            "-Isrc"
+        ]
+    },
+    "dragonfly": {
+        "repo_owner": "dragonflydb",
+        "repo_name": "dragonfly",
+        "main_branch": "main",
+        "main_language": "C++",
+        "compilation_workflows": [
+            "ci-tests"
+        ],
+        "reproducible_jobs": [],
+        "include_paths": [
+            "-I.",
+            "-Iinclude",
+            "-Isrc"
+        ]
+    },
+    "php": {
+        "repo_owner": "php",
+        "repo_name": "php-src",
+        "main_branch": "master",
+        "main_language": "C",
+        "compilation_workflows": [
+            "Push"
+        ],
+        "reproducible_jobs": [
+            "LINUX_X32_DEBUG_ZTS"
+        ],
+        "include_paths": []
+    },
+    "valkey": {
+        "repo_owner": "valkey-io",
+        "repo_name": "valkey",
+        "main_branch": "unstable",
+        "main_language": "C",
+        "compilation_workflows": [
+            "CI"
+        ],
+        "reproducible_jobs": [],
+        "include_paths": []
+    },
+    "zephyr": {
+        "repo_owner": "zephyrproject-rtos",
+        "repo_name": "zephyr",
+        "main_branch": "main",
+        "main_language": "C",
+        "compilation_workflows": [
+            "Build with Clang/LLVM"
+        ]
+    },
+    "mongoose": {
+        "repo_owner": "cesanta",
+        "repo_name": "mongoose",
+        "main_branch": "master",
+        "main_language": "C",
+        "compilation_workflows": [
+            "Full build and test"
+        ]
+    }
+}

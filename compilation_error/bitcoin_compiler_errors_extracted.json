@@ -1,0 +1,1449 @@
+{
+  "metadata": {
+    "project_name": "bitcoin",
+    "original_records": 85,
+    "deduplicated_records": 0,
+    "workflow_filtered": 0,
+    "werror_filtered": 19,
+    "merged_records": 18,
+    "final_records": 43,
+    "processing_timestamp": "2025-08-12 18:35:02",
+    "allowed_workflows": [
+      "CI"
+    ],
+    "statistics": {
+      "total_errors": 43,
+      "commits_with_errors": 24,
+      "workflows_with_errors": {
+        "CI": 43
+      },
+      "error_types_summary": {
+        "type_error": 14,
+        "function_error": 20,
+        "declaration_error": 60,
+        "other_error": 2,
+        "member_error": 19,
+        "syntax_error": 3,
+        "semantic_error": 3
+      },
+      "error_types_summary_detailed": {
+        "initialization_error": 2,
+        "function_overload_error": 10,
+        "undefined_error": 49,
+        "type_conversion_error": 5,
+        "type_mismatch": 3,
+        "member_not_found": 10,
+        "conflict_error": 11,
+        "other_error": 6,
+        "template_error": 8,
+        "namespace_error": 1,
+        "call_error": 2,
+        "constructor_error": 8,
+        "missing_error": 3,
+        "operator_error": 3
+      },
+      "jobs_with_errors": {
+        "macOS 14 native, arm64, no depends, sqlite only, gui": 11,
+        "macOS 14 native, arm64, fuzz": 11,
+        "ASan + LSan + UBSan + integer, no depends, USDT": 13,
+        "Linux->Windows cross, no tests": 12,
+        "test each commit": 12
+      }
+    }
+  },
+  "compiler_errors": [
+    {
+      "commit_sha": "76295efe08f864e9760b65f9d3aa03735db68354",
+      "branch": "p2p-fix-nscore-overflow-24049",
+      "workflow_name": "CI",
+      "job_name": [
+        "macOS 14 native, arm64, no depends, sqlite only, gui",
+        "macOS 14 native, arm64, fuzz"
+      ],
+      "workflow_id": 16558331993,
+      "job_id": [
+        46841335938,
+        46841335949
+      ],
+      "created_at": "2025-07-28T02:07:04Z",
+      "error_lines": [
+        "/Users/runner/work/bitcoin/bitcoin/src/net.cpp:181:30: error: non-constant-expression cannot be narrowed from type 'int64_t' (aka 'long long') to 'int' in initializer list [-Wc++11-narrowing]"
+      ],
+      "error_details": [
+        "/Users/runner/work/bitcoin/bitcoin/src/net.cpp:181:30: error: non-constant-expression cannot be narrowed from type 'int64_t' (aka 'long long') to 'int' in initializer list [-Wc++11-narrowing]\n            const int nScore{local_service_info.nScore};\n                             ^~~~~~~~~~~~~~~~~~~~~~~~~"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "type_error": 1
+      },
+      "error_line_types": [
+        "type_error"
+      ]
+    },
+    {
+      "commit_sha": "76295efe08f864e9760b65f9d3aa03735db68354",
+      "branch": "p2p-fix-nscore-overflow-24049",
+      "workflow_name": "CI",
+      "job_name": [
+        "ASan + LSan + UBSan + integer, no depends, USDT"
+      ],
+      "workflow_id": 16558331993,
+      "job_id": [
+        46841335952
+      ],
+      "created_at": "2025-07-28T02:07:04Z",
+      "error_lines": [
+        "/home/runner/work/_temp/src/net.cpp:181:30: error: non-constant-expression cannot be narrowed from type 'int64_t' (aka 'long') to 'int' in initializer list [-Wc++11-narrowing]"
+      ],
+      "error_details": [
+        "/home/runner/work/_temp/src/net.cpp:181:30: error: non-constant-expression cannot be narrowed from type 'int64_t' (aka 'long') to 'int' in initializer list [-Wc++11-narrowing]\n  181 |             const int nScore{local_service_info.nScore};\n      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "type_error": 1
+      },
+      "error_line_types": [
+        "type_error"
+      ]
+    },
+    {
+      "commit_sha": "bcbbb574b17a0449fa38f65f7c7f5a4f01a825b6",
+      "branch": "2024-02-batch-validation-updated",
+      "workflow_name": "CI",
+      "job_name": [
+        "macOS 14 native, arm64, fuzz",
+        "macOS 14 native, arm64, no depends, sqlite only, gui"
+      ],
+      "workflow_id": 16501195883,
+      "job_id": [
+        46659971851,
+        46659971861
+      ],
+      "created_at": "2025-07-24T15:30:25Z",
+      "error_lines": [
+        "/Applications/Xcode_15.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__memory/allocator_traits.h:304:9: error: no matching function for call to 'construct_at'"
+      ],
+      "error_details": [
+        "In file included from /Users/runner/work/bitcoin/bitcoin/src/script/sigcache.cpp:6:\nIn file included from /Users/runner/work/bitcoin/bitcoin/src/script/sigcache.h:9:\nIn file included from /Users/runner/work/bitcoin/bitcoin/src/batchverify.h:8:\nIn file included from /Users/runner/work/bitcoin/bitcoin/src/pubkey.h:10:\nIn file included from /Users/runner/work/bitcoin/bitcoin/src/hash.h:12:\nIn file included from /Users/runner/work/bitcoin/bitcoin/src/crypto/sha256.h:10:\nIn file included from /Applications/Xcode_15.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/string:553:\nIn file included from /Applications/Xcode_15.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__memory/allocate_at_least.h:13:\n/Applications/Xcode_15.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__memory/allocator_traits.h:304:9: error: no matching function for call to 'construct_at'\n        _VSTD::construct_at(__p, _VSTD::forward<_Args>(__args)...);\n        ^~~~~~~~~~~~~~~~~~~"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "function_error": 1
+      },
+      "error_line_types": [
+        "function_error"
+      ]
+    },
+    {
+      "commit_sha": "d9fa0ce37fb108531aa786f4e434321691393753",
+      "branch": "2403-log-",
+      "workflow_name": "CI",
+      "job_name": [
+        "macOS 14 native, arm64, no depends, sqlite only, gui",
+        "macOS 14 native, arm64, fuzz",
+        "ASan + LSan + UBSan + integer, no depends, USDT"
+      ],
+      "workflow_id": 16266396173,
+      "job_id": [
+        45922955085,
+        45922955102,
+        45922955128
+      ],
+      "created_at": "2025-07-14T12:07:17Z",
+      "error_lines": [
+        "/Users/runner/work/bitcoin/bitcoin/src/init.cpp:396:5: error: use of undeclared identifier 'RemovePidFileeeeeeeeeeeee'"
+      ],
+      "error_details": [
+        "/Users/runner/work/bitcoin/bitcoin/src/init.cpp:396:5: error: use of undeclared identifier 'RemovePidFileeeeeeeeeeeee'\n    RemovePidFileeeeeeeeeeeee(*node.args);\n    ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      },
+      "error_line_types": [
+        "declaration_error"
+      ]
+    },
+    {
+      "commit_sha": "0079e8149975b81b06c4437d23b1b8e0410a5f6a",
+      "branch": "202504_sighash_cache",
+      "workflow_name": "CI",
+      "job_name": [
+        "macOS 14 native, arm64, no depends, sqlite only, gui",
+        "ASan + LSan + UBSan + integer, no depends, USDT",
+        "macOS 14 native, arm64, fuzz"
+      ],
+      "workflow_id": 16220404935,
+      "job_id": [
+        45799285674,
+        45799285680,
+        45799285708
+      ],
+      "created_at": "2025-07-11T12:47:32Z",
+      "error_lines": [
+        "/Users/runner/work/bitcoin/bitcoin/src/validation.h:345:111: error: no viable conversion from 'SignatureCache' to 'SignatureCache *'"
+      ],
+      "error_details": [
+        "In file included from /Users/runner/work/bitcoin/bitcoin/src/wallet/rpc/transactions.cpp:9:\nIn file included from /Users/runner/work/bitcoin/bitcoin/src/rpc/blockchain.h:13:\n/Users/runner/work/bitcoin/bitcoin/src/validation.h:345:111: error: no viable conversion from 'SignatureCache' to 'SignatureCache *'\n        m_tx_out(outIn), ptxTo(&txToIn), nIn(nInIn), nFlags(nFlagsIn), cacheStore(cacheIn), txdata(txdataIn), m_signature_cache(signature_cache) { }\n                                                                                                              ^                 ~~~~~~~~~~~~~~~"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "type_error": 1
+      },
+      "error_line_types": [
+        "type_error"
+      ]
+    },
+    {
+      "commit_sha": "0079e8149975b81b06c4437d23b1b8e0410a5f6a",
+      "branch": "202504_sighash_cache",
+      "workflow_name": "CI",
+      "job_name": [
+        "Linux->Windows cross, no tests"
+      ],
+      "workflow_id": 16220404935,
+      "job_id": [
+        45799285684
+      ],
+      "created_at": "2025-07-11T12:47:32Z",
+      "error_lines": [
+        "/home/runner/work/_temp/src/validation.h:345:129: error: cannot convert 'SignatureCache' to 'SignatureCache*' in initialization"
+      ],
+      "error_details": [
+        "In file included from /home/runner/work/_temp/src/test/util/blockfilter.cpp:11:\n/home/runner/work/_temp/src/validation.h: In constructor 'CScriptCheck::CScriptCheck(const CTxOut&, const CTransaction&, SignatureCache&, unsigned int, unsigned int, bool, PrecomputedTransactionData*, bool)':\n/home/runner/work/_temp/src/validation.h:345:129: error: cannot convert 'SignatureCache' to 'SignatureCache*' in initialization\n  345 |         m_tx_out(outIn), ptxTo(&txToIn), nIn(nInIn), nFlags(nFlagsIn), cacheStore(cacheIn), txdata(txdataIn), m_signature_cache(signature_cache) { }\n      |                                                                                                                                 ^~~~~~~~~~~~~~~\n      |                                                                                                                                 |\n      |                                                                                                                                 SignatureCache\ngmake[2]: *** [src/test/util/CMakeFiles/test_util.dir/build.make:77: src/test/util/CMakeFiles/test_util.dir/blockfilter.cpp.obj] Error 1"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "type_error": 1
+      },
+      "error_line_types": [
+        "type_error"
+      ]
+    },
+    {
+      "commit_sha": "68fd1f1b9636acc9dad26ebbef04f1d267e656b0",
+      "branch": "202507-par-coins-tests",
+      "workflow_name": "CI",
+      "job_name": [
+        "Linux->Windows cross, no tests"
+      ],
+      "workflow_id": 16216062238,
+      "job_id": [
+        45785682117
+      ],
+      "created_at": "2025-07-11T08:57:33Z",
+      "error_lines": [
+        "/home/runner/work/_temp/build/CMakeFiles/CMakeScratch/TryCompile-7e1oCB/src.cxx:10:42: error: invalid conversion from 'const char**' to 'char**' [-fpermissive]",
+        "/home/runner/work/_temp/build/CMakeFiles/CMakeScratch/TryCompile-Yjyq1e/src.cxx:7:13: error: 'strerror_r' was not declared in this scope; did you mean 'strerror_s''",
+        "/home/runner/work/_temp/build/CMakeFiles/CMakeScratch/TryCompile-As1T2F/src.cxx:6:13: error: 'M_ARENA_MAX' was not declared in this scope",
+        "/home/runner/work/_temp/build/CMakeFiles/CMakeScratch/TryCompile-As1T2F/src.cxx:6:5: error: 'mallopt' was not declared in this scope; did you mean 'malloc''",
+        "/home/runner/work/_temp/build/CMakeFiles/CMakeScratch/TryCompile-emvayu/src.cxx:6:12: error: 'posix_fallocate' was not declared in this scope"
+      ],
+      "error_details": [
+        "        /home/runner/work/_temp/build/CMakeFiles/CMakeScratch/TryCompile-7e1oCB/src.cxx:10:42: error: invalid conversion from 'const char**' to 'char**' [-fpermissive]\n           10 |         evhttp_connection_get_peer(conn, &host, &port);\n              |                                          ^~~~~\n              |                                          |\n              |                                          const char**\n        In file included from /home/runner/work/_temp/build/CMakeFiles/CMakeScratch/TryCompile-7e1oCB/src.cxx:3:\n        /home/runner/work/_temp/depends/x86_64-w64-mingw32/include/event2/http.h:766:12: note:   initializing argument 2 of 'void evhttp_connection_get_peer(evhttp_connection*, char**, uint16_t*)'\n          766 |     char **address, ev_uint16_t *port);\n              |     ~~~~~~~^~~~~~~\n        gmake[1]: *** [CMakeFiles/cmTC_3e27a.dir/build.make:79: CMakeFiles/cmTC_3e27a.dir/src.cxx.obj] Error 1\n        gmake[1]: Leaving directory '/home/runner/work/_temp/build/CMakeFiles/CMakeScratch/TryCompile-7e1oCB'",
+        "        /home/runner/work/_temp/build/CMakeFiles/CMakeScratch/TryCompile-Yjyq1e/src.cxx:7:13: error: 'strerror_r' was not declared in this scope; did you mean 'strerror_s''\n            7 |     char* p{strerror_r(0, buf, sizeof buf)};\n              |             ^~~~~~~~~~\n              |             strerror_s\n        gmake[1]: *** [CMakeFiles/cmTC_4e394.dir/build.make:78: CMakeFiles/cmTC_4e394.dir/src.cxx.obj] Error 1\n        gmake[1]: Leaving directory '/home/runner/work/_temp/build/CMakeFiles/CMakeScratch/TryCompile-Yjyq1e'",
+        "        /home/runner/work/_temp/build/CMakeFiles/CMakeScratch/TryCompile-As1T2F/src.cxx:6:5: error: 'mallopt' was not declared in this scope; did you mean 'malloc''",
+        "        /home/runner/work/_temp/build/CMakeFiles/CMakeScratch/TryCompile-emvayu/src.cxx:6:12: error: 'posix_fallocate' was not declared in this scope\n            6 |     return posix_fallocate(0, 0, 0);\n              |            ^~~~~~~~~~~~~~~\n        gmake[1]: *** [CMakeFiles/cmTC_3b398.dir/build.make:78: CMakeFiles/cmTC_3b398.dir/src.cxx.obj] Error 1\n        gmake[1]: Leaving directory '/home/runner/work/_temp/build/CMakeFiles/CMakeScratch/TryCompile-emvayu'"
+      ],
+      "error_count": 5,
+      "error_types": {
+        "other_error": 1,
+        "declaration_error": 4
+      },
+      "error_line_types": [
+        "other_error",
+        "declaration_error",
+        "declaration_error",
+        "declaration_error",
+        "declaration_error"
+      ]
+    },
+    {
+      "commit_sha": "68fd1f1b9636acc9dad26ebbef04f1d267e656b0",
+      "branch": "202507-par-coins-tests",
+      "workflow_name": "CI",
+      "job_name": [
+        "ASan + LSan + UBSan + integer, no depends, USDT"
+      ],
+      "workflow_id": 16216062238,
+      "job_id": [
+        45785682171
+      ],
+      "created_at": "2025-07-11T08:57:33Z",
+      "error_lines": [
+        "/home/runner/work/_temp/build-asan/CMakeFiles/CMakeScratch/TryCompile-fmNSqA/src.cxx:10:9: error: no matching function for call to 'evhttp_connection_get_peer'"
+      ],
+      "error_details": [
+        "        /home/runner/work/_temp/build-asan/CMakeFiles/CMakeScratch/TryCompile-fmNSqA/src.cxx:10:9: error: no matching function for call to 'evhttp_connection_get_peer'\n           10 |         evhttp_connection_get_peer(conn, &host, &port);\n              |         ^~~~~~~~~~~~~~~~~~~~~~~~~~\n        /usr/include/event2/http.h:765:6: note: candidate function not viable: no known conversion from 'const char **' to 'char **' for 2nd argument\n          765 | void evhttp_connection_get_peer(struct evhttp_connection *evcon,\n              |      ^\n          766 |     char **address, ev_uint16_t *port);\n              |     ~~~~~~~~~~~~~~"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "function_error": 1
+      },
+      "error_line_types": [
+        "function_error"
+      ]
+    },
+    {
+      "commit_sha": "fa67233de993a308963ebf33b72392bed65c0a73",
+      "branch": "2505-elapse-time",
+      "workflow_name": "CI",
+      "job_name": [
+        "test each commit",
+        "ASan + LSan + UBSan + integer, no depends, USDT"
+      ],
+      "workflow_id": 16152863493,
+      "job_id": [
+        45588202672,
+        45588202712
+      ],
+      "created_at": "2025-07-08T19:44:36Z",
+      "error_lines": [
+        "/home/runner/work/bitcoin/bitcoin/src/util/time.cpp:41:80: error: no member named 'time_since_epoch' in 'std::chrono::duration<long>'"
+      ],
+      "error_details": [
+        "/home/runner/work/bitcoin/bitcoin/src/util/time.cpp:41:80: error: no member named 'time_since_epoch' in 'std::chrono::duration<long>'\n   41 | void NodeClock::SetMockTime(mock_time_point::duration mock) { SetMockTime(mock.time_since_epoch()); }\n      |                                                                           ~~~~ ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "member_error": 1
+      },
+      "error_line_types": [
+        "member_error"
+      ]
+    },
+    {
+      "commit_sha": "fa67233de993a308963ebf33b72392bed65c0a73",
+      "branch": "2505-elapse-time",
+      "workflow_name": "CI",
+      "job_name": [
+        "macOS 14 native, arm64, fuzz",
+        "macOS 14 native, arm64, no depends, sqlite only, gui"
+      ],
+      "workflow_id": 16152863493,
+      "job_id": [
+        45588202688,
+        45588202694
+      ],
+      "created_at": "2025-07-08T19:44:36Z",
+      "error_lines": [
+        "/Users/runner/work/bitcoin/bitcoin/src/util/time.cpp:41:80: error: no member named 'time_since_epoch' in 'std::chrono::duration<long long>'"
+      ],
+      "error_details": [
+        "/Users/runner/work/bitcoin/bitcoin/src/util/time.cpp:41:80: error: no member named 'time_since_epoch' in 'std::chrono::duration<long long>'\nvoid NodeClock::SetMockTime(mock_time_point::duration mock) { SetMockTime(mock.time_since_epoch()); }\n                                                                          ~~~~ ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "member_error": 1
+      },
+      "error_line_types": [
+        "member_error"
+      ]
+    },
+    {
+      "commit_sha": "fa67233de993a308963ebf33b72392bed65c0a73",
+      "branch": "2505-elapse-time",
+      "workflow_name": "CI",
+      "job_name": [
+        "Linux->Windows cross, no tests"
+      ],
+      "workflow_id": 16152863493,
+      "job_id": [
+        45588202709
+      ],
+      "created_at": "2025-07-08T19:44:36Z",
+      "error_lines": [
+        "/home/runner/work/_temp/src/util/time.cpp:41:80: error: 'std::chrono::time_point<NodeClock, std::chrono::duration<long long int> >::duration' {aka 'class std::chrono::duration<long long int>'} has no member named 'time_since_epoch'"
+      ],
+      "error_details": [
+        "/home/runner/work/_temp/src/util/time.cpp: In static member function 'static void NodeClock::SetMockTime(std::chrono::time_point<NodeClock, std::chrono::duration<long long int> >::duration)':\n/home/runner/work/_temp/src/util/time.cpp:41:80: error: 'std::chrono::time_point<NodeClock, std::chrono::duration<long long int> >::duration' {aka 'class std::chrono::duration<long long int>'} has no member named 'time_since_epoch'\n   41 | void NodeClock::SetMockTime(mock_time_point::duration mock) { SetMockTime(mock.time_since_epoch()); }\n      |                                                                                ^~~~~~~~~~~~~~~~\ngmake[2]: *** [src/util/CMakeFiles/bitcoin_util.dir/build.make:437: src/util/CMakeFiles/bitcoin_util.dir/time.cpp.obj] Error 1"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "member_error": 1
+      },
+      "error_line_types": [
+        "member_error"
+      ]
+    },
+    {
+      "commit_sha": "ea493972d21e9adbb69616ae8c226cff100e188d",
+      "branch": "2025/07/fill-psbt-struct",
+      "workflow_name": "CI",
+      "job_name": [
+        "Linux->Windows cross, no tests"
+      ],
+      "workflow_id": 16074017532,
+      "job_id": [
+        45364864868
+      ],
+      "created_at": "2025-07-04T12:40:48Z",
+      "error_lines": [
+        "/home/runner/work/_temp/src/wallet/rpc/spend.cpp:1654:35: error: designator order for field 'common::PSBTOptions::finalize' does not match declaration order in 'common::PSBTOptions'",
+        "/home/runner/work/_temp/src/psbt.cpp:537:35: error: designator order for field 'common::PSBTOptions::finalize' does not match declaration order in 'common::PSBTOptions'",
+        "/home/runner/work/_temp/src/rpc/rawtransaction.cpp:239:26: error: designator order for field 'common::PSBTOptions::finalize' does not match declaration order in 'common::PSBTOptions'"
+      ],
+      "error_details": [
+        "/home/runner/work/_temp/src/wallet/rpc/spend.cpp: In lambda function:\n/home/runner/work/_temp/src/wallet/rpc/spend.cpp:1654:35: error: designator order for field 'common::PSBTOptions::finalize' does not match declaration order in 'common::PSBTOptions'\n 1654 |     const auto err{wallet.FillPSBT(psbtx, {.sign = sign, .bip32_derivs = bip32derivs, .sighash_type = nHashType, .finalize = finalize}, complete)};\n      |                    ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\ngmake[2]: *** [src/wallet/CMakeFiles/bitcoin_wallet.dir/build.make:347: src/wallet/CMakeFiles/bitcoin_wallet.dir/rpc/spend.cpp.obj] Error 1",
+        "/home/runner/work/_temp/src/psbt.cpp: In function 'bool FinalizePSBT(PartiallySignedTransaction&)':\n/home/runner/work/_temp/src/psbt.cpp:537:35: error: designator order for field 'common::PSBTOptions::finalize' does not match declaration order in 'common::PSBTOptions'\n  537 |         complete &= (SignPSBTInput(DUMMY_SIGNING_PROVIDER, psbtx, i, &txdata, {.sighash_type = input.sighash_type, .finalize = true}, nullptr) == PSBTError::OK);\n      |                      ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\ngmake[2]: *** [src/CMakeFiles/bitcoin_common.dir/build.make:662: src/CMakeFiles/bitcoin_common.dir/psbt.cpp.obj] Error 1",
+        "/home/runner/work/_temp/src/rpc/rawtransaction.cpp: In function 'PartiallySignedTransaction ProcessPSBT(const std::string&, const std::any&, const HidingSigningProvider&, std::optional<int>, bool)':\n/home/runner/work/_temp/src/rpc/rawtransaction.cpp:239:26: error: designator order for field 'common::PSBTOptions::finalize' does not match declaration order in 'common::PSBTOptions'\n  239 |         if (SignPSBTInput(provider, psbtx, /*index=*/i, &txdata, {.sighash_type = sighash_type, .finalize = finalize}, /*out_sigdata=*/nullptr) == common::PSBTError::SIGHASH_MISMATCH) {\n      |             ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\ngmake[2]: *** [src/CMakeFiles/bitcoin_node.dir/build.make:1217: src/CMakeFiles/bitcoin_node.dir/rpc/rawtransaction.cpp.obj] Error 1"
+      ],
+      "error_count": 3,
+      "error_types": {
+        "declaration_error": 3
+      },
+      "error_line_types": [
+        "declaration_error",
+        "declaration_error",
+        "declaration_error"
+      ]
+    },
+    {
+      "commit_sha": "3549e0baa59536981aff3ab727cbc096a46b253b",
+      "branch": "use_author_warning",
+      "workflow_name": "CI",
+      "job_name": [
+        "Linux->Windows cross, no tests"
+      ],
+      "workflow_id": 16049059150,
+      "job_id": [
+        45287144454
+      ],
+      "created_at": "2025-07-03T11:21:37Z",
+      "error_lines": [
+        "/home/runner/work/_temp/build/CMakeFiles/CMakeScratch/TryCompile-2x2N4m/src.cxx:10:42: error: invalid conversion from 'const char**' to 'char**' [-fpermissive]",
+        "/home/runner/work/_temp/build/CMakeFiles/CMakeScratch/TryCompile-ZrHb6s/src.cxx:7:13: error: 'strerror_r' was not declared in this scope; did you mean 'strerror_s''",
+        "/home/runner/work/_temp/build/CMakeFiles/CMakeScratch/TryCompile-0fqToV/src.cxx:6:13: error: 'M_ARENA_MAX' was not declared in this scope",
+        "/home/runner/work/_temp/build/CMakeFiles/CMakeScratch/TryCompile-0fqToV/src.cxx:6:5: error: 'mallopt' was not declared in this scope; did you mean 'malloc''",
+        "/home/runner/work/_temp/build/CMakeFiles/CMakeScratch/TryCompile-bv5wX6/src.cxx:6:12: error: 'posix_fallocate' was not declared in this scope"
+      ],
+      "error_details": [
+        "        /home/runner/work/_temp/build/CMakeFiles/CMakeScratch/TryCompile-2x2N4m/src.cxx:10:42: error: invalid conversion from 'const char**' to 'char**' [-fpermissive]\n           10 |         evhttp_connection_get_peer(conn, &host, &port);\n              |                                          ^~~~~\n              |                                          |\n              |                                          const char**\n        In file included from /home/runner/work/_temp/build/CMakeFiles/CMakeScratch/TryCompile-2x2N4m/src.cxx:3:\n        /home/runner/work/_temp/depends/x86_64-w64-mingw32/include/event2/http.h:766:12: note:   initializing argument 2 of 'void evhttp_connection_get_peer(evhttp_connection*, char**, uint16_t*)'\n          766 |     char **address, ev_uint16_t *port);\n              |     ~~~~~~~^~~~~~~\n        gmake[1]: *** [CMakeFiles/cmTC_5d38a.dir/build.make:79: CMakeFiles/cmTC_5d38a.dir/src.cxx.obj] Error 1\n        gmake[1]: Leaving directory '/home/runner/work/_temp/build/CMakeFiles/CMakeScratch/TryCompile-2x2N4m'",
+        "        /home/runner/work/_temp/build/CMakeFiles/CMakeScratch/TryCompile-ZrHb6s/src.cxx:7:13: error: 'strerror_r' was not declared in this scope; did you mean 'strerror_s''\n            7 |     char* p{strerror_r(0, buf, sizeof buf)};\n              |             ^~~~~~~~~~\n              |             strerror_s\n        gmake[1]: *** [CMakeFiles/cmTC_0ca9e.dir/build.make:78: CMakeFiles/cmTC_0ca9e.dir/src.cxx.obj] Error 1\n        gmake[1]: Leaving directory '/home/runner/work/_temp/build/CMakeFiles/CMakeScratch/TryCompile-ZrHb6s'",
+        "        /home/runner/work/_temp/build/CMakeFiles/CMakeScratch/TryCompile-0fqToV/src.cxx:6:5: error: 'mallopt' was not declared in this scope; did you mean 'malloc''",
+        "        /home/runner/work/_temp/build/CMakeFiles/CMakeScratch/TryCompile-bv5wX6/src.cxx:6:12: error: 'posix_fallocate' was not declared in this scope\n            6 |     return posix_fallocate(0, 0, 0);\n              |            ^~~~~~~~~~~~~~~\n        gmake[1]: *** [CMakeFiles/cmTC_30af5.dir/build.make:78: CMakeFiles/cmTC_30af5.dir/src.cxx.obj] Error 1\n        gmake[1]: Leaving directory '/home/runner/work/_temp/build/CMakeFiles/CMakeScratch/TryCompile-bv5wX6'"
+      ],
+      "error_count": 5,
+      "error_types": {
+        "other_error": 1,
+        "declaration_error": 4
+      },
+      "error_line_types": [
+        "other_error",
+        "declaration_error",
+        "declaration_error",
+        "declaration_error",
+        "declaration_error"
+      ]
+    },
+    {
+      "commit_sha": "d6f3f85e228fddbfff28a655d0c76ecb362ae16c",
+      "branch": "wallet-readonly-access",
+      "workflow_name": "CI",
+      "job_name": [
+        "macOS 14 native, arm64, fuzz",
+        "ASan + LSan + UBSan + integer, no depends, USDT",
+        "macOS 14 native, arm64, no depends, sqlite only, gui"
+      ],
+      "workflow_id": 15931868481,
+      "job_id": [
+        44984051871,
+        44984051880,
+        44984051883
+      ],
+      "created_at": "2025-06-27T17:05:23Z",
+      "error_lines": [
+        "/Users/runner/work/bitcoin/bitcoin/src/wallet/walletdb.cpp:1206:33: error: use of undeclared identifier 'upgraded_txs'"
+      ],
+      "error_details": [
+        "/Users/runner/work/bitcoin/bitcoin/src/wallet/walletdb.cpp:1206:33: error: use of undeclared identifier 'upgraded_txs'\n        for (const Txid& hash : upgraded_txs)\n                                ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      },
+      "error_line_types": [
+        "declaration_error"
+      ]
+    },
+    {
+      "commit_sha": "d6f3f85e228fddbfff28a655d0c76ecb362ae16c",
+      "branch": "wallet-readonly-access",
+      "workflow_name": "CI",
+      "job_name": [
+        "Linux->Windows cross, no tests"
+      ],
+      "workflow_id": 15931868481,
+      "job_id": [
+        44984051882
+      ],
+      "created_at": "2025-06-27T17:05:23Z",
+      "error_lines": [
+        "/home/runner/work/_temp/src/wallet/walletdb.cpp:1206:33: error: 'upgraded_txs' was not declared in this scope"
+      ],
+      "error_details": [
+        "/home/runner/work/_temp/src/wallet/walletdb.cpp: In member function 'wallet::DBErrors wallet::WalletBatch::LoadWallet(wallet::CWallet*)':\n/home/runner/work/_temp/src/wallet/walletdb.cpp:1206:33: error: 'upgraded_txs' was not declared in this scope\n 1206 |         for (const Txid& hash : upgraded_txs)\n      |                                 ^~~~~~~~~~~~\ngmake[2]: *** [src/wallet/CMakeFiles/bitcoin_wallet.dir/build.make:482: src/wallet/CMakeFiles/bitcoin_wallet.dir/walletdb.cpp.obj] Error 1"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      },
+      "error_line_types": [
+        "declaration_error"
+      ]
+    },
+    {
+      "commit_sha": "3335c14373a656ba399ce1974bbc1191fceee986",
+      "branch": "codex32",
+      "workflow_name": "CI",
+      "job_name": [
+        "test each commit"
+      ],
+      "workflow_id": 15854289127,
+      "job_id": [
+        44695543723
+      ],
+      "created_at": "2025-06-24T15:08:24Z",
+      "error_lines": [
+        "/home/runner/work/bitcoin/bitcoin/src/wallet/rpc/wallet.cpp:995:58: error: cannot use dynamic_cast to convert from 'T' (aka 'std::reference_wrapper<wallet::DescriptorScriptPubKeyMan>') to 'DescriptorScriptPubKeyMan *'"
+      ],
+      "error_details": [
+        "/home/runner/work/bitcoin/bitcoin/src/wallet/rpc/wallet.cpp:995:58: error: cannot use dynamic_cast to convert from 'T' (aka 'std::reference_wrapper<wallet::DescriptorScriptPubKeyMan>') to 'DescriptorScriptPubKeyMan *'\n  995 |             const DescriptorScriptPubKeyMan* desc_spkm = dynamic_cast<DescriptorScriptPubKeyMan*>(*spkm);\n      |                                                          ^                                        ~~~~~"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "type_error": 1
+      },
+      "error_line_types": [
+        "type_error"
+      ]
+    },
+    {
+      "commit_sha": "3335c14373a656ba399ce1974bbc1191fceee986",
+      "branch": "codex32",
+      "workflow_name": "CI",
+      "job_name": [
+        "macOS 14 native, arm64, no depends, sqlite only, gui",
+        "ASan + LSan + UBSan + integer, no depends, USDT",
+        "macOS 14 native, arm64, fuzz"
+      ],
+      "workflow_id": 15854289127,
+      "job_id": [
+        44695543751,
+        44695543852,
+        44695543874
+      ],
+      "created_at": "2025-06-24T15:08:24Z",
+      "error_lines": [
+        "/Users/runner/work/bitcoin/bitcoin/src/wallet/rpc/wallet.cpp:1035:58: error: cannot use dynamic_cast to convert from 'T' (aka 'std::reference_wrapper<wallet::DescriptorScriptPubKeyMan>') to 'DescriptorScriptPubKeyMan *'"
+      ],
+      "error_details": [
+        "/Users/runner/work/bitcoin/bitcoin/src/wallet/rpc/wallet.cpp:1035:58: error: cannot use dynamic_cast to convert from 'T' (aka 'std::reference_wrapper<wallet::DescriptorScriptPubKeyMan>') to 'DescriptorScriptPubKeyMan *'\n            const DescriptorScriptPubKeyMan* desc_spkm = dynamic_cast<DescriptorScriptPubKeyMan*>(*spkm);\n                                                         ^                                        ~~~~~"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "type_error": 1
+      },
+      "error_line_types": [
+        "type_error"
+      ]
+    },
+    {
+      "commit_sha": "3335c14373a656ba399ce1974bbc1191fceee986",
+      "branch": "codex32",
+      "workflow_name": "CI",
+      "job_name": [
+        "Linux->Windows cross, no tests"
+      ],
+      "workflow_id": 15854289127,
+      "job_id": [
+        44695543915
+      ],
+      "created_at": "2025-06-24T15:08:24Z",
+      "error_lines": [
+        "/home/runner/work/_temp/src/wallet/rpc/wallet.cpp:1035:58: error: cannot 'dynamic_cast' 'spkm.util::Result<std::reference_wrapper<wallet::DescriptorScriptPubKeyMan> >::operator*()' (of type 'using util::Result<std::reference_wrapper<wallet::DescriptorScriptPubKeyMan> >::T = std::conditional_t<false, std::monostate, std::reference_wrapper<wallet::DescriptorScriptPubKeyMan> >' {aka 'class std::reference_wrapper<wallet::DescriptorScriptPubKeyMan>'}) to type 'class wallet::DescriptorScriptPubKeyMan*' (source is not a pointer)"
+      ],
+      "error_details": [
+        "/home/runner/work/_temp/src/wallet/rpc/wallet.cpp: In lambda function:\n/home/runner/work/_temp/src/wallet/rpc/wallet.cpp:1035:58: error: cannot 'dynamic_cast' 'spkm.util::Result<std::reference_wrapper<wallet::DescriptorScriptPubKeyMan> >::operator*()' (of type 'using util::Result<std::reference_wrapper<wallet::DescriptorScriptPubKeyMan> >::T = std::conditional_t<false, std::monostate, std::reference_wrapper<wallet::DescriptorScriptPubKeyMan> >' {aka 'class std::reference_wrapper<wallet::DescriptorScriptPubKeyMan>'}) to type 'class wallet::DescriptorScriptPubKeyMan*' (source is not a pointer)\n 1035 |             const DescriptorScriptPubKeyMan* desc_spkm = dynamic_cast<DescriptorScriptPubKeyMan*>(*spkm);\n      |                                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\ngmake[2]: *** [src/wallet/CMakeFiles/bitcoin_wallet.dir/build.make:392: src/wallet/CMakeFiles/bitcoin_wallet.dir/rpc/wallet.cpp.obj] Error 1"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "type_error": 1
+      },
+      "error_line_types": [
+        "type_error"
+      ]
+    },
+    {
+      "commit_sha": "6617add45502be5896a006415d44a9cf4e5d33a3",
+      "branch": "2025/06/gethdkey",
+      "workflow_name": "CI",
+      "job_name": [
+        "test each commit"
+      ],
+      "workflow_id": 15777525194,
+      "job_id": [
+        44475255731
+      ],
+      "created_at": "2025-06-20T11:04:44Z",
+      "error_lines": [
+        "/home/runner/work/bitcoin/bitcoin/src/util/bip32.h:25:6: error: no template named 'optional' in namespace 'std'"
+      ],
+      "error_details": [
+        "In file included from /home/runner/work/bitcoin/bitcoin/src/util/bip32.cpp:6:\n/home/runner/work/bitcoin/bitcoin/src/util/bip32.h:25:6: error: no template named 'optional' in namespace 'std'\n   25 | std::optional<std::pair<CExtKey, KeyOriginInfo>> DeriveExtKey(const CExtKey& ext_key, const std::vector<uint32_t>& path);\n      | ~~~~~^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "member_error": 1
+      },
+      "error_line_types": [
+        "member_error"
+      ]
+    },
+    {
+      "commit_sha": "6617add45502be5896a006415d44a9cf4e5d33a3",
+      "branch": "2025/06/gethdkey",
+      "workflow_name": "CI",
+      "job_name": [
+        "Linux->Windows cross, no tests"
+      ],
+      "workflow_id": 15777525194,
+      "job_id": [
+        44475255785
+      ],
+      "created_at": "2025-06-20T11:04:44Z",
+      "error_lines": [
+        "/home/runner/work/_temp/src/util/bip32.h:25:6: error: 'optional' in namespace 'std' does not name a template type"
+      ],
+      "error_details": [
+        "In file included from /home/runner/work/_temp/src/util/bip32.cpp:6:\n/home/runner/work/_temp/src/util/bip32.h:25:6: error: 'optional' in namespace 'std' does not name a template type\n   25 | std::optional<std::pair<CExtKey, KeyOriginInfo>> DeriveExtKey(const CExtKey& ext_key, const std::vector<uint32_t>& path);\n      |      ^~~~~~~~"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "member_error": 1
+      },
+      "error_line_types": [
+        "member_error"
+      ]
+    },
+    {
+      "commit_sha": "18951224800c9a125a0103a48634eff1c6a85ea8",
+      "branch": "cwallet-tx-rm-mapvalue-vorderform",
+      "workflow_name": "CI",
+      "job_name": [
+        "test each commit"
+      ],
+      "workflow_id": 15693511894,
+      "job_id": [
+        44213780670
+      ],
+      "created_at": "2025-06-16T22:37:37Z",
+      "error_lines": [
+        "/home/runner/work/bitcoin/bitcoin/src/qt/transactiondesc.cpp:131:20: error: no member named 'm_from' in 'interfaces::WalletTx'",
+        "/home/runner/work/bitcoin/bitcoin/src/qt/transactiondesc.cpp:133:77: error: no member named 'm_from' in 'interfaces::WalletTx'",
+        "/home/runner/work/bitcoin/bitcoin/src/qt/transactiondesc.cpp:287:13: error: no member named 'm_message' in 'interfaces::WalletTx'",
+        "/home/runner/work/bitcoin/bitcoin/src/qt/transactiondesc.cpp:288:87: error: no member named 'm_message' in 'interfaces::WalletTx'"
+      ],
+      "error_details": [
+        "/home/runner/work/bitcoin/bitcoin/src/qt/transactiondesc.cpp:131:20: error: no member named 'm_from' in 'interfaces::WalletTx'\n  131 |     } else if (wtx.m_from) {\n      |                ~~~ ^",
+        "/home/runner/work/bitcoin/bitcoin/src/qt/transactiondesc.cpp:133:77: error: no member named 'm_from' in 'interfaces::WalletTx'\n  133 |         strHTML += \"<b>\" + tr(\"From\") + \":</b> \" + GUIUtil::HtmlEscape(*wtx.m_from) + \"<br>\";\n      |                                                                         ~~~ ^",
+        "/home/runner/work/bitcoin/bitcoin/src/qt/transactiondesc.cpp:287:13: error: no member named 'm_message' in 'interfaces::WalletTx'\n  287 |     if (wtx.m_message) {\n      |         ~~~ ^",
+        "/home/runner/work/bitcoin/bitcoin/src/qt/transactiondesc.cpp:288:87: error: no member named 'm_message' in 'interfaces::WalletTx'\n  288 |         strHTML += \"<br><b>\" + tr(\"Message\") + \":</b><br>\" + GUIUtil::HtmlEscape(*wtx.m_message, true) + \"<br>\";\n      |                                                                                   ~~~ ^"
+      ],
+      "error_count": 4,
+      "error_types": {
+        "member_error": 4
+      },
+      "error_line_types": [
+        "member_error",
+        "member_error",
+        "member_error",
+        "member_error"
+      ]
+    },
+    {
+      "commit_sha": "5535df69a2a7f198e48656912522d531d3867346",
+      "branch": "log_ratelimiting_05192025",
+      "workflow_name": "CI",
+      "job_name": [
+        "test each commit"
+      ],
+      "workflow_id": 15452522706,
+      "job_id": [
+        43497804909
+      ],
+      "created_at": "2025-06-04T20:52:57Z",
+      "error_lines": [
+        "/home/runner/work/bitcoin/bitcoin/src/logging.cpp:78:166: error: too few arguments to function call, expected 6, have 5",
+        "/home/runner/work/bitcoin/bitcoin/src/logging.cpp:392:75: error: too few arguments to function call, expected 6, have 5",
+        "/home/runner/work/bitcoin/bitcoin/src/logging.cpp:395:21: error: out-of-line definition of 'LogPrintStr_' does not match any declaration in 'BCLog::Logger'"
+      ],
+      "error_details": [
+        "/home/runner/work/bitcoin/bitcoin/src/logging.cpp:78:166: error: too few arguments to function call, expected 6, have 5\n   78 |         LogPrintStr_(strprintf(\"Early logging buffer overflowed, %d log lines discarded.\\n\", m_buffer_lines_discarded), __func__, source_loc, BCLog::ALL, Level::Info);\n      |         ~~~~~~~~~~~~                                                                                                                                                 ^",
+        "/home/runner/work/bitcoin/bitcoin/src/logging.h:193:14: note: 'LogPrintStr_' declared here\n/home/runner/work/bitcoin/bitcoin/src/logging.cpp:392:75: error: too few arguments to function call, expected 6, have 5\n  392 |     return LogPrintStr_(str, logging_function, source_loc, category, level);\n      |            ~~~~~~~~~~~~                                                   ^",
+        "/home/runner/work/bitcoin/bitcoin/src/logging.h:193:14: note: 'LogPrintStr_' declared here\n/home/runner/work/bitcoin/bitcoin/src/logging.cpp:395:21: error: out-of-line definition of 'LogPrintStr_' does not match any declaration in 'BCLog::Logger'\n  395 | void BCLog::Logger::LogPrintStr_(std::string_view str, std::string_view logging_function, const std::source_location& source_loc, BCLog::LogFlags category, BCLog::Level level)\n      |                     ^~~~~~~~~~~~"
+      ],
+      "error_count": 3,
+      "error_types": {
+        "function_error": 2,
+        "declaration_error": 1
+      },
+      "error_line_types": [
+        "function_error",
+        "function_error",
+        "declaration_error"
+      ]
+    },
+    {
+      "commit_sha": "82f8575ecee97ebe1570993f4b757c22eb50a736",
+      "branch": "1944/899512/227275/515514a4e6/7c6d5aa000-uint256-cxx-20-constexpr-patch",
+      "workflow_name": "CI",
+      "job_name": [
+        "test each commit",
+        "ASan + LSan + UBSan + integer, no depends, USDT"
+      ],
+      "workflow_id": 15403779489,
+      "job_id": [
+        43342224378,
+        43342224400
+      ],
+      "created_at": "2025-06-02T22:05:33Z",
+      "error_lines": [
+        "/home/runner/work/bitcoin/bitcoin/src/uint256.cpp:34:24: error: call to constructor of 'const uint256' is ambiguous",
+        "/home/runner/work/bitcoin/bitcoin/src/uint256.cpp:35:24: error: call to constructor of 'const uint256' is ambiguous"
+      ],
+      "error_details": [
+        "/home/runner/work/bitcoin/bitcoin/src/uint256.cpp:34:24: error: call to constructor of 'const uint256' is ambiguous\n   34 | const uint256 uint256::ZERO(0ULL);\n      |                        ^    ~~~~",
+        "/home/runner/work/bitcoin/bitcoin/src/uint256.h:201:24: note: candidate constructor\n/home/runner/work/bitcoin/bitcoin/src/uint256.h:206:24: note: candidate constructor\n/home/runner/work/bitcoin/bitcoin/src/uint256.cpp:35:24: error: call to constructor of 'const uint256' is ambiguous\n   35 | const uint256 uint256::ONE(1ULL);\n      |                        ^   ~~~~"
+      ],
+      "error_count": 2,
+      "error_types": {
+        "function_error": 2
+      },
+      "error_line_types": [
+        "function_error",
+        "function_error"
+      ]
+    },
+    {
+      "commit_sha": "5500c70d1cc1e6881af255a5d0fc64d69f93927e",
+      "branch": "1944/899512/227275/515514a4e6/7c6d5aa000-uint256-cxx-20-constexpr-patch",
+      "workflow_name": "CI",
+      "job_name": [
+        "ASan + LSan + UBSan + integer, no depends, USDT"
+      ],
+      "workflow_id": 15401357406,
+      "job_id": [
+        43334475695
+      ],
+      "created_at": "2025-06-02T19:46:36Z",
+      "error_lines": [
+        "/home/runner/work/_temp/src/addrman.cpp:111:28: error: call to constructor of 'uint256' is ambiguous",
+        "/home/runner/work/_temp/src/uint256.cpp:34:24: error: call to constructor of 'const uint256' is ambiguous",
+        "/home/runner/work/_temp/src/uint256.cpp:35:24: error: call to constructor of 'const uint256' is ambiguous"
+      ],
+      "error_details": [
+        "/home/runner/work/_temp/src/addrman.cpp:111:28: error: call to constructor of 'uint256' is ambiguous\n  111 |     , nKey{deterministic ? uint256{1ULL} : insecure_rand.rand256()}\n      |                            ^      ~~~~~~",
+        "/home/runner/work/_temp/src/uint256.h:201:24: note: candidate constructor\n/home/runner/work/_temp/src/uint256.h:206:24: note: candidate constructor\n/home/runner/work/_temp/src/uint256.cpp:34:24: error: call to constructor of 'const uint256' is ambiguous\n   34 | const uint256 uint256::ZERO(0ULL);\n      |                        ^    ~~~~",
+        "/home/runner/work/_temp/src/uint256.h:201:24: note: candidate constructor\n/home/runner/work/_temp/src/uint256.h:206:24: note: candidate constructor\n/home/runner/work/_temp/src/uint256.cpp:35:24: error: call to constructor of 'const uint256' is ambiguous\n   35 | const uint256 uint256::ONE(1ULL);\n      |                        ^   ~~~~"
+      ],
+      "error_count": 3,
+      "error_types": {
+        "function_error": 3
+      },
+      "error_line_types": [
+        "function_error",
+        "function_error",
+        "function_error"
+      ]
+    },
+    {
+      "commit_sha": "68333abd097ee06c4d79897830a5a7ecd68b6449",
+      "branch": "1944/899512/227275/515514a4e6/7c6d5aa000-uint256-cxx-20-constexpr-patch",
+      "workflow_name": "CI",
+      "job_name": [
+        "ASan + LSan + UBSan + integer, no depends, USDT"
+      ],
+      "workflow_id": 15397099603,
+      "job_id": [
+        43320527405
+      ],
+      "created_at": "2025-06-02T16:06:00Z",
+      "error_lines": [
+        "/home/runner/work/_temp/src/uint256.cpp:34:24: error: call to constructor of 'const uint256' is ambiguous",
+        "/home/runner/work/_temp/src/uint256.cpp:35:24: error: call to constructor of 'const uint256' is ambiguous",
+        "/home/runner/work/_temp/src/addrman.cpp:111:28: error: call to constructor of 'uint256' is ambiguous"
+      ],
+      "error_details": [
+        "/home/runner/work/_temp/src/uint256.cpp:34:24: error: call to constructor of 'const uint256' is ambiguous\n   34 | const uint256 uint256::ZERO(0ULL);\n      |                        ^    ~~~~",
+        "/home/runner/work/_temp/src/uint256.h:201:24: note: candidate constructor\n/home/runner/work/_temp/src/uint256.h:206:24: note: candidate constructor\n/home/runner/work/_temp/src/uint256.cpp:35:24: error: call to constructor of 'const uint256' is ambiguous\n   35 | const uint256 uint256::ONE(1ULL);\n      |                        ^   ~~~~",
+        "/home/runner/work/_temp/src/uint256.h:206:24: note: candidate constructor\n/home/runner/work/_temp/src/addrman.cpp:111:28: error: call to constructor of 'uint256' is ambiguous\n  111 |     , nKey{deterministic ? uint256{1ULL} : insecure_rand.rand256()}\n      |                            ^      ~~~~~~"
+      ],
+      "error_count": 3,
+      "error_types": {
+        "function_error": 3
+      },
+      "error_line_types": [
+        "function_error",
+        "function_error",
+        "function_error"
+      ]
+    },
+    {
+      "commit_sha": "46b0e700deb378829fced05f13b63de137b1d3c5",
+      "branch": "codex32",
+      "workflow_name": "CI",
+      "job_name": [
+        "test each commit"
+      ],
+      "workflow_id": 15356611335,
+      "job_id": [
+        43216930542
+      ],
+      "created_at": "2025-05-30T22:06:01Z",
+      "error_lines": [
+        "/home/runner/work/bitcoin/bitcoin/src/wallet/rpc/wallet.cpp:1004:58: error: cannot use dynamic_cast to convert from 'T' (aka 'std::reference_wrapper<wallet::DescriptorScriptPubKeyMan>') to 'DescriptorScriptPubKeyMan *'"
+      ],
+      "error_details": [
+        "/home/runner/work/bitcoin/bitcoin/src/wallet/rpc/wallet.cpp:1004:58: error: cannot use dynamic_cast to convert from 'T' (aka 'std::reference_wrapper<wallet::DescriptorScriptPubKeyMan>') to 'DescriptorScriptPubKeyMan *'\n 1004 |             const DescriptorScriptPubKeyMan* desc_spkm = dynamic_cast<DescriptorScriptPubKeyMan*>(*spkm);\n      |                                                          ^                                        ~~~~~"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "type_error": 1
+      },
+      "error_line_types": [
+        "type_error"
+      ]
+    },
+    {
+      "commit_sha": "46b0e700deb378829fced05f13b63de137b1d3c5",
+      "branch": "codex32",
+      "workflow_name": "CI",
+      "job_name": [
+        "macOS 14 native, arm64, fuzz",
+        "macOS 14 native, arm64, no depends, sqlite only, gui",
+        "ASan + LSan + UBSan + integer, no depends, USDT"
+      ],
+      "workflow_id": 15356611335,
+      "job_id": [
+        43216930552,
+        43216930560,
+        43216930568
+      ],
+      "created_at": "2025-05-30T22:06:01Z",
+      "error_lines": [
+        "/Users/runner/work/bitcoin/bitcoin/src/wallet/rpc/wallet.cpp:1044:58: error: cannot use dynamic_cast to convert from 'T' (aka 'std::reference_wrapper<wallet::DescriptorScriptPubKeyMan>') to 'DescriptorScriptPubKeyMan *'"
+      ],
+      "error_details": [
+        "/Users/runner/work/bitcoin/bitcoin/src/wallet/rpc/wallet.cpp:1044:58: error: cannot use dynamic_cast to convert from 'T' (aka 'std::reference_wrapper<wallet::DescriptorScriptPubKeyMan>') to 'DescriptorScriptPubKeyMan *'\n            const DescriptorScriptPubKeyMan* desc_spkm = dynamic_cast<DescriptorScriptPubKeyMan*>(*spkm);\n                                                         ^                                        ~~~~~"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "type_error": 1
+      },
+      "error_line_types": [
+        "type_error"
+      ]
+    },
+    {
+      "commit_sha": "46b0e700deb378829fced05f13b63de137b1d3c5",
+      "branch": "codex32",
+      "workflow_name": "CI",
+      "job_name": [
+        "Linux->Windows cross, no tests"
+      ],
+      "workflow_id": 15356611335,
+      "job_id": [
+        43216930555
+      ],
+      "created_at": "2025-05-30T22:06:01Z",
+      "error_lines": [
+        "/home/runner/work/_temp/src/wallet/rpc/wallet.cpp:1044:58: error: cannot 'dynamic_cast' 'spkm.util::Result<std::reference_wrapper<wallet::DescriptorScriptPubKeyMan> >::operator*()' (of type 'using util::Result<std::reference_wrapper<wallet::DescriptorScriptPubKeyMan> >::T = std::conditional_t<false, std::monostate, std::reference_wrapper<wallet::DescriptorScriptPubKeyMan> >' {aka 'class std::reference_wrapper<wallet::DescriptorScriptPubKeyMan>'}) to type 'class wallet::DescriptorScriptPubKeyMan*' (source is not a pointer)"
+      ],
+      "error_details": [
+        "/home/runner/work/_temp/src/wallet/rpc/wallet.cpp: In lambda function:\n/home/runner/work/_temp/src/wallet/rpc/wallet.cpp:1044:58: error: cannot 'dynamic_cast' 'spkm.util::Result<std::reference_wrapper<wallet::DescriptorScriptPubKeyMan> >::operator*()' (of type 'using util::Result<std::reference_wrapper<wallet::DescriptorScriptPubKeyMan> >::T = std::conditional_t<false, std::monostate, std::reference_wrapper<wallet::DescriptorScriptPubKeyMan> >' {aka 'class std::reference_wrapper<wallet::DescriptorScriptPubKeyMan>'}) to type 'class wallet::DescriptorScriptPubKeyMan*' (source is not a pointer)\n 1044 |             const DescriptorScriptPubKeyMan* desc_spkm = dynamic_cast<DescriptorScriptPubKeyMan*>(*spkm);\n      |                                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\ngmake[2]: *** [src/wallet/CMakeFiles/bitcoin_wallet.dir/build.make:392: src/wallet/CMakeFiles/bitcoin_wallet.dir/rpc/wallet.cpp.obj] Error 1"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "type_error": 1
+      },
+      "error_line_types": [
+        "type_error"
+      ]
+    },
+    {
+      "commit_sha": "8abf8ee195ff9b7447e9b5121fb471f14e2bf6dc",
+      "branch": "241117-force-iwyu",
+      "workflow_name": "CI",
+      "job_name": [
+        "macOS 14 native, arm64, fuzz"
+      ],
+      "workflow_id": 15189689798,
+      "job_id": [
+        42718954464
+      ],
+      "created_at": "2025-05-22T14:45:29Z",
+      "error_lines": [
+        "/Users/runner/work/bitcoin/bitcoin/src/crypto/sha3.h:37:21: error: no template named 'span' in namespace 'std'; did you mean 'Span''",
+        "/Users/runner/work/bitcoin/bitcoin/src/crypto/sha3.h:38:24: error: no template named 'span' in namespace 'std'; did you mean 'Span''",
+        "/Users/runner/work/bitcoin/bitcoin/src/crypto/sha3.cpp:105:21: error: out-of-line definition of 'Write' does not match any declaration in 'SHA3_256'",
+        "/Users/runner/work/bitcoin/bitcoin/src/crypto/sha3.cpp:135:21: error: out-of-line definition of 'Finalize' does not match any declaration in 'SHA3_256'",
+        "/Users/runner/work/bitcoin/bitcoin/src/crypto/siphash.h:31:23: error: no template named 'span' in namespace 'std'; did you mean 'Span''",
+        "/Users/runner/work/bitcoin/bitcoin/src/crypto/siphash.cpp:52:25: error: out-of-line definition of 'Write' does not match any declaration in 'CSipHasher'"
+      ],
+      "error_details": [
+        "In file included from /Users/runner/work/bitcoin/bitcoin/src/crypto/sha3.cpp:8:\n/Users/runner/work/bitcoin/bitcoin/src/crypto/sha3.h:37:21: error: no template named 'span' in namespace 'std'; did you mean 'Span''\n    SHA3_256& Write(std::span<const unsigned char> data);\n                    ^~~~~~~~~\n                    Span",
+        "/Users/runner/work/bitcoin/bitcoin/src/crypto/sha3.h:12:7: note: 'Span' declared here\n/Users/runner/work/bitcoin/bitcoin/src/crypto/sha3.h:38:24: error: no template named 'span' in namespace 'std'; did you mean 'Span''\n    SHA3_256& Finalize(std::span<unsigned char> output);\n                       ^~~~~~~~~\n                       Span",
+        "/Users/runner/work/bitcoin/bitcoin/src/crypto/sha3.h:12:7: note: 'Span' declared here\n/Users/runner/work/bitcoin/bitcoin/src/crypto/sha3.cpp:105:21: error: out-of-line definition of 'Write' does not match any declaration in 'SHA3_256'\nSHA3_256& SHA3_256::Write(std::span<const unsigned char> data)\n                    ^~~~~",
+        "/Users/runner/work/bitcoin/bitcoin/src/crypto/sha3.cpp:135:21: error: out-of-line definition of 'Finalize' does not match any declaration in 'SHA3_256'\nSHA3_256& SHA3_256::Finalize(std::span<unsigned char> output)\n                    ^~~~~~~~",
+        "In file included from /Users/runner/work/bitcoin/bitcoin/src/crypto/siphash.cpp:5:\n/Users/runner/work/bitcoin/bitcoin/src/crypto/siphash.h:31:23: error: no template named 'span' in namespace 'std'; did you mean 'Span''\n    CSipHasher& Write(std::span<const unsigned char> data);\n                      ^~~~~~~~~\n                      Span",
+        "/Users/runner/work/bitcoin/bitcoin/src/crypto/siphash.h:12:7: note: 'Span' declared here\n/Users/runner/work/bitcoin/bitcoin/src/crypto/siphash.cpp:52:25: error: out-of-line definition of 'Write' does not match any declaration in 'CSipHasher'\nCSipHasher& CSipHasher::Write(std::span<const unsigned char> data)\n                        ^~~~~"
+      ],
+      "error_count": 6,
+      "error_types": {
+        "declaration_error": 6
+      },
+      "error_line_types": [
+        "declaration_error",
+        "declaration_error",
+        "declaration_error",
+        "declaration_error",
+        "declaration_error",
+        "declaration_error"
+      ]
+    },
+    {
+      "commit_sha": "8abf8ee195ff9b7447e9b5121fb471f14e2bf6dc",
+      "branch": "241117-force-iwyu",
+      "workflow_name": "CI",
+      "job_name": [
+        "macOS 14 native, arm64, no depends, sqlite only, gui"
+      ],
+      "workflow_id": 15189689798,
+      "job_id": [
+        42718954483
+      ],
+      "created_at": "2025-05-22T14:45:29Z",
+      "error_lines": [
+        "/Users/runner/work/bitcoin/bitcoin/src/crypto/siphash.h:31:23: error: no template named 'span' in namespace 'std'; did you mean 'Span''",
+        "/Users/runner/work/bitcoin/bitcoin/src/netaddress.h:589:16: error: no matching member function for call to 'Write'"
+      ],
+      "error_details": [
+        "In file included from /Users/runner/work/bitcoin/bitcoin/src/addrman.cpp:8:\nIn file included from /Users/runner/work/bitcoin/bitcoin/src/addrman.h:9:\nIn file included from /Users/runner/work/bitcoin/bitcoin/src/netaddress.h:9:\n/Users/runner/work/bitcoin/bitcoin/src/crypto/siphash.h:31:23: error: no template named 'span' in namespace 'std'; did you mean 'Span''\n    CSipHasher& Write(std::span<const unsigned char> data);\n                      ^~~~~~~~~\n                      Span",
+        "/Users/runner/work/bitcoin/bitcoin/src/crypto/siphash.h:12:7: note: 'Span' declared here\nIn file included from /Users/runner/work/bitcoin/bitcoin/src/addrman.cpp:8:\nIn file included from /Users/runner/work/bitcoin/bitcoin/src/addrman.h:9:\n/Users/runner/work/bitcoin/bitcoin/src/netaddress.h:589:16: error: no matching member function for call to 'Write'\n        hasher.Write(a.m_addr);\n        ~~~~~~~^~~~~"
+      ],
+      "error_count": 2,
+      "error_types": {
+        "declaration_error": 1,
+        "member_error": 1
+      },
+      "error_line_types": [
+        "declaration_error",
+        "member_error"
+      ]
+    },
+    {
+      "commit_sha": "8abf8ee195ff9b7447e9b5121fb471f14e2bf6dc",
+      "branch": "241117-force-iwyu",
+      "workflow_name": "CI",
+      "job_name": [
+        "Linux->Windows cross, no tests"
+      ],
+      "workflow_id": 15189689798,
+      "job_id": [
+        42718954488
+      ],
+      "created_at": "2025-05-22T14:45:29Z",
+      "error_lines": [
+        "/home/runner/work/_temp/src/crypto/sha3.h:37:21: error: 'std::span' has not been declared",
+        "/home/runner/work/_temp/src/crypto/sha3.h:37:30: error: expected ',' or '...' before '<' token",
+        "/home/runner/work/_temp/src/crypto/sha3.h:38:24: error: 'std::span' has not been declared",
+        "/home/runner/work/_temp/src/crypto/sha3.h:38:33: error: expected ',' or '...' before '<' token",
+        "/home/runner/work/_temp/src/crypto/sha3.cpp:105:11: error: no declaration matches 'SHA3_256& SHA3_256::Write(std::span<const unsigned char>)'",
+        "/home/runner/work/_temp/src/crypto/sha3.cpp:135:11: error: no declaration matches 'SHA3_256& SHA3_256::Finalize(std::span<unsigned char>)'",
+        "/home/runner/work/_temp/src/crypto/siphash.h:31:23: error: 'std::span' has not been declared",
+        "/home/runner/work/_temp/src/crypto/siphash.h:31:32: error: expected ',' or '...' before '<' token",
+        "/home/runner/work/_temp/src/netaddress.h:589:21: error: no matching function for call to 'CSipHasher::Write(const prevector<16, unsigned char>&)'"
+      ],
+      "error_details": [
+        "In file included from /home/runner/work/_temp/src/crypto/sha3.cpp:8:\n/home/runner/work/_temp/src/crypto/sha3.h:37:21: error: 'std::span' has not been declared\n   37 |     SHA3_256& Write(std::span<const unsigned char> data);\n      |                     ^~~",
+        "/home/runner/work/_temp/src/crypto/sha3.h:37:30: error: expected ',' or '...' before '<' token\n   37 |     SHA3_256& Write(std::span<const unsigned char> data);\n      |                              ^",
+        "/home/runner/work/_temp/src/crypto/sha3.h:38:24: error: 'std::span' has not been declared\n   38 |     SHA3_256& Finalize(std::span<unsigned char> output);\n      |                        ^~~",
+        "/home/runner/work/_temp/src/crypto/sha3.h:38:33: error: expected ',' or '...' before '<' token\n   38 |     SHA3_256& Finalize(std::span<unsigned char> output);\n      |                                 ^",
+        "/home/runner/work/_temp/src/crypto/sha3.cpp:105:11: error: no declaration matches 'SHA3_256& SHA3_256::Write(std::span<const unsigned char>)'\n  105 | SHA3_256& SHA3_256::Write(std::span<const unsigned char> data)\n      |           ^~~~~~~~",
+        "/home/runner/work/_temp/src/crypto/sha3.h:37:15: note: candidate is: 'SHA3_256& SHA3_256::Write(int)'\n/home/runner/work/_temp/src/crypto/sha3.h:17:7: note: 'class SHA3_256' defined here\n/home/runner/work/_temp/src/crypto/sha3.cpp:135:11: error: no declaration matches 'SHA3_256& SHA3_256::Finalize(std::span<unsigned char>)'\n  135 | SHA3_256& SHA3_256::Finalize(std::span<unsigned char> output)\n      |           ^~~~~~~~",
+        "In file included from /home/runner/work/_temp/src/netaddress.h:9,\n/home/runner/work/_temp/src/crypto/siphash.h:31:23: error: 'std::span' has not been declared\n   31 |     CSipHasher& Write(std::span<const unsigned char> data);\n      |                       ^~~",
+        "/home/runner/work/_temp/src/crypto/siphash.h:31:32: error: expected ',' or '...' before '<' token\n   31 |     CSipHasher& Write(std::span<const unsigned char> data);\n      |                                ^",
+        "/home/runner/work/_temp/src/netaddress.h: In member function 'size_t CServiceHash::operator()(const CService&) const':\n/home/runner/work/_temp/src/netaddress.h:589:21: error: no matching function for call to 'CSipHasher::Write(const prevector<16, unsigned char>&)'\n  589 |         hasher.Write(a.m_addr);\n      |         ~~~~~~~~~~~~^~~~~~~~~~"
+      ],
+      "error_count": 9,
+      "error_types": {
+        "declaration_error": 5,
+        "syntax_error": 3,
+        "function_error": 1
+      },
+      "error_line_types": [
+        "declaration_error",
+        "syntax_error",
+        "declaration_error",
+        "syntax_error",
+        "declaration_error",
+        "declaration_error",
+        "declaration_error",
+        "syntax_error",
+        "function_error"
+      ]
+    },
+    {
+      "commit_sha": "8abf8ee195ff9b7447e9b5121fb471f14e2bf6dc",
+      "branch": "241117-force-iwyu",
+      "workflow_name": "CI",
+      "job_name": [
+        "test each commit"
+      ],
+      "workflow_id": 15189689798,
+      "job_id": [
+        42718954492
+      ],
+      "created_at": "2025-05-22T14:45:29Z",
+      "error_lines": [
+        "/home/runner/work/bitcoin/bitcoin/src/crypto/sha3.h:37:21: error: no template named 'span' in namespace 'std'; did you mean 'Span''",
+        "/home/runner/work/bitcoin/bitcoin/src/crypto/sha3.h:38:24: error: no template named 'span' in namespace 'std'; did you mean 'Span''",
+        "/home/runner/work/bitcoin/bitcoin/src/crypto/sha3.cpp:105:21: error: out-of-line definition of 'Write' does not match any declaration in 'SHA3_256'",
+        "/home/runner/work/bitcoin/bitcoin/src/crypto/sha3.cpp:135:21: error: out-of-line definition of 'Finalize' does not match any declaration in 'SHA3_256'",
+        "/home/runner/work/bitcoin/bitcoin/src/crypto/siphash.h:31:23: error: use of undeclared identifier 'std'",
+        "/home/runner/work/bitcoin/bitcoin/src/util/bytevectorhash.cpp:19:41: error: no viable conversion from 'const std::vector<unsigned char>' to 'uint64_t' (aka 'unsigned long')"
+      ],
+      "error_details": [
+        "In file included from /home/runner/work/bitcoin/bitcoin/src/crypto/sha3.cpp:8:\n/home/runner/work/bitcoin/bitcoin/src/crypto/sha3.h:37:21: error: no template named 'span' in namespace 'std'; did you mean 'Span''\n   37 |     SHA3_256& Write(std::span<const unsigned char> data);\n      |                     ^~~~~~~~~\n      |                     Span",
+        "/home/runner/work/bitcoin/bitcoin/src/crypto/sha3.h:12:7: note: 'Span' declared here\n/home/runner/work/bitcoin/bitcoin/src/crypto/sha3.h:38:24: error: no template named 'span' in namespace 'std'; did you mean 'Span''\n   38 |     SHA3_256& Finalize(std::span<unsigned char> output);\n      |                        ^~~~~~~~~\n      |                        Span",
+        "/home/runner/work/bitcoin/bitcoin/src/crypto/sha3.h:12:7: note: 'Span' declared here\n/home/runner/work/bitcoin/bitcoin/src/crypto/sha3.cpp:105:21: error: out-of-line definition of 'Write' does not match any declaration in 'SHA3_256'\n  105 | SHA3_256& SHA3_256::Write(std::span<const unsigned char> data)\n      |                     ^~~~~",
+        "/home/runner/work/bitcoin/bitcoin/src/crypto/sha3.cpp:135:21: error: out-of-line definition of 'Finalize' does not match any declaration in 'SHA3_256'\n  135 | SHA3_256& SHA3_256::Finalize(std::span<unsigned char> output)\n      |                     ^~~~~~~~",
+        "In file included from /home/runner/work/bitcoin/bitcoin/src/util/bytevectorhash.cpp:5:\n/home/runner/work/bitcoin/bitcoin/src/crypto/siphash.h:31:23: error: use of undeclared identifier 'std'\n   31 |     CSipHasher& Write(std::span<const unsigned char> data);\n      |                       ^",
+        "/home/runner/work/bitcoin/bitcoin/src/util/bytevectorhash.cpp:19:41: error: no viable conversion from 'const std::vector<unsigned char>' to 'uint64_t' (aka 'unsigned long')\n   19 |     return CSipHasher(m_k0, m_k1).Write(input).Finalize();\n      |                                         ^~~~~"
+      ],
+      "error_count": 6,
+      "error_types": {
+        "declaration_error": 5,
+        "type_error": 1
+      },
+      "error_line_types": [
+        "declaration_error",
+        "declaration_error",
+        "declaration_error",
+        "declaration_error",
+        "declaration_error",
+        "type_error"
+      ]
+    },
+    {
+      "commit_sha": "8abf8ee195ff9b7447e9b5121fb471f14e2bf6dc",
+      "branch": "241117-force-iwyu",
+      "workflow_name": "CI",
+      "job_name": [
+        "ASan + LSan + UBSan + integer, no depends, USDT"
+      ],
+      "workflow_id": 15189689798,
+      "job_id": [
+        42718954522
+      ],
+      "created_at": "2025-05-22T14:45:29Z",
+      "error_lines": [
+        "/home/runner/work/_temp/src/crypto/siphash.h:31:23: error: use of undeclared identifier 'std'",
+        "/home/runner/work/_temp/src/util/bytevectorhash.cpp:19:41: error: no viable conversion from 'const std::vector<unsigned char>' to 'uint64_t' (aka 'unsigned long')",
+        "/home/runner/work/_temp/src/crypto/sha3.h:37:21: error: no template named 'span' in namespace 'std'; did you mean 'Span''",
+        "/home/runner/work/_temp/src/crypto/sha3.h:38:24: error: no template named 'span' in namespace 'std'; did you mean 'Span''",
+        "/home/runner/work/_temp/src/crypto/sha3.cpp:105:21: error: out-of-line definition of 'Write' does not match any declaration in 'SHA3_256'",
+        "/home/runner/work/_temp/src/crypto/sha3.cpp:135:21: error: out-of-line definition of 'Finalize' does not match any declaration in 'SHA3_256'",
+        "/home/runner/work/_temp/src/crypto/siphash.h:31:23: error: no template named 'span' in namespace 'std'; did you mean 'Span''",
+        "/home/runner/work/_temp/src/netaddress.h:589:16: error: no matching member function for call to 'Write'"
+      ],
+      "error_details": [
+        "In file included from /home/runner/work/_temp/src/util/bytevectorhash.cpp:5:\n/home/runner/work/_temp/src/crypto/siphash.h:31:23: error: use of undeclared identifier 'std'\n   31 |     CSipHasher& Write(std::span<const unsigned char> data);\n      |                       ^",
+        "/home/runner/work/_temp/src/util/bytevectorhash.cpp:19:41: error: no viable conversion from 'const std::vector<unsigned char>' to 'uint64_t' (aka 'unsigned long')\n   19 |     return CSipHasher(m_k0, m_k1).Write(input).Finalize();\n      |                                         ^~~~~",
+        "In file included from /home/runner/work/_temp/src/crypto/sha3.cpp:8:\n/home/runner/work/_temp/src/crypto/sha3.h:37:21: error: no template named 'span' in namespace 'std'; did you mean 'Span''\n   37 |     SHA3_256& Write(std::span<const unsigned char> data);\n      |                     ^~~~~~~~~\n      |                     Span",
+        "/home/runner/work/_temp/src/crypto/sha3.h:12:7: note: 'Span' declared here\n/home/runner/work/_temp/src/crypto/sha3.h:38:24: error: no template named 'span' in namespace 'std'; did you mean 'Span''\n   38 |     SHA3_256& Finalize(std::span<unsigned char> output);\n      |                        ^~~~~~~~~\n      |                        Span",
+        "/home/runner/work/_temp/src/crypto/sha3.h:12:7: note: 'Span' declared here\n/home/runner/work/_temp/src/crypto/sha3.cpp:105:21: error: out-of-line definition of 'Write' does not match any declaration in 'SHA3_256'\n  105 | SHA3_256& SHA3_256::Write(std::span<const unsigned char> data)\n      |                     ^~~~~",
+        "/home/runner/work/_temp/src/crypto/sha3.h:17:7: note: SHA3_256 defined here\n/home/runner/work/_temp/src/crypto/sha3.cpp:135:21: error: out-of-line definition of 'Finalize' does not match any declaration in 'SHA3_256'\n  135 | SHA3_256& SHA3_256::Finalize(std::span<unsigned char> output)\n      |                     ^~~~~~~~",
+        "/home/runner/work/_temp/src/crypto/sha3.h:17:7: note: SHA3_256 defined here\nIn file included from /home/runner/work/_temp/src/addrman.cpp:8:\nIn file included from /home/runner/work/_temp/src/addrman.h:9:\nIn file included from /home/runner/work/_temp/src/netaddress.h:9:\n/home/runner/work/_temp/src/crypto/siphash.h:31:23: error: no template named 'span' in namespace 'std'; did you mean 'Span''\n   31 |     CSipHasher& Write(std::span<const unsigned char> data);\n      |                       ^~~~~~~~~\n      |                       Span",
+        "/home/runner/work/_temp/src/crypto/siphash.h:12:7: note: 'Span' declared here\nIn file included from /home/runner/work/_temp/src/addrman.cpp:8:\nIn file included from /home/runner/work/_temp/src/addrman.h:9:\n/home/runner/work/_temp/src/netaddress.h:589:16: error: no matching member function for call to 'Write'\n  589 |         hasher.Write(a.m_addr);\n      |         ~~~~~~~^~~~~"
+      ],
+      "error_count": 8,
+      "error_types": {
+        "declaration_error": 6,
+        "type_error": 1,
+        "member_error": 1
+      },
+      "error_line_types": [
+        "declaration_error",
+        "type_error",
+        "declaration_error",
+        "declaration_error",
+        "declaration_error",
+        "declaration_error",
+        "declaration_error",
+        "member_error"
+      ]
+    },
+    {
+      "commit_sha": "edff83a95fea244e88cc32152c96c353c354005e",
+      "branch": "2025/03/full-txid-type-safety",
+      "workflow_name": "CI",
+      "job_name": [
+        "macOS 14 native, arm64, fuzz",
+        "macOS 14 native, arm64, no depends, sqlite only, gui"
+      ],
+      "workflow_id": 15189291846,
+      "job_id": [
+        42717596112,
+        42717596125
+      ],
+      "created_at": "2025-05-22T14:28:39Z",
+      "error_lines": [
+        "/Applications/Xcode_15.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__algorithm/find.h:25:18: error: invalid operands to binary expression ('uint256' and 'const transaction_identifier<false>')"
+      ],
+      "error_details": [
+        "In file included from /Users/runner/work/bitcoin/bitcoin/src/wallet/rpc/backup.cpp:5:\nIn file included from /Users/runner/work/bitcoin/bitcoin/src/chain.h:9:\nIn file included from /Users/runner/work/bitcoin/bitcoin/src/arith_uint256.h:14:\nIn file included from /Applications/Xcode_15.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/string:539:\nIn file included from /Applications/Xcode_15.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__algorithm/remove.h:12:\n/Applications/Xcode_15.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__algorithm/find.h:25:18: error: invalid operands to binary expression ('uint256' and 'const transaction_identifier<false>')\n    if (*__first == __value)\n        ~~~~~~~~ ^  ~~~~~~~"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "semantic_error": 1
+      },
+      "error_line_types": [
+        "semantic_error"
+      ]
+    },
+    {
+      "commit_sha": "edff83a95fea244e88cc32152c96c353c354005e",
+      "branch": "2025/03/full-txid-type-safety",
+      "workflow_name": "CI",
+      "job_name": [
+        "Linux->Windows cross, no tests"
+      ],
+      "workflow_id": 15189291846,
+      "job_id": [
+        42717596174
+      ],
+      "created_at": "2025-05-22T14:28:39Z",
+      "error_lines": [
+        "/usr/lib/gcc/x86_64-w64-mingw32/13-posix/include/c++/bits/predefined_ops.h:270:24: error: no match for 'operator==' (operand types are 'uint256' and 'const transaction_identifier<false>')"
+      ],
+      "error_details": [
+        "In file included from /usr/lib/gcc/x86_64-w64-mingw32/13-posix/include/c++/bits/stl_algobase.h:71,\n/usr/lib/gcc/x86_64-w64-mingw32/13-posix/include/c++/bits/predefined_ops.h: In instantiation of 'constexpr bool __gnu_cxx::__ops::_Iter_equals_val<_Value>::operator()(_Iterator) [with _Iterator = __gnu_cxx::__normal_iterator<uint256*, std::vector<uint256> >; _Value = const transaction_identifier<false>]':\n/usr/lib/gcc/x86_64-w64-mingw32/13-posix/include/c++/bits/stl_algobase.h:2069:14:   required from 'constexpr _RandomAccessIterator std::__find_if(_RandomAccessIterator, _RandomAccessIterator, _Predicate, random_access_iterator_tag) [with _RandomAccessIterator = __gnu_cxx::__normal_iterator<uint256*, vector<uint256> >; _Predicate = __gnu_cxx::__ops::_Iter_equals_val<const transaction_identifier<false> >]'\n/usr/lib/gcc/x86_64-w64-mingw32/13-posix/include/c++/bits/stl_algobase.h:2114:23:   required from 'constexpr _Iterator std::__find_if(_Iterator, _Iterator, _Predicate) [with _Iterator = __gnu_cxx::__normal_iterator<uint256*, vector<uint256> >; _Predicate = __gnu_cxx::__ops::_Iter_equals_val<const transaction_identifier<false> >]'\n/usr/lib/gcc/x86_64-w64-mingw32/13-posix/include/c++/bits/stl_algo.h:3897:28:   required from 'constexpr _IIter std::find(_IIter, _IIter, const _Tp&) [with _IIter = __gnu_cxx::__normal_iterator<uint256*, vector<uint256> >; _Tp = transaction_identifier<false>]'\n/home/runner/work/_temp/src/wallet/rpc/backup.cpp:76:24:   required from here\n/usr/lib/gcc/x86_64-w64-mingw32/13-posix/include/c++/bits/predefined_ops.h:270:24: error: no match for 'operator==' (operand types are 'uint256' and 'const transaction_identifier<false>')\n  270 |         { return *__it == _M_value; }\n      |                  ~~~~~~^~~~~~~~~~~"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "semantic_error": 1
+      },
+      "error_line_types": [
+        "semantic_error"
+      ]
+    },
+    {
+      "commit_sha": "edff83a95fea244e88cc32152c96c353c354005e",
+      "branch": "2025/03/full-txid-type-safety",
+      "workflow_name": "CI",
+      "job_name": [
+        "ASan + LSan + UBSan + integer, no depends, USDT"
+      ],
+      "workflow_id": 15189291846,
+      "job_id": [
+        42717596242
+      ],
+      "created_at": "2025-05-22T14:28:39Z",
+      "error_lines": [
+        "/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/predefined_ops.h:270:17: error: invalid operands to binary expression ('uint256' and 'const transaction_identifier<false>')",
+        "/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_algobase.h:2076:8: error: no matching function for call to object of type '__gnu_cxx::__ops::_Iter_equals_val<const transaction_identifier<false>>'",
+        "/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_algobase.h:2080:8: error: no matching function for call to object of type '__gnu_cxx::__ops::_Iter_equals_val<const transaction_identifier<false>>'",
+        "/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_algobase.h:2084:8: error: no matching function for call to object of type '__gnu_cxx::__ops::_Iter_equals_val<const transaction_identifier<false>>'",
+        "/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_algobase.h:2092:8: error: no matching function for call to object of type '__gnu_cxx::__ops::_Iter_equals_val<const transaction_identifier<false>>'",
+        "/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_algobase.h:2097:8: error: no matching function for call to object of type '__gnu_cxx::__ops::_Iter_equals_val<const transaction_identifier<false>>'",
+        "/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_algobase.h:2102:8: error: no matching function for call to object of type '__gnu_cxx::__ops::_Iter_equals_val<const transaction_identifier<false>>'"
+      ],
+      "error_details": [
+        "In file included from /home/runner/work/_temp/src/wallet/rpc/backup.cpp:5:\nIn file included from /home/runner/work/_temp/src/chain.h:9:\nIn file included from /home/runner/work/_temp/src/arith_uint256.h:13:\nIn file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/stdexcept:39:\nIn file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/string:51:\nIn file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_algobase.h:71:\n/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/predefined_ops.h:270:17: error: invalid operands to binary expression ('uint256' and 'const transaction_identifier<false>')\n  270 |         { return *__it == _M_value; }\n      |                  ~~~~~ ^  ~~~~~~~~",
+        "/home/runner/work/_temp/src/uint256.h:66:27: note: candidate function not viable: no known conversion from 'const transaction_identifier<false>' to 'const base_blob<256>' for 2nd argument\n/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_iterator.h:1178:5: note: candidate template ignored: could not match '__normal_iterator<_IteratorL, _Container>' against 'uint256'\n/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_iterator.h:1178:5: note: candidate template ignored: could not match '__normal_iterator' against 'transaction_identifier'\n/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_iterator.h:1197:5: note: candidate template ignored: could not match '__normal_iterator<_Iterator, _Container>' against 'uint256'\n/home/runner/work/_temp/src/support/allocators/pool.h:336:6: note: candidate template ignored: could not match 'PoolAllocator<T1, MAX_BLOCK_SIZE_BYTES, ALIGN_BYTES>' against 'uint256'\nIn file included from /home/runner/work/_temp/src/wallet/rpc/backup.cpp:5:\nIn file included from /home/runner/work/_temp/src/chain.h:9:\nIn file included from /home/runner/work/_temp/src/arith_uint256.h:13:\nIn file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/stdexcept:39:\nIn file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/string:51:\n/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_algobase.h:2076:8: error: no matching function for call to object of type '__gnu_cxx::__ops::_Iter_equals_val<const transaction_identifier<false>>'\n 2076 |           if (__pred(__first))\n      |               ^~~~~~",
+        "/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_algobase.h:2117:14: note: in instantiation of function template specialization 'std::__find_if<__gnu_cxx::__normal_iterator<uint256 *, std::vector<uint256>>, __gnu_cxx::__ops::_Iter_equals_val<const transaction_identifier<false>>>' requested here\n/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_algo.h:3897:19: note: in instantiation of function template specialization 'std::__find_if<__gnu_cxx::__normal_iterator<uint256 *, std::vector<uint256>>, __gnu_cxx::__ops::_Iter_equals_val<const transaction_identifier<false>>>' requested here\n/home/runner/work/_temp/src/wallet/rpc/backup.cpp:76:20: note: in instantiation of function template specialization 'std::find<__gnu_cxx::__normal_iterator<uint256 *, std::vector<uint256>>, transaction_identifier<false>>' requested here\n/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/predefined_ops.h:269:2: note: candidate template ignored: substitution failure [with _Iterator = __gnu_cxx::__normal_iterator<uint256 *, std::vector<uint256>>]\nIn file included from /home/runner/work/_temp/src/wallet/rpc/backup.cpp:5:\nIn file included from /home/runner/work/_temp/src/chain.h:9:\nIn file included from /home/runner/work/_temp/src/arith_uint256.h:13:\nIn file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/stdexcept:39:\nIn file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/string:51:\n/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_algobase.h:2080:8: error: no matching function for call to object of type '__gnu_cxx::__ops::_Iter_equals_val<const transaction_identifier<false>>'\n 2080 |           if (__pred(__first))\n      |               ^~~~~~",
+        "/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/predefined_ops.h:269:2: note: candidate template ignored: substitution failure [with _Iterator = __gnu_cxx::__normal_iterator<uint256 *, std::vector<uint256>>]\nIn file included from /home/runner/work/_temp/src/wallet/rpc/backup.cpp:5:\nIn file included from /home/runner/work/_temp/src/chain.h:9:\nIn file included from /home/runner/work/_temp/src/arith_uint256.h:13:\nIn file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/stdexcept:39:\nIn file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/string:51:\n/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_algobase.h:2084:8: error: no matching function for call to object of type '__gnu_cxx::__ops::_Iter_equals_val<const transaction_identifier<false>>'\n 2084 |           if (__pred(__first))\n      |               ^~~~~~",
+        "/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/predefined_ops.h:269:2: note: candidate template ignored: substitution failure [with _Iterator = __gnu_cxx::__normal_iterator<uint256 *, std::vector<uint256>>]\nIn file included from /home/runner/work/_temp/src/wallet/rpc/backup.cpp:5:\nIn file included from /home/runner/work/_temp/src/chain.h:9:\nIn file included from /home/runner/work/_temp/src/arith_uint256.h:13:\nIn file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/stdexcept:39:\nIn file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/string:51:\n/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_algobase.h:2092:8: error: no matching function for call to object of type '__gnu_cxx::__ops::_Iter_equals_val<const transaction_identifier<false>>'\n 2092 |           if (__pred(__first))\n      |               ^~~~~~",
+        "/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/predefined_ops.h:269:2: note: candidate template ignored: substitution failure [with _Iterator = __gnu_cxx::__normal_iterator<uint256 *, std::vector<uint256>>]\nIn file included from /home/runner/work/_temp/src/wallet/rpc/backup.cpp:5:\nIn file included from /home/runner/work/_temp/src/chain.h:9:\nIn file included from /home/runner/work/_temp/src/arith_uint256.h:13:\nIn file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/stdexcept:39:\nIn file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/string:51:\n/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_algobase.h:2097:8: error: no matching function for call to object of type '__gnu_cxx::__ops::_Iter_equals_val<const transaction_identifier<false>>'\n 2097 |           if (__pred(__first))\n      |               ^~~~~~",
+        "/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/predefined_ops.h:269:2: note: candidate template ignored: substitution failure [with _Iterator = __gnu_cxx::__normal_iterator<uint256 *, std::vector<uint256>>]\nIn file included from /home/runner/work/_temp/src/wallet/rpc/backup.cpp:5:\nIn file included from /home/runner/work/_temp/src/chain.h:9:\nIn file included from /home/runner/work/_temp/src/arith_uint256.h:13:\nIn file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/stdexcept:39:\nIn file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/string:51:\n/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_algobase.h:2102:8: error: no matching function for call to object of type '__gnu_cxx::__ops::_Iter_equals_val<const transaction_identifier<false>>'\n 2102 |           if (__pred(__first))\n      |               ^~~~~~"
+      ],
+      "error_count": 7,
+      "error_types": {
+        "semantic_error": 1,
+        "function_error": 6
+      },
+      "error_line_types": [
+        "semantic_error",
+        "function_error",
+        "function_error",
+        "function_error",
+        "function_error",
+        "function_error",
+        "function_error"
+      ]
+    },
+    {
+      "commit_sha": "bc3d88bf829a22dc7e3aa59e519b125a6253aa68",
+      "branch": "2025-05-pool-poison",
+      "workflow_name": "CI",
+      "job_name": [
+        "macOS 14 native, arm64, no depends, sqlite only, gui"
+      ],
+      "workflow_id": 15168503904,
+      "job_id": [
+        42652439784
+      ],
+      "created_at": "2025-05-21T17:18:35Z",
+      "error_lines": [
+        "/Users/runner/work/bitcoin/bitcoin/src/support/allocators/pool.h:258:13: error: use of undeclared identifier 'ASAN_UNPOISON_MEMORY_REGION'",
+        "/Users/runner/work/bitcoin/bitcoin/src/support/allocators/pool.h:260:13: error: use of undeclared identifier 'ASAN_POISON_MEMORY_REGION'",
+        "/Users/runner/work/bitcoin/bitcoin/src/support/allocators/pool.h:160:13: error: use of undeclared identifier 'ASAN_UNPOISON_MEMORY_REGION'",
+        "/Users/runner/work/bitcoin/bitcoin/src/support/allocators/pool.h:162:13: error: use of undeclared identifier 'ASAN_POISON_MEMORY_REGION'",
+        "/Users/runner/work/bitcoin/bitcoin/src/support/allocators/pool.h:168:9: error: use of undeclared identifier 'ASAN_POISON_MEMORY_REGION'",
+        "/Users/runner/work/bitcoin/bitcoin/src/support/allocators/pool.h:210:13: error: use of undeclared identifier 'ASAN_POISON_MEMORY_REGION'"
+      ],
+      "error_details": [
+        "In file included from /Users/runner/work/bitcoin/bitcoin/src/wallet/external_signer_scriptpubkeyman.cpp:10:\nIn file included from /Users/runner/work/bitcoin/bitcoin/src/wallet/external_signer_scriptpubkeyman.h:8:\nIn file included from /Users/runner/work/bitcoin/bitcoin/src/wallet/scriptpubkeyman.h:14:\nIn file included from /Users/runner/work/bitcoin/bitcoin/src/psbt.h:14:\nIn file included from /Users/runner/work/bitcoin/bitcoin/src/script/sign.h:10:\nIn file included from /Users/runner/work/bitcoin/bitcoin/src/coins.h:10:\nIn file included from /Users/runner/work/bitcoin/bitcoin/src/core_memusage.h:10:\nIn file included from /Users/runner/work/bitcoin/bitcoin/src/memusage.h:10:\n/Users/runner/work/bitcoin/bitcoin/src/support/allocators/pool.h:258:13: error: use of undeclared identifier 'ASAN_UNPOISON_MEMORY_REGION'\n            ASAN_UNPOISON_MEMORY_REGION(p, sizeof(ListNode));\n            ^",
+        "/Users/runner/work/bitcoin/bitcoin/src/support/allocators/pool.h:260:13: error: use of undeclared identifier 'ASAN_POISON_MEMORY_REGION'\n            ASAN_POISON_MEMORY_REGION(p, std::max(bytes, sizeof(ListNode)));\n            ^",
+        "/Users/runner/work/bitcoin/bitcoin/src/support/allocators/pool.h:160:13: error: use of undeclared identifier 'ASAN_UNPOISON_MEMORY_REGION'\n            ASAN_UNPOISON_MEMORY_REGION(m_available_memory_it, sizeof(ListNode));\n            ^",
+        "/Users/runner/work/bitcoin/bitcoin/src/support/allocators/pool.h:186:9: note: in instantiation of member function 'PoolResource<144, 8>::AllocateChunk' requested here\n/Users/runner/work/bitcoin/bitcoin/src/support/allocators/pool.h:192:22: note: in instantiation of member function 'PoolResource<144, 8>::PoolResource' requested here\n/Users/runner/work/bitcoin/bitcoin/src/coins.h:373:66: note: in instantiation of member function 'PoolResource<144, 8>::PoolResource' requested here\nIn file included from /Users/runner/work/bitcoin/bitcoin/src/wallet/external_signer_scriptpubkeyman.cpp:10:\nIn file included from /Users/runner/work/bitcoin/bitcoin/src/wallet/external_signer_scriptpubkeyman.h:8:\nIn file included from /Users/runner/work/bitcoin/bitcoin/src/wallet/scriptpubkeyman.h:14:\nIn file included from /Users/runner/work/bitcoin/bitcoin/src/psbt.h:14:\nIn file included from /Users/runner/work/bitcoin/bitcoin/src/script/sign.h:10:\nIn file included from /Users/runner/work/bitcoin/bitcoin/src/coins.h:10:\nIn file included from /Users/runner/work/bitcoin/bitcoin/src/core_memusage.h:10:\nIn file included from /Users/runner/work/bitcoin/bitcoin/src/memusage.h:10:\n/Users/runner/work/bitcoin/bitcoin/src/support/allocators/pool.h:162:13: error: use of undeclared identifier 'ASAN_POISON_MEMORY_REGION'\n            ASAN_POISON_MEMORY_REGION(m_available_memory_it, sizeof(ListNode));\n            ^",
+        "/Users/runner/work/bitcoin/bitcoin/src/support/allocators/pool.h:168:9: error: use of undeclared identifier 'ASAN_POISON_MEMORY_REGION'\n        ASAN_POISON_MEMORY_REGION(m_available_memory_it, m_chunk_size_bytes);\n        ^",
+        "/Users/runner/work/bitcoin/bitcoin/src/support/allocators/pool.h:210:13: error: use of undeclared identifier 'ASAN_POISON_MEMORY_REGION'\n            ASAN_POISON_MEMORY_REGION(chunk, m_chunk_size_bytes);\n            ^"
+      ],
+      "error_count": 6,
+      "error_types": {
+        "declaration_error": 6
+      },
+      "error_line_types": [
+        "declaration_error",
+        "declaration_error",
+        "declaration_error",
+        "declaration_error",
+        "declaration_error",
+        "declaration_error"
+      ]
+    },
+    {
+      "commit_sha": "bc3d88bf829a22dc7e3aa59e519b125a6253aa68",
+      "branch": "2025-05-pool-poison",
+      "workflow_name": "CI",
+      "job_name": [
+        "macOS 14 native, arm64, fuzz"
+      ],
+      "workflow_id": 15168503904,
+      "job_id": [
+        42652439804
+      ],
+      "created_at": "2025-05-21T17:18:35Z",
+      "error_lines": [
+        "/Users/runner/work/bitcoin/bitcoin/src/support/allocators/pool.h:258:13: error: use of undeclared identifier 'ASAN_UNPOISON_MEMORY_REGION'",
+        "/Users/runner/work/bitcoin/bitcoin/src/support/allocators/pool.h:260:13: error: use of undeclared identifier 'ASAN_POISON_MEMORY_REGION'",
+        "/Users/runner/work/bitcoin/bitcoin/src/support/allocators/pool.h:160:13: error: use of undeclared identifier 'ASAN_UNPOISON_MEMORY_REGION'",
+        "/Users/runner/work/bitcoin/bitcoin/src/support/allocators/pool.h:162:13: error: use of undeclared identifier 'ASAN_POISON_MEMORY_REGION'",
+        "/Users/runner/work/bitcoin/bitcoin/src/support/allocators/pool.h:168:9: error: use of undeclared identifier 'ASAN_POISON_MEMORY_REGION'",
+        "/Users/runner/work/bitcoin/bitcoin/src/support/allocators/pool.h:226:17: error: use of undeclared identifier 'ASAN_UNPOISON_MEMORY_REGION'",
+        "/Users/runner/work/bitcoin/bitcoin/src/support/allocators/pool.h:228:17: error: use of undeclared identifier 'ASAN_POISON_MEMORY_REGION'",
+        "/Users/runner/work/bitcoin/bitcoin/src/support/allocators/pool.h:229:17: error: use of undeclared identifier 'ASAN_UNPOISON_MEMORY_REGION'",
+        "/Users/runner/work/bitcoin/bitcoin/src/support/allocators/pool.h:241:13: error: use of undeclared identifier 'ASAN_UNPOISON_MEMORY_REGION'",
+        "/Users/runner/work/bitcoin/bitcoin/src/support/allocators/pool.h:210:13: error: use of undeclared identifier 'ASAN_POISON_MEMORY_REGION'"
+      ],
+      "error_details": [
+        "In file included from /Users/runner/work/bitcoin/bitcoin/src/coins.cpp:5:\nIn file included from /Users/runner/work/bitcoin/bitcoin/src/coins.h:10:\nIn file included from /Users/runner/work/bitcoin/bitcoin/src/core_memusage.h:10:\nIn file included from /Users/runner/work/bitcoin/bitcoin/src/memusage.h:10:\n/Users/runner/work/bitcoin/bitcoin/src/support/allocators/pool.h:258:13: error: use of undeclared identifier 'ASAN_UNPOISON_MEMORY_REGION'\n            ASAN_UNPOISON_MEMORY_REGION(p, sizeof(ListNode));\n            ^",
+        "/Users/runner/work/bitcoin/bitcoin/src/support/allocators/pool.h:260:13: error: use of undeclared identifier 'ASAN_POISON_MEMORY_REGION'\n            ASAN_POISON_MEMORY_REGION(p, std::max(bytes, sizeof(ListNode)));\n            ^",
+        "/Users/runner/work/bitcoin/bitcoin/src/support/allocators/pool.h:160:13: error: use of undeclared identifier 'ASAN_UNPOISON_MEMORY_REGION'\n            ASAN_UNPOISON_MEMORY_REGION(m_available_memory_it, sizeof(ListNode));\n            ^",
+        "/Users/runner/work/bitcoin/bitcoin/src/support/allocators/pool.h:186:9: note: in instantiation of member function 'PoolResource<144, 8>::AllocateChunk' requested here\n/Users/runner/work/bitcoin/bitcoin/src/support/allocators/pool.h:192:22: note: in instantiation of member function 'PoolResource<144, 8>::PoolResource' requested here\n/Users/runner/work/bitcoin/bitcoin/src/coins.h:373:66: note: in instantiation of member function 'PoolResource<144, 8>::PoolResource' requested here\nIn file included from /Users/runner/work/bitcoin/bitcoin/src/coins.cpp:5:\nIn file included from /Users/runner/work/bitcoin/bitcoin/src/coins.h:10:\nIn file included from /Users/runner/work/bitcoin/bitcoin/src/core_memusage.h:10:\nIn file included from /Users/runner/work/bitcoin/bitcoin/src/memusage.h:10:\n/Users/runner/work/bitcoin/bitcoin/src/support/allocators/pool.h:162:13: error: use of undeclared identifier 'ASAN_POISON_MEMORY_REGION'\n            ASAN_POISON_MEMORY_REGION(m_available_memory_it, sizeof(ListNode));\n            ^",
+        "/Users/runner/work/bitcoin/bitcoin/src/support/allocators/pool.h:168:9: error: use of undeclared identifier 'ASAN_POISON_MEMORY_REGION'\n        ASAN_POISON_MEMORY_REGION(m_available_memory_it, m_chunk_size_bytes);\n        ^",
+        "/Users/runner/work/bitcoin/bitcoin/src/support/allocators/pool.h:226:17: error: use of undeclared identifier 'ASAN_UNPOISON_MEMORY_REGION'\n                ASAN_UNPOISON_MEMORY_REGION(m_free_lists[num_alignments], sizeof(ListNode));\n                ^",
+        "In file included from /Users/runner/work/bitcoin/bitcoin/src/coins.cpp:5:\nIn file included from /Users/runner/work/bitcoin/bitcoin/src/coins.h:10:\nIn file included from /Users/runner/work/bitcoin/bitcoin/src/core_memusage.h:10:\nIn file included from /Users/runner/work/bitcoin/bitcoin/src/memusage.h:10:\n/Users/runner/work/bitcoin/bitcoin/src/support/allocators/pool.h:228:17: error: use of undeclared identifier 'ASAN_POISON_MEMORY_REGION'\n                ASAN_POISON_MEMORY_REGION(m_free_lists[num_alignments], sizeof(ListNode));\n                ^",
+        "/Users/runner/work/bitcoin/bitcoin/src/support/allocators/pool.h:229:17: error: use of undeclared identifier 'ASAN_UNPOISON_MEMORY_REGION'\n                ASAN_UNPOISON_MEMORY_REGION(m_free_lists[num_alignments], bytes);\n                ^",
+        "/Users/runner/work/bitcoin/bitcoin/src/support/allocators/pool.h:241:13: error: use of undeclared identifier 'ASAN_UNPOISON_MEMORY_REGION'\n            ASAN_UNPOISON_MEMORY_REGION(m_available_memory_it, round_bytes);\n            ^",
+        "/Users/runner/work/bitcoin/bitcoin/src/support/allocators/pool.h:210:13: error: use of undeclared identifier 'ASAN_POISON_MEMORY_REGION'\n            ASAN_POISON_MEMORY_REGION(chunk, m_chunk_size_bytes);\n            ^"
+      ],
+      "error_count": 10,
+      "error_types": {
+        "declaration_error": 10
+      },
+      "error_line_types": [
+        "declaration_error",
+        "declaration_error",
+        "declaration_error",
+        "declaration_error",
+        "declaration_error",
+        "declaration_error",
+        "declaration_error",
+        "declaration_error",
+        "declaration_error",
+        "declaration_error"
+      ]
+    },
+    {
+      "commit_sha": "bc3d88bf829a22dc7e3aa59e519b125a6253aa68",
+      "branch": "2025-05-pool-poison",
+      "workflow_name": "CI",
+      "job_name": [
+        "Linux->Windows cross, no tests"
+      ],
+      "workflow_id": 15168503904,
+      "job_id": [
+        42652439814
+      ],
+      "created_at": "2025-05-21T17:18:35Z",
+      "error_lines": [
+        "/home/runner/work/_temp/src/support/allocators/pool.h:160:13: error: there are no arguments to 'ASAN_UNPOISON_MEMORY_REGION' that depend on a template parameter, so a declaration of 'ASAN_UNPOISON_MEMORY_REGION' must be available [-fpermissive]",
+        "/home/runner/work/_temp/src/support/allocators/pool.h:162:13: error: there are no arguments to 'ASAN_POISON_MEMORY_REGION' that depend on a template parameter, so a declaration of 'ASAN_POISON_MEMORY_REGION' must be available [-fpermissive]",
+        "/home/runner/work/_temp/src/support/allocators/pool.h:168:9: error: there are no arguments to 'ASAN_POISON_MEMORY_REGION' that depend on a template parameter, so a declaration of 'ASAN_POISON_MEMORY_REGION' must be available [-fpermissive]",
+        "/home/runner/work/_temp/src/support/allocators/pool.h:210:13: error: there are no arguments to 'ASAN_POISON_MEMORY_REGION' that depend on a template parameter, so a declaration of 'ASAN_POISON_MEMORY_REGION' must be available [-fpermissive]",
+        "/home/runner/work/_temp/src/support/allocators/pool.h:241:13: error: there are no arguments to 'ASAN_UNPOISON_MEMORY_REGION' that depend on a template parameter, so a declaration of 'ASAN_UNPOISON_MEMORY_REGION' must be available [-fpermissive]",
+        "/home/runner/work/_temp/src/support/allocators/pool.h:258:13: error: there are no arguments to 'ASAN_UNPOISON_MEMORY_REGION' that depend on a template parameter, so a declaration of 'ASAN_UNPOISON_MEMORY_REGION' must be available [-fpermissive]",
+        "/home/runner/work/_temp/src/support/allocators/pool.h:260:13: error: there are no arguments to 'ASAN_POISON_MEMORY_REGION' that depend on a template parameter, so a declaration of 'ASAN_POISON_MEMORY_REGION' must be available [-fpermissive]",
+        "/home/runner/work/_temp/src/support/allocators/pool.h:210:38: error: 'ASAN_POISON_MEMORY_REGION' was not declared in this scope",
+        "/home/runner/work/_temp/src/support/allocators/pool.h:160:40: error: 'ASAN_UNPOISON_MEMORY_REGION' was not declared in this scope",
+        "/home/runner/work/_temp/src/support/allocators/pool.h:162:38: error: 'ASAN_POISON_MEMORY_REGION' was not declared in this scope",
+        "/home/runner/work/_temp/src/support/allocators/pool.h:168:34: error: 'ASAN_POISON_MEMORY_REGION' was not declared in this scope",
+        "/home/runner/work/_temp/src/support/allocators/pool.h:258:40: error: 'ASAN_UNPOISON_MEMORY_REGION' was not declared in this scope",
+        "/home/runner/work/_temp/src/support/allocators/pool.h:260:38: error: 'ASAN_POISON_MEMORY_REGION' was not declared in this scope"
+      ],
+      "error_details": [
+        "In file included from /home/runner/work/_temp/src/memusage.h:10,\n/home/runner/work/_temp/src/support/allocators/pool.h: In member function 'void PoolResource<MAX_BLOCK_SIZE_BYTES, ALIGN_BYTES>::AllocateChunk()':\n/home/runner/work/_temp/src/support/allocators/pool.h:160:13: error: there are no arguments to 'ASAN_UNPOISON_MEMORY_REGION' that depend on a template parameter, so a declaration of 'ASAN_UNPOISON_MEMORY_REGION' must be available [-fpermissive]\n  160 |             ASAN_UNPOISON_MEMORY_REGION(m_available_memory_it, sizeof(ListNode));\n      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~",
+        "/home/runner/work/_temp/src/support/allocators/pool.h:160:13: note: (if you use '-fpermissive', G++ will accept your code, but allowing the use of an undeclared name is deprecated)\n/home/runner/work/_temp/src/support/allocators/pool.h:162:13: error: there are no arguments to 'ASAN_POISON_MEMORY_REGION' that depend on a template parameter, so a declaration of 'ASAN_POISON_MEMORY_REGION' must be available [-fpermissive]\n  162 |             ASAN_POISON_MEMORY_REGION(m_available_memory_it, sizeof(ListNode));\n      |             ^~~~~~~~~~~~~~~~~~~~~~~~~",
+        "/home/runner/work/_temp/src/support/allocators/pool.h:168:9: error: there are no arguments to 'ASAN_POISON_MEMORY_REGION' that depend on a template parameter, so a declaration of 'ASAN_POISON_MEMORY_REGION' must be available [-fpermissive]\n  168 |         ASAN_POISON_MEMORY_REGION(m_available_memory_it, m_chunk_size_bytes);\n      |         ^~~~~~~~~~~~~~~~~~~~~~~~~",
+        "/home/runner/work/_temp/src/support/allocators/pool.h: In destructor 'PoolResource<MAX_BLOCK_SIZE_BYTES, ALIGN_BYTES>::~PoolResource()':\n/home/runner/work/_temp/src/support/allocators/pool.h:210:13: error: there are no arguments to 'ASAN_POISON_MEMORY_REGION' that depend on a template parameter, so a declaration of 'ASAN_POISON_MEMORY_REGION' must be available [-fpermissive]\n  210 |             ASAN_POISON_MEMORY_REGION(chunk, m_chunk_size_bytes);\n      |             ^~~~~~~~~~~~~~~~~~~~~~~~~",
+        "/home/runner/work/_temp/src/support/allocators/pool.h: In member function 'void* PoolResource<MAX_BLOCK_SIZE_BYTES, ALIGN_BYTES>::Allocate(std::size_t, std::size_t)':\n/home/runner/work/_temp/src/support/allocators/pool.h:241:13: error: there are no arguments to 'ASAN_UNPOISON_MEMORY_REGION' that depend on a template parameter, so a declaration of 'ASAN_UNPOISON_MEMORY_REGION' must be available [-fpermissive]\n  241 |             ASAN_UNPOISON_MEMORY_REGION(m_available_memory_it, round_bytes);\n      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~",
+        "/home/runner/work/_temp/src/support/allocators/pool.h: In member function 'void PoolResource<MAX_BLOCK_SIZE_BYTES, ALIGN_BYTES>::Deallocate(void*, std::size_t, std::size_t)':\n/home/runner/work/_temp/src/support/allocators/pool.h:258:13: error: there are no arguments to 'ASAN_UNPOISON_MEMORY_REGION' that depend on a template parameter, so a declaration of 'ASAN_UNPOISON_MEMORY_REGION' must be available [-fpermissive]\n  258 |             ASAN_UNPOISON_MEMORY_REGION(p, sizeof(ListNode));\n      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~",
+        "/home/runner/work/_temp/src/support/allocators/pool.h:260:13: error: there are no arguments to 'ASAN_POISON_MEMORY_REGION' that depend on a template parameter, so a declaration of 'ASAN_POISON_MEMORY_REGION' must be available [-fpermissive]\n  260 |             ASAN_POISON_MEMORY_REGION(p, std::max(bytes, sizeof(ListNode)));\n      |             ^~~~~~~~~~~~~~~~~~~~~~~~~",
+        "/home/runner/work/_temp/src/support/allocators/pool.h: In instantiation of 'PoolResource<MAX_BLOCK_SIZE_BYTES, ALIGN_BYTES>::~PoolResource() [with long long unsigned int MAX_BLOCK_SIZE_BYTES = 144; long long unsigned int ALIGN_BYTES = 8]':\n/home/runner/work/_temp/src/support/allocators/pool.h:192:41:   required from 'PoolResource<MAX_BLOCK_SIZE_BYTES, ALIGN_BYTES>::PoolResource() [with long long unsigned int MAX_BLOCK_SIZE_BYTES = 144; long long unsigned int ALIGN_BYTES = 8]'\n/home/runner/work/_temp/src/coins.h:373:67:   required from here\n/home/runner/work/_temp/src/support/allocators/pool.h:210:38: error: 'ASAN_POISON_MEMORY_REGION' was not declared in this scope\n  210 |             ASAN_POISON_MEMORY_REGION(chunk, m_chunk_size_bytes);\n      |             ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~",
+        "/home/runner/work/_temp/src/support/allocators/pool.h: In instantiation of 'void PoolResource<MAX_BLOCK_SIZE_BYTES, ALIGN_BYTES>::AllocateChunk() [with long long unsigned int MAX_BLOCK_SIZE_BYTES = 144; long long unsigned int ALIGN_BYTES = 8]':\n/home/runner/work/_temp/src/support/allocators/pool.h:186:9:   required from 'PoolResource<MAX_BLOCK_SIZE_BYTES, ALIGN_BYTES>::PoolResource(std::size_t) [with long long unsigned int MAX_BLOCK_SIZE_BYTES = 144; long long unsigned int ALIGN_BYTES = 8; std::size_t = long long unsigned int]'\n/home/runner/work/_temp/src/support/allocators/pool.h:192:41:   required from 'PoolResource<MAX_BLOCK_SIZE_BYTES, ALIGN_BYTES>::PoolResource() [with long long unsigned int MAX_BLOCK_SIZE_BYTES = 144; long long unsigned int ALIGN_BYTES = 8]'\n/home/runner/work/_temp/src/coins.h:373:67:   required from here\n/home/runner/work/_temp/src/support/allocators/pool.h:160:40: error: 'ASAN_UNPOISON_MEMORY_REGION' was not declared in this scope\n  160 |             ASAN_UNPOISON_MEMORY_REGION(m_available_memory_it, sizeof(ListNode));\n      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+        "/home/runner/work/_temp/src/support/allocators/pool.h:162:38: error: 'ASAN_POISON_MEMORY_REGION' was not declared in this scope\n  162 |             ASAN_POISON_MEMORY_REGION(m_available_memory_it, sizeof(ListNode));\n      |             ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+        "/home/runner/work/_temp/src/support/allocators/pool.h:168:34: error: 'ASAN_POISON_MEMORY_REGION' was not declared in this scope\n  168 |         ASAN_POISON_MEMORY_REGION(m_available_memory_it, m_chunk_size_bytes);\n      |         ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+        "/home/runner/work/_temp/src/support/allocators/pool.h: In instantiation of 'void PoolResource<MAX_BLOCK_SIZE_BYTES, ALIGN_BYTES>::Deallocate(void*, std::size_t, std::size_t) [with long long unsigned int MAX_BLOCK_SIZE_BYTES = 144; long long unsigned int ALIGN_BYTES = 8; std::size_t = long long unsigned int]':\n/home/runner/work/_temp/src/coins.h:292:28:   required from here\n/home/runner/work/_temp/src/support/allocators/pool.h:258:40: error: 'ASAN_UNPOISON_MEMORY_REGION' was not declared in this scope\n  258 |             ASAN_UNPOISON_MEMORY_REGION(p, sizeof(ListNode));\n      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~",
+        "/home/runner/work/_temp/src/support/allocators/pool.h:260:38: error: 'ASAN_POISON_MEMORY_REGION' was not declared in this scope\n  260 |             ASAN_POISON_MEMORY_REGION(p, std::max(bytes, sizeof(ListNode)));\n      |             ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\ngmake[2]: *** [src/qt/CMakeFiles/bitcoinqt.dir/build.make:825: src/qt/CMakeFiles/bitcoinqt.dir/bitcoinqt_autogen/mocs_compilation.cpp.obj] Error 1"
+      ],
+      "error_count": 13,
+      "error_types": {
+        "member_error": 7,
+        "declaration_error": 6
+      },
+      "error_line_types": [
+        "member_error",
+        "member_error",
+        "member_error",
+        "member_error",
+        "member_error",
+        "member_error",
+        "member_error",
+        "declaration_error",
+        "declaration_error",
+        "declaration_error",
+        "declaration_error",
+        "declaration_error",
+        "declaration_error"
+      ]
+    },
+    {
+      "commit_sha": "cbd7bd7422408a132cd99aedc30c286b7082d034",
+      "branch": "cnode_shared_ptr",
+      "workflow_name": "CI",
+      "job_name": [
+        "test each commit"
+      ],
+      "workflow_id": 15161490326,
+      "job_id": [
+        42628449093
+      ],
+      "created_at": "2025-05-21T11:55:25Z",
+      "error_lines": [
+        "/home/runner/work/bitcoin/bitcoin/src/net.cpp:2094:47: error: no viable conversion from 'const std::vector<std::shared_ptr<CNode>>' to 'std::span<std::shared_ptr<CNode>>'"
+      ],
+      "error_details": [
+        "/home/runner/work/bitcoin/bitcoin/src/net.cpp:2094:47: error: no viable conversion from 'const std::vector<std::shared_ptr<CNode>>' to 'std::span<std::shared_ptr<CNode>>'\n 2094 |         events_per_sock = GenerateWaitSockets(snap.Nodes());\n      |                                               ^~~~~~~~~~~~"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "type_error": 1
+      },
+      "error_line_types": [
+        "type_error"
+      ]
+    },
+    {
+      "commit_sha": "ab59837c7c910f14c33ded05ff102fefbb398963",
+      "branch": "wallet-unspent-txos",
+      "workflow_name": "CI",
+      "job_name": [
+        "test each commit"
+      ],
+      "workflow_id": 15076016408,
+      "job_id": [
+        42383475068
+      ],
+      "created_at": "2025-05-16T19:31:40Z",
+      "error_lines": [
+        "/home/runner/work/bitcoin/bitcoin/src/wallet/receive.cpp:256:12: error: no matching function for call to 'CachedTxIsTrusted'"
+      ],
+      "error_details": [
+        "/home/runner/work/bitcoin/bitcoin/src/wallet/receive.cpp:256:12: error: no matching function for call to 'CachedTxIsTrusted'\n  256 |     return CachedTxIsTrusted(wallet, wtx.GetState(), wtx.GetHash(), trusted_parents);\n      |            ^~~~~~~~~~~~~~~~~"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "function_error": 1
+      },
+      "error_line_types": [
+        "function_error"
+      ]
+    },
+    {
+      "commit_sha": "caf62ee890395f9f20e2da3917c3b49f96209ae5",
+      "branch": "wallet-unspent-txos",
+      "workflow_name": "CI",
+      "job_name": [
+        "test each commit"
+      ],
+      "workflow_id": 15055749231,
+      "job_id": [
+        42321140764
+      ],
+      "created_at": "2025-05-15T21:40:48Z",
+      "error_lines": [
+        "/home/runner/work/bitcoin/bitcoin/src/wallet/wallet.cpp:151:16: error: no member named 'RefreshSingleTxTXOs' in 'wallet::CWallet'"
+      ],
+      "error_details": [
+        "/home/runner/work/bitcoin/bitcoin/src/wallet/wallet.cpp:151:16: error: no member named 'RefreshSingleTxTXOs' in 'wallet::CWallet'\n  151 |         wallet.RefreshSingleTxTXOs(tx);\n      |         ~~~~~~ ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "member_error": 1
+      },
+      "error_line_types": [
+        "member_error"
+      ]
+    },
+    {
+      "commit_sha": "20657a7c8eeb969121b4654a138e365eb0cc0e39",
+      "branch": "cnode_shared_ptr",
+      "workflow_name": "CI",
+      "job_name": [
+        "test each commit"
+      ],
+      "workflow_id": 15019718393,
+      "job_id": [
+        42205786771
+      ],
+      "created_at": "2025-05-14T11:39:32Z",
+      "error_lines": [
+        "/home/runner/work/bitcoin/bitcoin/src/net.cpp:2097:47: error: no viable conversion from 'const std::vector<std::shared_ptr<CNode>>' to 'std::span<std::shared_ptr<CNode>>'"
+      ],
+      "error_details": [
+        "/home/runner/work/bitcoin/bitcoin/src/net.cpp:2097:47: error: no viable conversion from 'const std::vector<std::shared_ptr<CNode>>' to 'std::span<std::shared_ptr<CNode>>'\n 2097 |         events_per_sock = GenerateWaitSockets(snap.Nodes());\n      |                                               ^~~~~~~~~~~~"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "type_error": 1
+      },
+      "error_line_types": [
+        "type_error"
+      ]
+    }
+  ]
+}

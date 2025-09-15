@@ -1,0 +1,18 @@
+{
+  "dataset": "rocksdb",
+  "model_name": "qwen3-4b",
+  "evaluation_result": {
+    "model_name": "qwen3-4b",
+    "total_instances": 52,
+    "total_errors": 64,
+    "successful_fixes": 22,
+    "exact_matches": 0,
+    "valid_patches": 0,
+    "total_time": 14418.74026632309,
+    "average_time": 225.29281666129827,
+    "success_rate": 0.34375,
+    "exact_match_rate": 0.0,
+    "patch_validity_rate": 0.0
+  },
+  "timestamp": "2025-09-05 16:50:13"
+}

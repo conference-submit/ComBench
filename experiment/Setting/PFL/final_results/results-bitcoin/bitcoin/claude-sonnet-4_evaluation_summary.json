@@ -1,0 +1,18 @@
+{
+  "dataset": "bitcoin",
+  "model_name": "claude-sonnet-4",
+  "evaluation_result": {
+    "model_name": "claude-sonnet-4",
+    "total_instances": 19,
+    "total_errors": 11,
+    "successful_fixes": 7,
+    "exact_matches": 0,
+    "valid_patches": 0,
+    "total_time": 164.72441148757935,
+    "average_time": 14.97494649887085,
+    "success_rate": 0.6363636363636364,
+    "exact_match_rate": 0.0,
+    "patch_validity_rate": 0.0
+  },
+  "timestamp": "2025-09-07 22:27:21"
+}

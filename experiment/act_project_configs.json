@@ -1,0 +1,245 @@
+{
+    "default": {
+        "platform_mappings": {},
+        "additional_args": [
+            "--rm",
+            "--network=host",
+            "--privileged",
+            "--pull=false",
+            "--env",
+            "DEBIAN_FRONTEND=noninteractive",
+            "--action-cache-path",
+            "/data/tmp/act",
+            "--use-new-action-cache"
+        ],
+        "token_pool": [
+            "${GITHUB_TOKEN}"
+        ],
+        "github_env": {
+            "GITHUB_SERVER_URL": "https://github.com",
+            "GITHUB_REPOSITORY": "{owner}/{repo}",
+            "GITHUB_REPOSITORY_OWNER": "{owner}",
+            "GITHUB_REPOSITORY_NAME": "{repo}",
+            "GITHUB_REF": "refs/heads/{main_branch}",
+            "GITHUB_SHA": "{commit}",
+            "GITHUB_WORKSPACE": "{repo_path}",
+            "GITHUB_TOKEN": "{token}",
+            "GITHUB_REPOSITORY_DEFAULT_BRANCH": "{main_branch}",
+            "GITHUB_WORKFLOW_REF": "{owner}/{repo}/.github/workflows/ci.yml@refs/pull/1/merge"
+        }
+    },
+    "llvm": {
+        "repo_path": "./repos/llvm_repo",
+        "platform_mappings": {
+            "llvm-premerge-linux-runners": "llvm-build-env:latest",
+            "llvm-premerge-windows-runners": "ghcr.io/llvm/ci-windows-2019:latest",
+            "windows-latest": "ghcr.io/llvm/ci-windows-2019:latest"
+        },
+        "additional_args": [
+            "--bind",
+            "--env",
+            "PRE_BUILD_COMMAND=apt-get update && apt-get install -y ccache && mkdir -p /tmp/ccache && chown gha:gha /tmp/ccache && export CCACHE_DIR=/tmp/ccache && export CCACHE_MAXSIZE=2G && export CCACHE_COMPRESS=true && export CCACHE_COMPRESSLEVEL=6 && echo '#!/bin/bash' > /usr/local/bin/sccache && echo '# sccache wrapper script' >> /usr/local/bin/sccache && echo 'case \"$1\" in' >> /usr/local/bin/sccache && echo '    --start-server)' >> /usr/local/bin/sccache && echo '        echo \"ccache server is always available\"' >> /usr/local/bin/sccache && echo '        exit 0' >> /usr/local/bin/sccache && echo '        ;;' >> /usr/local/bin/sccache && echo '    --stop-server)' >> /usr/local/bin/sccache && echo '        echo \"ccache server stopped\"' >> /usr/local/bin/sccache && echo '        exit 0' >> /usr/local/bin/sccache && echo '        ;;' >> /usr/local/bin/sccache && echo '    --show-stats)' >> /usr/local/bin/sccache && echo '        exec ccache -s' >> /usr/local/bin/sccache && echo '        ;;' >> /usr/local/bin/sccache && echo '    --zero-stats)' >> /usr/local/bin/sccache && echo '        exec ccache -z' >> /usr/local/bin/sccache && echo '        ;;' >> /usr/local/bin/sccache && echo '    --version)' >> /usr/local/bin/sccache && echo '        echo \"sccache wrapper using ccache $(ccache --version | head -1)\"' >> /usr/local/bin/sccache && echo '        exit 0' >> /usr/local/bin/sccache && echo '        ;;' >> /usr/local/bin/sccache && echo '    *)' >> /usr/local/bin/sccache && echo '        exec ccache \"$@\"' >> /usr/local/bin/sccache && echo '        ;;' >> /usr/local/bin/sccache && echo 'esac' >> /usr/local/bin/sccache && chmod +x /usr/local/bin/sccache"
+        ]
+    },
+    "opencv": {
+        "repo_path": "./repos/opencv_repo",
+        "platform_mappings": {
+            "ubuntu-latest": "catthehacker/ubuntu:act-latest",
+            "ubuntu-22.04": "catthehacker/ubuntu:act-22.04",
+            "ubuntu-20.04": "catthehacker/ubuntu:act-20.04"
+        },
+        "additional_args": [
+            "--env",
+            "PYTHONUNBUFFERED=1",
+            "--container-options",
+            "--platform=linux/arm64"
+        ]
+    },
+    "protobuf": {
+        "platform_mappings": {
+            "ubuntu-latest": "protobuf-build-env:latest",
+            "ubuntu-22-4core": "protobuf-build-env:latest"
+        },
+        "additional_args": [
+            "--env",
+            "PRE_BUILD_COMMAND=apt-get update && apt-get install -y build-essential gcc-9 g++-9 cmake autoconf automake libtool pkg-config && mkdir -p /data/repo/compiler-error/collect-compiler-fix/experiment/_actions && chmod 777 /data/repo/compiler-error/collect-compiler-fix/experiment/_actions"
+        ],
+        "repo_path": "./repos/protobuf_repo"
+    },
+    "clickhouse": {
+        "repo_path": "./repos/clickhouse_repo",
+        "platform_mappings": {
+            "ubuntu-latest": "clickhouse-build-env:latest",
+            "ubuntu-22.04": "clickhouse-build-env:latest",
+            "ubuntu-20.04": "clickhouse-build-env:latest",
+            "self-hosted": "clickhouse-build-env:latest",
+            "style-checker-aarch64": "clickhouse-build-env:latest",
+            "builder": "clickhouse-build-env:latest",
+            "builder-aarch64": "clickhouse-build-env:latest",
+            "style-checker": "clickhouse-build-env:latest"
+        },
+        "additional_args": [
+            "--env",
+            "PRE_BUILD_COMMAND=apt-get update && apt-get install -y python3-requests"
+        ]
+    },
+    "systemd": {
+        "platform_mappings": {
+            "ubuntu-24.04": "systemd-build-env:latest"
+        },
+        "additional_args": [
+            "--env",
+            "GNUPGHOME=/tmp/.gnupg",
+            "--env",
+            "PRE_BUILD_COMMAND=export DEBIAN_FRONTEND=noninteractive && echo 'exit 101' | sudo tee /usr/sbin/policy-rc.d && sudo chmod +x /usr/sbin/policy-rc.d && echo 'console-setup console-setup/ask_detect boolean false' | sudo debconf-set-selections && echo 'console-setup console-setup/charmap select UTF-8' | sudo debconf-set-selections && echo 'keyboard-configuration keyboard-configuration/toggle select No toggling' | sudo debconf-set-selections && echo 'keyboard-configuration keyboard-configuration/layout select English (US)' | sudo debconf-set-selections && echo 'keyboard-configuration keyboard-configuration/variant select English (US)' | sudo debconf-set-selections && sudo sed -i 's/^# deb-src/deb-src/' /etc/apt/sources.list && sudo apt-get update --allow-releaseinfo-change && python3 -m pip install --upgrade pip && sudo apt-get install -y lsb-release build-essential debhelper-compat xsltproc docbook-xsl docbook-xml meson gettext gperf gnu-efi libcap-dev libpam0g-dev libapparmor-dev libidn2-dev libiptc-dev libaudit-dev libdbus-1-dev libcryptsetup-dev libacl1-dev liblz4-dev liblz4-tool libmicrohttpd-dev libgnutls28-dev libgcrypt20-dev libkmod-dev libfdisk-dev libseccomp-dev libdw-dev libpolkit-gobject-1-dev libtss2-dev libfido2-dev linux-base acl python3-jinja2 python3-lxml python3-evdev iproute2 fdisk cryptsetup-bin expect iputils-ping isc-dhcp-client itstool libblkid-dev libbpf-dev libcurl4-gnutls-dev libfido2-dev libgpg-error-dev liblz4-dev liblzma-dev libmicrohttpd-dev libmount-dev libp11-kit-dev libpwquality-dev libqrencode-dev libssl-dev libtss2-dev libxen-dev libxkbcommon-dev libxtables-dev libzstd-dev mold mount net-tools python3-pefile python3-pip python3-pyelftools python3-pyparsing python3-setuptools quota strace unifont util-linux zstd && sudo dpkg --configure -a && sudo rm -f /usr/sbin/policy-rc.d && echo 'Package: console-setup' | sudo tee /etc/apt/preferences.d/console-setup && echo 'Pin: release *' | sudo tee -a /etc/apt/preferences.d/console-setup && echo 'Pin-Priority: -1' | sudo tee -a /etc/apt/preferences.d/console-setup"
+        ],
+        "repo_path": "./repos/systemd_repo"
+    },
+    "electron": {
+        "platform_mappings": {
+            "ubuntu-latest": "electron-build-env:latest"
+        },
+        "additional_args": [
+            "--env",
+            "PRE_BUILD_COMMAND=chmod 777 /tmp"
+        ],
+        "repo_path": "./repos/electron_repo"
+    },
+    "git": {
+        "platform_mappings": {},
+        "additional_args": [],
+        "repo_path": "./repos/git_repo"
+    },
+    "curl": {
+        "platform_mappings": {
+            "ubuntu-latest": "curl-build-env:latest",
+            "ubuntu-22.04": "curl-build-env:latest"
+        },
+        "additional_args": [
+            "--use-new-action-cache",
+            "--container-options",
+            "--user=500:500",
+            "--env",
+            "PRE_BUILD_COMMAND=export DEBIAN_FRONTEND=noninteractive && export APT_LISTCHANGES_FRONTEND=none && echo 'exit 101' | sudo tee /usr/sbin/policy-rc.d && sudo chmod +x /usr/sbin/policy-rc.d && sudo apt-get update && sudo apt-get install -y libmbedtls-dev build-essential autoconf automake libtool pkg-config cmake git curl wget ninja-build && sudo rm -f /usr/sbin/policy-rc.d && echo -e '#!/bin/sh\\nexec /usr/bin/apt-get -y \"$@\"' | sudo tee /usr/local/bin/apt-get && sudo chmod +x /usr/local/bin/apt-get"
+        ],
+        "repo_path": "./repos/curl_repo"
+    },
+    "bitcoin": {
+        "platform_mappings": {
+            "ubuntu-24.04": "bitcoin-build-env:latest",
+            "ubuntu-latest": "bitcoin-build-env:latest"
+        },
+        "additional_args": [
+            "--env",
+            "PRE_BUILD_COMMAND=mkdir -p /tmp/ccache_dir /tmp/depends/built /tmp/depends/sources /tmp/prev_releases /tmp/build && chmod 777 -R /tmp"
+        ],
+        "repo_path": "./repos/bitcoin_repo"
+    },
+    "redis": {
+        "platform_mappings": {
+            "ubuntu-latest": "catthehacker/ubuntu:act-latest"
+        },
+        "additional_args": [],
+        "repo_path": "./repos/redis_repo"
+    },
+    "openssl": {
+        "platform_mappings": {
+            "ubuntu-latest": "openssl-build-env:latest"
+        },
+        "additional_args": [
+            "--env",
+            "PRE_BUILD_COMMAND=chmod 777 /tmp && apt-get update && apt-get install -y libnghttp3-dev locales kmod clang clang-tidy libkmod-dev build-essential autoconf automake libtool pkg-config && echo 'Creating dummy modprobe for container environment' && echo '#!/bin/bash' | tee /usr/local/bin/modprobe && echo 'echo \"Skipping modprobe $@ for container environment\"' | tee -a /usr/local/bin/modprobe && chmod +x /usr/local/bin/modprobe && echo 'Creating dummy sysctl for container environment' && echo '#!/bin/bash' | tee /usr/local/bin/sysctl && echo 'echo \"Skipping sysctl $@ for container environment\"' | tee -a /usr/local/bin/sysctl && chmod +x /usr/local/bin/sysctl"
+        ],
+        "repo_path": "./repos/openssl_repo"
+    },
+    "openxla": {
+        "platform_mappings": {},
+        "additional_args": [
+            "--reuse"
+        ],
+        "repo_path": "./repos/openxla_repo"
+    },
+    "kratos": {
+        "platform_mappings": {
+            "ubuntu-latest": "kratosmultiphysics/kratos-image-ci-ubuntu-22-04:latest"
+        },
+        "additional_args": [
+            "--env",
+            "HOME=/tmp",
+            "--env",
+            "PRE_BUILD_COMMAND=chmod 777 /tmp && apt-get update && apt-get install -y gh jq curl && curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg && chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg && echo \"deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main\" | tee /etc/apt/sources.list.d/github-cli.list > /dev/null && apt-get update && apt-get install -y gh",
+            "--container-options",
+            "--user=1001"
+        ],
+        "repo_path": "./repos/kratos_repo"
+    },
+    "iree": {
+        "platform_mappings": {
+            "azure-linux-scale": "ghcr.io/iree-org/cpubuilder_ubuntu_jammy_ghr_x86_64:main",
+            "ubuntu-24.04": "ghcr.io/iree-org/cpubuilder_ubuntu_jammy_ghr_x86_64:main"
+        },
+        "additional_args": [
+            "--env",
+            "GH_TOKEN=${GITHUB_TOKEN}"
+        ],
+        "repo_path": "./repos/iree_repo"
+    },
+    "velox": {
+        "platform_mappings": {
+            "8-core-ubuntu-22.04": "ghcr.io/facebookincubator/velox-dev:adapters"
+        },
+        "additional_args": [
+            "--env",
+            "head_repo_id=123456"
+        ],
+        "repo_path": "./repos/velox_repo"
+    },
+    "rocksdb": {
+        "platform_mappings": {},
+        "additional_args": [],
+        "repo_path": "./repos/rocksdb_repo"
+    },
+    "faiss": {
+        "platform_mappings": {},
+        "additional_args": [
+            "--env",
+            "ACTIONS_RUNTIME_TOKEN=${GITHUB_TOKEN}"
+        ],
+        "repo_path": "./repos/faiss_repo"
+    },
+    "hyprland": {
+        "platform_mappings": {},
+        "additional_args": [],
+        "repo_path": "./repos/hyprland_repo"
+    },
+    "mongoose": {
+        "platform_mappings": {},
+        "additional_args": [],
+        "repo_path": "./repos/mongoose_repo"
+    },
+    "dragonfly": {
+        "platform_mappings": {},
+        "additional_args": [
+            "--network=bridge"
+        ],
+        "repo_path": "./repos/dragonfly_repo"
+    },
+    "php": {
+        "platform_mappings": {
+            "ubuntu-latest": "php-build-env:latest",
+            "ubuntu-24.04": "php-build-env:latest"
+        },
+        "additional_args": [
+            "--env",
+            "PRE_BUILD_COMMAND=chmod 1777 /tmp && apt-get update && apt-get install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils && systemctl start libvirtd || true",
+            "--container-options",
+            "--privileged --tmpfs /tmp:rw,exec,mode=1777"
+        ],
+        "repo_path": "./repos/php_repo"
+    },
+    "valkey": {
+        "platform_mappings": {},
+        "additional_args": [],
+        "repo_path": "./repos/valkey_repo"
+    }
+}

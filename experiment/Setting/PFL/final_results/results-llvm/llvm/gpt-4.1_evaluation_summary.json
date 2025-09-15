@@ -1,0 +1,18 @@
+{
+  "dataset": "llvm",
+  "model_name": "gpt-4.1",
+  "evaluation_result": {
+    "model_name": "gpt-4.1",
+    "total_instances": 63,
+    "total_errors": 109,
+    "successful_fixes": 61,
+    "exact_matches": 0,
+    "valid_patches": 0,
+    "total_time": 13043.638293027878,
+    "average_time": 119.66640635805392,
+    "success_rate": 0.5596330275229358,
+    "exact_match_rate": 0.0,
+    "patch_validity_rate": 0.0
+  },
+  "timestamp": "2025-09-05 05:36:37"
+}

@@ -1,0 +1,18 @@
+{
+  "dataset": "bitcoin",
+  "model_name": "gpt-5",
+  "evaluation_result": {
+    "model_name": "gpt-5",
+    "total_instances": 19,
+    "total_errors": 12,
+    "successful_fixes": 9,
+    "exact_matches": 0,
+    "valid_patches": 0,
+    "total_time": 1468.498664855957,
+    "average_time": 122.37488873799641,
+    "success_rate": 0.75,
+    "exact_match_rate": 0.0,
+    "patch_validity_rate": 0.0
+  },
+  "timestamp": "2025-08-24 19:29:37"
+}

@@ -1,0 +1,18 @@
+{
+  "dataset": "openssl",
+  "model_name": "deepseek-v3",
+  "evaluation_result": {
+    "model_name": "deepseek-v3",
+    "total_instances": 13,
+    "total_errors": 19,
+    "successful_fixes": 12,
+    "exact_matches": 0,
+    "valid_patches": 0,
+    "total_time": 239.0773720741272,
+    "average_time": 12.5830195828488,
+    "success_rate": 0.631578947368421,
+    "exact_match_rate": 0.0,
+    "patch_validity_rate": 0.0
+  },
+  "timestamp": "2025-08-24 08:18:24"
+}

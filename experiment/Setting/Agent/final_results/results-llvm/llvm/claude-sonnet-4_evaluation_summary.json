@@ -1,0 +1,18 @@
+{
+  "dataset": "llvm",
+  "model_name": "claude-sonnet-4",
+  "evaluation_result": {
+    "model_name": "claude-sonnet-4",
+    "total_instances": 100,
+    "total_errors": 97,
+    "successful_fixes": 61,
+    "exact_matches": 0,
+    "valid_patches": 0,
+    "total_time": 50882.94501924515,
+    "average_time": 524.5664434973727,
+    "success_rate": 0.6288659793814433,
+    "exact_match_rate": 0.0,
+    "patch_validity_rate": 0.0
+  },
+  "timestamp": "2025-09-11 00:58:56"
+}

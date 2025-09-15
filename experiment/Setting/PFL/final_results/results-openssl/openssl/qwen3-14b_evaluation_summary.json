@@ -1,0 +1,18 @@
+{
+  "dataset": "openssl",
+  "model_name": "qwen3-14b",
+  "evaluation_result": {
+    "model_name": "qwen3-14b",
+    "total_instances": 13,
+    "total_errors": 19,
+    "successful_fixes": 10,
+    "exact_matches": 0,
+    "valid_patches": 0,
+    "total_time": 5204.958067178726,
+    "average_time": 273.9451614304593,
+    "success_rate": 0.5263157894736842,
+    "exact_match_rate": 0.0,
+    "patch_validity_rate": 0.0
+  },
+  "timestamp": "2025-09-02 04:42:04"
+}

@@ -1,0 +1,1572 @@
+{
+  "metadata": {
+    "total_compiler_errors": 63,
+    "extraction_timestamp": "2025-08-06 15:06:10",
+    "method": "enhanced_string_matching_with_classification",
+    "statistics": {
+      "total_errors": 63,
+      "commits_with_errors": 35,
+      "workflows_with_errors": {
+        "Build": 63
+      },
+      "error_types_summary": {
+        "member_error": 161,
+        "function_error": 4,
+        "declaration_error": 38
+      },
+      "error_types_summary_detailed": {
+        "member_not_found": 158,
+        "constructor_error": 4,
+        "access_error": 3,
+        "undefined_error": 38
+      },
+      "jobs_with_errors": {
+        "build-pull-request / Linux x86_64 (cmake)": 17,
+        "build-pull-request / Linux x86_64 GPU (cmake)": 2,
+        "build-pull-request / Linux x86_64 GPU w/ ROCm (cmake)": 2,
+        "build-pull-request / Linux x86_64 GPU w/ cuVS (cmake)": 6,
+        "build-pull-request / Linux x86_64 AVX512 (cmake)": 12,
+        "build-pull-request / Linux x86_64 AVX512_SPR (cmake)": 12,
+        "build-pull-request / Linux x86_64 (conda)": 12
+      }
+    }
+  },
+  "compiler_errors": [
+    {
+      "commit_sha": "fee720592c275913cf5de978c570a55047885b79",
+      "branch": "no-mem-allocation-for-int8-cagra",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 (cmake)",
+      "workflow_id": 16581040497,
+      "job_id": 46897533644,
+      "created_at": "2025-07-28T21:44:35Z",
+      "error_lines": [
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:441:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:474:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp:206:30: error: 'class std::unordered_set<long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp:108:16: error: 'const class std::unordered_set<long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp:147:34: error: 'class std::unordered_set<int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:807:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:815:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp:69:48: error: 'class std::unordered_set<int>' has no member named 'contains'"
+      ],
+      "error_details": [
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp: In member function 'virtual size_t faiss::IndexIVFFlatDedup::remove_ids(const faiss::IDSelector&)':\n/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:441:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'\n  441 |                 if (!replace.contains(it->first)) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:474:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'\n  474 |                 if (!replace.contains(idsi[j])) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp: In member function 'virtual void faiss::IndexRandom::search(faiss::idx_t, const float*, faiss::idx_t, float*, faiss::idx_t*, const faiss::SearchParameters*) const':\n/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp:206:30: error: 'class std::unordered_set<long int>' has no member named 'contains'\n  206 |                     if (!map.contains(ii)) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp: In member function 'virtual bool faiss::IDSelectorBatch::is_member(faiss::idx_t) const':\n/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp:108:16: error: 'const class std::unordered_set<long int>' has no member named 'contains'\n  108 |     return set.contains(i);\n      |                ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp: In member function 'void faiss::HNSW::print_neighbor_stats(int) const':\n/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp:147:34: error: 'class std::unordered_set<int>' has no member named 'contains'\n  147 |                     if (neighset.contains(i3)) {\n      |                                  ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp: In member function 'double faiss::lsq::LSQTimer::get(const std::string&)':\n/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:807:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'\n  807 |     if (!t.contains(name)) {\n      |            ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp: In member function 'void faiss::lsq::LSQTimer::add(const std::string&, double)':\n/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:815:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'\n  815 |     if (!t.contains(name)) {\n      |            ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp: In member function 'void faiss::LockLevels::lock_1(int)':\n/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp:69:48: error: 'class std::unordered_set<int>' has no member named 'contains'\n   69 |         while (level3_in_use || level1_holders.contains(no)) {\n      |                                                ^~~~~~~~"
+      ],
+      "error_count": 8,
+      "error_types": {
+        "member_error": 8
+      }
+    },
+    {
+      "commit_sha": "22a1e208aba58c8b246b4da98c4d77fd61f8ac74",
+      "branch": "export-D79087527",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 (cmake)",
+      "workflow_id": 16580765967,
+      "job_id": 46896094399,
+      "created_at": "2025-07-28T21:29:03Z",
+      "error_lines": [
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:441:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:474:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp:206:30: error: 'class std::unordered_set<long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp:108:16: error: 'const class std::unordered_set<long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp:147:34: error: 'class std::unordered_set<int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:807:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:815:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp:69:48: error: 'class std::unordered_set<int>' has no member named 'contains'"
+      ],
+      "error_details": [
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp: In member function 'virtual size_t faiss::IndexIVFFlatDedup::remove_ids(const faiss::IDSelector&)':\n/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:441:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'\n  441 |                 if (!replace.contains(it->first)) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:474:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'\n  474 |                 if (!replace.contains(idsi[j])) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp: In member function 'virtual void faiss::IndexRandom::search(faiss::idx_t, const float*, faiss::idx_t, float*, faiss::idx_t*, const faiss::SearchParameters*) const':\n/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp:206:30: error: 'class std::unordered_set<long int>' has no member named 'contains'\n  206 |                     if (!map.contains(ii)) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp: In member function 'virtual bool faiss::IDSelectorBatch::is_member(faiss::idx_t) const':\n/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp:108:16: error: 'const class std::unordered_set<long int>' has no member named 'contains'\n  108 |     return set.contains(i);\n      |                ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp: In member function 'void faiss::HNSW::print_neighbor_stats(int) const':\n/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp:147:34: error: 'class std::unordered_set<int>' has no member named 'contains'\n  147 |                     if (neighset.contains(i3)) {\n      |                                  ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp: In member function 'double faiss::lsq::LSQTimer::get(const std::string&)':\n/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:807:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'\n  807 |     if (!t.contains(name)) {\n      |            ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp: In member function 'void faiss::lsq::LSQTimer::add(const std::string&, double)':\n/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:815:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'\n  815 |     if (!t.contains(name)) {\n      |            ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp: In member function 'void faiss::LockLevels::lock_1(int)':\n/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp:69:48: error: 'class std::unordered_set<int>' has no member named 'contains'\n   69 |         while (level3_in_use || level1_holders.contains(no)) {\n      |                                                ^~~~~~~~"
+      ],
+      "error_count": 8,
+      "error_types": {
+        "member_error": 8
+      }
+    },
+    {
+      "commit_sha": "b5433709a7e13b4fab0ade61eba349da25448dd4",
+      "branch": "export-D79087418",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 (cmake)",
+      "workflow_id": 16577709825,
+      "job_id": 46885986286,
+      "created_at": "2025-07-28T18:55:40Z",
+      "error_lines": [
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:441:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:474:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp:108:16: error: 'const class std::unordered_set<long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp:206:30: error: 'class std::unordered_set<long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp:147:34: error: 'class std::unordered_set<int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:807:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:815:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp:69:48: error: 'class std::unordered_set<int>' has no member named 'contains'"
+      ],
+      "error_details": [
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp: In member function 'virtual size_t faiss::IndexIVFFlatDedup::remove_ids(const faiss::IDSelector&)':\n/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:441:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'\n  441 |                 if (!replace.contains(it->first)) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:474:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'\n  474 |                 if (!replace.contains(idsi[j])) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp: In member function 'virtual bool faiss::IDSelectorBatch::is_member(faiss::idx_t) const':\n/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp:108:16: error: 'const class std::unordered_set<long int>' has no member named 'contains'\n  108 |     return set.contains(i);\n      |                ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp: In member function 'virtual void faiss::IndexRandom::search(faiss::idx_t, const float*, faiss::idx_t, float*, faiss::idx_t*, const faiss::SearchParameters*) const':\n/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp:206:30: error: 'class std::unordered_set<long int>' has no member named 'contains'\n  206 |                     if (!map.contains(ii)) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp: In member function 'void faiss::HNSW::print_neighbor_stats(int) const':\n/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp:147:34: error: 'class std::unordered_set<int>' has no member named 'contains'\n  147 |                     if (neighset.contains(i3)) {\n      |                                  ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp: In member function 'double faiss::lsq::LSQTimer::get(const std::string&)':\n/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:807:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'\n  807 |     if (!t.contains(name)) {\n      |            ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp: In member function 'void faiss::lsq::LSQTimer::add(const std::string&, double)':\n/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:815:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'\n  815 |     if (!t.contains(name)) {\n      |            ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp: In member function 'void faiss::LockLevels::lock_1(int)':\n/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp:69:48: error: 'class std::unordered_set<int>' has no member named 'contains'\n   69 |         while (level3_in_use || level1_holders.contains(no)) {\n      |                                                ^~~~~~~~"
+      ],
+      "error_count": 8,
+      "error_types": {
+        "member_error": 8
+      }
+    },
+    {
+      "commit_sha": "dbffa105700156a7f7894caf68dc0eee82404afc",
+      "branch": "export-D79098681",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 (cmake)",
+      "workflow_id": 16577351569,
+      "job_id": 46884801817,
+      "created_at": "2025-07-28T18:38:25Z",
+      "error_lines": [
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:441:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:474:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp:206:30: error: 'class std::unordered_set<long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp:108:16: error: 'const class std::unordered_set<long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp:147:34: error: 'class std::unordered_set<int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:807:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:815:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp:69:48: error: 'class std::unordered_set<int>' has no member named 'contains'"
+      ],
+      "error_details": [
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp: In member function 'virtual size_t faiss::IndexIVFFlatDedup::remove_ids(const faiss::IDSelector&)':\n/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:441:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'\n  441 |                 if (!replace.contains(it->first)) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:474:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'\n  474 |                 if (!replace.contains(idsi[j])) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp: In member function 'virtual void faiss::IndexRandom::search(faiss::idx_t, const float*, faiss::idx_t, float*, faiss::idx_t*, const faiss::SearchParameters*) const':\n/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp:206:30: error: 'class std::unordered_set<long int>' has no member named 'contains'\n  206 |                     if (!map.contains(ii)) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp: In member function 'virtual bool faiss::IDSelectorBatch::is_member(faiss::idx_t) const':\n/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp:108:16: error: 'const class std::unordered_set<long int>' has no member named 'contains'\n  108 |     return set.contains(i);\n      |                ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp: In member function 'void faiss::HNSW::print_neighbor_stats(int) const':\n/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp:147:34: error: 'class std::unordered_set<int>' has no member named 'contains'\n  147 |                     if (neighset.contains(i3)) {\n      |                                  ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp: In member function 'double faiss::lsq::LSQTimer::get(const std::string&)':\n/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:807:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'\n  807 |     if (!t.contains(name)) {\n      |            ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp: In member function 'void faiss::lsq::LSQTimer::add(const std::string&, double)':\n/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:815:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'\n  815 |     if (!t.contains(name)) {\n      |            ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp: In member function 'void faiss::LockLevels::lock_1(int)':\n/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp:69:48: error: 'class std::unordered_set<int>' has no member named 'contains'\n   69 |         while (level3_in_use || level1_holders.contains(no)) {\n      |                                                ^~~~~~~~"
+      ],
+      "error_count": 8,
+      "error_types": {
+        "member_error": 8
+      }
+    },
+    {
+      "commit_sha": "33e4ad73691d18ef0b0a2519b68cc28f2d0ff268",
+      "branch": "export-D79098942",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 (cmake)",
+      "workflow_id": 16577345689,
+      "job_id": 46884782808,
+      "created_at": "2025-07-28T18:38:07Z",
+      "error_lines": [
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:441:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:474:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp:206:30: error: 'class std::unordered_set<long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp:108:16: error: 'const class std::unordered_set<long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp:147:34: error: 'class std::unordered_set<int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:807:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:815:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp:69:48: error: 'class std::unordered_set<int>' has no member named 'contains'"
+      ],
+      "error_details": [
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp: In member function 'virtual size_t faiss::IndexIVFFlatDedup::remove_ids(const faiss::IDSelector&)':\n/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:441:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'\n  441 |                 if (!replace.contains(it->first)) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:474:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'\n  474 |                 if (!replace.contains(idsi[j])) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp: In member function 'virtual void faiss::IndexRandom::search(faiss::idx_t, const float*, faiss::idx_t, float*, faiss::idx_t*, const faiss::SearchParameters*) const':\n/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp:206:30: error: 'class std::unordered_set<long int>' has no member named 'contains'\n  206 |                     if (!map.contains(ii)) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp: In member function 'virtual bool faiss::IDSelectorBatch::is_member(faiss::idx_t) const':\n/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp:108:16: error: 'const class std::unordered_set<long int>' has no member named 'contains'\n  108 |     return set.contains(i);\n      |                ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp: In member function 'void faiss::HNSW::print_neighbor_stats(int) const':\n/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp:147:34: error: 'class std::unordered_set<int>' has no member named 'contains'\n  147 |                     if (neighset.contains(i3)) {\n      |                                  ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp: In member function 'double faiss::lsq::LSQTimer::get(const std::string&)':\n/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:807:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'\n  807 |     if (!t.contains(name)) {\n      |            ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp: In member function 'void faiss::lsq::LSQTimer::add(const std::string&, double)':\n/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:815:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'\n  815 |     if (!t.contains(name)) {\n      |            ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp: In member function 'void faiss::LockLevels::lock_1(int)':\n/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp:69:48: error: 'class std::unordered_set<int>' has no member named 'contains'\n   69 |         while (level3_in_use || level1_holders.contains(no)) {\n      |                                                ^~~~~~~~"
+      ],
+      "error_count": 8,
+      "error_types": {
+        "member_error": 8
+      }
+    },
+    {
+      "commit_sha": "91b46aaf2c2f6bd0ef113dd9de10f35c2457e072",
+      "branch": "export-D79087527",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 (cmake)",
+      "workflow_id": 16576868562,
+      "job_id": 46883208791,
+      "created_at": "2025-07-28T18:15:09Z",
+      "error_lines": [
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:441:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:474:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp:206:30: error: 'class std::unordered_set<long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp:108:16: error: 'const class std::unordered_set<long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp:147:34: error: 'class std::unordered_set<int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:807:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:815:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp:69:48: error: 'class std::unordered_set<int>' has no member named 'contains'"
+      ],
+      "error_details": [
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp: In member function 'virtual size_t faiss::IndexIVFFlatDedup::remove_ids(const faiss::IDSelector&)':\n/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:441:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'\n  441 |                 if (!replace.contains(it->first)) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:474:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'\n  474 |                 if (!replace.contains(idsi[j])) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp: In member function 'virtual void faiss::IndexRandom::search(faiss::idx_t, const float*, faiss::idx_t, float*, faiss::idx_t*, const faiss::SearchParameters*) const':\n/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp:206:30: error: 'class std::unordered_set<long int>' has no member named 'contains'\n  206 |                     if (!map.contains(ii)) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp: In member function 'virtual bool faiss::IDSelectorBatch::is_member(faiss::idx_t) const':\n/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp:108:16: error: 'const class std::unordered_set<long int>' has no member named 'contains'\n  108 |     return set.contains(i);\n      |                ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp: In member function 'void faiss::HNSW::print_neighbor_stats(int) const':\n/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp:147:34: error: 'class std::unordered_set<int>' has no member named 'contains'\n  147 |                     if (neighset.contains(i3)) {\n      |                                  ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp: In member function 'double faiss::lsq::LSQTimer::get(const std::string&)':\n/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:807:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'\n  807 |     if (!t.contains(name)) {\n      |            ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp: In member function 'void faiss::lsq::LSQTimer::add(const std::string&, double)':\n/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:815:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'\n  815 |     if (!t.contains(name)) {\n      |            ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp: In member function 'void faiss::LockLevels::lock_1(int)':\n/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp:69:48: error: 'class std::unordered_set<int>' has no member named 'contains'\n   69 |         while (level3_in_use || level1_holders.contains(no)) {\n      |                                                ^~~~~~~~"
+      ],
+      "error_count": 8,
+      "error_types": {
+        "member_error": 8
+      }
+    },
+    {
+      "commit_sha": "40a64a5f1774b808135b779d4dfb62d8ec47ceb9",
+      "branch": "export-D79102126",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 GPU (cmake)",
+      "workflow_id": 16576559592,
+      "job_id": 46883512368,
+      "created_at": "2025-07-28T18:00:51Z",
+      "error_lines": [
+        "/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp:265:42: error: 'class std::unordered_map<int, CUstream_st*>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp:293:42: error: 'class std::unordered_map<int, CUstream_st*>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp:334:28: error: 'const class std::unordered_map<int, CUstream_st*>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp:445:27: error: 'class std::unordered_map<int, std::unordered_map<void*, faiss::gpu::AllocRequest> >' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp:448:31: error: 'class std::unordered_map<int, std::unique_ptr<faiss::gpu::StackDeviceMemory> >' has no member named 'contains'"
+      ],
+      "error_details": [
+        "In file included from /home/runner/work/faiss/faiss/faiss/gpu/GpuResources.h:28,\n/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp: In member function 'virtual void faiss::gpu::StandardGpuResourcesImpl::setDefaultStream(int, cudaStream_t)':\n/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp:265:42: error: 'class std::unordered_map<int, CUstream_st*>' has no member named 'contains'\n  265 |             FAISS_ASSERT(defaultStreams_.contains(device));\n      |                                          ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/FaissAssert.h:25:15: note: in definition of macro 'FAISS_ASSERT'\n/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp: In member function 'void faiss::gpu::StandardGpuResourcesImpl::revertDefaultStream(int)':\n/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp:293:42: error: 'class std::unordered_map<int, CUstream_st*>' has no member named 'contains'\n  293 |             FAISS_ASSERT(defaultStreams_.contains(device));\n      |                                          ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/FaissAssert.h:25:15: note: in definition of macro 'FAISS_ASSERT'\n/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp: In member function 'bool faiss::gpu::StandardGpuResourcesImpl::isInitialized(int) const':\n/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp:334:28: error: 'const class std::unordered_map<int, CUstream_st*>' has no member named 'contains'\n  334 |     return defaultStreams_.contains(device);\n      |                            ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp: In member function 'virtual void faiss::gpu::StandardGpuResourcesImpl::initializeForDevice(int)':\n/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp:445:27: error: 'class std::unordered_map<int, std::unordered_map<void*, faiss::gpu::AllocRequest> >' has no member named 'contains'\n  445 |     FAISS_ASSERT(!allocs_.contains(device));\n      |                           ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/FaissAssert.h:25:15: note: in definition of macro 'FAISS_ASSERT'\n/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp:448:31: error: 'class std::unordered_map<int, std::unique_ptr<faiss::gpu::StackDeviceMemory> >' has no member named 'contains'\n  448 |     FAISS_ASSERT(!tempMemory_.contains(device));\n      |                               ^~~~~~~~"
+      ],
+      "error_count": 5,
+      "error_types": {
+        "member_error": 5
+      }
+    },
+    {
+      "commit_sha": "40a64a5f1774b808135b779d4dfb62d8ec47ceb9",
+      "branch": "export-D79102126",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 GPU w/ ROCm (cmake)",
+      "workflow_id": 16576559592,
+      "job_id": 46883512377,
+      "created_at": "2025-07-28T18:00:51Z",
+      "error_lines": [
+        "/__w/faiss/faiss/faiss/gpu-rocm/StandardGpuResources.cpp:265:42: error: 'class std::unordered_map<int, ihipStream_t*>' has no member named 'contains'",
+        "/__w/faiss/faiss/faiss/gpu-rocm/StandardGpuResources.cpp:293:42: error: 'class std::unordered_map<int, ihipStream_t*>' has no member named 'contains'",
+        "/__w/faiss/faiss/faiss/gpu-rocm/StandardGpuResources.cpp:334:28: error: 'const class std::unordered_map<int, ihipStream_t*>' has no member named 'contains'",
+        "/__w/faiss/faiss/faiss/gpu-rocm/StandardGpuResources.cpp:445:27: error: 'class std::unordered_map<int, std::unordered_map<void*, faiss::gpu::AllocRequest> >' has no member named 'contains'",
+        "/__w/faiss/faiss/faiss/gpu-rocm/StandardGpuResources.cpp:448:31: error: 'class std::unordered_map<int, std::unique_ptr<faiss::gpu::StackDeviceMemory> >' has no member named 'contains'"
+      ],
+      "error_details": [
+        "In file included from /__w/faiss/faiss/faiss/gpu-rocm/GpuResources.h:28,\n/__w/faiss/faiss/faiss/gpu-rocm/StandardGpuResources.cpp: In member function 'virtual void faiss::gpu::StandardGpuResourcesImpl::setDefaultStream(int, hipStream_t)':\n/__w/faiss/faiss/faiss/gpu-rocm/StandardGpuResources.cpp:265:42: error: 'class std::unordered_map<int, ihipStream_t*>' has no member named 'contains'\n  265 |             FAISS_ASSERT(defaultStreams_.contains(device));\n      |                                          ^~~~~~~~",
+        "/__w/faiss/faiss/faiss/impl/FaissAssert.h:25:15: note: in definition of macro 'FAISS_ASSERT'\n/__w/faiss/faiss/faiss/gpu-rocm/StandardGpuResources.cpp: In member function 'void faiss::gpu::StandardGpuResourcesImpl::revertDefaultStream(int)':\n/__w/faiss/faiss/faiss/gpu-rocm/StandardGpuResources.cpp:293:42: error: 'class std::unordered_map<int, ihipStream_t*>' has no member named 'contains'\n  293 |             FAISS_ASSERT(defaultStreams_.contains(device));\n      |                                          ^~~~~~~~",
+        "/__w/faiss/faiss/faiss/impl/FaissAssert.h:25:15: note: in definition of macro 'FAISS_ASSERT'\n/__w/faiss/faiss/faiss/gpu-rocm/StandardGpuResources.cpp: In member function 'bool faiss::gpu::StandardGpuResourcesImpl::isInitialized(int) const':\n/__w/faiss/faiss/faiss/gpu-rocm/StandardGpuResources.cpp:334:28: error: 'const class std::unordered_map<int, ihipStream_t*>' has no member named 'contains'\n  334 |     return defaultStreams_.contains(device);\n      |                            ^~~~~~~~",
+        "In file included from /opt/rocm/include/hipblas/hipblas.h:38,\n/opt/rocm/include/hip/hip_runtime_api.h:3780:12: note: declared here\n/__w/faiss/faiss/faiss/gpu-rocm/StandardGpuResources.cpp:445:27: error: 'class std::unordered_map<int, std::unordered_map<void*, faiss::gpu::AllocRequest> >' has no member named 'contains'\n  445 |     FAISS_ASSERT(!allocs_.contains(device));\n      |                           ^~~~~~~~",
+        "/__w/faiss/faiss/faiss/impl/FaissAssert.h:25:15: note: in definition of macro 'FAISS_ASSERT'\n/__w/faiss/faiss/faiss/gpu-rocm/StandardGpuResources.cpp:448:31: error: 'class std::unordered_map<int, std::unique_ptr<faiss::gpu::StackDeviceMemory> >' has no member named 'contains'\n  448 |     FAISS_ASSERT(!tempMemory_.contains(device));\n      |                               ^~~~~~~~"
+      ],
+      "error_count": 5,
+      "error_types": {
+        "member_error": 5
+      }
+    },
+    {
+      "commit_sha": "40a64a5f1774b808135b779d4dfb62d8ec47ceb9",
+      "branch": "export-D79102126",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 GPU w/ cuVS (cmake)",
+      "workflow_id": 16576559592,
+      "job_id": 46883512384,
+      "created_at": "2025-07-28T18:00:51Z",
+      "error_lines": [
+        "/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp:265:42: error: 'class std::unordered_map<int, CUstream_st*>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp:293:42: error: 'class std::unordered_map<int, CUstream_st*>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp:334:28: error: 'const class std::unordered_map<int, CUstream_st*>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp:445:27: error: 'class std::unordered_map<int, std::unordered_map<void*, faiss::gpu::AllocRequest> >' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp:448:31: error: 'class std::unordered_map<int, std::unique_ptr<faiss::gpu::StackDeviceMemory> >' has no member named 'contains'"
+      ],
+      "error_details": [
+        "In file included from /home/runner/work/faiss/faiss/faiss/gpu/GpuResources.h:28,\n/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp: In member function 'virtual void faiss::gpu::StandardGpuResourcesImpl::setDefaultStream(int, cudaStream_t)':\n/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp:265:42: error: 'class std::unordered_map<int, CUstream_st*>' has no member named 'contains'\n  265 |             FAISS_ASSERT(defaultStreams_.contains(device));\n      |                                          ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/FaissAssert.h:25:15: note: in definition of macro 'FAISS_ASSERT'\n/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp: In member function 'void faiss::gpu::StandardGpuResourcesImpl::revertDefaultStream(int)':\n/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp:293:42: error: 'class std::unordered_map<int, CUstream_st*>' has no member named 'contains'\n  293 |             FAISS_ASSERT(defaultStreams_.contains(device));\n      |                                          ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/FaissAssert.h:25:15: note: in definition of macro 'FAISS_ASSERT'\n/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp: In member function 'bool faiss::gpu::StandardGpuResourcesImpl::isInitialized(int) const':\n/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp:334:28: error: 'const class std::unordered_map<int, CUstream_st*>' has no member named 'contains'\n  334 |     return defaultStreams_.contains(device);\n      |                            ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp: In member function 'virtual void faiss::gpu::StandardGpuResourcesImpl::initializeForDevice(int)':\n/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp:445:27: error: 'class std::unordered_map<int, std::unordered_map<void*, faiss::gpu::AllocRequest> >' has no member named 'contains'\n  445 |     FAISS_ASSERT(!allocs_.contains(device));\n      |                           ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/FaissAssert.h:25:15: note: in definition of macro 'FAISS_ASSERT'\n/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp:448:31: error: 'class std::unordered_map<int, std::unique_ptr<faiss::gpu::StackDeviceMemory> >' has no member named 'contains'\n  448 |     FAISS_ASSERT(!tempMemory_.contains(device));\n      |                               ^~~~~~~~"
+      ],
+      "error_count": 5,
+      "error_types": {
+        "member_error": 5
+      }
+    },
+    {
+      "commit_sha": "ab21e25f4f08fd078a8fc9d7a3e83eb7f3a9c2cf",
+      "branch": "export-D79101184",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 (cmake)",
+      "workflow_id": 16575522295,
+      "job_id": 46878735860,
+      "created_at": "2025-07-28T17:10:53Z",
+      "error_lines": [
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:441:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:474:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp:206:30: error: 'class std::unordered_set<long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp:108:16: error: 'const class std::unordered_set<long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp:147:34: error: 'class std::unordered_set<int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:807:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:815:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp:69:48: error: 'class std::unordered_set<int>' has no member named 'contains'"
+      ],
+      "error_details": [
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp: In member function 'virtual size_t faiss::IndexIVFFlatDedup::remove_ids(const faiss::IDSelector&)':\n/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:441:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'\n  441 |                 if (!replace.contains(it->first)) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:474:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'\n  474 |                 if (!replace.contains(idsi[j])) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp: In member function 'virtual void faiss::IndexRandom::search(faiss::idx_t, const float*, faiss::idx_t, float*, faiss::idx_t*, const faiss::SearchParameters*) const':\n/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp:206:30: error: 'class std::unordered_set<long int>' has no member named 'contains'\n  206 |                     if (!map.contains(ii)) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp: In member function 'virtual bool faiss::IDSelectorBatch::is_member(faiss::idx_t) const':\n/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp:108:16: error: 'const class std::unordered_set<long int>' has no member named 'contains'\n  108 |     return set.contains(i);\n      |                ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp: In member function 'void faiss::HNSW::print_neighbor_stats(int) const':\n/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp:147:34: error: 'class std::unordered_set<int>' has no member named 'contains'\n  147 |                     if (neighset.contains(i3)) {\n      |                                  ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp: In member function 'double faiss::lsq::LSQTimer::get(const std::string&)':\n/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:807:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'\n  807 |     if (!t.contains(name)) {\n      |            ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp: In member function 'void faiss::lsq::LSQTimer::add(const std::string&, double)':\n/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:815:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'\n  815 |     if (!t.contains(name)) {\n      |            ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp: In member function 'void faiss::LockLevels::lock_1(int)':\n/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp:69:48: error: 'class std::unordered_set<int>' has no member named 'contains'\n   69 |         while (level3_in_use || level1_holders.contains(no)) {\n      |                                                ^~~~~~~~"
+      ],
+      "error_count": 8,
+      "error_types": {
+        "member_error": 8
+      }
+    },
+    {
+      "commit_sha": "a4fb1756f90225bbc4e1d6c91a30ab2df1d35fa8",
+      "branch": "export-D79069937",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 (cmake)",
+      "workflow_id": 16574469743,
+      "job_id": 46875179019,
+      "created_at": "2025-07-28T16:21:09Z",
+      "error_lines": [
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:441:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:474:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp:206:30: error: 'class std::unordered_set<long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp:108:16: error: 'const class std::unordered_set<long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp:147:34: error: 'class std::unordered_set<int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:807:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:815:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp:69:48: error: 'class std::unordered_set<int>' has no member named 'contains'"
+      ],
+      "error_details": [
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp: In member function 'virtual size_t faiss::IndexIVFFlatDedup::remove_ids(const faiss::IDSelector&)':\n/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:441:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'\n  441 |                 if (!replace.contains(it->first)) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:474:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'\n  474 |                 if (!replace.contains(idsi[j])) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp: In member function 'virtual void faiss::IndexRandom::search(faiss::idx_t, const float*, faiss::idx_t, float*, faiss::idx_t*, const faiss::SearchParameters*) const':\n/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp:206:30: error: 'class std::unordered_set<long int>' has no member named 'contains'\n  206 |                     if (!map.contains(ii)) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp: In member function 'virtual bool faiss::IDSelectorBatch::is_member(faiss::idx_t) const':\n/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp:108:16: error: 'const class std::unordered_set<long int>' has no member named 'contains'\n  108 |     return set.contains(i);\n      |                ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp: In member function 'void faiss::HNSW::print_neighbor_stats(int) const':\n/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp:147:34: error: 'class std::unordered_set<int>' has no member named 'contains'\n  147 |                     if (neighset.contains(i3)) {\n      |                                  ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp: In member function 'double faiss::lsq::LSQTimer::get(const std::string&)':\n/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:807:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'\n  807 |     if (!t.contains(name)) {\n      |            ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp: In member function 'void faiss::lsq::LSQTimer::add(const std::string&, double)':\n/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:815:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'\n  815 |     if (!t.contains(name)) {\n      |            ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp: In member function 'void faiss::LockLevels::lock_1(int)':\n/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp:69:48: error: 'class std::unordered_set<int>' has no member named 'contains'\n   69 |         while (level3_in_use || level1_holders.contains(no)) {\n      |                                                ^~~~~~~~"
+      ],
+      "error_count": 8,
+      "error_types": {
+        "member_error": 8
+      }
+    },
+    {
+      "commit_sha": "018f6d98570163ced130a692c7991e3df76cddf0",
+      "branch": "binary-cagra-nnd",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 (cmake)",
+      "workflow_id": 16573883179,
+      "job_id": 46898615063,
+      "created_at": "2025-07-28T15:55:35Z",
+      "error_lines": [
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:441:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:474:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp:206:30: error: 'class std::unordered_set<long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp:108:16: error: 'const class std::unordered_set<long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp:147:34: error: 'class std::unordered_set<int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:807:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:815:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp:69:48: error: 'class std::unordered_set<int>' has no member named 'contains'"
+      ],
+      "error_details": [
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp: In member function 'virtual size_t faiss::IndexIVFFlatDedup::remove_ids(const faiss::IDSelector&)':\n/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:441:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'\n  441 |                 if (!replace.contains(it->first)) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:474:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'\n  474 |                 if (!replace.contains(idsi[j])) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp: In member function 'virtual void faiss::IndexRandom::search(faiss::idx_t, const float*, faiss::idx_t, float*, faiss::idx_t*, const faiss::SearchParameters*) const':\n/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp:206:30: error: 'class std::unordered_set<long int>' has no member named 'contains'\n  206 |                     if (!map.contains(ii)) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp: In member function 'virtual bool faiss::IDSelectorBatch::is_member(faiss::idx_t) const':\n/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp:108:16: error: 'const class std::unordered_set<long int>' has no member named 'contains'\n  108 |     return set.contains(i);\n      |                ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp: In member function 'void faiss::HNSW::print_neighbor_stats(int) const':\n/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp:147:34: error: 'class std::unordered_set<int>' has no member named 'contains'\n  147 |                     if (neighset.contains(i3)) {\n      |                                  ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp: In member function 'double faiss::lsq::LSQTimer::get(const std::string&)':\n/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:807:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'\n  807 |     if (!t.contains(name)) {\n      |            ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp: In member function 'void faiss::lsq::LSQTimer::add(const std::string&, double)':\n/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:815:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'\n  815 |     if (!t.contains(name)) {\n      |            ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp: In member function 'void faiss::LockLevels::lock_1(int)':\n/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp:69:48: error: 'class std::unordered_set<int>' has no member named 'contains'\n   69 |         while (level3_in_use || level1_holders.contains(no)) {\n      |                                                ^~~~~~~~"
+      ],
+      "error_count": 8,
+      "error_types": {
+        "member_error": 8
+      }
+    },
+    {
+      "commit_sha": "1e6daa2aea3dab76663f54d3caea3cf2454bc6f6",
+      "branch": "export-D79071887",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 (cmake)",
+      "workflow_id": 16571111617,
+      "job_id": 46863322605,
+      "created_at": "2025-07-28T14:00:11Z",
+      "error_lines": [
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:441:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:474:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp:206:30: error: 'class std::unordered_set<long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp:108:16: error: 'const class std::unordered_set<long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp:147:34: error: 'class std::unordered_set<int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:807:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:815:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp:69:48: error: 'class std::unordered_set<int>' has no member named 'contains'"
+      ],
+      "error_details": [
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp: In member function 'virtual size_t faiss::IndexIVFFlatDedup::remove_ids(const faiss::IDSelector&)':\n/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:441:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'\n  441 |                 if (!replace.contains(it->first)) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:474:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'\n  474 |                 if (!replace.contains(idsi[j])) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp: In member function 'virtual void faiss::IndexRandom::search(faiss::idx_t, const float*, faiss::idx_t, float*, faiss::idx_t*, const faiss::SearchParameters*) const':\n/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp:206:30: error: 'class std::unordered_set<long int>' has no member named 'contains'\n  206 |                     if (!map.contains(ii)) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp: In member function 'virtual bool faiss::IDSelectorBatch::is_member(faiss::idx_t) const':\n/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp:108:16: error: 'const class std::unordered_set<long int>' has no member named 'contains'\n  108 |     return set.contains(i);\n      |                ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp: In member function 'void faiss::HNSW::print_neighbor_stats(int) const':\n/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp:147:34: error: 'class std::unordered_set<int>' has no member named 'contains'\n  147 |                     if (neighset.contains(i3)) {\n      |                                  ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp: In member function 'double faiss::lsq::LSQTimer::get(const std::string&)':\n/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:807:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'\n  807 |     if (!t.contains(name)) {\n      |            ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp: In member function 'void faiss::lsq::LSQTimer::add(const std::string&, double)':\n/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:815:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'\n  815 |     if (!t.contains(name)) {\n      |            ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp: In member function 'void faiss::LockLevels::lock_1(int)':\n/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp:69:48: error: 'class std::unordered_set<int>' has no member named 'contains'\n   69 |         while (level3_in_use || level1_holders.contains(no)) {\n      |                                                ^~~~~~~~"
+      ],
+      "error_count": 8,
+      "error_types": {
+        "member_error": 8
+      }
+    },
+    {
+      "commit_sha": "645e9076af67d8fc8bbb1ff765d7139539253e0c",
+      "branch": "export-D79070292",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 (cmake)",
+      "workflow_id": 16569598495,
+      "job_id": 46858014953,
+      "created_at": "2025-07-28T12:54:42Z",
+      "error_lines": [
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:441:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:474:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp:206:30: error: 'class std::unordered_set<long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp:108:16: error: 'const class std::unordered_set<long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp:147:34: error: 'class std::unordered_set<int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:807:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:815:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp:69:48: error: 'class std::unordered_set<int>' has no member named 'contains'"
+      ],
+      "error_details": [
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp: In member function 'virtual size_t faiss::IndexIVFFlatDedup::remove_ids(const faiss::IDSelector&)':\n/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:441:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'\n  441 |                 if (!replace.contains(it->first)) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:474:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'\n  474 |                 if (!replace.contains(idsi[j])) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp: In member function 'virtual void faiss::IndexRandom::search(faiss::idx_t, const float*, faiss::idx_t, float*, faiss::idx_t*, const faiss::SearchParameters*) const':\n/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp:206:30: error: 'class std::unordered_set<long int>' has no member named 'contains'\n  206 |                     if (!map.contains(ii)) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp: In member function 'virtual bool faiss::IDSelectorBatch::is_member(faiss::idx_t) const':\n/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp:108:16: error: 'const class std::unordered_set<long int>' has no member named 'contains'\n  108 |     return set.contains(i);\n      |                ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp: In member function 'void faiss::HNSW::print_neighbor_stats(int) const':\n/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp:147:34: error: 'class std::unordered_set<int>' has no member named 'contains'\n  147 |                     if (neighset.contains(i3)) {\n      |                                  ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp: In member function 'double faiss::lsq::LSQTimer::get(const std::string&)':\n/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:807:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'\n  807 |     if (!t.contains(name)) {\n      |            ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp: In member function 'void faiss::lsq::LSQTimer::add(const std::string&, double)':\n/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:815:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'\n  815 |     if (!t.contains(name)) {\n      |            ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp: In member function 'void faiss::LockLevels::lock_1(int)':\n/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp:69:48: error: 'class std::unordered_set<int>' has no member named 'contains'\n   69 |         while (level3_in_use || level1_holders.contains(no)) {\n      |                                                ^~~~~~~~"
+      ],
+      "error_count": 8,
+      "error_types": {
+        "member_error": 8
+      }
+    },
+    {
+      "commit_sha": "4a69b5e6046a7414c26bc6c5c39abdead2a8ff61",
+      "branch": "export-D79070292",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 (cmake)",
+      "workflow_id": 16565249409,
+      "job_id": 46843689518,
+      "created_at": "2025-07-28T09:22:23Z",
+      "error_lines": [
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:441:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:474:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp:206:30: error: 'class std::unordered_set<long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp:108:16: error: 'const class std::unordered_set<long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp:147:34: error: 'class std::unordered_set<int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:807:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:815:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp:69:48: error: 'class std::unordered_set<int>' has no member named 'contains'"
+      ],
+      "error_details": [
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp: In member function 'virtual size_t faiss::IndexIVFFlatDedup::remove_ids(const faiss::IDSelector&)':\n/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:441:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'\n  441 |                 if (!replace.contains(it->first)) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:474:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'\n  474 |                 if (!replace.contains(idsi[j])) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp: In member function 'virtual void faiss::IndexRandom::search(faiss::idx_t, const float*, faiss::idx_t, float*, faiss::idx_t*, const faiss::SearchParameters*) const':\n/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp:206:30: error: 'class std::unordered_set<long int>' has no member named 'contains'\n  206 |                     if (!map.contains(ii)) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp: In member function 'virtual bool faiss::IDSelectorBatch::is_member(faiss::idx_t) const':\n/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp:108:16: error: 'const class std::unordered_set<long int>' has no member named 'contains'\n  108 |     return set.contains(i);\n      |                ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp: In member function 'void faiss::HNSW::print_neighbor_stats(int) const':\n/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp:147:34: error: 'class std::unordered_set<int>' has no member named 'contains'\n  147 |                     if (neighset.contains(i3)) {\n      |                                  ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp: In member function 'double faiss::lsq::LSQTimer::get(const std::string&)':\n/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:807:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'\n  807 |     if (!t.contains(name)) {\n      |            ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp: In member function 'void faiss::lsq::LSQTimer::add(const std::string&, double)':\n/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:815:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'\n  815 |     if (!t.contains(name)) {\n      |            ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp: In member function 'void faiss::LockLevels::lock_1(int)':\n/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp:69:48: error: 'class std::unordered_set<int>' has no member named 'contains'\n   69 |         while (level3_in_use || level1_holders.contains(no)) {\n      |                                                ^~~~~~~~"
+      ],
+      "error_count": 8,
+      "error_types": {
+        "member_error": 8
+      }
+    },
+    {
+      "commit_sha": "e06874d968cc8f58c106204ba458b03115a34f83",
+      "branch": "export-D79071887",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 (cmake)",
+      "workflow_id": 16564879166,
+      "job_id": 46842467120,
+      "created_at": "2025-07-28T09:05:14Z",
+      "error_lines": [
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:441:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:474:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp:206:30: error: 'class std::unordered_set<long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp:108:16: error: 'const class std::unordered_set<long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp:147:34: error: 'class std::unordered_set<int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:807:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:815:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp:69:48: error: 'class std::unordered_set<int>' has no member named 'contains'"
+      ],
+      "error_details": [
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp: In member function 'virtual size_t faiss::IndexIVFFlatDedup::remove_ids(const faiss::IDSelector&)':\n/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:441:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'\n  441 |                 if (!replace.contains(it->first)) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:474:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'\n  474 |                 if (!replace.contains(idsi[j])) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp: In member function 'virtual void faiss::IndexRandom::search(faiss::idx_t, const float*, faiss::idx_t, float*, faiss::idx_t*, const faiss::SearchParameters*) const':\n/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp:206:30: error: 'class std::unordered_set<long int>' has no member named 'contains'\n  206 |                     if (!map.contains(ii)) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp: In member function 'virtual bool faiss::IDSelectorBatch::is_member(faiss::idx_t) const':\n/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp:108:16: error: 'const class std::unordered_set<long int>' has no member named 'contains'\n  108 |     return set.contains(i);\n      |                ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp: In member function 'void faiss::HNSW::print_neighbor_stats(int) const':\n/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp:147:34: error: 'class std::unordered_set<int>' has no member named 'contains'\n  147 |                     if (neighset.contains(i3)) {\n      |                                  ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp: In member function 'double faiss::lsq::LSQTimer::get(const std::string&)':\n/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:807:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'\n  807 |     if (!t.contains(name)) {\n      |            ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp: In member function 'void faiss::lsq::LSQTimer::add(const std::string&, double)':\n/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:815:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'\n  815 |     if (!t.contains(name)) {\n      |            ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp: In member function 'void faiss::LockLevels::lock_1(int)':\n/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp:69:48: error: 'class std::unordered_set<int>' has no member named 'contains'\n   69 |         while (level3_in_use || level1_holders.contains(no)) {\n      |                                                ^~~~~~~~"
+      ],
+      "error_count": 8,
+      "error_types": {
+        "member_error": 8
+      }
+    },
+    {
+      "commit_sha": "20ab652a669b08ff6e588edc72e12849537715b3",
+      "branch": "export-D79069937",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 (cmake)",
+      "workflow_id": 16563495146,
+      "job_id": 46837891831,
+      "created_at": "2025-07-28T07:58:37Z",
+      "error_lines": [
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:441:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:474:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp:206:30: error: 'class std::unordered_set<long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp:108:16: error: 'const class std::unordered_set<long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp:147:34: error: 'class std::unordered_set<int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:807:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:815:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp:69:48: error: 'class std::unordered_set<int>' has no member named 'contains'"
+      ],
+      "error_details": [
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp: In member function 'virtual size_t faiss::IndexIVFFlatDedup::remove_ids(const faiss::IDSelector&)':\n/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:441:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'\n  441 |                 if (!replace.contains(it->first)) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:474:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'\n  474 |                 if (!replace.contains(idsi[j])) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp: In member function 'virtual void faiss::IndexRandom::search(faiss::idx_t, const float*, faiss::idx_t, float*, faiss::idx_t*, const faiss::SearchParameters*) const':\n/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp:206:30: error: 'class std::unordered_set<long int>' has no member named 'contains'\n  206 |                     if (!map.contains(ii)) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp: In member function 'virtual bool faiss::IDSelectorBatch::is_member(faiss::idx_t) const':\n/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp:108:16: error: 'const class std::unordered_set<long int>' has no member named 'contains'\n  108 |     return set.contains(i);\n      |                ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp: In member function 'void faiss::HNSW::print_neighbor_stats(int) const':\n/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp:147:34: error: 'class std::unordered_set<int>' has no member named 'contains'\n  147 |                     if (neighset.contains(i3)) {\n      |                                  ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp: In member function 'double faiss::lsq::LSQTimer::get(const std::string&)':\n/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:807:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'\n  807 |     if (!t.contains(name)) {\n      |            ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp: In member function 'void faiss::lsq::LSQTimer::add(const std::string&, double)':\n/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:815:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'\n  815 |     if (!t.contains(name)) {\n      |            ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp: In member function 'void faiss::LockLevels::lock_1(int)':\n/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp:69:48: error: 'class std::unordered_set<int>' has no member named 'contains'\n   69 |         while (level3_in_use || level1_holders.contains(no)) {\n      |                                                ^~~~~~~~"
+      ],
+      "error_count": 8,
+      "error_types": {
+        "member_error": 8
+      }
+    },
+    {
+      "commit_sha": "ad22cf6badc9dfde81192cb74cdaa42314628b75",
+      "branch": "export-D79069040",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 (cmake)",
+      "workflow_id": 16563166811,
+      "job_id": 46836879402,
+      "created_at": "2025-07-28T07:42:08Z",
+      "error_lines": [
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:441:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:474:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp:206:30: error: 'class std::unordered_set<long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp:108:16: error: 'const class std::unordered_set<long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp:147:34: error: 'class std::unordered_set<int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:807:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:815:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp:69:48: error: 'class std::unordered_set<int>' has no member named 'contains'"
+      ],
+      "error_details": [
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp: In member function 'virtual size_t faiss::IndexIVFFlatDedup::remove_ids(const faiss::IDSelector&)':\n/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:441:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'\n  441 |                 if (!replace.contains(it->first)) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:474:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'\n  474 |                 if (!replace.contains(idsi[j])) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp: In member function 'virtual void faiss::IndexRandom::search(faiss::idx_t, const float*, faiss::idx_t, float*, faiss::idx_t*, const faiss::SearchParameters*) const':\n/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp:206:30: error: 'class std::unordered_set<long int>' has no member named 'contains'\n  206 |                     if (!map.contains(ii)) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp: In member function 'virtual bool faiss::IDSelectorBatch::is_member(faiss::idx_t) const':\n/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp:108:16: error: 'const class std::unordered_set<long int>' has no member named 'contains'\n  108 |     return set.contains(i);\n      |                ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp: In member function 'void faiss::HNSW::print_neighbor_stats(int) const':\n/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp:147:34: error: 'class std::unordered_set<int>' has no member named 'contains'\n  147 |                     if (neighset.contains(i3)) {\n      |                                  ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp: In member function 'double faiss::lsq::LSQTimer::get(const std::string&)':\n/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:807:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'\n  807 |     if (!t.contains(name)) {\n      |            ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp: In member function 'void faiss::lsq::LSQTimer::add(const std::string&, double)':\n/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:815:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'\n  815 |     if (!t.contains(name)) {\n      |            ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp: In member function 'void faiss::LockLevels::lock_1(int)':\n/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp:69:48: error: 'class std::unordered_set<int>' has no member named 'contains'\n   69 |         while (level3_in_use || level1_holders.contains(no)) {\n      |                                                ^~~~~~~~"
+      ],
+      "error_count": 8,
+      "error_types": {
+        "member_error": 8
+      }
+    },
+    {
+      "commit_sha": "fd58179df23fbf7aa2c9c3bd7facb563109c1abb",
+      "branch": "patch-2",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 GPU w/ cuVS (cmake)",
+      "workflow_id": 16562376163,
+      "job_id": 46885697394,
+      "created_at": "2025-07-28T07:01:48Z",
+      "error_lines": [
+        "/home/runner/miniconda3/include/cuvs/neighbors/cagra.hpp(422): error: default constructor for \"std::experimental::mdspan<const uint32_t, std::experimental::extents<int64_t, 18446744073709551615UL, 18446744073709551615UL>, raft::row_major, raft::host_device_accessor<std::experimental::default_accessor<const uint32_t>, raft::memory_type::device>>\" is not eligible",
+        "/home/runner/miniconda3/include/raft/thirdparty/mdspan/include/experimental/__p0009_bits/aligned_accessor.hpp(111): error: namespace \"std\" has no member \"has_single_bit\"",
+        "/home/runner/miniconda3/include/raft/thirdparty/mdspan/include/experimental/__p0009_bits/aligned_accessor.hpp(144): error: namespace \"std\" has no member \"assume_aligned\"",
+        "/home/runner/miniconda3/include/raft/thirdparty/mdspan/include/experimental/__p0009_bits/aligned_accessor.hpp(167): error: namespace \"std\" has no member \"assume_aligned\""
+      ],
+      "error_details": [
+        "/home/runner/miniconda3/include/cuvs/neighbors/cagra.hpp(422): error: default constructor for \"std::experimental::mdspan<const uint32_t, std::experimental::extents<int64_t, 18446744073709551615UL, 18446744073709551615UL>, raft::row_major, raft::host_device_accessor<std::experimental::default_accessor<const uint32_t>, raft::memory_type::device>>\" is not eligible\n    {\n    ^\n          detected during:\n            instantiation of \"cuvs::neighbors::cagra::index<T, IdxT>::index(const raft::resources &, cuvs::distance::DistanceType, raft::mdspan<const T, raft::matrix_extent<int64_t>, raft::row_major, data_accessor>, raft::mdspan<const IdxT, raft::matrix_extent<int64_t>, raft::row_major, graph_accessor>) [with T=uint8_t, IdxT=uint32_t, data_accessor=raft::host_device_accessor<std::experimental::default_accessor<const uint8_t>, raft::memory_type::device>, graph_accessor=raft::host_device_accessor<std::experimental::default_accessor<const uint32_t>, raft::memory_type::host>]\" at line 97 of /home/runner/miniconda3/lib/gcc/x86_64-conda-linux-gnu/12.4.0/include/c++/bits/stl_construct.h\n            instantiation of \"auto std::construct_at(_Tp *, _Args &&...)->decltype((<expression>)) [with _Tp=cuvs::neighbors::cagra::index<uint8_t, uint32_t>, _Args=<const raft::device_resources &, cuvsDistanceType, std::experimental::mdspan<const uint8_t, std::experimental::extents<int64_t, 18446744073709551615UL, 18446744073709551615UL>, raft::row_major, raft::host_device_accessor<std::experimental::default_accessor<const uint8_t>, raft::memory_type::device>> &, std::experimental::mdspan<const uint32_t, std::experimental::extents<int64_t, 18446744073709551615UL, 18446744073709551615UL>, raft::layout_c_contiguous, raft::host_device_accessor<std::experimental::default_accessor<const uint32_t>, raft::memory_type::host>>>]\" at line 115 of /home/runner/miniconda3/lib/gcc/x86_64-conda-linux-gnu/12.4.0/include/c++/bits/stl_construct.h\n            instantiation of \"void std::_Construct(_Tp *, _Args &&...) [with _Tp=cuvs::neighbors::cagra::index<uint8_t, uint32_t>, _Args=<const raft::device_resources &, cuvsDistanceType, std::experimental::mdspan<const uint8_t, std::experimental::extents<int64_t, 18446744073709551615UL, 18446744073709551615UL>, raft::row_major, raft::host_device_accessor<std::experimental::default_accessor<const uint8_t>, raft::memory_type::device>> &, std::experimental::mdspan<const uint32_t, std::experimental::extents<int64_t, 18446744073709551615UL, 18446744073709551615UL>, raft::layout_c_contiguous, raft::host_device_accessor<std::experimental::default_accessor<const uint32_t>, raft::memory_type::host>>>]\" at line 635 of /home/runner/miniconda3/lib/gcc/x86_64-conda-linux-gnu/12.4.0/include/c++/bits/alloc_traits.h\n            instantiation of \"void std::allocator_traits<std::allocator<void>>::construct(std::allocator_traits<std::allocator<void>>::allocator_type &, _Up *, _Args &&...) [with _Up=cuvs::neighbors::cagra::index<uint8_t, uint32_t>, _Args=<const raft::device_resources &, cuvsDistanceType, std::experimental::mdspan<const uint8_t, std::experimental::extents<int64_t, 18446744073709551615UL, 18446744073709551615UL>, raft::row_major, raft::host_device_accessor<std::experimental::default_accessor<const uint8_t>, raft::memory_type::device>> &, std::experimental::mdspan<const uint32_t, std::experimental::extents<int64_t, 18446744073709551615UL, 18446744073709551615UL>, raft::layout_c_contiguous, raft::host_device_accessor<std::experimental::default_accessor<const uint32_t>, raft::memory_type::host>>>]\" at line 605 of /home/runner/miniconda3/lib/gcc/x86_64-conda-linux-gnu/12.4.0/include/c++/bits/shared_ptr_base.h\n            instantiation of \"std::_Sp_counted_ptr_inplace<_Tp, _Alloc, _Lp>::_Sp_counted_ptr_inplace(_Alloc, _Args &&...) [with _Tp=cuvs::neighbors::cagra::index<uint8_t, uint32_t>, _Alloc=std::allocator<void>, _Lp=__gnu_cxx::_S_atomic, _Args=<const raft::device_resources &, cuvsDistanceType, std::experimental::mdspan<const uint8_t, std::experimental::extents<int64_t, 18446744073709551615UL, 18446744073709551615UL>, raft::row_major, raft::host_device_accessor<std::experimental::default_accessor<const uint8_t>, raft::memory_type::device>> &, std::experimental::mdspan<const uint32_t, std::experimental::extents<int64_t, 18446744073709551615UL, 18446744073709551615UL>, raft::layout_c_contiguous, raft::host_device_accessor<std::experimental::default_accessor<const uint32_t>, raft::memory_type::host>>>]\" at line 972 of /home/runner/miniconda3/lib/gcc/x86_64-conda-linux-gnu/12.4.0/include/c++/bits/shared_ptr_base.h\n            instantiation of \"std::__shared_count<_Lp>::__shared_count(_Tp *&, std::_Sp_alloc_shared_tag<_Alloc>, _Args &&...) [with _Lp=__gnu_cxx::_S_atomic, _Tp=cuvs::neighbors::cagra::index<uint8_t, uint32_t>, _Alloc=std::allocator<void>, _Args=<const raft::device_resources &, cuvsDistanceType, std::experimental::mdspan<const uint8_t, std::experimental::extents<int64_t, 18446744073709551615UL, 18446744073709551615UL>, raft::row_major, raft::host_device_accessor<std::experimental::default_accessor<const uint8_t>, raft::memory_type::device>> &, std::experimental::mdspan<const uint32_t, std::experimental::extents<int64_t, 18446744073709551615UL, 18446744073709551615UL>, raft::layout_c_contiguous, raft::host_device_accessor<std::experimental::default_accessor<const uint32_t>, raft::memory_type::host>>>]\" at line 1716 of /home/runner/miniconda3/lib/gcc/x86_64-conda-linux-gnu/12.4.0/include/c++/bits/shared_ptr_base.h\n            instantiation of \"std::__shared_ptr<_Tp, _Lp>::__shared_ptr(std::_Sp_alloc_shared_tag<_Alloc>, _Args &&...) [with _Tp=cuvs::neighbors::cagra::index<uint8_t, uint32_t>, _Lp=__gnu_cxx::_S_atomic, _Alloc=std::allocator<void>, _Args=<const raft::device_resources &, cuvsDistanceType, std::experimental::mdspan<const uint8_t, std::experimental::extents<int64_t, 18446744073709551615UL, 18446744073709551615UL>, raft::row_major, raft::host_device_accessor<std::experimental::default_accessor<const uint8_t>, raft::memory_type::device>> &, std::experimental::mdspan<const uint32_t, std::experimental::extents<int64_t, 18446744073709551615UL, 18446744073709551615UL>, raft::layout_c_contiguous, raft::host_device_accessor<std::experimental::default_accessor<const uint32_t>, raft::memory_type::host>>>]\" at line 465 of /home/runner/miniconda3/lib/gcc/x86_64-conda-linux-gnu/12.4.0/include/c++/bits/shared_ptr.h\n            instantiation of \"std::shared_ptr<_Tp>::shared_ptr(std::_Sp_alloc_shared_tag<_Alloc>, _Args &&...) [with _Tp=cuvs::neighbors::cagra::index<uint8_t, uint32_t>, _Alloc=std::allocator<void>, _Args=<const raft::device_resources &, cuvsDistanceType, std::experimental::mdspan<const uint8_t, std::experimental::extents<int64_t, 18446744073709551615UL, 18446744073709551615UL>, raft::row_major, raft::host_device_accessor<std::experimental::default_accessor<const uint8_t>, raft::memory_type::device>> &, std::experimental::mdspan<const uint32_t, std::experimental::extents<int64_t, 18446744073709551615UL, 18446744073709551615UL>, raft::layout_c_contiguous, raft::host_device_accessor<std::experimental::default_accessor<const uint32_t>, raft::memory_type::host>>>]\" at line 1010 of /home/runner/miniconda3/lib/gcc/x86_64-conda-linux-gnu/12.4.0/include/c++/bits/shared_ptr.h\n            instantiation of \"std::shared_ptr<std::_NonArray<_Tp>> std::make_shared<_Tp,_Args...>(_Args &&...) [with _Tp=cuvs::neighbors::cagra::index<uint8_t, uint32_t>, _Args=<const raft::device_resources &, cuvsDistanceType, std::experimental::mdspan<const uint8_t, std::experimental::extents<int64_t, 18446744073709551615UL, 18446744073709551615UL>, raft::row_major, raft::host_device_accessor<std::experimental::default_accessor<const uint8_t>, raft::memory_type::device>> &, std::experimental::mdspan<const uint32_t, std::experimental::extents<int64_t, 18446744073709551615UL, 18446744073709551615UL>, raft::layout_c_contiguous, raft::host_device_accessor<std::experimental::default_accessor<const uint32_t>, raft::memory_type::host>>>]\" at line 98 of /home/runner/work/faiss/faiss/faiss/gpu/impl/BinaryCuvsCagra.cu\n2025-07-28T20:08:30.6868866Z",
+        "/home/runner/miniconda3/include/raft/thirdparty/mdspan/include/experimental/__p0009_bits/aligned_accessor.hpp(111): error: namespace \"std\" has no member \"has_single_bit\"\n    return std::has_single_bit(x);\n                ^\n2025-07-28T20:08:56.6248838Z",
+        "/home/runner/miniconda3/include/raft/thirdparty/mdspan/include/experimental/__p0009_bits/aligned_accessor.hpp(144): error: namespace \"std\" has no member \"assume_aligned\"\n    return (std::assume_aligned< byte_alignment >( ptr ));\n                 ^\n2025-07-28T20:08:56.6293117Z",
+        "/home/runner/miniconda3/include/raft/thirdparty/mdspan/include/experimental/__p0009_bits/aligned_accessor.hpp(167): error: namespace \"std\" has no member \"assume_aligned\"\n      return (std::assume_aligned< byte_alignment >( p ))[i];\n                   ^\n2025-07-28T20:08:56.6330884Z\n3 errors detected in the compilation of \"/home/runner/work/faiss/faiss/faiss/gpu/utils/CuvsFilterConvert.cu\"."
+      ],
+      "error_count": 4,
+      "error_types": {
+        "function_error": 1,
+        "member_error": 3
+      }
+    },
+    {
+      "commit_sha": "1cbdc518d168a3294f51c3e2fb6b5f34acf9dc4a",
+      "branch": "export-D79042640",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 GPU (cmake)",
+      "workflow_id": 16543525732,
+      "job_id": 46788347064,
+      "created_at": "2025-07-26T20:19:25Z",
+      "error_lines": [
+        "/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp:265:42: error: 'class std::unordered_map<int, CUstream_st*>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp:293:42: error: 'class std::unordered_map<int, CUstream_st*>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp:334:28: error: 'const class std::unordered_map<int, CUstream_st*>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp:445:27: error: 'class std::unordered_map<int, std::unordered_map<void*, faiss::gpu::AllocRequest> >' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp:448:31: error: 'class std::unordered_map<int, std::unique_ptr<faiss::gpu::StackDeviceMemory> >' has no member named 'contains'"
+      ],
+      "error_details": [
+        "In file included from /home/runner/work/faiss/faiss/faiss/gpu/GpuResources.h:28,\n/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp: In member function 'virtual void faiss::gpu::StandardGpuResourcesImpl::setDefaultStream(int, cudaStream_t)':\n/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp:265:42: error: 'class std::unordered_map<int, CUstream_st*>' has no member named 'contains'\n  265 |             FAISS_ASSERT(defaultStreams_.contains(device));\n      |                                          ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/FaissAssert.h:25:15: note: in definition of macro 'FAISS_ASSERT'\n/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp: In member function 'void faiss::gpu::StandardGpuResourcesImpl::revertDefaultStream(int)':\n/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp:293:42: error: 'class std::unordered_map<int, CUstream_st*>' has no member named 'contains'\n  293 |             FAISS_ASSERT(defaultStreams_.contains(device));\n      |                                          ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/FaissAssert.h:25:15: note: in definition of macro 'FAISS_ASSERT'\n/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp: In member function 'bool faiss::gpu::StandardGpuResourcesImpl::isInitialized(int) const':\n/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp:334:28: error: 'const class std::unordered_map<int, CUstream_st*>' has no member named 'contains'\n  334 |     return defaultStreams_.contains(device);\n      |                            ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp: In member function 'virtual void faiss::gpu::StandardGpuResourcesImpl::initializeForDevice(int)':\n/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp:445:27: error: 'class std::unordered_map<int, std::unordered_map<void*, faiss::gpu::AllocRequest> >' has no member named 'contains'\n  445 |     FAISS_ASSERT(!allocs_.contains(device));\n      |                           ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/FaissAssert.h:25:15: note: in definition of macro 'FAISS_ASSERT'\n/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp:448:31: error: 'class std::unordered_map<int, std::unique_ptr<faiss::gpu::StackDeviceMemory> >' has no member named 'contains'\n  448 |     FAISS_ASSERT(!tempMemory_.contains(device));\n      |                               ^~~~~~~~"
+      ],
+      "error_count": 5,
+      "error_types": {
+        "member_error": 5
+      }
+    },
+    {
+      "commit_sha": "1cbdc518d168a3294f51c3e2fb6b5f34acf9dc4a",
+      "branch": "export-D79042640",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 GPU w/ cuVS (cmake)",
+      "workflow_id": 16543525732,
+      "job_id": 46788347093,
+      "created_at": "2025-07-26T20:19:25Z",
+      "error_lines": [
+        "/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp:265:42: error: 'class std::unordered_map<int, CUstream_st*>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp:293:42: error: 'class std::unordered_map<int, CUstream_st*>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp:334:28: error: 'const class std::unordered_map<int, CUstream_st*>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp:445:27: error: 'class std::unordered_map<int, std::unordered_map<void*, faiss::gpu::AllocRequest> >' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp:448:31: error: 'class std::unordered_map<int, std::unique_ptr<faiss::gpu::StackDeviceMemory> >' has no member named 'contains'"
+      ],
+      "error_details": [
+        "In file included from /home/runner/work/faiss/faiss/faiss/gpu/GpuResources.h:28,\n/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp: In member function 'virtual void faiss::gpu::StandardGpuResourcesImpl::setDefaultStream(int, cudaStream_t)':\n/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp:265:42: error: 'class std::unordered_map<int, CUstream_st*>' has no member named 'contains'\n  265 |             FAISS_ASSERT(defaultStreams_.contains(device));\n      |                                          ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/FaissAssert.h:25:15: note: in definition of macro 'FAISS_ASSERT'\n/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp: In member function 'void faiss::gpu::StandardGpuResourcesImpl::revertDefaultStream(int)':\n/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp:293:42: error: 'class std::unordered_map<int, CUstream_st*>' has no member named 'contains'\n  293 |             FAISS_ASSERT(defaultStreams_.contains(device));\n      |                                          ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/FaissAssert.h:25:15: note: in definition of macro 'FAISS_ASSERT'\n/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp: In member function 'bool faiss::gpu::StandardGpuResourcesImpl::isInitialized(int) const':\n/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp:334:28: error: 'const class std::unordered_map<int, CUstream_st*>' has no member named 'contains'\n  334 |     return defaultStreams_.contains(device);\n      |                            ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp: In member function 'virtual void faiss::gpu::StandardGpuResourcesImpl::initializeForDevice(int)':\n/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp:445:27: error: 'class std::unordered_map<int, std::unordered_map<void*, faiss::gpu::AllocRequest> >' has no member named 'contains'\n  445 |     FAISS_ASSERT(!allocs_.contains(device));\n      |                           ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/FaissAssert.h:25:15: note: in definition of macro 'FAISS_ASSERT'\n/home/runner/work/faiss/faiss/faiss/gpu/StandardGpuResources.cpp:448:31: error: 'class std::unordered_map<int, std::unique_ptr<faiss::gpu::StackDeviceMemory> >' has no member named 'contains'\n  448 |     FAISS_ASSERT(!tempMemory_.contains(device));\n      |                               ^~~~~~~~"
+      ],
+      "error_count": 5,
+      "error_types": {
+        "member_error": 5
+      }
+    },
+    {
+      "commit_sha": "1cbdc518d168a3294f51c3e2fb6b5f34acf9dc4a",
+      "branch": "export-D79042640",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 GPU w/ ROCm (cmake)",
+      "workflow_id": 16543525732,
+      "job_id": 46788347115,
+      "created_at": "2025-07-26T20:19:25Z",
+      "error_lines": [
+        "/__w/faiss/faiss/faiss/gpu-rocm/StandardGpuResources.cpp:265:42: error: 'class std::unordered_map<int, ihipStream_t*>' has no member named 'contains'",
+        "/__w/faiss/faiss/faiss/gpu-rocm/StandardGpuResources.cpp:293:42: error: 'class std::unordered_map<int, ihipStream_t*>' has no member named 'contains'",
+        "/__w/faiss/faiss/faiss/gpu-rocm/StandardGpuResources.cpp:334:28: error: 'const class std::unordered_map<int, ihipStream_t*>' has no member named 'contains'",
+        "/__w/faiss/faiss/faiss/gpu-rocm/StandardGpuResources.cpp:445:27: error: 'class std::unordered_map<int, std::unordered_map<void*, faiss::gpu::AllocRequest> >' has no member named 'contains'",
+        "/__w/faiss/faiss/faiss/gpu-rocm/StandardGpuResources.cpp:448:31: error: 'class std::unordered_map<int, std::unique_ptr<faiss::gpu::StackDeviceMemory> >' has no member named 'contains'"
+      ],
+      "error_details": [
+        "In file included from /__w/faiss/faiss/faiss/gpu-rocm/GpuResources.h:28,\n/__w/faiss/faiss/faiss/gpu-rocm/StandardGpuResources.cpp: In member function 'virtual void faiss::gpu::StandardGpuResourcesImpl::setDefaultStream(int, hipStream_t)':\n/__w/faiss/faiss/faiss/gpu-rocm/StandardGpuResources.cpp:265:42: error: 'class std::unordered_map<int, ihipStream_t*>' has no member named 'contains'\n  265 |             FAISS_ASSERT(defaultStreams_.contains(device));\n      |                                          ^~~~~~~~",
+        "/__w/faiss/faiss/faiss/impl/FaissAssert.h:25:15: note: in definition of macro 'FAISS_ASSERT'\n/__w/faiss/faiss/faiss/gpu-rocm/StandardGpuResources.cpp: In member function 'void faiss::gpu::StandardGpuResourcesImpl::revertDefaultStream(int)':\n/__w/faiss/faiss/faiss/gpu-rocm/StandardGpuResources.cpp:293:42: error: 'class std::unordered_map<int, ihipStream_t*>' has no member named 'contains'\n  293 |             FAISS_ASSERT(defaultStreams_.contains(device));\n      |                                          ^~~~~~~~",
+        "/__w/faiss/faiss/faiss/gpu-rocm/StandardGpuResources.cpp: In member function 'bool faiss::gpu::StandardGpuResourcesImpl::isInitialized(int) const':\n/__w/faiss/faiss/faiss/gpu-rocm/StandardGpuResources.cpp:334:28: error: 'const class std::unordered_map<int, ihipStream_t*>' has no member named 'contains'\n  334 |     return defaultStreams_.contains(device);\n      |                            ^~~~~~~~",
+        "In file included from /opt/rocm/include/hipblas/hipblas.h:38,\n/opt/rocm/include/hip/hip_runtime_api.h:3780:12: note: declared here\n/__w/faiss/faiss/faiss/gpu-rocm/StandardGpuResources.cpp:445:27: error: 'class std::unordered_map<int, std::unordered_map<void*, faiss::gpu::AllocRequest> >' has no member named 'contains'\n  445 |     FAISS_ASSERT(!allocs_.contains(device));\n      |                           ^~~~~~~~",
+        "/__w/faiss/faiss/faiss/impl/FaissAssert.h:25:15: note: in definition of macro 'FAISS_ASSERT'\n/__w/faiss/faiss/faiss/gpu-rocm/StandardGpuResources.cpp:448:31: error: 'class std::unordered_map<int, std::unique_ptr<faiss::gpu::StackDeviceMemory> >' has no member named 'contains'\n  448 |     FAISS_ASSERT(!tempMemory_.contains(device));\n      |                               ^~~~~~~~"
+      ],
+      "error_count": 5,
+      "error_types": {
+        "member_error": 5
+      }
+    },
+    {
+      "commit_sha": "5ffc0fbadf916a41fb52e8c082f60e58d1b5c893",
+      "branch": "export-D79041872",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 (cmake)",
+      "workflow_id": 16543192018,
+      "job_id": 46787233005,
+      "created_at": "2025-07-26T19:34:18Z",
+      "error_lines": [
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:441:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:474:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp:206:30: error: 'class std::unordered_set<long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp:108:16: error: 'const class std::unordered_set<long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp:147:34: error: 'class std::unordered_set<int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:807:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:815:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp:69:48: error: 'class std::unordered_set<int>' has no member named 'contains'"
+      ],
+      "error_details": [
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp: In member function 'virtual size_t faiss::IndexIVFFlatDedup::remove_ids(const faiss::IDSelector&)':\n/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:441:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'\n  441 |                 if (!replace.contains(it->first)) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/IndexIVFFlat.cpp:474:30: error: 'class std::unordered_map<long int, long int>' has no member named 'contains'",
+        "/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp: In member function 'virtual void faiss::IndexRandom::search(faiss::idx_t, const float*, faiss::idx_t, float*, faiss::idx_t*, const faiss::SearchParameters*) const':\n/home/runner/work/faiss/faiss/faiss/MetaIndexes.cpp:206:30: error: 'class std::unordered_set<long int>' has no member named 'contains'\n  206 |                     if (!map.contains(ii)) {\n      |                              ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp: In member function 'virtual bool faiss::IDSelectorBatch::is_member(faiss::idx_t) const':\n/home/runner/work/faiss/faiss/faiss/impl/IDSelector.cpp:108:16: error: 'const class std::unordered_set<long int>' has no member named 'contains'\n  108 |     return set.contains(i);\n      |                ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp: In member function 'void faiss::HNSW::print_neighbor_stats(int) const':\n/home/runner/work/faiss/faiss/faiss/impl/HNSW.cpp:147:34: error: 'class std::unordered_set<int>' has no member named 'contains'\n  147 |                     if (neighset.contains(i3)) {\n      |                                  ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp: In member function 'double faiss::lsq::LSQTimer::get(const std::string&)':\n/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:807:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'\n  807 |     if (!t.contains(name)) {\n      |            ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp: In member function 'void faiss::lsq::LSQTimer::add(const std::string&, double)':\n/home/runner/work/faiss/faiss/faiss/impl/LocalSearchQuantizer.cpp:815:12: error: 'class std::unordered_map<std::__cxx11::basic_string<char>, double>' has no member named 'contains'\n  815 |     if (!t.contains(name)) {\n      |            ^~~~~~~~",
+        "/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp: In member function 'void faiss::LockLevels::lock_1(int)':\n/home/runner/work/faiss/faiss/faiss/invlists/OnDiskInvertedLists.cpp:69:48: error: 'class std::unordered_set<int>' has no member named 'contains'\n   69 |         while (level3_in_use || level1_holders.contains(no)) {\n      |                                                ^~~~~~~~"
+      ],
+      "error_count": 8,
+      "error_types": {
+        "member_error": 8
+      }
+    },
+    {
+      "commit_sha": "6c09135523b2f75558fa5783e8dbe817ac53d1ec",
+      "branch": "2506",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 AVX512 (cmake)",
+      "workflow_id": 16479903748,
+      "job_id": 46592358594,
+      "created_at": "2025-07-23T19:22:59Z",
+      "error_lines": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?"
+      ],
+      "error_details": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp: In function 'bool faiss::exhaustive_L2sqr_fused_cmax(const float*, const float*, size_t, size_t, size_t, Top1BlockResultHandler<CMax<float, long int>, false>&, const float*)':\n/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?\n   29 |     return exhaustive_L2sqr_fused_cmax_AVX512(x, y, d, nx, ny, res, y_norms);\n      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |            exhaustive_L2sqr_fused_cmax_simdlib"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      }
+    },
+    {
+      "commit_sha": "6c09135523b2f75558fa5783e8dbe817ac53d1ec",
+      "branch": "2506",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 AVX512_SPR (cmake)",
+      "workflow_id": 16479903748,
+      "job_id": 46592358723,
+      "created_at": "2025-07-23T19:22:59Z",
+      "error_lines": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?"
+      ],
+      "error_details": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp: In function 'bool faiss::exhaustive_L2sqr_fused_cmax(const float*, const float*, size_t, size_t, size_t, Top1BlockResultHandler<CMax<float, long int>, false>&, const float*)':\n/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?\n   29 |     return exhaustive_L2sqr_fused_cmax_AVX512(x, y, d, nx, ny, res, y_norms);\n      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |            exhaustive_L2sqr_fused_cmax_simdlib"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      }
+    },
+    {
+      "commit_sha": "6c09135523b2f75558fa5783e8dbe817ac53d1ec",
+      "branch": "2506",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 (conda)",
+      "workflow_id": 16479903748,
+      "job_id": 46592358736,
+      "created_at": "2025-07-23T19:22:59Z",
+      "error_lines": [
+        "/home/runner/miniconda3/conda-bld/faiss-pkg_1753299755349/work/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?"
+      ],
+      "error_details": [
+        "/home/runner/miniconda3/conda-bld/faiss-pkg_1753299755349/work/faiss/utils/distances_fused/distances_fused.cpp: In function 'bool faiss::exhaustive_L2sqr_fused_cmax(const float*, const float*, size_t, size_t, size_t, Top1BlockResultHandler<CMax<float, long int>, false>&, const float*)':\n/home/runner/miniconda3/conda-bld/faiss-pkg_1753299755349/work/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?\n   29 |     return exhaustive_L2sqr_fused_cmax_AVX512(x, y, d, nx, ny, res, y_norms);\n      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |            exhaustive_L2sqr_fused_cmax_simdlib"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      }
+    },
+    {
+      "commit_sha": "83492d914d89f3757fd32897d9ebcaa4b813cce0",
+      "branch": "binary-cagra-nnd",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 AVX512 (cmake)",
+      "workflow_id": 16479861959,
+      "job_id": 46592236592,
+      "created_at": "2025-07-23T19:20:47Z",
+      "error_lines": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?"
+      ],
+      "error_details": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp: In function 'bool faiss::exhaustive_L2sqr_fused_cmax(const float*, const float*, size_t, size_t, size_t, Top1BlockResultHandler<CMax<float, long int>, false>&, const float*)':\n/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?\n   29 |     return exhaustive_L2sqr_fused_cmax_AVX512(x, y, d, nx, ny, res, y_norms);\n      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |            exhaustive_L2sqr_fused_cmax_simdlib"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      }
+    },
+    {
+      "commit_sha": "83492d914d89f3757fd32897d9ebcaa4b813cce0",
+      "branch": "binary-cagra-nnd",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 AVX512_SPR (cmake)",
+      "workflow_id": 16479861959,
+      "job_id": 46592236612,
+      "created_at": "2025-07-23T19:20:47Z",
+      "error_lines": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?"
+      ],
+      "error_details": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp: In function 'bool faiss::exhaustive_L2sqr_fused_cmax(const float*, const float*, size_t, size_t, size_t, Top1BlockResultHandler<CMax<float, long int>, false>&, const float*)':\n/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?\n   29 |     return exhaustive_L2sqr_fused_cmax_AVX512(x, y, d, nx, ny, res, y_norms);\n      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |            exhaustive_L2sqr_fused_cmax_simdlib"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      }
+    },
+    {
+      "commit_sha": "83492d914d89f3757fd32897d9ebcaa4b813cce0",
+      "branch": "binary-cagra-nnd",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 (conda)",
+      "workflow_id": 16479861959,
+      "job_id": 46592237534,
+      "created_at": "2025-07-23T19:20:47Z",
+      "error_lines": [
+        "/home/runner/miniconda3/conda-bld/faiss-pkg_1753299643417/work/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?"
+      ],
+      "error_details": [
+        "/home/runner/miniconda3/conda-bld/faiss-pkg_1753299643417/work/faiss/utils/distances_fused/distances_fused.cpp: In function 'bool faiss::exhaustive_L2sqr_fused_cmax(const float*, const float*, size_t, size_t, size_t, Top1BlockResultHandler<CMax<float, long int>, false>&, const float*)':\n/home/runner/miniconda3/conda-bld/faiss-pkg_1753299643417/work/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?\n   29 |     return exhaustive_L2sqr_fused_cmax_AVX512(x, y, d, nx, ny, res, y_norms);\n      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |            exhaustive_L2sqr_fused_cmax_simdlib"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      }
+    },
+    {
+      "commit_sha": "d723b6f0c03355375622af31331ca11df9a6b89f",
+      "branch": "export-D78826360",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 AVX512 (cmake)",
+      "workflow_id": 16478852966,
+      "job_id": 46588823859,
+      "created_at": "2025-07-23T18:30:03Z",
+      "error_lines": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?"
+      ],
+      "error_details": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp: In function 'bool faiss::exhaustive_L2sqr_fused_cmax(const float*, const float*, size_t, size_t, size_t, Top1BlockResultHandler<CMax<float, long int>, false>&, const float*)':\n/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?\n   29 |     return exhaustive_L2sqr_fused_cmax_AVX512(x, y, d, nx, ny, res, y_norms);\n      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |            exhaustive_L2sqr_fused_cmax_simdlib"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      }
+    },
+    {
+      "commit_sha": "d723b6f0c03355375622af31331ca11df9a6b89f",
+      "branch": "export-D78826360",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 AVX512_SPR (cmake)",
+      "workflow_id": 16478852966,
+      "job_id": 46588823888,
+      "created_at": "2025-07-23T18:30:03Z",
+      "error_lines": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?"
+      ],
+      "error_details": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp: In function 'bool faiss::exhaustive_L2sqr_fused_cmax(const float*, const float*, size_t, size_t, size_t, Top1BlockResultHandler<CMax<float, long int>, false>&, const float*)':\n/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?\n   29 |     return exhaustive_L2sqr_fused_cmax_AVX512(x, y, d, nx, ny, res, y_norms);\n      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |            exhaustive_L2sqr_fused_cmax_simdlib"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      }
+    },
+    {
+      "commit_sha": "d723b6f0c03355375622af31331ca11df9a6b89f",
+      "branch": "export-D78826360",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 (conda)",
+      "workflow_id": 16478852966,
+      "job_id": 46588823889,
+      "created_at": "2025-07-23T18:30:03Z",
+      "error_lines": [
+        "/home/runner/miniconda3/conda-bld/faiss-pkg_1753296595490/work/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?"
+      ],
+      "error_details": [
+        "/home/runner/miniconda3/conda-bld/faiss-pkg_1753296595490/work/faiss/utils/distances_fused/distances_fused.cpp: In function 'bool faiss::exhaustive_L2sqr_fused_cmax(const float*, const float*, size_t, size_t, size_t, Top1BlockResultHandler<CMax<float, long int>, false>&, const float*)':\n/home/runner/miniconda3/conda-bld/faiss-pkg_1753296595490/work/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?\n   29 |     return exhaustive_L2sqr_fused_cmax_AVX512(x, y, d, nx, ny, res, y_norms);\n      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |            exhaustive_L2sqr_fused_cmax_simdlib"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      }
+    },
+    {
+      "commit_sha": "ae12cf899c011dcb5bc9bbb9d556de8343319a77",
+      "branch": "export-D78826360",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 (cmake)",
+      "workflow_id": 16478388657,
+      "job_id": 46585980289,
+      "created_at": "2025-07-23T18:07:22Z",
+      "error_lines": [
+        "/home/runner/work/faiss/faiss/faiss/IndexPreTransform.cpp:116:6: error: no declaration matches 'void faiss::IndexPreTransform::train(faiss::idx_t, const float*, faiss::NumericType)'",
+        "/home/runner/work/faiss/faiss/faiss/IndexPreTransform.cpp:197:6: error: no declaration matches 'void faiss::IndexPreTransform::search(faiss::idx_t, const float*, faiss::NumericType, faiss::idx_t, float*, faiss::idx_t*, const faiss::SearchParameters*) const'"
+      ],
+      "error_details": [
+        "/home/runner/work/faiss/faiss/faiss/IndexPreTransform.cpp:116:6: error: no declaration matches 'void faiss::IndexPreTransform::train(faiss::idx_t, const float*, faiss::NumericType)'\n  116 | void IndexPreTransform::train(\n      |      ^~~~~~~~~~~~~~~~~",
+        "In file included from /home/runner/work/faiss/faiss/faiss/IndexPreTransform.cpp:10:\n/home/runner/work/faiss/faiss/faiss/IndexPreTransform.h:41:10: note: candidates are: 'virtual void faiss::IndexPreTransform::train(faiss::idx_t, const void*, faiss::NumericType)'\n/home/runner/work/faiss/faiss/faiss/IndexPreTransform.cpp:57:6: note:                 'virtual void faiss::IndexPreTransform::train(faiss::idx_t, const float*)'\n/home/runner/work/faiss/faiss/faiss/IndexPreTransform.h:25:8: note: 'struct faiss::IndexPreTransform' defined here\n/home/runner/work/faiss/faiss/faiss/IndexPreTransform.cpp:197:6: error: no declaration matches 'void faiss::IndexPreTransform::search(faiss::idx_t, const float*, faiss::NumericType, faiss::idx_t, float*, faiss::idx_t*, const faiss::SearchParameters*) const'\n  197 | void IndexPreTransform::search(\n      |      ^~~~~~~~~~~~~~~~~"
+      ],
+      "error_count": 2,
+      "error_types": {
+        "declaration_error": 2
+      }
+    },
+    {
+      "commit_sha": "db911d6485640420534bddf0be7582e18e93b6b9",
+      "branch": "2506",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 AVX512 (cmake)",
+      "workflow_id": 16477538450,
+      "job_id": 46584369025,
+      "created_at": "2025-07-23T17:26:09Z",
+      "error_lines": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?"
+      ],
+      "error_details": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp: In function 'bool faiss::exhaustive_L2sqr_fused_cmax(const float*, const float*, size_t, size_t, size_t, Top1BlockResultHandler<CMax<float, long int>, false>&, const float*)':\n/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?\n   29 |     return exhaustive_L2sqr_fused_cmax_AVX512(x, y, d, nx, ny, res, y_norms);\n      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |            exhaustive_L2sqr_fused_cmax_simdlib"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      }
+    },
+    {
+      "commit_sha": "db911d6485640420534bddf0be7582e18e93b6b9",
+      "branch": "2506",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 (conda)",
+      "workflow_id": 16477538450,
+      "job_id": 46584369101,
+      "created_at": "2025-07-23T17:26:09Z",
+      "error_lines": [
+        "/home/runner/miniconda3/conda-bld/faiss-pkg_1753292744010/work/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?"
+      ],
+      "error_details": [
+        "/home/runner/miniconda3/conda-bld/faiss-pkg_1753292744010/work/faiss/utils/distances_fused/distances_fused.cpp: In function 'bool faiss::exhaustive_L2sqr_fused_cmax(const float*, const float*, size_t, size_t, size_t, Top1BlockResultHandler<CMax<float, long int>, false>&, const float*)':\n/home/runner/miniconda3/conda-bld/faiss-pkg_1753292744010/work/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?\n   29 |     return exhaustive_L2sqr_fused_cmax_AVX512(x, y, d, nx, ny, res, y_norms);\n      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |            exhaustive_L2sqr_fused_cmax_simdlib"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      }
+    },
+    {
+      "commit_sha": "db911d6485640420534bddf0be7582e18e93b6b9",
+      "branch": "2506",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 AVX512_SPR (cmake)",
+      "workflow_id": 16477538450,
+      "job_id": 46584369104,
+      "created_at": "2025-07-23T17:26:09Z",
+      "error_lines": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?"
+      ],
+      "error_details": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp: In function 'bool faiss::exhaustive_L2sqr_fused_cmax(const float*, const float*, size_t, size_t, size_t, Top1BlockResultHandler<CMax<float, long int>, false>&, const float*)':\n/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?\n   29 |     return exhaustive_L2sqr_fused_cmax_AVX512(x, y, d, nx, ny, res, y_norms);\n      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |            exhaustive_L2sqr_fused_cmax_simdlib"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      }
+    },
+    {
+      "commit_sha": "50fe0d6006aba2f54b06a90c357ec5a2dc06af86",
+      "branch": "export-D78797054",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 AVX512 (cmake)",
+      "workflow_id": 16476765829,
+      "job_id": 46581742325,
+      "created_at": "2025-07-23T16:50:09Z",
+      "error_lines": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?"
+      ],
+      "error_details": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp: In function 'bool faiss::exhaustive_L2sqr_fused_cmax(const float*, const float*, size_t, size_t, size_t, Top1BlockResultHandler<CMax<float, long int>, false>&, const float*)':\n/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?\n   29 |     return exhaustive_L2sqr_fused_cmax_AVX512(x, y, d, nx, ny, res, y_norms);\n      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |            exhaustive_L2sqr_fused_cmax_simdlib"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      }
+    },
+    {
+      "commit_sha": "50fe0d6006aba2f54b06a90c357ec5a2dc06af86",
+      "branch": "export-D78797054",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 AVX512_SPR (cmake)",
+      "workflow_id": 16476765829,
+      "job_id": 46581742361,
+      "created_at": "2025-07-23T16:50:09Z",
+      "error_lines": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?"
+      ],
+      "error_details": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp: In function 'bool faiss::exhaustive_L2sqr_fused_cmax(const float*, const float*, size_t, size_t, size_t, Top1BlockResultHandler<CMax<float, long int>, false>&, const float*)':\n/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?\n   29 |     return exhaustive_L2sqr_fused_cmax_AVX512(x, y, d, nx, ny, res, y_norms);\n      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |            exhaustive_L2sqr_fused_cmax_simdlib"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      }
+    },
+    {
+      "commit_sha": "50fe0d6006aba2f54b06a90c357ec5a2dc06af86",
+      "branch": "export-D78797054",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 (conda)",
+      "workflow_id": 16476765829,
+      "job_id": 46581742431,
+      "created_at": "2025-07-23T16:50:09Z",
+      "error_lines": [
+        "/home/runner/miniconda3/conda-bld/faiss-pkg_1753290564222/work/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?"
+      ],
+      "error_details": [
+        "/home/runner/miniconda3/conda-bld/faiss-pkg_1753290564222/work/faiss/utils/distances_fused/distances_fused.cpp: In function 'bool faiss::exhaustive_L2sqr_fused_cmax(const float*, const float*, size_t, size_t, size_t, Top1BlockResultHandler<CMax<float, long int>, false>&, const float*)':\n/home/runner/miniconda3/conda-bld/faiss-pkg_1753290564222/work/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?\n   29 |     return exhaustive_L2sqr_fused_cmax_AVX512(x, y, d, nx, ny, res, y_norms);\n      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |            exhaustive_L2sqr_fused_cmax_simdlib"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      }
+    },
+    {
+      "commit_sha": "ba0f6d27481998f15235528a7b6371bc571bedbe",
+      "branch": "binary-cagra-nnd",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 AVX512_SPR (cmake)",
+      "workflow_id": 16475925636,
+      "job_id": 46578844692,
+      "created_at": "2025-07-23T16:09:05Z",
+      "error_lines": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?"
+      ],
+      "error_details": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp: In function 'bool faiss::exhaustive_L2sqr_fused_cmax(const float*, const float*, size_t, size_t, size_t, Top1BlockResultHandler<CMax<float, long int>, false>&, const float*)':\n/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?\n   29 |     return exhaustive_L2sqr_fused_cmax_AVX512(x, y, d, nx, ny, res, y_norms);\n      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |            exhaustive_L2sqr_fused_cmax_simdlib"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      }
+    },
+    {
+      "commit_sha": "ba0f6d27481998f15235528a7b6371bc571bedbe",
+      "branch": "binary-cagra-nnd",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 AVX512 (cmake)",
+      "workflow_id": 16475925636,
+      "job_id": 46578844701,
+      "created_at": "2025-07-23T16:09:05Z",
+      "error_lines": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?"
+      ],
+      "error_details": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp: In function 'bool faiss::exhaustive_L2sqr_fused_cmax(const float*, const float*, size_t, size_t, size_t, Top1BlockResultHandler<CMax<float, long int>, false>&, const float*)':\n/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?\n   29 |     return exhaustive_L2sqr_fused_cmax_AVX512(x, y, d, nx, ny, res, y_norms);\n      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |            exhaustive_L2sqr_fused_cmax_simdlib"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      }
+    },
+    {
+      "commit_sha": "ba0f6d27481998f15235528a7b6371bc571bedbe",
+      "branch": "binary-cagra-nnd",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 (conda)",
+      "workflow_id": 16475925636,
+      "job_id": 46578844768,
+      "created_at": "2025-07-23T16:09:05Z",
+      "error_lines": [
+        "/home/runner/miniconda3/conda-bld/faiss-pkg_1753288154688/work/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?"
+      ],
+      "error_details": [
+        "/home/runner/miniconda3/conda-bld/faiss-pkg_1753288154688/work/faiss/utils/distances_fused/distances_fused.cpp: In function 'bool faiss::exhaustive_L2sqr_fused_cmax(const float*, const float*, size_t, size_t, size_t, Top1BlockResultHandler<CMax<float, long int>, false>&, const float*)':\n/home/runner/miniconda3/conda-bld/faiss-pkg_1753288154688/work/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?\n   29 |     return exhaustive_L2sqr_fused_cmax_AVX512(x, y, d, nx, ny, res, y_norms);\n      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |            exhaustive_L2sqr_fused_cmax_simdlib"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      }
+    },
+    {
+      "commit_sha": "4b3e9cc0efff227cb24ccad44dca4fd576251c93",
+      "branch": "export-D78795472",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 AVX512 (cmake)",
+      "workflow_id": 16475681752,
+      "job_id": 46578028138,
+      "created_at": "2025-07-23T15:58:32Z",
+      "error_lines": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?"
+      ],
+      "error_details": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp: In function 'bool faiss::exhaustive_L2sqr_fused_cmax(const float*, const float*, size_t, size_t, size_t, Top1BlockResultHandler<CMax<float, long int>, false>&, const float*)':\n/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?\n   29 |     return exhaustive_L2sqr_fused_cmax_AVX512(x, y, d, nx, ny, res, y_norms);\n      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |            exhaustive_L2sqr_fused_cmax_simdlib"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      }
+    },
+    {
+      "commit_sha": "4b3e9cc0efff227cb24ccad44dca4fd576251c93",
+      "branch": "export-D78795472",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 AVX512_SPR (cmake)",
+      "workflow_id": 16475681752,
+      "job_id": 46578028187,
+      "created_at": "2025-07-23T15:58:32Z",
+      "error_lines": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?"
+      ],
+      "error_details": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp: In function 'bool faiss::exhaustive_L2sqr_fused_cmax(const float*, const float*, size_t, size_t, size_t, Top1BlockResultHandler<CMax<float, long int>, false>&, const float*)':\n/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?\n   29 |     return exhaustive_L2sqr_fused_cmax_AVX512(x, y, d, nx, ny, res, y_norms);\n      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |            exhaustive_L2sqr_fused_cmax_simdlib"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      }
+    },
+    {
+      "commit_sha": "4b3e9cc0efff227cb24ccad44dca4fd576251c93",
+      "branch": "export-D78795472",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 (conda)",
+      "workflow_id": 16475681752,
+      "job_id": 46578028315,
+      "created_at": "2025-07-23T15:58:32Z",
+      "error_lines": [
+        "/home/runner/miniconda3/conda-bld/faiss-pkg_1753287498709/work/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?"
+      ],
+      "error_details": [
+        "/home/runner/miniconda3/conda-bld/faiss-pkg_1753287498709/work/faiss/utils/distances_fused/distances_fused.cpp: In function 'bool faiss::exhaustive_L2sqr_fused_cmax(const float*, const float*, size_t, size_t, size_t, Top1BlockResultHandler<CMax<float, long int>, false>&, const float*)':\n/home/runner/miniconda3/conda-bld/faiss-pkg_1753287498709/work/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?\n   29 |     return exhaustive_L2sqr_fused_cmax_AVX512(x, y, d, nx, ny, res, y_norms);\n      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |            exhaustive_L2sqr_fused_cmax_simdlib"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      }
+    },
+    {
+      "commit_sha": "dc7a46384e8fd99ebc4d377a2599e707878b0d63",
+      "branch": "export-D78795714",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 AVX512 (cmake)",
+      "workflow_id": 16475568351,
+      "job_id": 46577621389,
+      "created_at": "2025-07-23T15:53:34Z",
+      "error_lines": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?"
+      ],
+      "error_details": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp: In function 'bool faiss::exhaustive_L2sqr_fused_cmax(const float*, const float*, size_t, size_t, size_t, Top1BlockResultHandler<CMax<float, long int>, false>&, const float*)':\n/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?\n   29 |     return exhaustive_L2sqr_fused_cmax_AVX512(x, y, d, nx, ny, res, y_norms);\n      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |            exhaustive_L2sqr_fused_cmax_simdlib"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      }
+    },
+    {
+      "commit_sha": "dc7a46384e8fd99ebc4d377a2599e707878b0d63",
+      "branch": "export-D78795714",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 AVX512_SPR (cmake)",
+      "workflow_id": 16475568351,
+      "job_id": 46577621595,
+      "created_at": "2025-07-23T15:53:34Z",
+      "error_lines": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?"
+      ],
+      "error_details": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp: In function 'bool faiss::exhaustive_L2sqr_fused_cmax(const float*, const float*, size_t, size_t, size_t, Top1BlockResultHandler<CMax<float, long int>, false>&, const float*)':\n/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?\n   29 |     return exhaustive_L2sqr_fused_cmax_AVX512(x, y, d, nx, ny, res, y_norms);\n      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |            exhaustive_L2sqr_fused_cmax_simdlib"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      }
+    },
+    {
+      "commit_sha": "dc7a46384e8fd99ebc4d377a2599e707878b0d63",
+      "branch": "export-D78795714",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 (conda)",
+      "workflow_id": 16475568351,
+      "job_id": 46577621694,
+      "created_at": "2025-07-23T15:53:34Z",
+      "error_lines": [
+        "/home/runner/miniconda3/conda-bld/faiss-pkg_1753287184534/work/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?"
+      ],
+      "error_details": [
+        "/home/runner/miniconda3/conda-bld/faiss-pkg_1753287184534/work/faiss/utils/distances_fused/distances_fused.cpp: In function 'bool faiss::exhaustive_L2sqr_fused_cmax(const float*, const float*, size_t, size_t, size_t, Top1BlockResultHandler<CMax<float, long int>, false>&, const float*)':\n/home/runner/miniconda3/conda-bld/faiss-pkg_1753287184534/work/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?\n   29 |     return exhaustive_L2sqr_fused_cmax_AVX512(x, y, d, nx, ny, res, y_norms);\n      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |            exhaustive_L2sqr_fused_cmax_simdlib"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      }
+    },
+    {
+      "commit_sha": "9fa290a79e06f6222c9c98acac44129027b82db8",
+      "branch": "export-D78796179",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 AVX512 (cmake)",
+      "workflow_id": 16472886399,
+      "job_id": 46568169541,
+      "created_at": "2025-07-23T14:02:55Z",
+      "error_lines": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?"
+      ],
+      "error_details": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp: In function 'bool faiss::exhaustive_L2sqr_fused_cmax(const float*, const float*, size_t, size_t, size_t, Top1BlockResultHandler<CMax<float, long int>, false>&, const float*)':\n/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?\n   29 |     return exhaustive_L2sqr_fused_cmax_AVX512(x, y, d, nx, ny, res, y_norms);\n      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |            exhaustive_L2sqr_fused_cmax_simdlib"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      }
+    },
+    {
+      "commit_sha": "9fa290a79e06f6222c9c98acac44129027b82db8",
+      "branch": "export-D78796179",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 AVX512_SPR (cmake)",
+      "workflow_id": 16472886399,
+      "job_id": 46568169588,
+      "created_at": "2025-07-23T14:02:55Z",
+      "error_lines": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?"
+      ],
+      "error_details": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp: In function 'bool faiss::exhaustive_L2sqr_fused_cmax(const float*, const float*, size_t, size_t, size_t, Top1BlockResultHandler<CMax<float, long int>, false>&, const float*)':\n/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?\n   29 |     return exhaustive_L2sqr_fused_cmax_AVX512(x, y, d, nx, ny, res, y_norms);\n      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |            exhaustive_L2sqr_fused_cmax_simdlib"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      }
+    },
+    {
+      "commit_sha": "9fa290a79e06f6222c9c98acac44129027b82db8",
+      "branch": "export-D78796179",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 (conda)",
+      "workflow_id": 16472886399,
+      "job_id": 46568169809,
+      "created_at": "2025-07-23T14:02:55Z",
+      "error_lines": [
+        "/home/runner/miniconda3/conda-bld/faiss-pkg_1753280553622/work/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?"
+      ],
+      "error_details": [
+        "/home/runner/miniconda3/conda-bld/faiss-pkg_1753280553622/work/faiss/utils/distances_fused/distances_fused.cpp: In function 'bool faiss::exhaustive_L2sqr_fused_cmax(const float*, const float*, size_t, size_t, size_t, Top1BlockResultHandler<CMax<float, long int>, false>&, const float*)':\n/home/runner/miniconda3/conda-bld/faiss-pkg_1753280553622/work/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?\n   29 |     return exhaustive_L2sqr_fused_cmax_AVX512(x, y, d, nx, ny, res, y_norms);\n      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |            exhaustive_L2sqr_fused_cmax_simdlib"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      }
+    },
+    {
+      "commit_sha": "1df161c126cce42b02673cb33d49d06c9200107d",
+      "branch": "cuvs-cagra-int8-pub",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 AVX512 (cmake)",
+      "workflow_id": 16461271612,
+      "job_id": 46529683850,
+      "created_at": "2025-07-23T04:05:47Z",
+      "error_lines": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?"
+      ],
+      "error_details": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp: In function 'bool faiss::exhaustive_L2sqr_fused_cmax(const float*, const float*, size_t, size_t, size_t, Top1BlockResultHandler<CMax<float, long int>, false>&, const float*)':\n/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?\n   29 |     return exhaustive_L2sqr_fused_cmax_AVX512(x, y, d, nx, ny, res, y_norms);\n      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |            exhaustive_L2sqr_fused_cmax_simdlib"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      }
+    },
+    {
+      "commit_sha": "1df161c126cce42b02673cb33d49d06c9200107d",
+      "branch": "cuvs-cagra-int8-pub",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 (conda)",
+      "workflow_id": 16461271612,
+      "job_id": 46529683900,
+      "created_at": "2025-07-23T04:05:47Z",
+      "error_lines": [
+        "/home/runner/miniconda3/conda-bld/faiss-pkg_1753244721165/work/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?"
+      ],
+      "error_details": [
+        "/home/runner/miniconda3/conda-bld/faiss-pkg_1753244721165/work/faiss/utils/distances_fused/distances_fused.cpp: In function 'bool faiss::exhaustive_L2sqr_fused_cmax(const float*, const float*, size_t, size_t, size_t, Top1BlockResultHandler<CMax<float, long int>, false>&, const float*)':\n/home/runner/miniconda3/conda-bld/faiss-pkg_1753244721165/work/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?\n   29 |     return exhaustive_L2sqr_fused_cmax_AVX512(x, y, d, nx, ny, res, y_norms);\n      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |            exhaustive_L2sqr_fused_cmax_simdlib"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      }
+    },
+    {
+      "commit_sha": "1df161c126cce42b02673cb33d49d06c9200107d",
+      "branch": "cuvs-cagra-int8-pub",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 AVX512_SPR (cmake)",
+      "workflow_id": 16461271612,
+      "job_id": 46529683928,
+      "created_at": "2025-07-23T04:05:47Z",
+      "error_lines": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?"
+      ],
+      "error_details": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp: In function 'bool faiss::exhaustive_L2sqr_fused_cmax(const float*, const float*, size_t, size_t, size_t, Top1BlockResultHandler<CMax<float, long int>, false>&, const float*)':\n/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?\n   29 |     return exhaustive_L2sqr_fused_cmax_AVX512(x, y, d, nx, ny, res, y_norms);\n      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |            exhaustive_L2sqr_fused_cmax_simdlib"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      }
+    },
+    {
+      "commit_sha": "6203ed6761a70322ef40fefb9f93498da3ecec06",
+      "branch": "bwc-rw-cagra",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 AVX512 (cmake)",
+      "workflow_id": 16460823567,
+      "job_id": 46528384981,
+      "created_at": "2025-07-23T03:30:00Z",
+      "error_lines": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?"
+      ],
+      "error_details": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp: In function 'bool faiss::exhaustive_L2sqr_fused_cmax(const float*, const float*, size_t, size_t, size_t, Top1BlockResultHandler<CMax<float, long int>, false>&, const float*)':\n/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?\n   29 |     return exhaustive_L2sqr_fused_cmax_AVX512(x, y, d, nx, ny, res, y_norms);\n      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |            exhaustive_L2sqr_fused_cmax_simdlib"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      }
+    },
+    {
+      "commit_sha": "6203ed6761a70322ef40fefb9f93498da3ecec06",
+      "branch": "bwc-rw-cagra",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 AVX512_SPR (cmake)",
+      "workflow_id": 16460823567,
+      "job_id": 46528384999,
+      "created_at": "2025-07-23T03:30:00Z",
+      "error_lines": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?"
+      ],
+      "error_details": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp: In function 'bool faiss::exhaustive_L2sqr_fused_cmax(const float*, const float*, size_t, size_t, size_t, Top1BlockResultHandler<CMax<float, long int>, false>&, const float*)':\n/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?\n   29 |     return exhaustive_L2sqr_fused_cmax_AVX512(x, y, d, nx, ny, res, y_norms);\n      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |            exhaustive_L2sqr_fused_cmax_simdlib"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      }
+    },
+    {
+      "commit_sha": "6203ed6761a70322ef40fefb9f93498da3ecec06",
+      "branch": "bwc-rw-cagra",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 (conda)",
+      "workflow_id": 16460823567,
+      "job_id": 46528385006,
+      "created_at": "2025-07-23T03:30:00Z",
+      "error_lines": [
+        "/home/runner/miniconda3/conda-bld/faiss-pkg_1753242598750/work/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?"
+      ],
+      "error_details": [
+        "/home/runner/miniconda3/conda-bld/faiss-pkg_1753242598750/work/faiss/utils/distances_fused/distances_fused.cpp: In function 'bool faiss::exhaustive_L2sqr_fused_cmax(const float*, const float*, size_t, size_t, size_t, Top1BlockResultHandler<CMax<float, long int>, false>&, const float*)':\n/home/runner/miniconda3/conda-bld/faiss-pkg_1753242598750/work/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?\n   29 |     return exhaustive_L2sqr_fused_cmax_AVX512(x, y, d, nx, ny, res, y_norms);\n      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |            exhaustive_L2sqr_fused_cmax_simdlib"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      }
+    },
+    {
+      "commit_sha": "2deb075a79beb7b027ff6266261b1cdadc33e225",
+      "branch": "export-D78330300",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 AVX512 (cmake)",
+      "workflow_id": 16299851253,
+      "job_id": 46032599519,
+      "created_at": "2025-07-15T17:15:43Z",
+      "error_lines": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?"
+      ],
+      "error_details": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp: In function 'bool faiss::exhaustive_L2sqr_fused_cmax(const float*, const float*, size_t, size_t, size_t, Top1BlockResultHandler<CMax<float, long int>, false>&, const float*)':\n/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?\n   29 |     return exhaustive_L2sqr_fused_cmax_AVX512(x, y, d, nx, ny, res, y_norms);\n      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |            exhaustive_L2sqr_fused_cmax_simdlib"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      }
+    },
+    {
+      "commit_sha": "2deb075a79beb7b027ff6266261b1cdadc33e225",
+      "branch": "export-D78330300",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 AVX512_SPR (cmake)",
+      "workflow_id": 16299851253,
+      "job_id": 46032599597,
+      "created_at": "2025-07-15T17:15:43Z",
+      "error_lines": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?"
+      ],
+      "error_details": [
+        "/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp: In function 'bool faiss::exhaustive_L2sqr_fused_cmax(const float*, const float*, size_t, size_t, size_t, Top1BlockResultHandler<CMax<float, long int>, false>&, const float*)':\n/home/ubuntu/actions-runner/_work/faiss/faiss/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?\n   29 |     return exhaustive_L2sqr_fused_cmax_AVX512(x, y, d, nx, ny, res, y_norms);\n      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |            exhaustive_L2sqr_fused_cmax_simdlib"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      }
+    },
+    {
+      "commit_sha": "2deb075a79beb7b027ff6266261b1cdadc33e225",
+      "branch": "export-D78330300",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 (conda)",
+      "workflow_id": 16299851253,
+      "job_id": 46032599692,
+      "created_at": "2025-07-15T17:15:43Z",
+      "error_lines": [
+        "/home/runner/miniconda3/conda-bld/faiss-pkg_1752600903376/work/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?"
+      ],
+      "error_details": [
+        "/home/runner/miniconda3/conda-bld/faiss-pkg_1752600903376/work/faiss/utils/distances_fused/distances_fused.cpp: In function 'bool faiss::exhaustive_L2sqr_fused_cmax(const float*, const float*, size_t, size_t, size_t, Top1BlockResultHandler<CMax<float, long int>, false>&, const float*)':\n/home/runner/miniconda3/conda-bld/faiss-pkg_1752600903376/work/faiss/utils/distances_fused/distances_fused.cpp:29:12: error: 'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_fused_cmax_simdlib'?\n   29 |     return exhaustive_L2sqr_fused_cmax_AVX512(x, y, d, nx, ny, res, y_norms);\n      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |            exhaustive_L2sqr_fused_cmax_simdlib"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      }
+    },
+    {
+      "commit_sha": "b4f743df20e282e2e3452f680f99b951e15ba287",
+      "branch": "guarantee-connectivity",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 GPU w/ cuVS (cmake)",
+      "workflow_id": 15594556225,
+      "job_id": 43922781624,
+      "created_at": "2025-06-11T20:05:45Z",
+      "error_lines": [
+        "/home/runner/miniconda3/lib/gcc/x86_64-conda-linux-gnu/12.4.0/include/c++/bits/stl_construct.h(119): error: no instance of constructor \"faiss::gpu::CuvsCagra::CuvsCagra\" matches the argument list"
+      ],
+      "error_details": [
+        "/home/runner/work/faiss/faiss/faiss/gpu/impl/CuvsCagra.cu(37): error: no instance of overloaded function \"faiss::gpu::CuvsCagra::CuvsCagra\" matches the specified type\n/home/runner/work/faiss/faiss/faiss/gpu/impl/CuvsCagra.cu(53): error: expected a \"{\"\n/home/runner/work/faiss/faiss/faiss/gpu/impl/CuvsCagra.cu(64): warning #12-D: parsing restarts here after previous syntax error\n/home/runner/miniconda3/lib/gcc/x86_64-conda-linux-gnu/12.4.0/include/c++/bits/stl_construct.h(119): error: no instance of constructor \"faiss::gpu::CuvsCagra::CuvsCagra\" matches the argument list\n            argument types are: (faiss::gpu::GpuResources *, int, const size_t, const size_t, faiss::cagra_build_algo, const size_t, const __nv_bool, faiss::MetricType, float, faiss::gpu::IndicesOptions, std::optional<cuvs::neighbors::ivf_pq::index_params>, std::optional<cuvs::neighbors::ivf_pq::search_params>, const float, const __nv_bool)\n        ::new((void*)__p) _Tp(std::forward<_Args>(__args)...);\n                             ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "function_error": 1
+      }
+    },
+    {
+      "commit_sha": "784c9a455dfcd6970c8b3d03ea4070119e25b776",
+      "branch": "guarantee-connectivity",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 GPU w/ cuVS (cmake)",
+      "workflow_id": 15594458933,
+      "job_id": 43922496038,
+      "created_at": "2025-06-11T20:00:52Z",
+      "error_lines": [
+        "/home/runner/miniconda3/lib/gcc/x86_64-conda-linux-gnu/12.4.0/include/c++/bits/stl_construct.h(119): error: no instance of constructor \"faiss::gpu::CuvsCagra::CuvsCagra\" matches the argument list"
+      ],
+      "error_details": [
+        "/home/runner/work/faiss/faiss/faiss/gpu/impl/CuvsCagra.cu(37): error: no instance of overloaded function \"faiss::gpu::CuvsCagra::CuvsCagra\" matches the specified type\n/home/runner/work/faiss/faiss/faiss/gpu/impl/CuvsCagra.cu(53): error: expected a \"{\"\n/home/runner/work/faiss/faiss/faiss/gpu/impl/CuvsCagra.cu(64): warning #12-D: parsing restarts here after previous syntax error\n/home/runner/miniconda3/lib/gcc/x86_64-conda-linux-gnu/12.4.0/include/c++/bits/stl_construct.h(119): error: no instance of constructor \"faiss::gpu::CuvsCagra::CuvsCagra\" matches the argument list\n            argument types are: (faiss::gpu::GpuResources *, int, const size_t, const size_t, faiss::cagra_build_algo, const size_t, const __nv_bool, faiss::MetricType, float, faiss::gpu::IndicesOptions, std::optional<cuvs::neighbors::ivf_pq::index_params>, std::optional<cuvs::neighbors::ivf_pq::search_params>, const float, const __nv_bool)\n        ::new((void*)__p) _Tp(std::forward<_Args>(__args)...);\n                             ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "function_error": 1
+      }
+    },
+    {
+      "commit_sha": "45975eb8278a2c44343db8db1dd819a9d406db1e",
+      "branch": "guarantee-connectivity",
+      "workflow_name": "Build",
+      "job_name": "build-pull-request / Linux x86_64 GPU w/ cuVS (cmake)",
+      "workflow_id": 15594454421,
+      "job_id": 43922489974,
+      "created_at": "2025-06-11T20:00:38Z",
+      "error_lines": [
+        "/home/runner/miniconda3/lib/gcc/x86_64-conda-linux-gnu/12.4.0/include/c++/bits/stl_construct.h(119): error: no instance of constructor \"faiss::gpu::CuvsCagra::CuvsCagra\" matches the argument list"
+      ],
+      "error_details": [
+        "/home/runner/work/faiss/faiss/faiss/gpu/impl/CuvsCagra.cu(37): error: no instance of overloaded function \"faiss::gpu::CuvsCagra::CuvsCagra\" matches the specified type\n/home/runner/work/faiss/faiss/faiss/gpu/impl/CuvsCagra.cu(53): error: expected a \"{\"\n/home/runner/work/faiss/faiss/faiss/gpu/impl/CuvsCagra.cu(64): warning #12-D: parsing restarts here after previous syntax error\n/home/runner/miniconda3/lib/gcc/x86_64-conda-linux-gnu/12.4.0/include/c++/bits/stl_construct.h(119): error: no instance of constructor \"faiss::gpu::CuvsCagra::CuvsCagra\" matches the argument list\n            argument types are: (faiss::gpu::GpuResources *, int, const size_t, const size_t, faiss::cagra_build_algo, const size_t, const __nv_bool, faiss::MetricType, float, faiss::gpu::IndicesOptions, std::optional<cuvs::neighbors::ivf_pq::index_params>, std::optional<cuvs::neighbors::ivf_pq::search_params>, const float, const __nv_bool)\n        ::new((void*)__p) _Tp(std::forward<_Args>(__args)...);\n                             ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "function_error": 1
+      }
+    }
+  ],
+  "error_classification_report": {
+    "summary": {
+      "total_error_types": 3,
+      "total_error_instances": 203,
+      "most_common_error": [
+        "member_error",
+        161
+      ],
+      "commits_affected": 35
+    },
+    "by_category": {
+      "syntax_errors": 0,
+      "type_errors": 0,
+      "declaration_errors": 38,
+      "function_errors": 4,
+      "member_errors": 161,
+      "semantic_errors": 0,
+      "werror_errors": 0,
+      "other_errors": 0
+    },
+    "top_errors": {
+      "member_error": 161,
+      "declaration_error": 38,
+      "function_error": 4,
+      "syntax_error": 0,
+      "missing_error": 0,
+      "unexpected_token": 0,
+      "format_error": 0,
+      "initialization_error": 0,
+      "operator_precedence_error": 0,
+      "constexpr_error": 0
+    },
+    "error_frequency": {
+      "member_error": 19,
+      "function_error": 4,
+      "declaration_error": 13
+    },
+    "commit_impact": {},
+    "error_examples": {
+      "member_not_found": [
+        "'class std::unordered_map<long int, long int>' has no member named 'contains'",
+        "'class std::unordered_map<int, CUstream_st*>' has no member named 'contains'",
+        "'class std::unordered_map<int, ihipStream_t*>' has no member named 'contains'"
+      ],
+      "constructor_error": [
+        "default constructor for \"std::experimental::mdspan<const uint32_t, std::experimental::extents<int64_",
+        "no instance of constructor \"faiss::gpu::CuvsCagra::CuvsCagra\" matches the argument list"
+      ],
+      "access_error": [
+        "namespace \"std\" has no member \"has_single_bit\""
+      ],
+      "undefined_error": [
+        "'exhaustive_L2sqr_fused_cmax_AVX512' was not declared in this scope; did you mean 'exhaustive_L2sqr_",
+        "no declaration matches 'void faiss::IndexPreTransform::train(faiss::idx_t, const float*, faiss::Nume",
+        "no declaration matches 'void faiss::IndexPreTransform::search(faiss::idx_t, const float*, faiss::Num"
+      ]
+    }
+  }
+}

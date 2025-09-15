@@ -1,0 +1,18 @@
+{
+  "dataset": "openssl",
+  "model_name": "claude-sonnet-4",
+  "evaluation_result": {
+    "model_name": "claude-sonnet-4",
+    "total_instances": 13,
+    "total_errors": 19,
+    "successful_fixes": 12,
+    "exact_matches": 0,
+    "valid_patches": 0,
+    "total_time": 237.28853392601013,
+    "average_time": 12.488870206632113,
+    "success_rate": 0.631578947368421,
+    "exact_match_rate": 0.0,
+    "patch_validity_rate": 0.0
+  },
+  "timestamp": "2025-09-07 16:23:13"
+}

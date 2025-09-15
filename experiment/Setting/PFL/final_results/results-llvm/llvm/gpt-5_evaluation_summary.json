@@ -1,0 +1,18 @@
+{
+  "dataset": "llvm",
+  "model_name": "gpt-5",
+  "evaluation_result": {
+    "model_name": "gpt-5",
+    "total_instances": 63,
+    "total_errors": 107,
+    "successful_fixes": 81,
+    "exact_matches": 0,
+    "valid_patches": 0,
+    "total_time": 28233.944881916046,
+    "average_time": 263.86864375622474,
+    "success_rate": 0.7570093457943925,
+    "exact_match_rate": 0.0,
+    "patch_validity_rate": 0.0
+  },
+  "timestamp": "2025-09-06 00:37:04"
+}

@@ -1,0 +1,18 @@
+{
+  "dataset": "rocksdb",
+  "model_name": "claude-sonnet-4",
+  "evaluation_result": {
+    "model_name": "claude-sonnet-4",
+    "total_instances": 64,
+    "total_errors": 64,
+    "successful_fixes": 33,
+    "exact_matches": 0,
+    "valid_patches": 0,
+    "total_time": 24895.63100719452,
+    "average_time": 388.99423448741436,
+    "success_rate": 0.515625,
+    "exact_match_rate": 0.0,
+    "patch_validity_rate": 0.0
+  },
+  "timestamp": "2025-09-08 15:59:30"
+}

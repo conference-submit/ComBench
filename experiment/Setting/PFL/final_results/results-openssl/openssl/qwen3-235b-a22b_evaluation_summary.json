@@ -1,0 +1,18 @@
+{
+  "dataset": "openssl",
+  "model_name": "qwen3-235b-a22b",
+  "evaluation_result": {
+    "model_name": "qwen3-235b-a22b",
+    "total_instances": 13,
+    "total_errors": 19,
+    "successful_fixes": 13,
+    "exact_matches": 0,
+    "valid_patches": 0,
+    "total_time": 2661.161201953888,
+    "average_time": 140.06111589230989,
+    "success_rate": 0.6842105263157895,
+    "exact_match_rate": 0.0,
+    "patch_validity_rate": 0.0
+  },
+  "timestamp": "2025-09-02 00:22:17"
+}

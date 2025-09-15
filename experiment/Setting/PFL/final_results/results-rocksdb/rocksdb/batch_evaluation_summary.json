@@ -1,0 +1,32 @@
+{
+  "dataset": "rocksdb",
+  "models": {
+    "qwen3-235b-a22b": {
+      "model_name": "qwen3-235b-a22b",
+      "total_instances": 52,
+      "total_errors": 64,
+      "successful_fixes": 23,
+      "exact_matches": 0,
+      "valid_patches": 0,
+      "total_time": 10511.182533502579,
+      "average_time": 164.2372270859778,
+      "success_rate": 0.359375,
+      "exact_match_rate": 0.0,
+      "patch_validity_rate": 0.0
+    },
+    "qwen3-30b-a3b": {
+      "model_name": "qwen3-30b-a3b",
+      "total_instances": 52,
+      "total_errors": 64,
+      "successful_fixes": 20,
+      "exact_matches": 0,
+      "valid_patches": 0,
+      "total_time": 6776.717843055725,
+      "average_time": 105.8862162977457,
+      "success_rate": 0.3125,
+      "exact_match_rate": 0.0,
+      "patch_validity_rate": 0.0
+    }
+  },
+  "timestamp": "2025-09-07 03:11:08"
+}

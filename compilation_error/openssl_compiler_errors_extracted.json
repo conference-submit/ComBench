@@ -1,0 +1,1976 @@
+{
+  "metadata": {
+    "project_name": "openssl",
+    "original_records": 1431,
+    "deduplicated_records": 0,
+    "workflow_filtered": 0,
+    "werror_filtered": 1121,
+    "merged_records": 264,
+    "final_records": 38,
+    "processing_timestamp": "2025-08-12 18:35:24",
+    "allowed_workflows": [
+      "GitHub CI"
+    ],
+    "statistics": {
+      "total_errors": 38,
+      "commits_with_errors": 23,
+      "workflows_with_errors": {
+        "GitHub CI": 38
+      },
+      "error_types_summary": {
+        "function_error": 11,
+        "declaration_error": 47,
+        "syntax_error": 78,
+        "other_error": 12,
+        "type_error": 14
+      },
+      "error_types_summary_detailed": {
+        "call_error": 32,
+        "undefined_error": 45,
+        "missing_error": 35,
+        "other_error": 9,
+        "macro_error": 16,
+        "incomplete_type": 19,
+        "unexpected_token": 5,
+        "format_error": 1
+      },
+      "jobs_with_errors": {
+        "memory_sanitizer": 15,
+        "freebsd-x86_64": 15,
+        "out-of-readonly-source-and-install-macos (macos-13)": 14,
+        "out-of-readonly-source-and-install-macos (macos-14)": 17,
+        "basic_clang": 13,
+        "address_ub_sanitizer": 10,
+        "basic_gcc": 10,
+        "fuzz_tests": 9,
+        "linux-arm64": 9,
+        "minimal": 12,
+        "check-c99": 7,
+        "no-deprecated": 10,
+        "no-shared-ubuntu": 10,
+        "non-caching": 10,
+        "legacy": 11,
+        "external-tests-misc": 10,
+        "external-tests-oqs-provider": 7,
+        "out-of-readonly-source-and-install-ubuntu": 10,
+        "external-tests-pyca (3.9)": 9,
+        "external-tests-pkcs11-provider": 8,
+        "full_featured": 10,
+        "enable_non-default_options": 11,
+        "no-legacy": 10,
+        "no-shared-macos (macos-14)": 16,
+        "no-shared-macos (macos-13)": 13,
+        "threads_sanitizer": 13,
+        "check-ansi": 5,
+        "buildtest": 1,
+        "fips_and_ktls": 1,
+        "external-test-pyca (1.51.0, 3.9)": 1,
+        "external-tests": 1,
+        "external-tests-providers": 2
+      }
+    }
+  },
+  "compiler_errors": [
+    {
+      "commit_sha": "07748a9d4115e208b19470462e76c1ab38b7693c",
+      "branch": "fips-import-pct",
+      "workflow_name": "GitHub CI",
+      "job_name": [
+        "memory_sanitizer",
+        "freebsd-x86_64",
+        "out-of-readonly-source-and-install-macos (macos-13)",
+        "out-of-readonly-source-and-install-macos (macos-14)"
+      ],
+      "workflow_id": 16615429536,
+      "job_id": [
+        47006937763,
+        47006937812,
+        47006938017,
+        47006938028
+      ],
+      "created_at": "2025-07-30T06:44:03Z",
+      "error_lines": [
+        "crypto/dh/dh_backend.c:85:38: error: too few arguments to function call, expected 2, have 1"
+      ],
+      "error_details": [
+        "crypto/dh/dh_backend.c:85:38: error: too few arguments to function call, expected 2, have 1\n   85 |         if (ossl_dh_check_pairwise(dh) == 0)\n      |             ~~~~~~~~~~~~~~~~~~~~~~   ^\ninclude/crypto/dh.h:45:5: note: 'ossl_dh_check_pairwise' declared here\n   45 | int ossl_dh_check_pairwise(const DH *dh, int return_on_null_numbers);\n      |     ^                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "function_error": 1
+      },
+      "error_line_types": [
+        "function_error"
+      ]
+    },
+    {
+      "commit_sha": "d0d3c0d30f57208d4a737b49c8eae8f105241d4d",
+      "branch": "zeroparams",
+      "workflow_name": "GitHub CI",
+      "job_name": [
+        "basic_clang"
+      ],
+      "workflow_id": 16569352287,
+      "job_id": [
+        46857184546
+      ],
+      "created_at": "2025-07-28T12:43:36Z",
+      "error_lines": [
+        "crypto/param_build.c:385:9: error: member reference type 'OSSL_PARAM *' (aka 'struct ossl_param_st *') is a pointer; did you mean to use '->''",
+        "crypto/params_dup.c:137:9: error: member reference type 'OSSL_PARAM *' (aka 'struct ossl_param_st *') is a pointer; did you mean to use '->''"
+      ],
+      "error_details": [
+        "  385 |     last.return_size = total;\n      |     ~~~~^\n      |         ->",
+        "  137 |     last.return_size = size;\n      |     ~~~~^\n      |         ->"
+      ],
+      "error_count": 2,
+      "error_types": {
+        "declaration_error": 2
+      },
+      "error_line_types": [
+        "declaration_error",
+        "declaration_error"
+      ]
+    },
+    {
+      "commit_sha": "d0d3c0d30f57208d4a737b49c8eae8f105241d4d",
+      "branch": "zeroparams",
+      "workflow_name": "GitHub CI",
+      "job_name": [
+        "address_ub_sanitizer",
+        "basic_gcc",
+        "fuzz_tests",
+        "linux-arm64",
+        "minimal",
+        "check-c99",
+        "no-deprecated",
+        "no-shared-ubuntu",
+        "non-caching",
+        "legacy",
+        "external-tests-misc",
+        "external-tests-oqs-provider",
+        "out-of-readonly-source-and-install-ubuntu",
+        "external-tests-pyca (3.9)",
+        "external-tests-pkcs11-provider",
+        "full_featured",
+        "enable_non-default_options",
+        "no-legacy"
+      ],
+      "workflow_id": 16569352287,
+      "job_id": [
+        46857184556,
+        46857184561,
+        46857184576,
+        46857184579,
+        46857184591,
+        46857184593,
+        46857184605,
+        46857184632,
+        46857184639,
+        46857184785,
+        46857184828,
+        46857184847,
+        46857184869,
+        46857184875,
+        46857184894,
+        46857184898,
+        46857184899,
+        46857184925
+      ],
+      "created_at": "2025-07-28T12:43:36Z",
+      "error_lines": [
+        "crypto/param_build.c:385:9: error: 'last' is a pointer; did you mean to use '->''"
+      ],
+      "error_details": [
+        "crypto/param_build.c:385:9: error: 'last' is a pointer; did you mean to use '->''\n  385 |     last.return_size = total;\n      |         ^\n      |         ->\nAt top level:\ncc1: note: unrecognized command-line option '-Wno-unterminated-string-initialization' may have been intended to silence earlier diagnostics"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      },
+      "error_line_types": [
+        "declaration_error"
+      ]
+    },
+    {
+      "commit_sha": "d0d3c0d30f57208d4a737b49c8eae8f105241d4d",
+      "branch": "zeroparams",
+      "workflow_name": "GitHub CI",
+      "job_name": [
+        "no-shared-macos (macos-14)",
+        "freebsd-x86_64",
+        "no-shared-macos (macos-13)",
+        "out-of-readonly-source-and-install-macos (macos-13)",
+        "memory_sanitizer",
+        "out-of-readonly-source-and-install-macos (macos-14)",
+        "threads_sanitizer"
+      ],
+      "workflow_id": 16569352287,
+      "job_id": [
+        46857184558,
+        46857184559,
+        46857184567,
+        46857184833,
+        46857184845,
+        46857184862,
+        46857184883
+      ],
+      "created_at": "2025-07-28T12:43:36Z",
+      "error_lines": [
+        "crypto/param_build.c:385:9: error: member reference type 'OSSL_PARAM *' (aka 'struct ossl_param_st *') is a pointer; did you mean to use '->''"
+      ],
+      "error_details": [
+        "    last.return_size = total;\n    ~~~~^\n        ->"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      },
+      "error_line_types": [
+        "declaration_error"
+      ]
+    },
+    {
+      "commit_sha": "90d5d27fcfbce4bd1253d3220c6a5232d234b40a",
+      "branch": "kemri_upstream2",
+      "workflow_name": "GitHub CI",
+      "job_name": [
+        "basic_clang",
+        "no-shared-macos (macos-13)",
+        "freebsd-x86_64",
+        "threads_sanitizer",
+        "no-shared-macos (macos-14)",
+        "memory_sanitizer",
+        "out-of-readonly-source-and-install-macos (macos-13)",
+        "out-of-readonly-source-and-install-macos (macos-14)"
+      ],
+      "workflow_id": 16472317719,
+      "job_id": [
+        46564483430,
+        46564483505,
+        46564483513,
+        46564483515,
+        46564483548,
+        46564483646,
+        46564483805,
+        46564483828
+      ],
+      "created_at": "2025-07-23T13:40:07Z",
+      "error_lines": [
+        "crypto/cms/cms_asn1.c:240:73: error: expected ';' after top level declarator"
+      ],
+      "error_details": [
+        "crypto/cms/cms_asn1.c:240:73: error: expected ';' after top level declarator\n  240 | } ASN1_ADB_END(CMS_OtherRecipientInfo, 0, oriType, 0, &ori_def_tt, NULL)\n      |                                                                         ^\n      |                                                                         ;"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "syntax_error": 1
+      },
+      "error_line_types": [
+        "syntax_error"
+      ]
+    },
+    {
+      "commit_sha": "4bdc1981f96a70c8f97f735e953c075d17840ca1",
+      "branch": "issue.1266",
+      "workflow_name": "GitHub CI",
+      "job_name": [
+        "check-c99",
+        "basic_gcc",
+        "linux-arm64",
+        "no-shared-ubuntu",
+        "fuzz_tests",
+        "no-legacy",
+        "address_ub_sanitizer",
+        "legacy",
+        "no-deprecated",
+        "enable_non-default_options",
+        "non-caching",
+        "full_featured",
+        "out-of-readonly-source-and-install-ubuntu",
+        "external-tests-misc",
+        "external-tests-pkcs11-provider",
+        "external-tests-oqs-provider",
+        "external-tests-pyca (3.9)"
+      ],
+      "workflow_id": 16455404553,
+      "job_id": [
+        46511078053,
+        46511078080,
+        46511078083,
+        46511078086,
+        46511078129,
+        46511078142,
+        46511078146,
+        46511078152,
+        46511078153,
+        46511078197,
+        46511078199,
+        46511078210,
+        46511078254,
+        46511078264,
+        46511078269,
+        46511078273,
+        46511078276
+      ],
+      "created_at": "2025-07-22T20:59:39Z",
+      "error_lines": [
+        "ssl/quic/quic_ackm.c:1037:12: error: conflicting types for 'ossl_ackm_new'; have 'OSSL_ACKM *(OSSL_TIME (*)(void *), void *, OSSL_STATM *, const OSSL_CC_METHOD *, OSSL_CC_DATA *, char)' {aka 'struct ossl_ackm_st *(OSSL_TIME (*)(void *), void *, struct ossl_statm_st *, const struct ossl_cc_method_st *, struct ossl_cc_data_st *, char)'}"
+      ],
+      "error_details": [
+        " 1037 | OSSL_ACKM *ossl_ackm_new(OSSL_TIME (*now)(void *arg),\n      |            ^~~~~~~~~~~~~"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      },
+      "error_line_types": [
+        "declaration_error"
+      ]
+    },
+    {
+      "commit_sha": "4bdc1981f96a70c8f97f735e953c075d17840ca1",
+      "branch": "issue.1266",
+      "workflow_name": "GitHub CI",
+      "job_name": [
+        "no-shared-macos (macos-13)",
+        "no-shared-macos (macos-14)",
+        "memory_sanitizer",
+        "basic_clang",
+        "threads_sanitizer",
+        "freebsd-x86_64",
+        "out-of-readonly-source-and-install-macos (macos-14)",
+        "out-of-readonly-source-and-install-macos (macos-13)"
+      ],
+      "workflow_id": 16455404553,
+      "job_id": [
+        46511078091,
+        46511078134,
+        46511078155,
+        46511078159,
+        46511078164,
+        46511078201,
+        46511078255,
+        46511078261
+      ],
+      "created_at": "2025-07-22T20:59:39Z",
+      "error_lines": [
+        "ssl/quic/quic_ackm.c:1037:12: error: conflicting types for 'ossl_ackm_new'"
+      ],
+      "error_details": [
+        "ssl/quic/quic_ackm.c:1037:12: error: conflicting types for 'ossl_ackm_new'\nOSSL_ACKM *ossl_ackm_new(OSSL_TIME (*now)(void *arg),\n           ^\ninclude/internal/quic_ackm.h:22:12: note: previous declaration is here\nOSSL_ACKM *ossl_ackm_new(OSSL_TIME (*now)(void *arg),\n           ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      },
+      "error_line_types": [
+        "declaration_error"
+      ]
+    },
+    {
+      "commit_sha": "e9e56e513ff54e9a3da168845ea94b9e30fcb3e2",
+      "branch": "sslv3",
+      "workflow_name": "GitHub CI",
+      "job_name": [
+        "enable_non-default_options",
+        "minimal"
+      ],
+      "workflow_id": 16373729801,
+      "job_id": [
+        46268326721,
+        46268326769
+      ],
+      "created_at": "2025-07-18T14:59:10Z",
+      "error_lines": [
+        "ssl/s3_lib.c:4490:5: error: 'alg_k' undeclared (first use in this function); did you mean 'alg_a''"
+      ],
+      "error_details": [
+        "ssl/s3_lib.c:4490:5: error: 'alg_k' undeclared (first use in this function); did you mean 'alg_a''\n 4490 |     alg_k = s->s3.tmp.new_cipher->algorithm_mkey;\n      |     ^~~~~\n      |     alg_a\nssl/s3_lib.c:4490:5: note: each undeclared identifier is reported only once for each function it appears in\nAt top level:\ncc1: note: unrecognized command-line option '-Wno-unterminated-string-initialization' may have been intended to silence earlier diagnostics"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      },
+      "error_line_types": [
+        "declaration_error"
+      ]
+    },
+    {
+      "commit_sha": "68291df6a57d34d5fe6d3c1a27de18ecfc06b8a1",
+      "branch": "security-categories",
+      "workflow_name": "GitHub CI",
+      "job_name": [
+        "address_ub_sanitizer",
+        "check-c99",
+        "linux-arm64",
+        "no-shared-ubuntu",
+        "fuzz_tests",
+        "basic_gcc",
+        "minimal",
+        "non-caching",
+        "no-deprecated",
+        "full_featured",
+        "enable_non-default_options",
+        "external-tests-oqs-provider",
+        "no-legacy",
+        "external-tests-pyca (3.9)",
+        "out-of-readonly-source-and-install-ubuntu",
+        "legacy",
+        "external-tests-misc"
+      ],
+      "workflow_id": 16358305080,
+      "job_id": [
+        46221374106,
+        46221374121,
+        46221374128,
+        46221374133,
+        46221374138,
+        46221374141,
+        46221374145,
+        46221374158,
+        46221374159,
+        46221374212,
+        46221374214,
+        46221374219,
+        46221374222,
+        46221374223,
+        46221374224,
+        46221374231,
+        46221374233
+      ],
+      "created_at": "2025-07-17T23:32:29Z",
+      "error_lines": [
+        "providers/implementations/ciphers/cipher_aes.c:70:69: error: macro \"IMPLEMENT_generic_cipher\" requires 10 arguments, but only 9 given",
+        "providers/implementations/ciphers/cipher_aes.c:72:69: error: macro \"IMPLEMENT_generic_cipher\" requires 10 arguments, but only 9 given",
+        "providers/implementations/ciphers/cipher_aes.c:70:1: error: unknown type name 'IMPLEMENT_generic_cipher'",
+        "providers/implementations/ciphers/cipher_aes.c:74:69: error: macro \"IMPLEMENT_generic_cipher\" requires 10 arguments, but only 9 given",
+        "providers/implementations/ciphers/cipher_aes.c:74:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'IMPLEMENT_generic_cipher'"
+      ],
+      "error_details": [
+        "providers/implementations/ciphers/cipher_aes.c:70:69: error: macro \"IMPLEMENT_generic_cipher\" requires 10 arguments, but only 9 given\n   70 | IMPLEMENT_generic_cipher(aes, AES, cfb,  CFB, 0, 256, 8, 128, stream)\n      |                                                                     ^",
+        "In file included from providers/implementations/ciphers/cipher_aes.h:11,\nproviders/implementations/ciphers/cipher_aes.c:72:69: error: macro \"IMPLEMENT_generic_cipher\" requires 10 arguments, but only 9 given\n   72 | IMPLEMENT_generic_cipher(aes, AES, cfb,  CFB, 0, 192, 8, 128, stream)\n      |                                                                     ^\nproviders/implementations/include/prov/ciphercommon.h:219: note: macro \"IMPLEMENT_generic_cipher\" defined here\n  219 | # define IMPLEMENT_generic_cipher(alg, UCALG, lcmode, UCMODE, flags, kbits,    \\\n      |",
+        "providers/implementations/ciphers/cipher_aes.c:70:1: error: unknown type name 'IMPLEMENT_generic_cipher'\n   70 | IMPLEMENT_generic_cipher(aes, AES, cfb,  CFB, 0, 256, 8, 128, stream)\n      | ^~~~~~~~~~~~~~~~~~~~~~~~",
+        "providers/implementations/ciphers/cipher_aes.c:74:69: error: macro \"IMPLEMENT_generic_cipher\" requires 10 arguments, but only 9 given\n   74 | IMPLEMENT_generic_cipher(aes, AES, cfb,  CFB, 0, 128, 8, 128, stream)\n      |                                                                     ^\nproviders/implementations/include/prov/ciphercommon.h:219: note: macro \"IMPLEMENT_generic_cipher\" defined here\n  219 | # define IMPLEMENT_generic_cipher(alg, UCALG, lcmode, UCMODE, flags, kbits,    \\\n      |",
+        "providers/implementations/ciphers/cipher_aes.c:74:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'IMPLEMENT_generic_cipher'\n   74 | IMPLEMENT_generic_cipher(aes, AES, cfb,  CFB, 0, 128, 8, 128, stream)\n      | ^~~~~~~~~~~~~~~~~~~~~~~~\ncc1: note: unrecognized command-line option '-Wno-unterminated-string-initialization' may have been intended to silence earlier diagnostics"
+      ],
+      "error_count": 5,
+      "error_types": {
+        "syntax_error": 4,
+        "declaration_error": 1
+      },
+      "error_line_types": [
+        "syntax_error",
+        "syntax_error",
+        "declaration_error",
+        "syntax_error",
+        "syntax_error"
+      ]
+    },
+    {
+      "commit_sha": "68291df6a57d34d5fe6d3c1a27de18ecfc06b8a1",
+      "branch": "security-categories",
+      "workflow_name": "GitHub CI",
+      "job_name": [
+        "basic_clang",
+        "freebsd-x86_64",
+        "no-shared-macos (macos-14)",
+        "no-shared-macos (macos-13)",
+        "memory_sanitizer",
+        "out-of-readonly-source-and-install-macos (macos-13)",
+        "out-of-readonly-source-and-install-macos (macos-14)",
+        "threads_sanitizer"
+      ],
+      "workflow_id": 16358305080,
+      "job_id": [
+        46221374113,
+        46221374147,
+        46221374167,
+        46221374171,
+        46221374232,
+        46221374234,
+        46221374246,
+        46221374247
+      ],
+      "created_at": "2025-07-17T23:32:29Z",
+      "error_lines": [
+        "providers/implementations/ciphers/cipher_aes.c:70:69: error: too few arguments provided to function-like macro invocation",
+        "providers/implementations/ciphers/cipher_aes.c:72:69: error: too few arguments provided to function-like macro invocation",
+        "providers/implementations/ciphers/cipher_aes.c:70:1: error: unknown type name 'IMPLEMENT_generic_cipher'",
+        "providers/implementations/ciphers/cipher_aes.c:74:69: error: too few arguments provided to function-like macro invocation",
+        "providers/implementations/ciphers/cipher_aes.c:72:25: error: expected ';' after top level declarator"
+      ],
+      "error_details": [
+        "providers/implementations/ciphers/cipher_aes.c:70:69: error: too few arguments provided to function-like macro invocation\n   70 | IMPLEMENT_generic_cipher(aes, AES, cfb,  CFB, 0, 256, 8, 128, stream)\n      |                                                                     ^\nproviders/implementations/include/prov/ciphercommon.h:219:10: note: macro 'IMPLEMENT_generic_cipher' defined here\n  219 | # define IMPLEMENT_generic_cipher(alg, UCALG, lcmode, UCMODE, flags, kbits,    \\\n      |          ^",
+        "providers/implementations/ciphers/cipher_aes.c:72:69: error: too few arguments provided to function-like macro invocation\n   72 | IMPLEMENT_generic_cipher(aes, AES, cfb,  CFB, 0, 192, 8, 128, stream)\n      |                                                                     ^\nproviders/implementations/include/prov/ciphercommon.h:219:10: note: macro 'IMPLEMENT_generic_cipher' defined here\n  219 | # define IMPLEMENT_generic_cipher(alg, UCALG, lcmode, UCMODE, flags, kbits,    \\\n      |          ^",
+        "providers/implementations/ciphers/cipher_aes.c:70:1: error: unknown type name 'IMPLEMENT_generic_cipher'\n   70 | IMPLEMENT_generic_cipher(aes, AES, cfb,  CFB, 0, 256, 8, 128, stream)\n      | ^",
+        "providers/implementations/ciphers/cipher_aes.c:74:69: error: too few arguments provided to function-like macro invocation\n   74 | IMPLEMENT_generic_cipher(aes, AES, cfb,  CFB, 0, 128, 8, 128, stream)\n      |                                                                     ^\nproviders/implementations/include/prov/ciphercommon.h:219:10: note: macro 'IMPLEMENT_generic_cipher' defined here\n  219 | # define IMPLEMENT_generic_cipher(alg, UCALG, lcmode, UCMODE, flags, kbits,    \\\n      |          ^",
+        "providers/implementations/ciphers/cipher_aes.c:72:25: error: expected ';' after top level declarator\n   72 | IMPLEMENT_generic_cipher(aes, AES, cfb,  CFB, 0, 192, 8, 128, stream)\n      |                         ^\n      |                         ;"
+      ],
+      "error_count": 5,
+      "error_types": {
+        "syntax_error": 4,
+        "declaration_error": 1
+      },
+      "error_line_types": [
+        "syntax_error",
+        "syntax_error",
+        "declaration_error",
+        "syntax_error",
+        "syntax_error"
+      ]
+    },
+    {
+      "commit_sha": "68291df6a57d34d5fe6d3c1a27de18ecfc06b8a1",
+      "branch": "security-categories",
+      "workflow_name": "GitHub CI",
+      "job_name": [
+        "external-tests-pkcs11-provider"
+      ],
+      "workflow_id": 16358305080,
+      "job_id": [
+        46221374236
+      ],
+      "created_at": "2025-07-17T23:32:29Z",
+      "error_lines": [
+        "providers/implementations/ciphers/cipher_aes.c:70:69: error: macro 'IMPLEMENT_generic_cipher' requires 10 arguments, but only 9 given",
+        "providers/implementations/ciphers/cipher_aes.c:72:69: error: macro 'IMPLEMENT_generic_cipher' requires 10 arguments, but only 9 given",
+        "providers/implementations/ciphers/cipher_aes.c:70:1: error: unknown type name 'IMPLEMENT_generic_cipher'",
+        "providers/implementations/ciphers/cipher_aes.c:74:69: error: macro 'IMPLEMENT_generic_cipher' requires 10 arguments, but only 9 given",
+        "providers/implementations/ciphers/cipher_aes.c:74:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'IMPLEMENT_generic_cipher'"
+      ],
+      "error_details": [
+        "providers/implementations/ciphers/cipher_aes.c:70:69: error: macro 'IMPLEMENT_generic_cipher' requires 10 arguments, but only 9 given\n   70 | IMPLEMENT_generic_cipher(aes, AES, cfb,  CFB, 0, 256, 8, 128, stream)\n      |                                                                     ^",
+        "In file included from providers/implementations/ciphers/cipher_aes.h:11,\nproviders/implementations/ciphers/cipher_aes.c:72:69: error: macro 'IMPLEMENT_generic_cipher' requires 10 arguments, but only 9 given\n   72 | IMPLEMENT_generic_cipher(aes, AES, cfb,  CFB, 0, 192, 8, 128, stream)\n      |                                                                     ^\nproviders/implementations/include/prov/ciphercommon.h:219:10: note: macro 'IMPLEMENT_generic_cipher' defined here\n  219 | # define IMPLEMENT_generic_cipher(alg, UCALG, lcmode, UCMODE, flags, kbits,    \\\n      |          ^~~~~~~~~~~~~~~~~~~~~~~~",
+        "providers/implementations/ciphers/cipher_aes.c:70:1: error: unknown type name 'IMPLEMENT_generic_cipher'\n   70 | IMPLEMENT_generic_cipher(aes, AES, cfb,  CFB, 0, 256, 8, 128, stream)\n      | ^~~~~~~~~~~~~~~~~~~~~~~~",
+        "providers/implementations/ciphers/cipher_aes.c:74:69: error: macro 'IMPLEMENT_generic_cipher' requires 10 arguments, but only 9 given\n   74 | IMPLEMENT_generic_cipher(aes, AES, cfb,  CFB, 0, 128, 8, 128, stream)\n      |                                                                     ^\nproviders/implementations/include/prov/ciphercommon.h:219:10: note: macro 'IMPLEMENT_generic_cipher' defined here\n  219 | # define IMPLEMENT_generic_cipher(alg, UCALG, lcmode, UCMODE, flags, kbits,    \\\n      |          ^~~~~~~~~~~~~~~~~~~~~~~~",
+        "providers/implementations/ciphers/cipher_aes.c:74:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'IMPLEMENT_generic_cipher'\n   74 | IMPLEMENT_generic_cipher(aes, AES, cfb,  CFB, 0, 128, 8, 128, stream)\n      | ^~~~~~~~~~~~~~~~~~~~~~~~"
+      ],
+      "error_count": 5,
+      "error_types": {
+        "syntax_error": 4,
+        "declaration_error": 1
+      },
+      "error_line_types": [
+        "syntax_error",
+        "syntax_error",
+        "declaration_error",
+        "syntax_error",
+        "syntax_error"
+      ]
+    },
+    {
+      "commit_sha": "d851f9c3b267e0e161bbb8761b9d9e88d8e62bec",
+      "branch": "reduce-obj-contention",
+      "workflow_name": "GitHub CI",
+      "job_name": [
+        "check-c99",
+        "basic_gcc",
+        "out-of-readonly-source-and-install-ubuntu",
+        "enable_non-default_options",
+        "full_featured",
+        "fuzz_tests",
+        "no-shared-ubuntu",
+        "minimal",
+        "legacy",
+        "no-legacy",
+        "non-caching",
+        "address_ub_sanitizer",
+        "linux-arm64",
+        "no-deprecated",
+        "external-tests-pyca (3.9)",
+        "external-tests-oqs-provider",
+        "external-tests-misc"
+      ],
+      "workflow_id": 16351599679,
+      "job_id": [
+        46199550661,
+        46199550668,
+        46199550791,
+        46199550816,
+        46199550817,
+        46199550828,
+        46199550856,
+        46199550871,
+        46199550884,
+        46199550888,
+        46199550889,
+        46199550893,
+        46199550898,
+        46199550899,
+        46199550941,
+        46199550942,
+        46199550967
+      ],
+      "created_at": "2025-07-17T17:16:59Z",
+      "error_lines": [
+        "crypto/lockless/binarytree.c:21:18: error: array type has incomplete element type 'LBT_NODEINFO' {aka 'struct lbt_nodeinfo_st'}",
+        "crypto/lockless/binarytree.c:22:5: error: unknown type name 'LBT_NODE'",
+        "crypto/lockless/binarytree.c:28:5: error: unknown type name 'bool'",
+        "crypto/lockless/binarytree.c:29:5: error: unknown type name 'bool'"
+      ],
+      "error_details": [
+        "crypto/lockless/binarytree.c:21:18: error: array type has incomplete element type 'LBT_NODEINFO' {aka 'struct lbt_nodeinfo_st'}\n   21 |     LBT_NODEINFO child[2];\n      |                  ^~~~~",
+        "crypto/lockless/binarytree.c:22:5: error: unknown type name 'LBT_NODE'\n   22 |     LBT_NODE *backlink;\n      |     ^~~~~~~~",
+        "crypto/lockless/binarytree.c:28:5: error: unknown type name 'bool'\n   28 |     bool flag;\n      |     ^~~~",
+        "crypto/lockless/binarytree.c:29:5: error: unknown type name 'bool'\n   29 |     bool mark;\n      |     ^~~~\ncc1: note: unrecognized command-line option '-Wno-unterminated-string-initialization' may have been intended to silence earlier diagnostics"
+      ],
+      "error_count": 4,
+      "error_types": {
+        "other_error": 1,
+        "declaration_error": 3
+      },
+      "error_line_types": [
+        "other_error",
+        "declaration_error",
+        "declaration_error",
+        "declaration_error"
+      ]
+    },
+    {
+      "commit_sha": "d851f9c3b267e0e161bbb8761b9d9e88d8e62bec",
+      "branch": "reduce-obj-contention",
+      "workflow_name": "GitHub CI",
+      "job_name": [
+        "no-shared-macos (macos-14)",
+        "no-shared-macos (macos-13)",
+        "memory_sanitizer",
+        "out-of-readonly-source-and-install-macos (macos-13)",
+        "out-of-readonly-source-and-install-macos (macos-14)",
+        "threads_sanitizer",
+        "basic_clang",
+        "freebsd-x86_64"
+      ],
+      "workflow_id": 16351599679,
+      "job_id": [
+        46199550793,
+        46199550794,
+        46199550806,
+        46199550845,
+        46199550851,
+        46199550857,
+        46199550887,
+        46199550913
+      ],
+      "created_at": "2025-07-17T17:16:59Z",
+      "error_lines": [
+        "crypto/lockless/binarytree.c:21:23: error: array has incomplete element type 'LBT_NODEINFO' (aka 'struct lbt_nodeinfo_st')",
+        "crypto/lockless/binarytree.c:22:5: error: unknown type name 'LBT_NODE'",
+        "crypto/lockless/binarytree.c:28:5: error: unknown type name 'bool'",
+        "crypto/lockless/binarytree.c:29:5: error: unknown type name 'bool'"
+      ],
+      "error_details": [
+        "crypto/lockless/binarytree.c:21:23: error: array has incomplete element type 'LBT_NODEINFO' (aka 'struct lbt_nodeinfo_st')\n    LBT_NODEINFO child[2];\n                      ^\ncrypto/lockless/binarytree.c:17:8: note: forward declaration of 'struct lbt_nodeinfo_st'\nstruct lbt_nodeinfo_st;\n       ^",
+        "crypto/lockless/binarytree.c:22:5: error: unknown type name 'LBT_NODE'\n    LBT_NODE *backlink;\n    ^",
+        "crypto/lockless/binarytree.c:28:5: error: unknown type name 'bool'\n    bool flag;\n    ^",
+        "crypto/lockless/binarytree.c:29:5: error: unknown type name 'bool'\n    bool mark;\n    ^"
+      ],
+      "error_count": 4,
+      "error_types": {
+        "other_error": 1,
+        "declaration_error": 3
+      },
+      "error_line_types": [
+        "other_error",
+        "declaration_error",
+        "declaration_error",
+        "declaration_error"
+      ]
+    },
+    {
+      "commit_sha": "d851f9c3b267e0e161bbb8761b9d9e88d8e62bec",
+      "branch": "reduce-obj-contention",
+      "workflow_name": "GitHub CI",
+      "job_name": [
+        "external-tests-pkcs11-provider"
+      ],
+      "workflow_id": 16351599679,
+      "job_id": [
+        46199550927
+      ],
+      "created_at": "2025-07-17T17:16:59Z",
+      "error_lines": [
+        "crypto/lockless/binarytree.c:21:18: error: array type has incomplete element type 'LBT_NODEINFO' {aka 'struct lbt_nodeinfo_st'}",
+        "crypto/lockless/binarytree.c:22:5: error: unknown type name 'LBT_NODE'; did you mean 'LBT_NODEINFO''"
+      ],
+      "error_details": [
+        "crypto/lockless/binarytree.c:21:18: error: array type has incomplete element type 'LBT_NODEINFO' {aka 'struct lbt_nodeinfo_st'}\n   21 |     LBT_NODEINFO child[2];\n      |                  ^~~~~",
+        "crypto/lockless/binarytree.c:22:5: error: unknown type name 'LBT_NODE'; did you mean 'LBT_NODEINFO''\n   22 |     LBT_NODE *backlink;\n      |     ^~~~~~~~\n      |     LBT_NODEINFO"
+      ],
+      "error_count": 2,
+      "error_types": {
+        "other_error": 1,
+        "declaration_error": 1
+      },
+      "error_line_types": [
+        "other_error",
+        "declaration_error"
+      ]
+    },
+    {
+      "commit_sha": "d383901f7125203df3e18978974f7004d0b34d6a",
+      "branch": "param-kdf",
+      "workflow_name": "GitHub CI",
+      "job_name": [
+        "basic_clang",
+        "freebsd-x86_64",
+        "no-shared-macos (macos-14)",
+        "no-shared-macos (macos-13)",
+        "out-of-readonly-source-and-install-macos (macos-13)",
+        "out-of-readonly-source-and-install-macos (macos-14)",
+        "memory_sanitizer",
+        "threads_sanitizer"
+      ],
+      "workflow_id": 16333850133,
+      "job_id": [
+        46142018093,
+        46142018112,
+        46142018126,
+        46142018144,
+        46142018189,
+        46142018193,
+        46142018195,
+        46142018208
+      ],
+      "created_at": "2025-07-17T01:16:17Z",
+      "error_lines": [
+        "providers/implementations/signature/mac_legacy_sig.c:129:55: error: too few arguments to function call, expected 8, have 5"
+      ],
+      "error_details": [
+        "providers/implementations/signature/mac_legacy_sig.c:129:55: error: too few arguments to function call, expected 8, have 5\n  125 |     if (!ossl_prov_set_macctx(pmacctx->macctx,\n      |          ~~~~~~~~~~~~~~~~~~~~\n  126 |                               (char *)ciphername,\n  127 |                               (char *)mdname,\n  128 |                               (char *)engine,\n  129 |                               pmacctx->key->properties))\n      |                                                       ^\nproviders/common/include/prov/provider_util.h:110:5: note: 'ossl_prov_set_macctx' declared here\n  110 | int ossl_prov_set_macctx(EVP_MAC_CTX *macctx,\n      |     ^                    ~~~~~~~~~~~~~~~~~~~~"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "function_error": 1
+      },
+      "error_line_types": [
+        "function_error"
+      ]
+    },
+    {
+      "commit_sha": "d594455e02b99e703af4b9822fdbf4b879806434",
+      "branch": "sslv2",
+      "workflow_name": "GitHub CI",
+      "job_name": [
+        "basic_gcc",
+        "check-c99",
+        "address_ub_sanitizer",
+        "no-legacy",
+        "linux-arm64",
+        "minimal",
+        "no-shared-ubuntu",
+        "out-of-readonly-source-and-install-ubuntu",
+        "full_featured",
+        "fuzz_tests",
+        "non-caching",
+        "legacy",
+        "enable_non-default_options",
+        "external-tests-misc",
+        "external-tests-oqs-provider",
+        "external-tests-pyca (3.9)",
+        "external-tests-pkcs11-provider"
+      ],
+      "workflow_id": 16289796956,
+      "job_id": [
+        45996841430,
+        45996841503,
+        45996841522,
+        45996841530,
+        45996841547,
+        45996841551,
+        45996841609,
+        45996841620,
+        45996841621,
+        45996841644,
+        45996841660,
+        45996841667,
+        45996841672,
+        45996841726,
+        45996841764,
+        45996841767,
+        45996841769
+      ],
+      "created_at": "2025-07-15T09:42:46Z",
+      "error_lines": [
+        "ssl/statem/extensions.c:146:11: error: 'SSL_EXT_SSL3_ALLOWED' undeclared here (not in a function)"
+      ],
+      "error_details": [
+        "ssl/statem/extensions.c:146:11: error: 'SSL_EXT_SSL3_ALLOWED' undeclared here (not in a function)\n  146 |         | SSL_EXT_SSL3_ALLOWED | SSL_EXT_TLS1_2_AND_BELOW_ONLY,\n      |           ^~~~~~~~~~~~~~~~~~~~\ncc1: note: unrecognized command-line option '-Wno-unterminated-string-initialization' may have been intended to silence earlier diagnostics"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      },
+      "error_line_types": [
+        "declaration_error"
+      ]
+    },
+    {
+      "commit_sha": "d594455e02b99e703af4b9822fdbf4b879806434",
+      "branch": "sslv2",
+      "workflow_name": "GitHub CI",
+      "job_name": [
+        "threads_sanitizer",
+        "basic_clang",
+        "no-shared-macos (macos-14)",
+        "out-of-readonly-source-and-install-macos (macos-14)",
+        "memory_sanitizer",
+        "freebsd-x86_64",
+        "no-shared-macos (macos-13)",
+        "out-of-readonly-source-and-install-macos (macos-13)"
+      ],
+      "workflow_id": 16289796956,
+      "job_id": [
+        45996841531,
+        45996841555,
+        45996841642,
+        45996841684,
+        45996841685,
+        45996841694,
+        45996841710,
+        45996841750
+      ],
+      "created_at": "2025-07-15T09:42:46Z",
+      "error_lines": [
+        "ssl/statem/extensions.c:146:11: error: use of undeclared identifier 'SSL_EXT_SSL3_ALLOWED'",
+        "ssl/statem/extensions.c:438:23: error: invalid application of 'sizeof' to an incomplete type 'const EXTENSION_DEFINITION[]' (aka 'const struct extensions_definition_st[]')",
+        "ssl/statem/extensions.c:467:39: error: invalid application of 'sizeof' to an incomplete type 'const EXTENSION_DEFINITION[]' (aka 'const struct extensions_definition_st[]')",
+        "ssl/statem/extensions.c:514:26: error: invalid application of 'sizeof' to an incomplete type 'const EXTENSION_DEFINITION[]' (aka 'const struct extensions_definition_st[]')",
+        "ssl/statem/extensions.c:574:34: error: use of undeclared identifier 'SSL_EXT_SSL3_ALLOWED'",
+        "ssl/statem/extensions.c:628:16: error: invalid application of 'sizeof' to an incomplete type 'const EXTENSION_DEFINITION[]' (aka 'const struct extensions_definition_st[]')",
+        "ssl/statem/extensions.c:674:19: error: invalid application of 'sizeof' to an incomplete type 'const EXTENSION_DEFINITION[]' (aka 'const struct extensions_definition_st[]')",
+        "ssl/statem/extensions.c:709:45: error: invalid application of 'sizeof' to an incomplete type 'const EXTENSION_DEFINITION[]' (aka 'const struct extensions_definition_st[]')",
+        "ssl/statem/extensions.c:757:15: error: invalid application of 'sizeof' to an incomplete type 'const EXTENSION_DEFINITION[]' (aka 'const struct extensions_definition_st[]')",
+        "ssl/statem/extensions.c:794:25: error: invalid application of 'sizeof' to an incomplete type 'const EXTENSION_DEFINITION[]' (aka 'const struct extensions_definition_st[]')",
+        "ssl/statem/extensions.c:813:45: error: invalid application of 'sizeof' to an incomplete type 'const EXTENSION_DEFINITION[]' (aka 'const struct extensions_definition_st[]')",
+        "ssl/statem/extensions.c:894:41: error: invalid application of 'sizeof' to an incomplete type 'const EXTENSION_DEFINITION[]' (aka 'const struct extensions_definition_st[]')"
+      ],
+      "error_details": [
+        "ssl/statem/extensions.c:146:11: error: use of undeclared identifier 'SSL_EXT_SSL3_ALLOWED'\n  146 |         | SSL_EXT_SSL3_ALLOWED | SSL_EXT_TLS1_2_AND_BELOW_ONLY,\n      |           ^",
+        "ssl/statem/extensions.c:438:23: error: invalid application of 'sizeof' to an incomplete type 'const EXTENSION_DEFINITION[]' (aka 'const struct extensions_definition_st[]')\n  438 |     size_t num_exts = OSSL_NELEM(ext_defs);\n      |                       ^~~~~~~~~~~~~~~~~~~~\ninclude/internal/nelem.h:14:34: note: expanded from macro 'OSSL_NELEM'\n   14 | # define OSSL_NELEM(x)    (sizeof(x)/sizeof((x)[0]))\n      |                                  ^~~",
+        "ssl/statem/extensions.c:467:39: error: invalid application of 'sizeof' to an incomplete type 'const EXTENSION_DEFINITION[]' (aka 'const struct extensions_definition_st[]')\n  467 |     size_t i, num_exts, builtin_num = OSSL_NELEM(ext_defs), offset;\n      |                                       ^~~~~~~~~~~~~~~~~~~~\ninclude/internal/nelem.h:14:34: note: expanded from macro 'OSSL_NELEM'\n   14 | # define OSSL_NELEM(x)    (sizeof(x)/sizeof((x)[0]))\n      |                                  ^~~",
+        "ssl/statem/extensions.c:514:26: error: invalid application of 'sizeof' to an incomplete type 'const EXTENSION_DEFINITION[]' (aka 'const struct extensions_definition_st[]')\n  514 |     size_t builtin_num = OSSL_NELEM(ext_defs);\n      |                          ^~~~~~~~~~~~~~~~~~~~\ninclude/internal/nelem.h:14:34: note: expanded from macro 'OSSL_NELEM'\n   14 | # define OSSL_NELEM(x)    (sizeof(x)/sizeof((x)[0]))\n      |                                  ^~~",
+        "ssl/statem/extensions.c:574:34: error: use of undeclared identifier 'SSL_EXT_SSL3_ALLOWED'\n  574 |                     && (extctx & SSL_EXT_SSL3_ALLOWED) == 0)\n      |                                  ^",
+        "ssl/statem/extensions.c:628:16: error: invalid application of 'sizeof' to an incomplete type 'const EXTENSION_DEFINITION[]' (aka 'const struct extensions_definition_st[]')\n  628 |     num_exts = OSSL_NELEM(ext_defs) + (exts != NULL ? exts->meths_count : 0);\n      |                ^~~~~~~~~~~~~~~~~~~~\ninclude/internal/nelem.h:14:34: note: expanded from macro 'OSSL_NELEM'\n   14 | # define OSSL_NELEM(x)    (sizeof(x)/sizeof((x)[0]))\n      |                                  ^~~",
+        "ssl/statem/extensions.c:674:19: error: invalid application of 'sizeof' to an incomplete type 'const EXTENSION_DEFINITION[]' (aka 'const struct extensions_definition_st[]')\n  674 |         if (idx < OSSL_NELEM(ext_defs)\n      |                   ^~~~~~~~~~~~~~~~~~~~\ninclude/internal/nelem.h:14:34: note: expanded from macro 'OSSL_NELEM'\n   14 | # define OSSL_NELEM(x)    (sizeof(x)/sizeof((x)[0]))\n      |                                  ^~~",
+        "ssl/statem/extensions.c:709:45: error: invalid application of 'sizeof' to an incomplete type 'const EXTENSION_DEFINITION[]' (aka 'const struct extensions_definition_st[]')\n  709 |         for (thisexd = ext_defs, i = 0; i < OSSL_NELEM(ext_defs);\n      |                                             ^~~~~~~~~~~~~~~~~~~~\ninclude/internal/nelem.h:14:34: note: expanded from macro 'OSSL_NELEM'\n   14 | # define OSSL_NELEM(x)    (sizeof(x)/sizeof((x)[0]))\n      |                                  ^~~",
+        "ssl/statem/extensions.c:757:15: error: invalid application of 'sizeof' to an incomplete type 'const EXTENSION_DEFINITION[]' (aka 'const struct extensions_definition_st[]')\n  757 |     if (idx < OSSL_NELEM(ext_defs)) {\n      |               ^~~~~~~~~~~~~~~~~~~~\ninclude/internal/nelem.h:14:34: note: expanded from macro 'OSSL_NELEM'\n   14 | # define OSSL_NELEM(x)    (sizeof(x)/sizeof((x)[0]))\n      |                                  ^~~",
+        "ssl/statem/extensions.c:794:25: error: invalid application of 'sizeof' to an incomplete type 'const EXTENSION_DEFINITION[]' (aka 'const struct extensions_definition_st[]')\n  794 |     size_t i, numexts = OSSL_NELEM(ext_defs);\n      |                         ^~~~~~~~~~~~~~~~~~~~\ninclude/internal/nelem.h:14:34: note: expanded from macro 'OSSL_NELEM'\n   14 | # define OSSL_NELEM(x)    (sizeof(x)/sizeof((x)[0]))\n      |                                  ^~~",
+        "ssl/statem/extensions.c:813:45: error: invalid application of 'sizeof' to an incomplete type 'const EXTENSION_DEFINITION[]' (aka 'const struct extensions_definition_st[]')\n  813 |         for (i = 0, thisexd = ext_defs; i < OSSL_NELEM(ext_defs);\n      |                                             ^~~~~~~~~~~~~~~~~~~~\ninclude/internal/nelem.h:14:34: note: expanded from macro 'OSSL_NELEM'\n   14 | # define OSSL_NELEM(x)    (sizeof(x)/sizeof((x)[0]))\n      |                                  ^~~",
+        "ssl/statem/extensions.c:894:41: error: invalid application of 'sizeof' to an incomplete type 'const EXTENSION_DEFINITION[]' (aka 'const struct extensions_definition_st[]')\n  894 |     for (i = 0, thisexd = ext_defs; i < OSSL_NELEM(ext_defs); i++, thisexd++) {\n      |                                         ^~~~~~~~~~~~~~~~~~~~\ninclude/internal/nelem.h:14:34: note: expanded from macro 'OSSL_NELEM'\n   14 | # define OSSL_NELEM(x)    (sizeof(x)/sizeof((x)[0]))\n      |                                  ^~~"
+      ],
+      "error_count": 12,
+      "error_types": {
+        "declaration_error": 2,
+        "type_error": 10
+      },
+      "error_line_types": [
+        "declaration_error",
+        "type_error",
+        "type_error",
+        "type_error",
+        "declaration_error",
+        "type_error",
+        "type_error",
+        "type_error",
+        "type_error",
+        "type_error",
+        "type_error",
+        "type_error"
+      ]
+    },
+    {
+      "commit_sha": "75cf373fcb99cc082c9d303defeb663af228d44e",
+      "branch": "APPS-noleak-load_key_certs_crls",
+      "workflow_name": "GitHub CI",
+      "job_name": [
+        "no-shared-macos (macos-14)",
+        "freebsd-x86_64",
+        "basic_clang",
+        "no-shared-macos (macos-13)",
+        "out-of-readonly-source-and-install-macos (macos-13)",
+        "out-of-readonly-source-and-install-macos (macos-14)",
+        "memory_sanitizer",
+        "threads_sanitizer"
+      ],
+      "workflow_id": 16174230258,
+      "job_id": [
+        45655241010,
+        45655241017,
+        45655241021,
+        45655241032,
+        45655241109,
+        45655241125,
+        45655241156,
+        45655241192
+      ],
+      "created_at": "2025-07-09T15:56:45Z",
+      "error_lines": [
+        "apps/lib/apps.c:860:12: error: expected expression"
+      ],
+      "error_details": [
+        "apps/lib/apps.c:860:12: error: expected expression\n    return = load_key_certs_crls(uri, FORMAT_UNDEF, maybe_stdin, pass, desc, 0,\n           ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "syntax_error": 1
+      },
+      "error_line_types": [
+        "syntax_error"
+      ]
+    },
+    {
+      "commit_sha": "75cf373fcb99cc082c9d303defeb663af228d44e",
+      "branch": "APPS-noleak-load_key_certs_crls",
+      "workflow_name": "GitHub CI",
+      "job_name": [
+        "external-tests-pkcs11-provider"
+      ],
+      "workflow_id": 16174230258,
+      "job_id": [
+        45655241152
+      ],
+      "created_at": "2025-07-09T15:56:45Z",
+      "error_lines": [
+        "apps/lib/apps.c:860:12: error: expected expression before '=' token"
+      ],
+      "error_details": [
+        "apps/lib/apps.c:860:12: error: expected expression before '=' token\n  860 |     return = load_key_certs_crls(uri, FORMAT_UNDEF, maybe_stdin, pass, desc, 0,\n      |            ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "syntax_error": 1
+      },
+      "error_line_types": [
+        "syntax_error"
+      ]
+    },
+    {
+      "commit_sha": "d98c44f116490189453ebd91b1a0d0a3f1f21041",
+      "branch": "lock-contention-checking",
+      "workflow_name": "GitHub CI",
+      "job_name": [
+        "non-caching",
+        "no-deprecated",
+        "check-c99",
+        "linux-arm64",
+        "address_ub_sanitizer",
+        "minimal",
+        "basic_gcc",
+        "fuzz_tests",
+        "no-shared-ubuntu",
+        "no-legacy",
+        "legacy",
+        "out-of-readonly-source-and-install-ubuntu",
+        "external-tests-oqs-provider",
+        "external-tests-pyca (3.9)",
+        "full_featured",
+        "external-tests-misc",
+        "external-tests-pkcs11-provider"
+      ],
+      "workflow_id": 16050554668,
+      "job_id": [
+        45291945129,
+        45291945131,
+        45291945156,
+        45291945169,
+        45291945172,
+        45291945174,
+        45291945195,
+        45291945196,
+        45291945201,
+        45291945249,
+        45291945273,
+        45291945278,
+        45291945290,
+        45291945314,
+        45291945325,
+        45291945326,
+        45291945335
+      ],
+      "created_at": "2025-07-03T12:35:21Z",
+      "error_lines": [
+        "crypto/threads_pthread.c:747:60: error: 'thread_contention_data' undeclared (first use in this function)",
+        "crypto/threads_pthread.c:749:40: error: invalid application of 'sizeof' to incomplete type 'struct stack_traces'",
+        "crypto/threads_pthread.c:752:11: error: invalid use of undefined type 'struct stack_traces'",
+        "crypto/threads_pthread.c:792:60: error: 'thread_contention_data' undeclared (first use in this function)",
+        "crypto/threads_pthread.c:794:40: error: invalid application of 'sizeof' to incomplete type 'struct stack_traces'",
+        "crypto/threads_pthread.c:797:11: error: invalid use of undefined type 'struct stack_traces'"
+      ],
+      "error_details": [
+        "crypto/threads_pthread.c:747:60: error: 'thread_contention_data' undeclared (first use in this function)\n  747 |     struct stack_traces *traces = CRYPTO_THREAD_get_local(&thread_contention_data);\n      |                                                            ^~~~~~~~~~~~~~~~~~~~~~\ncrypto/threads_pthread.c:747:60: note: each undeclared identifier is reported only once for each function it appears in",
+        "In file included from crypto/threads_pthread.c:34:\ncrypto/threads_pthread.c:749:40: error: invalid application of 'sizeof' to incomplete type 'struct stack_traces'\n  749 |         traces = OPENSSL_zalloc(sizeof(struct stack_traces));\n      |                                        ^~~~~~\ninclude/openssl/crypto.h:104:23: note: in definition of macro 'OPENSSL_zalloc'\n  104 |         CRYPTO_zalloc(num, OPENSSL_FILE, OPENSSL_LINE)\n      |                       ^~~",
+        "crypto/threads_pthread.c:752:11: error: invalid use of undefined type 'struct stack_traces'\n  752 |     traces->lock_depth++;\n      |           ^~\ncrypto/threads_pthread.c: In function 'CRYPTO_THREAD_write_lock':",
+        "crypto/threads_pthread.c:792:60: error: 'thread_contention_data' undeclared (first use in this function)\n  792 |     struct stack_traces *traces = CRYPTO_THREAD_get_local(&thread_contention_data);\n      |                                                            ^~~~~~~~~~~~~~~~~~~~~~",
+        "crypto/threads_pthread.c:794:40: error: invalid application of 'sizeof' to incomplete type 'struct stack_traces'\n  794 |         traces = OPENSSL_zalloc(sizeof(struct stack_traces));\n      |                                        ^~~~~~\ninclude/openssl/crypto.h:104:23: note: in definition of macro 'OPENSSL_zalloc'\n  104 |         CRYPTO_zalloc(num, OPENSSL_FILE, OPENSSL_LINE)\n      |                       ^~~",
+        "crypto/threads_pthread.c:797:11: error: invalid use of undefined type 'struct stack_traces'\n  797 |     traces->lock_depth++;\n      |           ^~\nAt top level:\ncc1: note: unrecognized command-line option '-Wno-unterminated-string-initialization' may have been intended to silence earlier diagnostics"
+      ],
+      "error_count": 6,
+      "error_types": {
+        "declaration_error": 2,
+        "type_error": 2,
+        "other_error": 2
+      },
+      "error_line_types": [
+        "declaration_error",
+        "type_error",
+        "other_error",
+        "declaration_error",
+        "type_error",
+        "other_error"
+      ]
+    },
+    {
+      "commit_sha": "d98c44f116490189453ebd91b1a0d0a3f1f21041",
+      "branch": "lock-contention-checking",
+      "workflow_name": "GitHub CI",
+      "job_name": [
+        "no-shared-macos (macos-14)",
+        "basic_clang",
+        "no-shared-macos (macos-13)",
+        "freebsd-x86_64",
+        "threads_sanitizer",
+        "out-of-readonly-source-and-install-macos (macos-13)",
+        "memory_sanitizer",
+        "out-of-readonly-source-and-install-macos (macos-14)"
+      ],
+      "workflow_id": 16050554668,
+      "job_id": [
+        45291945152,
+        45291945157,
+        45291945178,
+        45291945179,
+        45291945296,
+        45291945324,
+        45291945347,
+        45291945349
+      ],
+      "created_at": "2025-07-03T12:35:21Z",
+      "error_lines": [
+        "crypto/threads_pthread.c:747:60: error: use of undeclared identifier 'thread_contention_data'",
+        "crypto/threads_pthread.c:749:33: error: invalid application of 'sizeof' to an incomplete type 'struct stack_traces'",
+        "crypto/threads_pthread.c:750:34: error: use of undeclared identifier 'thread_contention_data'",
+        "crypto/threads_pthread.c:752:11: error: incomplete definition of type 'struct stack_traces'",
+        "crypto/threads_pthread.c:792:60: error: use of undeclared identifier 'thread_contention_data'",
+        "crypto/threads_pthread.c:794:33: error: invalid application of 'sizeof' to an incomplete type 'struct stack_traces'",
+        "crypto/threads_pthread.c:795:34: error: use of undeclared identifier 'thread_contention_data'",
+        "crypto/threads_pthread.c:797:11: error: incomplete definition of type 'struct stack_traces'"
+      ],
+      "error_details": [
+        "crypto/threads_pthread.c:747:60: error: use of undeclared identifier 'thread_contention_data'\n    struct stack_traces *traces = CRYPTO_THREAD_get_local(&thread_contention_data);\n                                                           ^",
+        "crypto/threads_pthread.c:749:33: error: invalid application of 'sizeof' to an incomplete type 'struct stack_traces'\n        traces = OPENSSL_zalloc(sizeof(struct stack_traces));\n                                ^     ~~~~~~~~~~~~~~~~~~~~~\ninclude/openssl/crypto.h:104:23: note: expanded from macro 'OPENSSL_zalloc'\n        CRYPTO_zalloc(num, OPENSSL_FILE, OPENSSL_LINE)\n                      ^~~\ncrypto/threads_pthread.c:747:12: note: forward declaration of 'struct stack_traces'\n    struct stack_traces *traces = CRYPTO_THREAD_get_local(&thread_contention_data);\n           ^",
+        "crypto/threads_pthread.c:750:34: error: use of undeclared identifier 'thread_contention_data'\n        CRYPTO_THREAD_set_local(&thread_contention_data, traces);\n                                 ^",
+        "crypto/threads_pthread.c:752:11: error: incomplete definition of type 'struct stack_traces'\n    traces->lock_depth++;\n    ~~~~~~^\ncrypto/threads_pthread.c:747:12: note: forward declaration of 'struct stack_traces'\n    struct stack_traces *traces = CRYPTO_THREAD_get_local(&thread_contention_data);\n           ^",
+        "crypto/threads_pthread.c:792:60: error: use of undeclared identifier 'thread_contention_data'\n    struct stack_traces *traces = CRYPTO_THREAD_get_local(&thread_contention_data);\n                                                           ^",
+        "crypto/threads_pthread.c:794:33: error: invalid application of 'sizeof' to an incomplete type 'struct stack_traces'\n        traces = OPENSSL_zalloc(sizeof(struct stack_traces));\n                                ^     ~~~~~~~~~~~~~~~~~~~~~\ninclude/openssl/crypto.h:104:23: note: expanded from macro 'OPENSSL_zalloc'\n        CRYPTO_zalloc(num, OPENSSL_FILE, OPENSSL_LINE)\n                      ^~~\ncrypto/threads_pthread.c:792:12: note: forward declaration of 'struct stack_traces'\n    struct stack_traces *traces = CRYPTO_THREAD_get_local(&thread_contention_data);\n           ^",
+        "crypto/threads_pthread.c:795:34: error: use of undeclared identifier 'thread_contention_data'\n        CRYPTO_THREAD_set_local(&thread_contention_data, traces);\n                                 ^",
+        "crypto/threads_pthread.c:797:11: error: incomplete definition of type 'struct stack_traces'\n    traces->lock_depth++;\n    ~~~~~~^\ncrypto/threads_pthread.c:792:12: note: forward declaration of 'struct stack_traces'\n    struct stack_traces *traces = CRYPTO_THREAD_get_local(&thread_contention_data);\n           ^"
+      ],
+      "error_count": 8,
+      "error_types": {
+        "declaration_error": 4,
+        "type_error": 2,
+        "other_error": 2
+      },
+      "error_line_types": [
+        "declaration_error",
+        "type_error",
+        "declaration_error",
+        "other_error",
+        "declaration_error",
+        "type_error",
+        "declaration_error",
+        "other_error"
+      ]
+    },
+    {
+      "commit_sha": "a17e2d9c6d2b6741778a80a80a85be84d4b0e9a6",
+      "branch": "feat/rfc-8449/record_size_limit_ext",
+      "workflow_name": "GitHub CI",
+      "job_name": [
+        "minimal"
+      ],
+      "workflow_id": 15942361272,
+      "job_id": [
+        44972125549
+      ],
+      "created_at": "2025-06-28T08:37:48Z",
+      "error_lines": [
+        "apps/s_client.c:945:5: error: unknown type name 'bool'",
+        "apps/s_client.c:945:34: error: 'false' undeclared (first use in this function)",
+        "apps/s_client.c:1553:37: error: 'true' undeclared (first use in this function)"
+      ],
+      "error_details": [
+        "apps/s_client.c:945:5: error: unknown type name 'bool'\n  945 |     bool record_size_limit_set = false;\n      |     ^~~~\napps/s_client.c:51:1: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>''\n   50 | #include \"timeouts.h\"\n  +++ |+#include <stdbool.h>\n   51 | #include \"internal/sockets.h\"",
+        "apps/s_client.c:945:34: error: 'false' undeclared (first use in this function)\n  945 |     bool record_size_limit_set = false;\n      |                                  ^~~~~\napps/s_client.c:945:34: note: 'false' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>''\napps/s_client.c:945:34: note: each undeclared identifier is reported only once for each function it appears in",
+        "apps/s_client.c:1553:37: error: 'true' undeclared (first use in this function)\n 1553 |             record_size_limit_set = true;\n      |                                     ^~~~\napps/s_client.c:1553:37: note: 'true' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>''\nAt top level:\ncc1: note: unrecognized command-line option '-Wno-unterminated-string-initialization' may have been intended to silence earlier diagnostics"
+      ],
+      "error_count": 3,
+      "error_types": {
+        "declaration_error": 3
+      },
+      "error_line_types": [
+        "declaration_error",
+        "declaration_error",
+        "declaration_error"
+      ]
+    },
+    {
+      "commit_sha": "2734bad3f0cd4c7c43707e7745c09be115532016",
+      "branch": "deprecate_EVP_PKEY_ASN1_METHOD",
+      "workflow_name": "GitHub CI",
+      "job_name": [
+        "basic_gcc",
+        "check-c99",
+        "legacy",
+        "enable_non-default_options",
+        "no-shared-ubuntu",
+        "freebsd-x86_64",
+        "no-deprecated",
+        "no-shared-macos (macos-14)",
+        "fuzz_tests",
+        "no-shared-macos (macos-13)",
+        "no-legacy",
+        "out-of-readonly-source-and-install-ubuntu",
+        "address_ub_sanitizer",
+        "out-of-readonly-source-and-install-macos (macos-13)",
+        "basic_clang",
+        "minimal",
+        "out-of-readonly-source-and-install-macos (macos-14)",
+        "linux-arm64",
+        "non-caching",
+        "full_featured",
+        "memory_sanitizer",
+        "external-tests-pkcs11-provider",
+        "external-tests-pyca (3.9)",
+        "external-tests-misc",
+        "external-tests-oqs-provider"
+      ],
+      "workflow_id": 15733058853,
+      "job_id": [
+        44338584495,
+        44338584496,
+        44338584516,
+        44338584550,
+        44338584566,
+        44338584569,
+        44338584575,
+        44338584587,
+        44338584598,
+        44338584603,
+        44338584614,
+        44338584624,
+        44338584655,
+        44338584671,
+        44338584673,
+        44338584674,
+        44338584687,
+        44338584688,
+        44338584703,
+        44338584706,
+        44338584736,
+        44338584748,
+        44338584749,
+        44338584759,
+        44338584779
+      ],
+      "created_at": "2025-06-18T12:39:19Z",
+      "error_lines": [
+        "include/openssl/evp.h:558:2: error: #endif without #if",
+        "include/openssl/evp.h:2342:2: error: #endif without #if"
+      ],
+      "error_details": [
+        "In file included from include/openssl/x509.h:29,\ninclude/openssl/evp.h:558:2: error: #endif without #if\n  558 | #endif\n      |  ^~~~~",
+        "include/openssl/evp.h:2342:2: error: #endif without #if\n 2342 | #endif\n      |  ^~~~~"
+      ],
+      "error_count": 2,
+      "error_types": {
+        "other_error": 2
+      },
+      "error_line_types": [
+        "other_error",
+        "other_error"
+      ]
+    },
+    {
+      "commit_sha": "2734bad3f0cd4c7c43707e7745c09be115532016",
+      "branch": "deprecate_EVP_PKEY_ASN1_METHOD",
+      "workflow_name": "GitHub CI",
+      "job_name": [
+        "threads_sanitizer"
+      ],
+      "workflow_id": 15733058853,
+      "job_id": [
+        44338584539
+      ],
+      "created_at": "2025-06-18T12:39:19Z",
+      "error_lines": [
+        "include/openssl/evp.hinclude/openssl/evp.h:2342:2: error: #endif without #if",
+        "include/openssl/evp.h:2342:2: error: #endif without #if"
+      ],
+      "error_details": [
+        "In file included from include/openssl/evp.hinclude/openssl/x509.h::29558:\nIn file included from In file included from apps/lib/app_libctx.capps/lib/app_rand.c::1011:\nIn file included from In file included from apps/include/apps.happs/include/apps.h::2727:\nIn file included from In file included from include/openssl/x509.hinclude/openssl/x509.h::2929:\ninclude/openssl/evp.hinclude/openssl/evp.h:2342:2: error: #endif without #if\n:2342:2:  2342error:  | #endif without #if#\nendif\n       2342|  |  ^#\nendif\n      |  ^",
+        "include/openssl/evp.h:2342:2: error: #endif without #if\n 2342 | #endif\n      |  ^"
+      ],
+      "error_count": 2,
+      "error_types": {
+        "other_error": 2
+      },
+      "error_line_types": [
+        "other_error",
+        "other_error"
+      ]
+    },
+    {
+      "commit_sha": "4b6f6604d8ad09c1fc0dcd3f122fd6dfa4c02ace",
+      "branch": "openssl-3.0",
+      "workflow_name": "GitHub CI",
+      "job_name": [
+        "basic_clang",
+        "freebsd-x86_64",
+        "memory_sanitizer",
+        "no-shared-macos (macos-13)",
+        "no-shared-macos (macos-14)",
+        "threads_sanitizer",
+        "out-of-readonly-source-and-install-macos (macos-13)",
+        "out-of-readonly-source-and-install-macos (macos-14)"
+      ],
+      "workflow_id": 15446358946,
+      "job_id": [
+        43477122273,
+        43477181806,
+        43477249381,
+        43477261249,
+        43477265157,
+        43477284634,
+        43477293929,
+        43477296405
+      ],
+      "created_at": "2025-06-04T15:31:25Z",
+      "error_lines": [
+        "ssl/record/rec_layer_d1.c:618:26: error: use of undeclared identifier 'sc'"
+      ],
+      "error_details": [
+        "ssl/record/rec_layer_d1.c:618:26: error: use of undeclared identifier 'sc'\n  618 |                 SSLfatal(sc, SSL_AD_HANDSHAKE_FAILURE, SSL_R_NO_RENEGOTIATION);\n      |                          ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      },
+      "error_line_types": [
+        "declaration_error"
+      ]
+    },
+    {
+      "commit_sha": "4b6f6604d8ad09c1fc0dcd3f122fd6dfa4c02ace",
+      "branch": "openssl-3.0",
+      "workflow_name": "GitHub CI",
+      "job_name": [
+        "basic_gcc",
+        "check-ansi",
+        "linux-arm64",
+        "minimal",
+        "no-deprecated",
+        "address_ub_sanitizer",
+        "buildtest",
+        "enable_non-default_options",
+        "fips_and_ktls",
+        "legacy",
+        "no-legacy",
+        "non-caching",
+        "no-shared-ubuntu",
+        "out-of-readonly-source-and-install-ubuntu",
+        "external-test-pyca (1.51.0, 3.9)",
+        "external-tests"
+      ],
+      "workflow_id": 15446358946,
+      "job_id": [
+        43477134293,
+        43477145239,
+        43477207177,
+        43477214724,
+        43477221284,
+        43477227139,
+        43477233376,
+        43477237873,
+        43477242273,
+        43477246157,
+        43477253150,
+        43477257234,
+        43477271960,
+        43477278151,
+        43477287514,
+        43477290399
+      ],
+      "created_at": "2025-06-04T15:31:25Z",
+      "error_lines": [
+        "ssl/record/rec_layer_d1.c:618:26: error: 'sc' undeclared (first use in this function); did you mean 's''"
+      ],
+      "error_details": [
+        "In file included from ssl/record/../ssl_local.h:31,\nssl/record/rec_layer_d1.c:618:26: error: 'sc' undeclared (first use in this function); did you mean 's''\n  618 |                 SSLfatal(sc, SSL_AD_HANDSHAKE_FAILURE, SSL_R_NO_RENEGOTIATION);\n      |                          ^~\nssl/record/../statem/statem.h:139:44: note: in definition of macro 'SSLfatal'\n  139 | # define SSLfatal(s, al, r) SSLfatal_data((s), (al), (r), NULL)\n      |                                            ^\nssl/record/rec_layer_d1.c:618:26: note: each undeclared identifier is reported only once for each function it appears in\n  618 |                 SSLfatal(sc, SSL_AD_HANDSHAKE_FAILURE, SSL_R_NO_RENEGOTIATION);\n      |                          ^~\nssl/record/../statem/statem.h:139:44: note: in definition of macro 'SSLfatal'\n  139 | # define SSLfatal(s, al, r) SSLfatal_data((s), (al), (r), NULL)\n      |                                            ^\nAt top level:\ncc1: note: unrecognized command-line option '-Wno-unterminated-string-initialization' may have been intended to silence earlier diagnostics"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      },
+      "error_line_types": [
+        "declaration_error"
+      ]
+    },
+    {
+      "commit_sha": "80a968fa763647fdc20b70fbcb25bfc6c6ad02f9",
+      "branch": "deprecate_EVP_PKEY_ASN1_METHOD",
+      "workflow_name": "GitHub CI",
+      "job_name": [
+        "no-deprecated"
+      ],
+      "workflow_id": 15346955589,
+      "job_id": [
+        43185285989
+      ],
+      "created_at": "2025-05-30T12:38:14Z",
+      "error_lines": [
+        "include/openssl/evp.h:1622:22: error: expected ';' before 'int'",
+        "include/openssl/evp.h:1623:22: error: expected ';' before 'const'",
+        "include/openssl/evp.h:1624:22: error: expected ';' before 'const'",
+        "include/openssl/evp.h:1626:22: error: expected ';' before 'const'",
+        "include/openssl/evp.h:1629:22: error: expected ';' before 'int'",
+        "include/openssl/evp.h:1630:22: error: expected ';' before 'int'",
+        "include/openssl/evp.h:1631:22: error: expected ';' before 'int'",
+        "include/openssl/evp.h:1637:22: error: expected ';' before 'const'",
+        "include/openssl/evp.h:1638:1: error: unknown type name 'OSSL_DEPRECATEDIN_3_6'; did you mean 'OSSL_DEPRECATED_FOR''",
+        "include/openssl/evp.h:1638:44: error: expected '=', ',', ';', 'asm' or '__attribute__' before '*' token",
+        "include/openssl/evp.h:1641:22: error: expected ';' before 'void'",
+        "include/openssl/evp.h:1643:22: error: expected ';' before 'void'",
+        "include/openssl/evp.h:1644:22: error: expected ';' before 'void'",
+        "include/openssl/evp.h:1657:22: error: expected ';' before 'void'",
+        "include/openssl/evp.h:1668:22: error: expected ';' before 'void'",
+        "include/openssl/evp.h:1685:22: error: expected ';' before 'void'",
+        "include/openssl/evp.h:1688:22: error: expected ';' before 'void'",
+        "include/openssl/evp.h:1692:22: error: expected ';' before 'void'",
+        "include/openssl/evp.h:1707:22: error: expected ';' before 'void'",
+        "include/openssl/evp.h:1713:22: error: expected ';' before 'void'",
+        "include/openssl/evp.h:1717:22: error: expected ';' before 'void'",
+        "include/openssl/evp.h:1721:22: error: expected ';' before 'void'",
+        "include/openssl/evp.h:1725:22: error: expected ';' before 'void'",
+        "include/openssl/evp.h:1731:22: error: expected ';' before 'void'",
+        "include/openssl/evp.h:1736:22: error: expected ';' before 'void'",
+        "include/openssl/evp.h:1741:22: error: expected ';' before 'void'",
+        "include/openssl/evp.h:1747:22: error: expected ';' before 'void'"
+      ],
+      "error_details": [
+        "In file included from include/openssl/x509.h:29,\ninclude/openssl/evp.h:1622:22: error: expected ';' before 'int'\n 1622 | OSSL_DEPRECATEDIN_3_6 int EVP_PKEY_asn1_get_count(void);\n      |                      ^~~~\n      |                      ;",
+        "include/openssl/evp.h:1623:22: error: expected ';' before 'const'\n 1623 | OSSL_DEPRECATEDIN_3_6 const EVP_PKEY_ASN1_METHOD *EVP_PKEY_asn1_get0(int idx);\n      |                      ^~~~~~\n      |                      ;",
+        "include/openssl/evp.h:1624:22: error: expected ';' before 'const'\n 1624 | OSSL_DEPRECATEDIN_3_6\n      |                      ^\n      |                      ;\n 1625 | const EVP_PKEY_ASN1_METHOD *EVP_PKEY_asn1_find(ENGINE **pe, int type);\n      | ~~~~~",
+        "include/openssl/evp.h:1626:22: error: expected ';' before 'const'\n 1626 | OSSL_DEPRECATEDIN_3_6\n      |                      ^\n      |                      ;\n 1627 | const EVP_PKEY_ASN1_METHOD *EVP_PKEY_asn1_find_str(ENGINE **pe,\n      | ~~~~~",
+        "include/openssl/evp.h:1629:22: error: expected ';' before 'int'\n 1629 | OSSL_DEPRECATEDIN_3_6 int EVP_PKEY_asn1_add0(const EVP_PKEY_ASN1_METHOD *ameth);\n      |                      ^~~~\n      |                      ;",
+        "include/openssl/evp.h:1630:22: error: expected ';' before 'int'\n 1630 | OSSL_DEPRECATEDIN_3_6 int EVP_PKEY_asn1_add_alias(int to, int from);\n      |                      ^~~~\n      |                      ;",
+        "include/openssl/evp.h:1631:22: error: expected ';' before 'int'\n 1631 | OSSL_DEPRECATEDIN_3_6\n      |                      ^\n      |                      ;\n 1632 | int EVP_PKEY_asn1_get0_info(int *ppkey_id, int *pkey_base_id,\n      | ~~~",
+        "include/openssl/evp.h:1637:22: error: expected ';' before 'const'\n 1637 | OSSL_DEPRECATEDIN_3_6 const EVP_PKEY_ASN1_METHOD *EVP_PKEY_get0_asn1(const EVP_PKEY *pkey);\n      |                      ^~~~~~\n      |                      ;",
+        "include/openssl/evp.h:1638:1: error: unknown type name 'OSSL_DEPRECATEDIN_3_6'; did you mean 'OSSL_DEPRECATED_FOR''\n 1638 | OSSL_DEPRECATEDIN_3_6 EVP_PKEY_ASN1_METHOD *EVP_PKEY_asn1_new(int id, int flags,\n      | ^~~~~~~~~~~~~~~~~~~~~\n      | OSSL_DEPRECATED_FOR",
+        "include/openssl/evp.h:1638:44: error: expected '=', ',', ';', 'asm' or '__attribute__' before '*' token\n 1638 | OSSL_DEPRECATEDIN_3_6 EVP_PKEY_ASN1_METHOD *EVP_PKEY_asn1_new(int id, int flags,\n      |                                            ^",
+        "include/openssl/evp.h:1641:22: error: expected ';' before 'void'\n 1641 | OSSL_DEPRECATEDIN_3_6 void EVP_PKEY_asn1_copy(EVP_PKEY_ASN1_METHOD *dst,\n      |                      ^~~~~\n      |                      ;",
+        "include/openssl/evp.h:1643:22: error: expected ';' before 'void'\n 1643 | OSSL_DEPRECATEDIN_3_6 void EVP_PKEY_asn1_free(EVP_PKEY_ASN1_METHOD *ameth);\n      |                      ^~~~~\n      |                      ;",
+        "include/openssl/evp.h:1644:22: error: expected ';' before 'void'\n 1644 | OSSL_DEPRECATEDIN_3_6\n      |                      ^\n      |                      ;\n 1645 | void EVP_PKEY_asn1_set_public(EVP_PKEY_ASN1_METHOD *ameth,\n      | ~~~~",
+        "include/openssl/evp.h:1657:22: error: expected ';' before 'void'\n 1657 | OSSL_DEPRECATEDIN_3_6\n      |                      ^\n      |                      ;\n 1658 | void EVP_PKEY_asn1_set_private(EVP_PKEY_ASN1_METHOD *ameth,\n      | ~~~~",
+        "include/openssl/evp.h:1668:22: error: expected ';' before 'void'\n 1668 | OSSL_DEPRECATEDIN_3_6\n      |                      ^\n      |                      ;\n 1669 | void EVP_PKEY_asn1_set_param(EVP_PKEY_ASN1_METHOD *ameth,\n      | ~~~~",
+        "include/openssl/evp.h:1685:22: error: expected ';' before 'void'\n 1685 | OSSL_DEPRECATEDIN_3_6\n      |                      ^\n      |                      ;\n 1686 | void EVP_PKEY_asn1_set_free(EVP_PKEY_ASN1_METHOD *ameth,\n      | ~~~~",
+        "include/openssl/evp.h:1688:22: error: expected ';' before 'void'\n 1688 | OSSL_DEPRECATEDIN_3_6\n      |                      ^\n      |                      ;\n 1689 | void EVP_PKEY_asn1_set_ctrl(EVP_PKEY_ASN1_METHOD *ameth,\n      | ~~~~",
+        "include/openssl/evp.h:1692:22: error: expected ';' before 'void'\n 1692 | OSSL_DEPRECATEDIN_3_6\n      |                      ^\n      |                      ;\n 1693 | void EVP_PKEY_asn1_set_item(EVP_PKEY_ASN1_METHOD *ameth,\n      | ~~~~",
+        "include/openssl/evp.h:1707:22: error: expected ';' before 'void'\n 1707 | OSSL_DEPRECATEDIN_3_6\n      |                      ^\n      |                      ;\n 1708 | void EVP_PKEY_asn1_set_siginf(EVP_PKEY_ASN1_METHOD *ameth,\n      | ~~~~",
+        "include/openssl/evp.h:1713:22: error: expected ';' before 'void'\n 1713 | OSSL_DEPRECATEDIN_3_6\n      |                      ^\n      |                      ;\n 1714 | void EVP_PKEY_asn1_set_check(EVP_PKEY_ASN1_METHOD *ameth,\n      | ~~~~",
+        "include/openssl/evp.h:1717:22: error: expected ';' before 'void'\n 1717 | OSSL_DEPRECATEDIN_3_6\n      |                      ^\n      |                      ;\n 1718 | void EVP_PKEY_asn1_set_public_check(EVP_PKEY_ASN1_METHOD *ameth,\n      | ~~~~",
+        "include/openssl/evp.h:1721:22: error: expected ';' before 'void'\n 1721 | OSSL_DEPRECATEDIN_3_6\n      |                      ^\n      |                      ;\n 1722 | void EVP_PKEY_asn1_set_param_check(EVP_PKEY_ASN1_METHOD *ameth,\n      | ~~~~",
+        "include/openssl/evp.h:1725:22: error: expected ';' before 'void'\n 1725 | OSSL_DEPRECATEDIN_3_6\n      |                      ^\n      |                      ;\n 1726 | void EVP_PKEY_asn1_set_set_priv_key(EVP_PKEY_ASN1_METHOD *ameth,\n      | ~~~~",
+        "include/openssl/evp.h:1731:22: error: expected ';' before 'void'\n 1731 | OSSL_DEPRECATEDIN_3_6\n      |                      ^\n      |                      ;\n 1732 | void EVP_PKEY_asn1_set_set_pub_key(EVP_PKEY_ASN1_METHOD *ameth,\n      | ~~~~",
+        "include/openssl/evp.h:1736:22: error: expected ';' before 'void'\n 1736 | OSSL_DEPRECATEDIN_3_6\n      |                      ^\n      |                      ;\n 1737 | void EVP_PKEY_asn1_set_get_priv_key(EVP_PKEY_ASN1_METHOD *ameth,\n      | ~~~~",
+        "include/openssl/evp.h:1741:22: error: expected ';' before 'void'\n 1741 | OSSL_DEPRECATEDIN_3_6\n      |                      ^\n      |                      ;\n 1742 | void EVP_PKEY_asn1_set_get_pub_key(EVP_PKEY_ASN1_METHOD *ameth,\n      | ~~~~",
+        "include/openssl/evp.h:1747:22: error: expected ';' before 'void'\n 1747 | OSSL_DEPRECATEDIN_3_6\n      |                      ^\n      |                      ;\n 1748 | void EVP_PKEY_asn1_set_security_bits(EVP_PKEY_ASN1_METHOD *ameth,\n      | ~~~~"
+      ],
+      "error_count": 27,
+      "error_types": {
+        "syntax_error": 26,
+        "declaration_error": 1
+      },
+      "error_line_types": [
+        "syntax_error",
+        "syntax_error",
+        "syntax_error",
+        "syntax_error",
+        "syntax_error",
+        "syntax_error",
+        "syntax_error",
+        "syntax_error",
+        "declaration_error",
+        "syntax_error",
+        "syntax_error",
+        "syntax_error",
+        "syntax_error",
+        "syntax_error",
+        "syntax_error",
+        "syntax_error",
+        "syntax_error",
+        "syntax_error",
+        "syntax_error",
+        "syntax_error",
+        "syntax_error",
+        "syntax_error",
+        "syntax_error",
+        "syntax_error",
+        "syntax_error",
+        "syntax_error",
+        "syntax_error"
+      ]
+    },
+    {
+      "commit_sha": "c489a6205ec25528d4ab692694571af75b35879e",
+      "branch": "master",
+      "workflow_name": "GitHub CI",
+      "job_name": [
+        "check-ansi"
+      ],
+      "workflow_id": 15324203276,
+      "job_id": [
+        43118303014
+      ],
+      "created_at": "2025-05-29T12:48:29Z",
+      "error_lines": [
+        "include/internal/numbers.h:109:1: error: C++ style comments are not allowed in ISO C90"
+      ],
+      "error_details": [
+        "In file included from include/internal/e_os.h:18,\ninclude/internal/numbers.h:109:1: error: C++ style comments are not allowed in ISO C90\n  109 | // Fix for cross compiling 64-bit PowerPC on OS X 10.4\n      | ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "syntax_error": 1
+      },
+      "error_line_types": [
+        "syntax_error"
+      ]
+    },
+    {
+      "commit_sha": "cdd6df5407f741906881e92d1c41ec7ea4af216e",
+      "branch": "quic-secret-yielding-fix",
+      "workflow_name": "GitHub CI",
+      "job_name": [
+        "enable_non-default_options",
+        "full_featured",
+        "external-tests-misc",
+        "legacy"
+      ],
+      "workflow_id": 15120614910,
+      "job_id": [
+        42501923896,
+        42501928088,
+        42501932326,
+        42501933393
+      ],
+      "created_at": "2025-05-19T18:36:20Z",
+      "error_lines": [
+        "ssl/statem/statem_clnt.c:3944:37: error: 's' undeclared (first use in this function); did you mean 'sc''"
+      ],
+      "error_details": [
+        "In file included from ssl/statem/statem_clnt.c:31:\nssl/statem/statem_clnt.c:3944:37: error: 's' undeclared (first use in this function); did you mean 'sc''\n 3944 |         if (SSL_CONNECTION_IS_TLS13(s)\n      |                                     ^\ninclude/internal/ssl_unwrap.h:27:40: note: in definition of macro 'SSL_CONNECTION_GET_SSL'\n   27 | # define SSL_CONNECTION_GET_SSL(sc) (&(sc)->ssl)\n      |                                        ^~\nssl/statem/../ssl_local.h:265:39: note: in expansion of macro 'SSL_CONNECTION_IS_DTLS'\n  265 | # define SSL_CONNECTION_IS_TLS13(s) (!SSL_CONNECTION_IS_DTLS(s) \\\n      |                                       ^~~~~~~~~~~~~~~~~~~~~~\nssl/statem/statem_clnt.c:3944:13: note: in expansion of macro 'SSL_CONNECTION_IS_TLS13'\n 3944 |         if (SSL_CONNECTION_IS_TLS13(s)\n      |             ^~~~~~~~~~~~~~~~~~~~~~~\nssl/statem/statem_clnt.c:3944:37: note: each undeclared identifier is reported only once for each function it appears in\n 3944 |         if (SSL_CONNECTION_IS_TLS13(s)\n      |                                     ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      },
+      "error_line_types": [
+        "declaration_error"
+      ]
+    },
+    {
+      "commit_sha": "1a4e7d479cc0f9283ebaf5cfe467a9ca63eaf868",
+      "branch": "security-categories",
+      "workflow_name": "GitHub CI",
+      "job_name": [
+        "basic_clang",
+        "freebsd-x86_64",
+        "memory_sanitizer",
+        "no-shared-macos (macos-13)",
+        "no-shared-macos (macos-14)",
+        "out-of-readonly-source-and-install-macos (macos-13)",
+        "out-of-readonly-source-and-install-macos (macos-14)",
+        "threads_sanitizer"
+      ],
+      "workflow_id": 15010014789,
+      "job_id": [
+        42176929429,
+        42176934019,
+        42176940662,
+        42176941395,
+        42176941859,
+        42176941990,
+        42176942233,
+        42176942424
+      ],
+      "created_at": "2025-05-14T01:13:01Z",
+      "error_lines": [
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:337:60: error: too many arguments provided to function-like macro invocation",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:339:60: error: too many arguments provided to function-like macro invocation",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:337:1: error: unknown type name 'IMPLEMENT_CIPHER'",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:341:60: error: too many arguments provided to function-like macro invocation",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:339:17: error: expected ';' after top level declarator",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:343:62: error: too many arguments provided to function-like macro invocation",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:345:62: error: too many arguments provided to function-like macro invocation",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:347:62: error: too many arguments provided to function-like macro invocation",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:349:62: error: too many arguments provided to function-like macro invocation",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:351:62: error: too many arguments provided to function-like macro invocation",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:353:62: error: too many arguments provided to function-like macro invocation"
+      ],
+      "error_details": [
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:337:60: error: too many arguments provided to function-like macro invocation\n  337 | IMPLEMENT_CIPHER(aes, cbc_hmac_sha1_etm, 128, 128, 128, 1, EVP_CIPH_FLAG_ENC_THEN_MAC)\n      |                                                            ^\nproviders/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:17:10: note: macro 'IMPLEMENT_CIPHER' defined here\n   17 | # define IMPLEMENT_CIPHER(nm, sub, kbits, blkbits, ivbits, flags)              \\\n      |          ^",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:339:60: error: too many arguments provided to function-like macro invocation\n  339 | IMPLEMENT_CIPHER(aes, cbc_hmac_sha1_etm, 192, 128, 128, 3, EVP_CIPH_FLAG_ENC_THEN_MAC)\n      |                                                            ^\nproviders/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:17:10: note: macro 'IMPLEMENT_CIPHER' defined here\n   17 | # define IMPLEMENT_CIPHER(nm, sub, kbits, blkbits, ivbits, flags)              \\\n      |          ^",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:337:1: error: unknown type name 'IMPLEMENT_CIPHER'\n  337 | IMPLEMENT_CIPHER(aes, cbc_hmac_sha1_etm, 128, 128, 128, 1, EVP_CIPH_FLAG_ENC_THEN_MAC)\n      | ^",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:341:60: error: too many arguments provided to function-like macro invocation\n  341 | IMPLEMENT_CIPHER(aes, cbc_hmac_sha1_etm, 256, 128, 128, 5, EVP_CIPH_FLAG_ENC_THEN_MAC)\n      |                                                            ^\nproviders/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:17:10: note: macro 'IMPLEMENT_CIPHER' defined here\n   17 | # define IMPLEMENT_CIPHER(nm, sub, kbits, blkbits, ivbits, flags)              \\\n      |          ^",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:339:17: error: expected ';' after top level declarator\n  339 | IMPLEMENT_CIPHER(aes, cbc_hmac_sha1_etm, 192, 128, 128, 3, EVP_CIPH_FLAG_ENC_THEN_MAC)\n      |                 ^\n      |                 ;",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:343:62: error: too many arguments provided to function-like macro invocation\n  343 | IMPLEMENT_CIPHER(aes, cbc_hmac_sha256_etm, 128, 128, 128, 1, EVP_CIPH_FLAG_ENC_THEN_MAC)\n      |                                                              ^\nproviders/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:17:10: note: macro 'IMPLEMENT_CIPHER' defined here\n   17 | # define IMPLEMENT_CIPHER(nm, sub, kbits, blkbits, ivbits, flags)              \\\n      |          ^",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:345:62: error: too many arguments provided to function-like macro invocation\n  345 | IMPLEMENT_CIPHER(aes, cbc_hmac_sha256_etm, 192, 128, 128, 3, EVP_CIPH_FLAG_ENC_THEN_MAC)\n      |                                                              ^\nproviders/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:17:10: note: macro 'IMPLEMENT_CIPHER' defined here\n   17 | # define IMPLEMENT_CIPHER(nm, sub, kbits, blkbits, ivbits, flags)              \\\n      |          ^",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:347:62: error: too many arguments provided to function-like macro invocation\n  347 | IMPLEMENT_CIPHER(aes, cbc_hmac_sha256_etm, 256, 128, 128, 5, EVP_CIPH_FLAG_ENC_THEN_MAC)\n      |                                                              ^\nproviders/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:17:10: note: macro 'IMPLEMENT_CIPHER' defined here\n   17 | # define IMPLEMENT_CIPHER(nm, sub, kbits, blkbits, ivbits, flags)              \\\n      |          ^",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:349:62: error: too many arguments provided to function-like macro invocation\n  349 | IMPLEMENT_CIPHER(aes, cbc_hmac_sha512_etm, 128, 128, 128, 1, EVP_CIPH_FLAG_ENC_THEN_MAC)\n      |                                                              ^\nproviders/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:17:10: note: macro 'IMPLEMENT_CIPHER' defined here\n   17 | # define IMPLEMENT_CIPHER(nm, sub, kbits, blkbits, ivbits, flags)              \\\n      |          ^",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:351:62: error: too many arguments provided to function-like macro invocation\n  351 | IMPLEMENT_CIPHER(aes, cbc_hmac_sha512_etm, 192, 128, 128, 3, EVP_CIPH_FLAG_ENC_THEN_MAC)\n      |                                                              ^\nproviders/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:17:10: note: macro 'IMPLEMENT_CIPHER' defined here\n   17 | # define IMPLEMENT_CIPHER(nm, sub, kbits, blkbits, ivbits, flags)              \\\n      |          ^",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:353:62: error: too many arguments provided to function-like macro invocation\n  353 | IMPLEMENT_CIPHER(aes, cbc_hmac_sha512_etm, 256, 128, 128, 5, EVP_CIPH_FLAG_ENC_THEN_MAC)\n      |                                                              ^\nproviders/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:17:10: note: macro 'IMPLEMENT_CIPHER' defined here\n   17 | # define IMPLEMENT_CIPHER(nm, sub, kbits, blkbits, ivbits, flags)              \\\n      |          ^"
+      ],
+      "error_count": 11,
+      "error_types": {
+        "syntax_error": 10,
+        "declaration_error": 1
+      },
+      "error_line_types": [
+        "syntax_error",
+        "syntax_error",
+        "declaration_error",
+        "syntax_error",
+        "syntax_error",
+        "syntax_error",
+        "syntax_error",
+        "syntax_error",
+        "syntax_error",
+        "syntax_error",
+        "syntax_error"
+      ]
+    },
+    {
+      "commit_sha": "1a4e7d479cc0f9283ebaf5cfe467a9ca63eaf868",
+      "branch": "security-categories",
+      "workflow_name": "GitHub CI",
+      "job_name": [
+        "basic_gcc",
+        "check-ansi",
+        "minimal",
+        "no-deprecated",
+        "address_ub_sanitizer",
+        "enable_non-default_options",
+        "external-tests-misc",
+        "external-tests-providers",
+        "external-tests-pyca (3.9)",
+        "full_featured",
+        "fuzz_tests",
+        "legacy",
+        "no-legacy",
+        "non-caching",
+        "no-shared-ubuntu",
+        "out-of-readonly-source-and-install-ubuntu"
+      ],
+      "workflow_id": 15010014789,
+      "job_id": [
+        42176930868,
+        42176932878,
+        42176937801,
+        42176938570,
+        42176939034,
+        42176939380,
+        42176939573,
+        42176939727,
+        42176939894,
+        42176940093,
+        42176940257,
+        42176940462,
+        42176940892,
+        42176941168,
+        42176941639,
+        42176942621
+      ],
+      "created_at": "2025-05-14T01:13:01Z",
+      "error_lines": [
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:337:86: error: macro \"IMPLEMENT_CIPHER\" passed 7 arguments, but takes just 6",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:339:86: error: macro \"IMPLEMENT_CIPHER\" passed 7 arguments, but takes just 6",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:337:1: error: unknown type name 'IMPLEMENT_CIPHER'",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:341:86: error: macro \"IMPLEMENT_CIPHER\" passed 7 arguments, but takes just 6",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:341:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'IMPLEMENT_CIPHER'",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:343:88: error: macro \"IMPLEMENT_CIPHER\" passed 7 arguments, but takes just 6",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:341:1: error: unknown type name 'IMPLEMENT_CIPHER'",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:345:88: error: macro \"IMPLEMENT_CIPHER\" passed 7 arguments, but takes just 6",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:347:88: error: macro \"IMPLEMENT_CIPHER\" passed 7 arguments, but takes just 6",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:349:88: error: macro \"IMPLEMENT_CIPHER\" passed 7 arguments, but takes just 6",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:351:88: error: macro \"IMPLEMENT_CIPHER\" passed 7 arguments, but takes just 6",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:353:88: error: macro \"IMPLEMENT_CIPHER\" passed 7 arguments, but takes just 6"
+      ],
+      "error_details": [
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:337:86: error: macro \"IMPLEMENT_CIPHER\" passed 7 arguments, but takes just 6\n  337 | IMPLEMENT_CIPHER(aes, cbc_hmac_sha1_etm, 128, 128, 128, 1, EVP_CIPH_FLAG_ENC_THEN_MAC)\n      |                                                                                      ^\nproviders/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:17: note: macro \"IMPLEMENT_CIPHER\" defined here\n   17 | # define IMPLEMENT_CIPHER(nm, sub, kbits, blkbits, ivbits, flags)              \\\n      |",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:339:86: error: macro \"IMPLEMENT_CIPHER\" passed 7 arguments, but takes just 6\n  339 | IMPLEMENT_CIPHER(aes, cbc_hmac_sha1_etm, 192, 128, 128, 3, EVP_CIPH_FLAG_ENC_THEN_MAC)\n      |                                                                                      ^\nproviders/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:17: note: macro \"IMPLEMENT_CIPHER\" defined here\n   17 | # define IMPLEMENT_CIPHER(nm, sub, kbits, blkbits, ivbits, flags)              \\\n      |",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:337:1: error: unknown type name 'IMPLEMENT_CIPHER'\n  337 | IMPLEMENT_CIPHER(aes, cbc_hmac_sha1_etm, 128, 128, 128, 1, EVP_CIPH_FLAG_ENC_THEN_MAC)\n      | ^~~~~~~~~~~~~~~~",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:341:86: error: macro \"IMPLEMENT_CIPHER\" passed 7 arguments, but takes just 6\n  341 | IMPLEMENT_CIPHER(aes, cbc_hmac_sha1_etm, 256, 128, 128, 5, EVP_CIPH_FLAG_ENC_THEN_MAC)\n      |                                                                                      ^\nproviders/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:17: note: macro \"IMPLEMENT_CIPHER\" defined here\n   17 | # define IMPLEMENT_CIPHER(nm, sub, kbits, blkbits, ivbits, flags)              \\\n      |",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:341:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'IMPLEMENT_CIPHER'\n  341 | IMPLEMENT_CIPHER(aes, cbc_hmac_sha1_etm, 256, 128, 128, 5, EVP_CIPH_FLAG_ENC_THEN_MAC)\n      | ^~~~~~~~~~~~~~~~",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:343:88: error: macro \"IMPLEMENT_CIPHER\" passed 7 arguments, but takes just 6\n  343 | IMPLEMENT_CIPHER(aes, cbc_hmac_sha256_etm, 128, 128, 128, 1, EVP_CIPH_FLAG_ENC_THEN_MAC)\n      |                                                                                        ^\nproviders/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:17: note: macro \"IMPLEMENT_CIPHER\" defined here\n   17 | # define IMPLEMENT_CIPHER(nm, sub, kbits, blkbits, ivbits, flags)              \\\n      |",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:341:1: error: unknown type name 'IMPLEMENT_CIPHER'\n  341 | IMPLEMENT_CIPHER(aes, cbc_hmac_sha1_etm, 256, 128, 128, 5, EVP_CIPH_FLAG_ENC_THEN_MAC)\n      | ^~~~~~~~~~~~~~~~",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:345:88: error: macro \"IMPLEMENT_CIPHER\" passed 7 arguments, but takes just 6\n  345 | IMPLEMENT_CIPHER(aes, cbc_hmac_sha256_etm, 192, 128, 128, 3, EVP_CIPH_FLAG_ENC_THEN_MAC)\n      |                                                                                        ^\nproviders/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:17: note: macro \"IMPLEMENT_CIPHER\" defined here\n   17 | # define IMPLEMENT_CIPHER(nm, sub, kbits, blkbits, ivbits, flags)              \\\n      |",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:347:88: error: macro \"IMPLEMENT_CIPHER\" passed 7 arguments, but takes just 6\n  347 | IMPLEMENT_CIPHER(aes, cbc_hmac_sha256_etm, 256, 128, 128, 5, EVP_CIPH_FLAG_ENC_THEN_MAC)\n      |                                                                                        ^\nproviders/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:17: note: macro \"IMPLEMENT_CIPHER\" defined here\n   17 | # define IMPLEMENT_CIPHER(nm, sub, kbits, blkbits, ivbits, flags)              \\\n      |",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:349:88: error: macro \"IMPLEMENT_CIPHER\" passed 7 arguments, but takes just 6\n  349 | IMPLEMENT_CIPHER(aes, cbc_hmac_sha512_etm, 128, 128, 128, 1, EVP_CIPH_FLAG_ENC_THEN_MAC)\n      |                                                                                        ^\nproviders/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:17: note: macro \"IMPLEMENT_CIPHER\" defined here\n   17 | # define IMPLEMENT_CIPHER(nm, sub, kbits, blkbits, ivbits, flags)              \\\n      |",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:351:88: error: macro \"IMPLEMENT_CIPHER\" passed 7 arguments, but takes just 6\n  351 | IMPLEMENT_CIPHER(aes, cbc_hmac_sha512_etm, 192, 128, 128, 3, EVP_CIPH_FLAG_ENC_THEN_MAC)\n      |                                                                                        ^\nproviders/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:17: note: macro \"IMPLEMENT_CIPHER\" defined here\n   17 | # define IMPLEMENT_CIPHER(nm, sub, kbits, blkbits, ivbits, flags)              \\\n      |",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:353:88: error: macro \"IMPLEMENT_CIPHER\" passed 7 arguments, but takes just 6\n  353 | IMPLEMENT_CIPHER(aes, cbc_hmac_sha512_etm, 256, 128, 128, 5, EVP_CIPH_FLAG_ENC_THEN_MAC)\n      |                                                                                        ^\nproviders/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:17: note: macro \"IMPLEMENT_CIPHER\" defined here\n   17 | # define IMPLEMENT_CIPHER(nm, sub, kbits, blkbits, ivbits, flags)              \\\n      |\ncc1: note: unrecognized command-line option '-Wno-unterminated-string-initialization' may have been intended to silence earlier diagnostics"
+      ],
+      "error_count": 12,
+      "error_types": {
+        "syntax_error": 10,
+        "declaration_error": 2
+      },
+      "error_line_types": [
+        "syntax_error",
+        "syntax_error",
+        "declaration_error",
+        "syntax_error",
+        "syntax_error",
+        "syntax_error",
+        "declaration_error",
+        "syntax_error",
+        "syntax_error",
+        "syntax_error",
+        "syntax_error",
+        "syntax_error"
+      ]
+    },
+    {
+      "commit_sha": "a3de065a54caab98f9f301722041d210d0018b37",
+      "branch": "security-categories",
+      "workflow_name": "GitHub CI",
+      "job_name": [
+        "no-shared-macos (macos-14)",
+        "out-of-readonly-source-and-install-macos (macos-14)"
+      ],
+      "workflow_id": 15009979652,
+      "job_id": [
+        42176847768,
+        42176849895
+      ],
+      "created_at": "2025-05-14T01:10:05Z",
+      "error_lines": [
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:337:1: error: too few arguments to function call, expected 7, have 6",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:339:1: error: too few arguments to function call, expected 7, have 6",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:341:1: error: too few arguments to function call, expected 7, have 6",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:343:1: error: too few arguments to function call, expected 7, have 6",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:345:1: error: too few arguments to function call, expected 7, have 6",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:347:1: error: too few arguments to function call, expected 7, have 6",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:349:1: error: too few arguments to function call, expected 7, have 6",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:351:1: error: too few arguments to function call, expected 7, have 6",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:353:1: error: too few arguments to function call, expected 7, have 6"
+      ],
+      "error_details": [
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:337:1: error: too few arguments to function call, expected 7, have 6\nIMPLEMENT_CIPHER(aes, cbc_hmac_sha1_etm, 128, 128, 128, EVP_CIPH_FLAG_ENC_THEN_MAC)\n^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nproviders/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:309:72: note: expanded from macro 'IMPLEMENT_CIPHER'\n                                          flags, kbits, blkbits, ivbits);      \\\n                                                                       ^\nproviders/implementations/include/prov/ciphercommon.h:128:5: note: 'ossl_cipher_generic_get_params' declared here",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:339:1: error: too few arguments to function call, expected 7, have 6\nIMPLEMENT_CIPHER(aes, cbc_hmac_sha1_etm, 192, 128, 128, EVP_CIPH_FLAG_ENC_THEN_MAC)\n^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nproviders/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:309:72: note: expanded from macro 'IMPLEMENT_CIPHER'\n                                          flags, kbits, blkbits, ivbits);      \\\n                                                                       ^\nproviders/implementations/include/prov/ciphercommon.h:128:5: note: 'ossl_cipher_generic_get_params' declared here",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:341:1: error: too few arguments to function call, expected 7, have 6\nIMPLEMENT_CIPHER(aes, cbc_hmac_sha1_etm, 256, 128, 128, EVP_CIPH_FLAG_ENC_THEN_MAC)\n^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nproviders/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:309:72: note: expanded from macro 'IMPLEMENT_CIPHER'\n                                          flags, kbits, blkbits, ivbits);      \\\n                                                                       ^\nproviders/implementations/include/prov/ciphercommon.h:128:5: note: 'ossl_cipher_generic_get_params' declared here",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:343:1: error: too few arguments to function call, expected 7, have 6\nIMPLEMENT_CIPHER(aes, cbc_hmac_sha256_etm, 128, 128, 128, EVP_CIPH_FLAG_ENC_THEN_MAC)\n^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nproviders/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:309:72: note: expanded from macro 'IMPLEMENT_CIPHER'\n                                          flags, kbits, blkbits, ivbits);      \\\n                                                                       ^\nproviders/implementations/include/prov/ciphercommon.h:128:5: note: 'ossl_cipher_generic_get_params' declared here",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:345:1: error: too few arguments to function call, expected 7, have 6\nIMPLEMENT_CIPHER(aes, cbc_hmac_sha256_etm, 192, 128, 128, EVP_CIPH_FLAG_ENC_THEN_MAC)\n^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nproviders/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:309:72: note: expanded from macro 'IMPLEMENT_CIPHER'\n                                          flags, kbits, blkbits, ivbits);      \\\n                                                                       ^\nproviders/implementations/include/prov/ciphercommon.h:128:5: note: 'ossl_cipher_generic_get_params' declared here",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:347:1: error: too few arguments to function call, expected 7, have 6\nIMPLEMENT_CIPHER(aes, cbc_hmac_sha256_etm, 256, 128, 128, EVP_CIPH_FLAG_ENC_THEN_MAC)\n^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nproviders/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:309:72: note: expanded from macro 'IMPLEMENT_CIPHER'\n                                          flags, kbits, blkbits, ivbits);      \\\n                                                                       ^\nproviders/implementations/include/prov/ciphercommon.h:128:5: note: 'ossl_cipher_generic_get_params' declared here",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:349:1: error: too few arguments to function call, expected 7, have 6\nIMPLEMENT_CIPHER(aes, cbc_hmac_sha512_etm, 128, 128, 128, EVP_CIPH_FLAG_ENC_THEN_MAC)\n^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nproviders/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:309:72: note: expanded from macro 'IMPLEMENT_CIPHER'\n                                          flags, kbits, blkbits, ivbits);      \\\n                                                                       ^\nproviders/implementations/include/prov/ciphercommon.h:128:5: note: 'ossl_cipher_generic_get_params' declared here",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:351:1: error: too few arguments to function call, expected 7, have 6\nIMPLEMENT_CIPHER(aes, cbc_hmac_sha512_etm, 192, 128, 128, EVP_CIPH_FLAG_ENC_THEN_MAC)\n^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nproviders/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:309:72: note: expanded from macro 'IMPLEMENT_CIPHER'\n                                          flags, kbits, blkbits, ivbits);      \\\n                                                                       ^\nproviders/implementations/include/prov/ciphercommon.h:128:5: note: 'ossl_cipher_generic_get_params' declared here",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:353:1: error: too few arguments to function call, expected 7, have 6\nIMPLEMENT_CIPHER(aes, cbc_hmac_sha512_etm, 256, 128, 128, EVP_CIPH_FLAG_ENC_THEN_MAC)\n^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nproviders/implementations/ciphers/cipher_aes_cbc_hmac_sha_etm.c:309:72: note: expanded from macro 'IMPLEMENT_CIPHER'\n                                          flags, kbits, blkbits, ivbits);      \\\n                                                                       ^\nproviders/implementations/include/prov/ciphercommon.h:128:5: note: 'ossl_cipher_generic_get_params' declared here"
+      ],
+      "error_count": 9,
+      "error_types": {
+        "function_error": 9
+      },
+      "error_line_types": [
+        "function_error",
+        "function_error",
+        "function_error",
+        "function_error",
+        "function_error",
+        "function_error",
+        "function_error",
+        "function_error",
+        "function_error"
+      ]
+    },
+    {
+      "commit_sha": "33d590c29c222a454721acbb510ec9ed938c80f0",
+      "branch": "security-categories",
+      "workflow_name": "GitHub CI",
+      "job_name": [
+        "freebsd-x86_64",
+        "memory_sanitizer"
+      ],
+      "workflow_id": 15009949695,
+      "job_id": [
+        42176758902,
+        42176766153
+      ],
+      "created_at": "2025-05-14T01:07:33Z",
+      "error_lines": [
+        "crypto/evp/e_rc5.c:41:71: error: too few arguments provided to function-like macro invocation",
+        "crypto/evp/e_rc5.c:38:1: error: unknown type name 'IMPLEMENT_BLOCK_CIPHER'"
+      ],
+      "error_details": [
+        "crypto/evp/e_rc5.c:41:71: error: too few arguments provided to function-like macro invocation\n   41 |                        r_32_12_16_init_key, NULL, NULL, NULL, rc5_ctrl)\n      |                                                                       ^\ninclude/crypto/evp.h:567:9: note: macro 'IMPLEMENT_BLOCK_CIPHER' defined here\n  567 | #define IMPLEMENT_BLOCK_CIPHER(cname, ksched, cprefix, kstruct, nid, \\\n      |         ^\n--- crypto/evp/libcrypto-shlib-e_sm4.o ---\ner-types-discards-qualifiers -Wmissing-variable-declarations -DL_ENDIAN -DOPENSSL_PIC -DOPENSSLDIR=\"\\\"/usr/local/ssl\\\"\" -DENGINESDIR=\"\\\"/usr/local/lib/engines-3\\\"\" -DMODULESDIR=\"\\\"/usr/local/lib/ossl-modules\\\"\" -D_THREAD_SAFE -D_REENTRANT -DOPENSSL_BUILDING_OPENSSL -DNDEBUG  -MMD -MF crypto/evp/libcrypto-shlib-e_sm4.d.tmp -c -o crypto/evp/libcrypto-shlib-e_sm4.o crypto/evp/e_sm4.c\n--- crypto/evp/libcrypto-shlib-e_xcbc_d.o ---",
+        "crypto/evp/e_rc5.c:38:1: error: unknown type name 'IMPLEMENT_BLOCK_CIPHER'\n   38 | IMPLEMENT_BLOCK_CIPHER(rc5_32_12_16, ks, RC5_32, EVP_RC5_KEY, NID_rc5,\n      | ^"
+      ],
+      "error_count": 2,
+      "error_types": {
+        "syntax_error": 1,
+        "declaration_error": 1
+      },
+      "error_line_types": [
+        "syntax_error",
+        "declaration_error"
+      ]
+    },
+    {
+      "commit_sha": "9140e584a6f877085c0e7db7b9c36d2ab22a1c5c",
+      "branch": "security-categories",
+      "workflow_name": "GitHub CI",
+      "job_name": [
+        "check-ansi",
+        "minimal"
+      ],
+      "workflow_id": 15009885808,
+      "job_id": [
+        42176583909,
+        42176592651
+      ],
+      "created_at": "2025-05-14T01:02:14Z",
+      "error_lines": [
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha.c:27:66: error: expected ',' or ')', found \".\"",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha.c:435:37: error: expected ')' before numeric constant"
+      ],
+      "error_details": [
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha.c:27:66: error: expected ',' or ')', found \".\"\n   27 | # define IMPLEMENT_CIPHER(nm, sub, kbits, blkbits, ivbits, seccat. flags)       \\\n      |                                                                  ^",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha.c:435:37: error: expected ')' before numeric constant\n  435 | IMPLEMENT_CIPHER(aes, cbc_hmac_sha1, 128, 128, 128, 1, AES_CBC_HMAC_SHA_FLAGS)\n      |                                     ^~~~\n      |                                     )\ncc1: note: unrecognized command-line option '-Wno-unterminated-string-initialization' may have been intended to silence earlier diagnostics"
+      ],
+      "error_count": 2,
+      "error_types": {
+        "syntax_error": 2
+      },
+      "error_line_types": [
+        "syntax_error",
+        "syntax_error"
+      ]
+    },
+    {
+      "commit_sha": "9140e584a6f877085c0e7db7b9c36d2ab22a1c5c",
+      "branch": "security-categories",
+      "workflow_name": "GitHub CI",
+      "job_name": [
+        "no-shared-macos (macos-14)",
+        "out-of-readonly-source-and-install-macos (macos-14)"
+      ],
+      "workflow_id": 15009885808,
+      "job_id": [
+        42176593949,
+        42176594584
+      ],
+      "created_at": "2025-05-14T01:02:14Z",
+      "error_lines": [
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha.c:27:66: error: expected comma in macro parameter list",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha.c:435:38: error: expected identifier",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha.c:437:1: error: expected function body after function declarator"
+      ],
+      "error_details": [
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha.c:27:66: error: expected comma in macro parameter list\n# define IMPLEMENT_CIPHER(nm, sub, kbits, blkbits, ivbits, seccat. flags)       \\\n                                                                 ^",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha.c:435:38: error: expected identifier\nIMPLEMENT_CIPHER(aes, cbc_hmac_sha1, 128, 128, 128, 1, AES_CBC_HMAC_SHA_FLAGS)\n                                     ^",
+        "providers/implementations/ciphers/cipher_aes_cbc_hmac_sha.c:437:1: error: expected function body after function declarator\nIMPLEMENT_CIPHER(aes, cbc_hmac_sha1, 256, 128, 128, 5, AES_CBC_HMAC_SHA_FLAGS)\n^"
+      ],
+      "error_count": 3,
+      "error_types": {
+        "syntax_error": 3
+      },
+      "error_line_types": [
+        "syntax_error",
+        "syntax_error",
+        "syntax_error"
+      ]
+    },
+    {
+      "commit_sha": "d5d056dc408912c37e33753047b949cd6231867f",
+      "branch": "security-categories",
+      "workflow_name": "GitHub CI",
+      "job_name": [
+        "no-shared-macos (macos-14)",
+        "out-of-readonly-source-and-install-macos (macos-14)"
+      ],
+      "workflow_id": 15009830508,
+      "job_id": [
+        42176444354,
+        42176445782
+      ],
+      "created_at": "2025-05-14T00:57:51Z",
+      "error_lines": [
+        "crypto/evp/e_aes.c:3185:21: error: too many arguments provided to function-like macro invocation",
+        "crypto/evp/e_aes.c:3187:21: error: too many arguments provided to function-like macro invocation",
+        "crypto/evp/e_aes.c:3184:1: error: unknown type name 'BLOCK_CIPHER_custom'",
+        "crypto/evp/e_aes.c:3189:21: error: too many arguments provided to function-like macro invocation",
+        "crypto/evp/e_aes.c:3186:20: error: expected ';' after top level declarator",
+        "crypto/evp/e_aes.c:3374:55: error: too many arguments provided to function-like macro invocation",
+        "crypto/evp/e_aes.c:3375:55: error: too many arguments provided to function-like macro invocation",
+        "crypto/evp/e_aes.c:3653:21: error: too many arguments provided to function-like macro invocation",
+        "crypto/evp/e_aes.c:3655:21: error: too many arguments provided to function-like macro invocation",
+        "crypto/evp/e_aes.c:3657:21: error: too many arguments provided to function-like macro invocation",
+        "crypto/evp/e_aes.c:3672:30: error: expected expression",
+        "crypto/evp/e_aes.c:3672:41: error: use of undeclared identifier 'EVP_AES_WRAP_CTX'",
+        "crypto/evp/e_aes.c:3672:5: error: use of undeclared identifier 'EVP_AES_WRAP_CTX'",
+        "crypto/evp/e_aes.c:3672:23: error: use of undeclared identifier 'wctx'",
+        "crypto/evp/e_aes.c:3684:47: error: use of undeclared identifier 'wctx'",
+        "crypto/evp/e_aes.c:3686:47: error: use of undeclared identifier 'wctx'",
+        "crypto/evp/e_aes.c:3688:13: error: use of undeclared identifier 'wctx'; did you mean 'ctx''",
+        "crypto/evp/e_aes.c:3688:22: error: array type 'unsigned char[16]' is not assignable",
+        "crypto/evp/e_aes.c:3694:9: error: use of undeclared identifier 'wctx'; did you mean 'ctx''"
+      ],
+      "error_details": [
+        "crypto/evp/e_aes.c:3185:21: error: too many arguments provided to function-like macro invocation\n                    EVP_CIPH_FLAG_AEAD_CIPHER | CUSTOM_FLAGS)\n                    ^\ncrypto/evp/e_aes.c:2377:10: note: macro 'BLOCK_CIPHER_custom' defined here\n# define BLOCK_CIPHER_custom(nid,keylen,blocksize,ivlen,mode,MODE,flags) \\\n         ^",
+        "crypto/evp/e_aes.c:3187:21: error: too many arguments provided to function-like macro invocation\n                    EVP_CIPH_FLAG_AEAD_CIPHER | CUSTOM_FLAGS)\n                    ^\ncrypto/evp/e_aes.c:2377:10: note: macro 'BLOCK_CIPHER_custom' defined here\n# define BLOCK_CIPHER_custom(nid,keylen,blocksize,ivlen,mode,MODE,flags) \\\n         ^",
+        "crypto/evp/e_aes.c:3184:1: error: unknown type name 'BLOCK_CIPHER_custom'\nBLOCK_CIPHER_custom(NID_aes, 128, 1, 12, 1, gcm, GCM,\n^",
+        "crypto/evp/e_aes.c:3189:21: error: too many arguments provided to function-like macro invocation\n                    EVP_CIPH_FLAG_AEAD_CIPHER | CUSTOM_FLAGS)\n                    ^\ncrypto/evp/e_aes.c:2377:10: note: macro 'BLOCK_CIPHER_custom' defined here\n# define BLOCK_CIPHER_custom(nid,keylen,blocksize,ivlen,mode,MODE,flags) \\\n         ^",
+        "crypto/evp/e_aes.c:3186:20: error: expected ';' after top level declarator\nBLOCK_CIPHER_custom(NID_aes, 192, 1, 12, 3, gcm, GCM,\n                   ^\n                   ;",
+        "crypto/evp/e_aes.c:3374:55: error: too many arguments provided to function-like macro invocation\nBLOCK_CIPHER_custom(NID_aes, 128, 1, 16, 1, xts, XTS, XTS_FLAGS)\n                                                      ^\ncrypto/evp/e_aes.c:2377:10: note: macro 'BLOCK_CIPHER_custom' defined here\n# define BLOCK_CIPHER_custom(nid,keylen,blocksize,ivlen,mode,MODE,flags) \\\n         ^",
+        "crypto/evp/e_aes.c:3375:55: error: too many arguments provided to function-like macro invocation\nBLOCK_CIPHER_custom(NID_aes, 256, 1, 16, 5, xts, XTS, XTS_FLAGS)\n                                                      ^\ncrypto/evp/e_aes.c:2377:10: note: macro 'BLOCK_CIPHER_custom' defined here\n# define BLOCK_CIPHER_custom(nid,keylen,blocksize,ivlen,mode,MODE,flags) \\\n         ^",
+        "crypto/evp/e_aes.c:3653:21: error: too many arguments provided to function-like macro invocation\n                    EVP_CIPH_FLAG_AEAD_CIPHER | CUSTOM_FLAGS)\n                    ^\ncrypto/evp/e_aes.c:2377:10: note: macro 'BLOCK_CIPHER_custom' defined here\n# define BLOCK_CIPHER_custom(nid,keylen,blocksize,ivlen,mode,MODE,flags) \\\n         ^",
+        "crypto/evp/e_aes.c:3655:21: error: too many arguments provided to function-like macro invocation\n                    EVP_CIPH_FLAG_AEAD_CIPHER | CUSTOM_FLAGS)\n                    ^\ncrypto/evp/e_aes.c:2377:10: note: macro 'BLOCK_CIPHER_custom' defined here\n# define BLOCK_CIPHER_custom(nid,keylen,blocksize,ivlen,mode,MODE,flags) \\\n         ^",
+        "crypto/evp/e_aes.c:3657:21: error: too many arguments provided to function-like macro invocation\n                    EVP_CIPH_FLAG_AEAD_CIPHER | CUSTOM_FLAGS)\n                    ^\ncrypto/evp/e_aes.c:2377:10: note: macro 'BLOCK_CIPHER_custom' defined here\n# define BLOCK_CIPHER_custom(nid,keylen,blocksize,ivlen,mode,MODE,flags) \\\n         ^",
+        "crypto/evp/e_aes.c:3672:30: error: expected expression\n    EVP_AES_WRAP_CTX *wctx = EVP_C_DATA(EVP_AES_WRAP_CTX,ctx);\n                             ^\ninclude/crypto/evp.h:367:20: note: expanded from macro 'EVP_C_DATA'\n        ((kstruct *)EVP_CIPHER_CTX_get_cipher_data(ctx))\n                   ^",
+        "crypto/evp/e_aes.c:3672:41: error: use of undeclared identifier 'EVP_AES_WRAP_CTX'\n    EVP_AES_WRAP_CTX *wctx = EVP_C_DATA(EVP_AES_WRAP_CTX,ctx);\n                                        ^",
+        "crypto/evp/e_aes.c:3672:5: error: use of undeclared identifier 'EVP_AES_WRAP_CTX'\n    EVP_AES_WRAP_CTX *wctx = EVP_C_DATA(EVP_AES_WRAP_CTX,ctx);\n    ^",
+        "crypto/evp/e_aes.c:3672:23: error: use of undeclared identifier 'wctx'\n    EVP_AES_WRAP_CTX *wctx = EVP_C_DATA(EVP_AES_WRAP_CTX,ctx);\n                      ^",
+        "crypto/evp/e_aes.c:3684:47: error: use of undeclared identifier 'wctx'\n            AES_set_encrypt_key(key, keylen, &wctx->ks.ks);\n                                              ^",
+        "crypto/evp/e_aes.c:3686:47: error: use of undeclared identifier 'wctx'\n            AES_set_decrypt_key(key, keylen, &wctx->ks.ks);\n                                              ^",
+        "crypto/evp/e_aes.c:3688:13: error: use of undeclared identifier 'wctx'; did you mean 'ctx''\n            wctx->iv = NULL;\n            ^~~~\n            ctx\ncrypto/evp/e_aes.c:3668:46: note: 'ctx' declared here\nstatic int aes_wrap_init_key(EVP_CIPHER_CTX *ctx, const unsigned char *key,\n                                             ^",
+        "crypto/evp/e_aes.c:3688:22: error: array type 'unsigned char[16]' is not assignable\n            wctx->iv = NULL;\n            ~~~~~~~~ ^",
+        "crypto/evp/e_aes.c:3694:9: error: use of undeclared identifier 'wctx'; did you mean 'ctx''\n        wctx->iv = ctx->iv;\n        ^~~~\n        ctx\ncrypto/evp/e_aes.c:3668:46: note: 'ctx' declared here\nstatic int aes_wrap_init_key(EVP_CIPHER_CTX *ctx, const unsigned char *key,\n                                             ^\nfatal error: too many errors emitted, stopping now [-ferror-limit=]"
+      ],
+      "error_count": 19,
+      "error_types": {
+        "syntax_error": 10,
+        "declaration_error": 8,
+        "other_error": 1
+      },
+      "error_line_types": [
+        "syntax_error",
+        "syntax_error",
+        "declaration_error",
+        "syntax_error",
+        "syntax_error",
+        "syntax_error",
+        "syntax_error",
+        "syntax_error",
+        "syntax_error",
+        "syntax_error",
+        "syntax_error",
+        "declaration_error",
+        "declaration_error",
+        "declaration_error",
+        "declaration_error",
+        "declaration_error",
+        "declaration_error",
+        "other_error",
+        "declaration_error"
+      ]
+    },
+    {
+      "commit_sha": "322872068199942a581d26ed72e6dde6ac2d75f2",
+      "branch": "handle_bad_x_keyshare",
+      "workflow_name": "GitHub CI",
+      "job_name": [
+        "check-ansi",
+        "basic_gcc",
+        "linux-arm64",
+        "minimal",
+        "no-deprecated",
+        "no-shared-ubuntu",
+        "address_ub_sanitizer",
+        "enable_non-default_options",
+        "full_featured",
+        "fuzz_tests",
+        "legacy",
+        "no-legacy",
+        "non-caching",
+        "out-of-readonly-source-and-install-ubuntu",
+        "external-tests-misc",
+        "external-tests-providers",
+        "external-tests-pyca (3.9)"
+      ],
+      "workflow_id": 14970760878,
+      "job_id": [
+        42050978585,
+        42050980513,
+        42050985413,
+        42050989062,
+        42050990754,
+        42050991545,
+        42050992358,
+        42050992786,
+        42050993187,
+        42050993481,
+        42050993919,
+        42050994738,
+        42050995113,
+        42050995817,
+        42050996878,
+        42050997327,
+        42050997797
+      ],
+      "created_at": "2025-05-12T11:13:55Z",
+      "error_lines": [
+        "ssl/s3_lib.c:5044:22: error: 'PROV_R_FAILED_DURING_DERIVATION' undeclared (first use in this function)"
+      ],
+      "error_details": [
+        "In file included from ssl/ssl_local.h:30,\nssl/s3_lib.c:5044:22: error: 'PROV_R_FAILED_DURING_DERIVATION' undeclared (first use in this function)\n 5044 |                      PROV_R_FAILED_DURING_DERIVATION);\n      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\ninclude/internal/statem.h:148:55: note: in definition of macro 'SSLfatal'\n  148 | # define SSLfatal(s, al, r) SSLfatal_data((s), (al), (r), NULL)\n      |                                                       ^\nssl/s3_lib.c:5044:22: note: each undeclared identifier is reported only once for each function it appears in\n 5044 |                      PROV_R_FAILED_DURING_DERIVATION);\n      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\ninclude/internal/statem.h:148:55: note: in definition of macro 'SSLfatal'\n  148 | # define SSLfatal(s, al, r) SSLfatal_data((s), (al), (r), NULL)\n      |                                                       ^\nAt top level:\ncc1: note: unrecognized command-line option '-Wno-unterminated-string-initialization' may have been intended to silence earlier diagnostics"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      },
+      "error_line_types": [
+        "declaration_error"
+      ]
+    },
+    {
+      "commit_sha": "322872068199942a581d26ed72e6dde6ac2d75f2",
+      "branch": "handle_bad_x_keyshare",
+      "workflow_name": "GitHub CI",
+      "job_name": [
+        "basic_clang",
+        "freebsd-x86_64",
+        "no-shared-macos (macos-13)",
+        "no-shared-macos (macos-14)",
+        "memory_sanitizer",
+        "out-of-readonly-source-and-install-macos (macos-13)",
+        "out-of-readonly-source-and-install-macos (macos-14)",
+        "threads_sanitizer"
+      ],
+      "workflow_id": 14970760878,
+      "job_id": [
+        42050979620,
+        42050982333,
+        42050991188,
+        42050991904,
+        42050994361,
+        42050995437,
+        42050996159,
+        42050996524
+      ],
+      "created_at": "2025-05-12T11:13:55Z",
+      "error_lines": [
+        "ssl/s3_lib.c:5044:22: error: use of undeclared identifier 'PROV_R_FAILED_DURING_DERIVATION'"
+      ],
+      "error_details": [
+        "ssl/s3_lib.c:5044:22: error: use of undeclared identifier 'PROV_R_FAILED_DURING_DERIVATION'\n 5044 |                      PROV_R_FAILED_DURING_DERIVATION);\n      |                      ^"
+      ],
+      "error_count": 1,
+      "error_types": {
+        "declaration_error": 1
+      },
+      "error_line_types": [
+        "declaration_error"
+      ]
+    }
+  ]
+}

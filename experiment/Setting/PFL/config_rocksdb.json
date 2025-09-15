@@ -1,0 +1,99 @@
+{
+    "description": "PFL评估系统配置文件",
+    "datasets": [
+        {
+            "name": "rocksdb",
+            "path": "../../../find_repair_patch/rocksdb_repair_analysis.jsonl",
+            "repo_path": "../../../experiment/repos/rocksdb_repo",
+            "description": "RocksDB编译错误修复分析数据集"
+        }
+    ],
+    "models": [
+        {
+            "name": "claude-3-7-sonnet",
+            "description": "Anthropic Claude 3.7 Sonnet 模型",
+            "provider": "anthropic",
+            "enabled": true
+        },
+        {
+            "name": "claude-sonnet-4",
+            "description": "Anthropic Claude Sonnet 4 模型",
+            "provider": "anthropic",
+            "enabled": true
+        },
+        {
+            "name": "deepseek-v3",
+            "description": "DeepSeek V3 模型",
+            "provider": "deepseek",
+            "enabled": true
+        },
+        {
+            "name": "gemini-2.5-pro",
+            "description": "Google Gemini 2.5 Pro 模型",
+            "provider": "google",
+            "enabled": true
+        },
+        {
+            "name": "gpt-4.1",
+            "description": "OpenAI GPT-4.1 模型",
+            "provider": "openai",
+            "enabled": true
+        },
+        {
+            "name": "gpt-5",
+            "description": "OpenAI GPT-5 模型",
+            "provider": "openai",
+            "enabled": true
+        },
+        {
+            "name": "qwen3-14b",
+            "description": "千问3-14B模型",
+            "provider": "qwen",
+            "enabled": true
+        },
+        {
+            "name": "qwen3-235b-a22b",
+            "description": "千问3-235B-A22B模型",
+            "provider": "qwen",
+            "enabled": true
+        },
+        {
+            "name": "qwen3-30b-a3b",
+            "description": "千问3-30B-A3B模型",
+            "provider": "qwen",
+            "enabled": true
+        },
+        {
+            "name": "qwen3-32b",
+            "description": "千问3-32B模型",
+            "provider": "qwen",
+            "enabled": true
+        },
+        {
+            "name": "qwen3-4b",
+            "description": "千问3-4B模型",
+            "provider": "qwen",
+            "enabled": true
+        },
+        {
+            "name": "qwen3-8b",
+            "description": "千问3-8B模型",
+            "provider": "qwen",
+            "enabled": true
+        }
+    ],
+    "settings": {
+        "max_instances": 100,
+        "similarity_threshold": 0.8,
+        "output_dir": "results-rocksdb",
+        "max_workers": 5,
+        "save_detailed_results": true,
+        "log_level": "INFO"
+    },
+    "environment": {
+        "required_env_vars": {
+            "USE_CUSTOM_OPENAI_API": "true"
+        },
+        "optional_env_vars": {}
+    }
+}

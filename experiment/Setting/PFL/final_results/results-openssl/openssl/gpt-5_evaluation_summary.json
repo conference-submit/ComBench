@@ -1,0 +1,18 @@
+{
+  "dataset": "openssl",
+  "model_name": "gpt-5",
+  "evaluation_result": {
+    "model_name": "gpt-5",
+    "total_instances": 13,
+    "total_errors": 19,
+    "successful_fixes": 15,
+    "exact_matches": 0,
+    "valid_patches": 0,
+    "total_time": 10676.132531404495,
+    "average_time": 561.901712179184,
+    "success_rate": 0.7894736842105263,
+    "exact_match_rate": 0.0,
+    "patch_validity_rate": 0.0
+  },
+  "timestamp": "2025-08-24 05:49:06"
+}

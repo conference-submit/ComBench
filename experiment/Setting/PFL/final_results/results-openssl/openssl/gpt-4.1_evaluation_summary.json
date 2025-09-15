@@ -1,0 +1,18 @@
+{
+  "dataset": "openssl",
+  "model_name": "gpt-4.1",
+  "evaluation_result": {
+    "model_name": "gpt-4.1",
+    "total_instances": 13,
+    "total_errors": 19,
+    "successful_fixes": 12,
+    "exact_matches": 0,
+    "valid_patches": 0,
+    "total_time": 141.51029419898987,
+    "average_time": 7.447910220999467,
+    "success_rate": 0.631578947368421,
+    "exact_match_rate": 0.0,
+    "patch_validity_rate": 0.0
+  },
+  "timestamp": "2025-08-19 15:38:15"
+}

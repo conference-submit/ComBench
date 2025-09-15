@@ -1,0 +1,33 @@
+{
+    "description": "PFL评估系统配置文件",
+    "datasets": [
+        {
+            "name": "llvm",
+            "path": "reproduced_data/llvm.jsonl",
+            "repo_path": "../../../experiment/repos/llvm_repo",
+            "description": "LLVM编译错误修复分析数据集"
+        }
+    ],
+    "models": [
+        {
+            "name": "claude-sonnet-4",
+            "description": "Claude 4 Sonnet 模型",
+            "provider": "anthropic",
+            "enabled": true
+        }
+    ],
+    "settings": {
+        "max_instances": 200,
+        "similarity_threshold": 0.8,
+        "output_dir": "results-llvm",
+        "max_workers": 10,
+        "save_detailed_results": true,
+        "log_level": "INFO"
+    },
+    "environment": {
+        "required_env_vars": {
+            "USE_CUSTOM_OPENAI_API": "true"
+        },
+        "optional_env_vars": {}
+    }
+}

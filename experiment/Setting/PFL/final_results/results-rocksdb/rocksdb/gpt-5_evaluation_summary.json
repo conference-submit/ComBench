@@ -1,0 +1,18 @@
+{
+  "dataset": "rocksdb",
+  "model_name": "gpt-5",
+  "evaluation_result": {
+    "model_name": "gpt-5",
+    "total_instances": 52,
+    "total_errors": 63,
+    "successful_fixes": 41,
+    "exact_matches": 0,
+    "valid_patches": 0,
+    "total_time": 8233.597259521484,
+    "average_time": 130.6920199924045,
+    "success_rate": 0.6507936507936508,
+    "exact_match_rate": 0.0,
+    "patch_validity_rate": 0.0
+  },
+  "timestamp": "2025-08-24 12:37:16"
+}
